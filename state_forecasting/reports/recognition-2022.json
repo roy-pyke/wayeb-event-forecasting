@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "matches": 11247,
+  "endpoint_mismatches": 0,
+  "inserted_telemetry_mismatches": 0,
+  "input_sha256": "7b548eb1f0d388b4d71c6600d9236ddced5744c3a8dbc16f32b00ab495585d5e",
+  "table_sha256": "c84c77fa9e907d9936633cb96ad206aca5851a840bd091de3a122d3a59efc420",
+  "author_jar_sha256": "0bb519ec154206a103bae94e2311352a7f7cd3836f20197017dc3633a32d0889"
+}

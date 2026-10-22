@@ -1,8 +1,27 @@
 # 复现与使用 / Reproducibility and usage
 
+## 最终 2022 确认实验
+
+```bash
+./state_forecasting/reproduce_2022.sh
+```
+
+这是最终架构入口。第一次下载 [Zenodo 6854240](https://zenodo.org/records/6854240) 的约 1.6 GB 原始 CSV，检查作者 MD5 `83c713c0f8a6c2f24418cca999b2a8eb`；本次文件 SHA256 为 `3fd0788c1b8fb7753ac0a2047f487c87f59b8b36af2f5553e4990354ed86d168`。原生观测间隔中位数 1 秒，查询仍至少相隔 20 秒。确认区间、预热和全部参数记录在 `CONFIRMATION_2022.json`，源码哈希在 `FROZEN_2022.json`。
+
+已有环境和数据时可以只运行确认或演示：
+
+```bash
+./state_forecasting/run.sh state_forecasting/scripts/confirm_2022.py --output runs/my-2022
+./state_forecasting/run.sh state_forecasting/scripts/verify_2022.py
+./state_forecasting/run.sh state_forecasting/scripts/stress_fast.py --run runs/my-2022
+./state_forecasting/run.sh state_forecasting/scripts/demo_fast.py --run runs/my-2022
+```
+
+输出目录包含每日三个模型、原始/校准概率、最终预测、权重轨迹、训练截止时间审计和 `confirmation.json`。最终线上入口 `FastStateSidecar` 在内存中维护快速计数、组合权重和未揭晓查询；没有使用离线的最终周期时长作为在线输入。
+
 ## 文件与入口
 
-从仓库根目录运行：
+旧 2020 冻结实验从仓库根目录运行：
 
 ```bash
 ./state_forecasting/reproduce.sh
@@ -40,6 +59,10 @@
 
 `run.sh` 固定 OpenMP 为 2 线程、BLAS 为 1 线程。依赖版本、随机数种子、原始压缩包 SHA256、协议、核心源码与冻结评估脚本哈希均有记录。最终运行检查冻结哈希，不允许悄悄修改模型后仍沿用同一个冻结声明。重现结果会更新 `reports/*.json`，平台与计时差异可以出现在报告里；确定性输入和预测应独立比较。
 
+跨操作系统不声称逐位一致。2020 的 macOS 与 Linux 复现原始 ZIP、样本数、实例数一致，但派生数组哈希不同，平均 Brier 最大差约 0.000565。2022 的原始数据、样本数和识别端点也一致，三个最终方法的平均 Brier 差均小于 0.000005，Linux 相对改善约 34.60%。逐条预测有差异，尚未把差异定位到一个单独原因，不能把相近结果写成哈希完全相同。原始 Linux 推理 p95 为 38.87 ms，超过门槛；其报告的 `quality_pass=false` 原样保留。
+
+2022 同机复跑已完成：从每日模型训练重新执行，原始/校准概率、最终 F0/F1/F2 和组合权重逐元素相同，最大绝对差为 0。两次 p95 分别约 10.88 和 19.23 ms，均满足本机门槛；计时受负载影响。原始发布报告保留首次结果，重复结果与比较保存在 [reproducibility.json](../reports/reproducibility.json)。
+
 ## 数据来源与标签
 
 数据：[MetroPT-3](https://archive.ics.uci.edu/dataset/791/metropt+3+dataset)，Davari, Veloso, Ribeiro, Gama，DOI 10.24432/C5VW3R，CC BY 4.0。原始 ZIP SHA256：
@@ -58,7 +81,17 @@ aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a
 
 ## 在线接口
 
-`src/stateforecast/online.py` 的 `StateSidecar` 接收两类输入：
+最终入口 `src/stateforecast/online_fast.py` 的 `FastStateSidecar` 接收两类输入；`online.py` 的 `StateSidecar` 是早期实现，也负责被最终入口复用的匹配状态和特征维护。
+
+```python
+from stateforecast.online_fast import FastStateSidecar
+from stateforecast.stream import Event
+
+# table 为 configs/dfa.json；两个模型从同一日的 M0/M2.joblib 加载。
+sidecar = FastStateSidecar(table, context_model=m2, baseline=m0)
+```
+
+事件形式：
 
 ```python
 Event(instance="apu", kind="LoadStart", event_time=t, arrival_time=t)
@@ -66,7 +99,7 @@ Event(instance="apu", kind="Telemetry", event_time=s, arrival_time=t,
       values=(TP2, TP3, H1, DV_pressure, Reservoirs, Oil_temperature, Motor_current))
 ```
 
-业务事件推进作者自动机；遥测只更新上下文。`predict(instance, now)` 输出模式状态、30/60/120 秒完成概率、遥测年龄和状态专家权重。收到 `LoadEnd` 或实际经过 horizon 后才更新权重。缺口 `Gap` 使未揭晓标签删失；调用方需要提供可靠的观测覆盖/缺口信息。完整生产系统还需要持久化、流量控制、业务水位线和故障恢复，本原型没有声称具备这些能力。
+业务事件通过 `accept(event)` 推进作者自动机；遥测只更新上下文。`predict(instance, now)` 输出模式状态、30/60/120 秒完成概率、五个专家的当前权重及 `full_context_pool` / `business_fallback` 来源。收到 `LoadEnd` 或实际经过 horizon 后才更新权重。缺口 `Gap` 使未揭晓标签删失；调用方需要提供可靠的观测覆盖/缺口信息。完整生产系统还需要持久化、流量控制、业务水位线和故障恢复，本原型没有声称具备这些能力。
 
 演示脚本回放保留段前三个完整周期；示例从空业务历史开始，因此示例数值不应当与全历史批量基准逐行等同。
 

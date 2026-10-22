@@ -1,0 +1,231 @@
+{
+  "frozen_commit": "3391e7a9b577260f156527d0296ed76d01668e9d",
+  "same_host": {
+    "reference": "runs/state-confirmation-2022",
+    "repeat": "runs/state-confirmation-repeat",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "arrays": {
+      "raw_predictions.npz": {
+        "M0": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M1-16": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M2": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      },
+      "predictions.npz": {
+        "M0": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M1-16": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M2": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      },
+      "fast_predictions.npz": {
+        "F0": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F1": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F2": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      },
+      "fast_weights.npz": {
+        "F0": {
+          "shape": [
+            68197,
+            3
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F1": {
+          "shape": [
+            68197,
+            5
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F2": {
+          "shape": [
+            68197,
+            5
+          ],
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      }
+    },
+    "first_performance": {
+      "p95_ms": 10.877674989751533,
+      "p50_ms": 9.471728990320116,
+      "model_MiB": 0.661590576171875
+    },
+    "repeat_performance": {
+      "p95_ms": 19.234420552675143,
+      "p50_ms": 13.511125012882985,
+      "model_MiB": 0.661590576171875
+    },
+    "first_quality_pass": true,
+    "repeat_quality_pass": true
+  },
+  "cross_platform": {
+    "ci_url": "https://github.com/roy-pyke/wayeb-event-forecasting/actions/runs/39861854411",
+    "ci_commit": "3391e7a9b577260f156527d0296ed76d01668e9d",
+    "execution": "success",
+    "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
+    "source_sha256_equal": true,
+    "raw_rows_equal": true,
+    "split_counts_equal": true,
+    "arrays": {
+      "raw_predictions.npz": {
+        "M0": {
+          "equal": false,
+          "max_abs_difference": 0.06051798286010768,
+          "mean_abs_difference": 6.283704673528292e-05
+        },
+        "M1-16": {
+          "equal": false,
+          "max_abs_difference": 0.07093670062236523,
+          "mean_abs_difference": 4.483717023012344e-05
+        },
+        "M2": {
+          "equal": false,
+          "max_abs_difference": 0.07896017523268395,
+          "mean_abs_difference": 5.5848112666353445e-05
+        }
+      },
+      "predictions.npz": {
+        "M0": {
+          "equal": false,
+          "max_abs_difference": 0.17636100142811412,
+          "mean_abs_difference": 0.00015831817567862043
+        },
+        "M1-16": {
+          "equal": false,
+          "max_abs_difference": 0.27815737107219546,
+          "mean_abs_difference": 0.00010289575985313195
+        },
+        "M2": {
+          "equal": false,
+          "max_abs_difference": 0.3362825332949701,
+          "mean_abs_difference": 0.00011530294751323504
+        }
+      },
+      "fast_predictions.npz": {
+        "F0": {
+          "equal": false,
+          "max_abs_difference": 0.15761766331062993,
+          "mean_abs_difference": 8.150044264898911e-05
+        },
+        "F1": {
+          "equal": false,
+          "max_abs_difference": 0.14748949401535133,
+          "mean_abs_difference": 7.694552674042596e-05
+        },
+        "F2": {
+          "equal": false,
+          "max_abs_difference": 0.16424809660490758,
+          "mean_abs_difference": 8.412058075987426e-05
+        }
+      },
+      "fast_weights.npz": {
+        "F0": {
+          "equal": false,
+          "max_abs_difference": 0.4375924890036047,
+          "mean_abs_difference": 0.0003554212688010488
+        },
+        "F1": {
+          "equal": false,
+          "max_abs_difference": 0.10090127698515666,
+          "mean_abs_difference": 0.00033809779788314815
+        },
+        "F2": {
+          "equal": false,
+          "max_abs_difference": 0.12436488870779544,
+          "mean_abs_difference": 0.00032839103697876123
+        }
+      }
+    },
+    "mean_brier": {
+      "F0": 0.04277844150361069,
+      "F1": 0.029218966641564273,
+      "F2": 0.027976641723107622
+    },
+    "mean_brier_abs_difference": {
+      "F0": 1.888543404923726e-06,
+      "F1": 2.9996282473430946e-06,
+      "F2": 4.918511999858766e-06
+    },
+    "relative_reduction": 0.3460107301771087,
+    "performance": {
+      "p95_ms": 38.86805445010282,
+      "p50_ms": 38.121140500038564,
+      "model_MiB": 0.66156005859375
+    },
+    "checks": {
+      "relative_reduction": true,
+      "paired_ci": true,
+      "calibration": true,
+      "positive_months": true,
+      "latency": false,
+      "model_size": true
+    },
+    "quality_pass": false,
+    "interpretation": "Probability performance and semantic checks reproduce. Original unbatched Linux serving exceeds the frozen 20 ms latency threshold. Cross-platform predictions are not bit-identical; numerical differences have not been attributed to one isolated cause."
+  }
+}
