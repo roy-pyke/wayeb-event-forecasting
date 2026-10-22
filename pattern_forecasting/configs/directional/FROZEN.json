@@ -1,0 +1,519 @@
+{
+  "date": "2026-10-22",
+  "code_commit": "56c179b89bbeaea53571101e9ea442bca0da6a8f",
+  "family": "directional",
+  "source_sha256": {
+    "pattern_forecasting/src/patternforecast/__init__.py": "1ce284c052dbaee27d2d5903e7c145a0d38093e54db0e8871c6b64e41ec2c480",
+    "pattern_forecasting/src/patternforecast/affine.py": "de51fb26ac669058cfd431f37d60bd1d4c7a5736a741e69d646d42e943a0c8d9",
+    "pattern_forecasting/src/patternforecast/automata.py": "f2249023f9377533ac375f73c4743be22c7ceeae027e15a3b51821229cd481c8",
+    "pattern_forecasting/src/patternforecast/certificates.py": "05cec4cb126ca340e9e2a27337cfb33a81e3a66c932b9fde136ca12f9c218915",
+    "pattern_forecasting/src/patternforecast/common.py": "d7dc7c09778144b0c50fd30570fa3c77cff0d148233370de8d7c025248d16845",
+    "pattern_forecasting/src/patternforecast/communication.py": "0d43f3c7201a5e3a0b966466e804ba8312deab2f05c716b948fa519406ac7d88",
+    "pattern_forecasting/src/patternforecast/data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+    "pattern_forecasting/src/patternforecast/freeze.py": "4b6a0f57f334978b39ec8cfa6542c62f4c4c22fe31bfe7efc5f11bc276703999",
+    "pattern_forecasting/src/patternforecast/models.py": "4cf4c5496943514f200bd1a367b2ac72581c5802f83f879bd600f98ea789e092",
+    "pattern_forecasting/src/patternforecast/oracle.py": "7edb59ed635da78d4abde90905ebea50f9fa68bdff6e41967e9eb30a09d42d5d",
+    "pattern_forecasting/src/patternforecast/polytope.py": "579ff6a952ef977896d9d692af2992d883a78314ad43edd937e249f49fa99581",
+    "pattern_forecasting/src/patternforecast/refresh.py": "60020944ca1324aec3bbde87301d00c7dde67dc9505688f537b7fcde12064167",
+    "pattern_forecasting/src/patternforecast/wire.py": "93e7d773f776dfd5372dbc14ae020c31bf2b633a652bf8a45cbcbaff8e610878",
+    "pattern_forecasting/scripts/affine_codec.py": "2525e97c83ea9c04fa72ebb5f90d5347b4e76a66e9aeb4ad45c1ec9d4c378a32",
+    "pattern_forecasting/scripts/audit_data.py": "13fcb61ce7441634f09411f659104a73b91ac50d02fabe0622806b320436e92e",
+    "pattern_forecasting/scripts/check_reproducibility.py": "f58a094bec41721996709ef2f5e12fbfa939df1ea280dfd686c203dfc3898d10",
+    "pattern_forecasting/scripts/communicate.py": "e586e33459e3af81dd1b8ea3bf54240e9a721529e47605f2f47c74c63a7997d9",
+    "pattern_forecasting/scripts/compile_codec.py": "162a360cf97dad3c2bd554dd5ae867c1c32dd31351e9a9c2eb4106b01d186c33",
+    "pattern_forecasting/scripts/confirmation.py": "f3993bdfb8a6f7ab244c4a33c128b649dc20f1a62e7f39ba2e8222b5cb337aa0",
+    "pattern_forecasting/scripts/download_models.py": "b8866ca1ce919a31106e3c11e92d3e65b3fe16d0a8785dfb614a620752c15a8f",
+    "pattern_forecasting/scripts/freeze_confirmation.py": "13514ce353342c18464a1f45019cce1dab2ae23670586aa9a9cfae00dee7f941",
+    "pattern_forecasting/scripts/prepare.py": "95cdbb17f539ae37e06e18657d87eff2aea444812c2146ed6b6f70e82c92ca79",
+    "pattern_forecasting/scripts/refresh.py": "09eb861513e8c87cd40de72874efd3e400d5d72a801f0bdb7bd5a06f0166e069",
+    "pattern_forecasting/scripts/summarize.py": "e1bd3b9ea86f046d6d2ab7bce026bf9e5adba6525c5ad9c69c1dca94af6a933d",
+    "pattern_forecasting/scripts/train.py": "d645e74f5104e392c7efda9e0851ba52751699422e3ea5ebcb06db009651a8df",
+    "pattern_forecasting/scripts/verify_wayeb.py": "69a2ce0e51b7ab292f01acc417f1a64c4ee9708a5e50dc2bb0f99ef597be4b0b",
+    "pattern_forecasting/configs/AFFINE_CODEC.json": "2f33324dac209b25a399c1f6045123cd1617331000857e93a85d2aabcfe07268",
+    "pattern_forecasting/configs/EXPLORATORY_FRONTIER.json": "9824f892912a7fa813af04e80b4a4ba3366f569ca80794ebdb8190fe3b872b99",
+    "pattern_forecasting/configs/PROTOCOL.json": "ec482bf523979f15c03d9a2a08f46232648ad32b774cdb1bb97e8d37a6cd0077",
+    "pattern_forecasting/configs/REFRESH_V2.json": "a9cf7af2a8fbbc570b207632a3ca9f58bf7be23ca4e2b029ff41179cd9ca2d05",
+    "pattern_forecasting/configs/SHORT_HORIZON.json": "fb7f0dc25ec29b78dfe30259ae18b841a0c1bc7e8591722ddab8bbe2fca46f1a",
+    "pattern_forecasting/configs/SPARSE_OPTIMIZATION.json": "437b4792aaa57f21d86af8b16865fae18a068c892369fc45532da5a84f3d56a9",
+    "pattern_forecasting/configs/TRAINING.json": "918afe4a7f1724419c7d273aa14adcf0532b0a3d85163de421acbaef8c03ac5b",
+    "pattern_forecasting/configs/declarations.sre": "3fd6f450e9173ce072c8ff5a7db95e8aae9ea413d429428ad42533a24a11fb1e",
+    "pattern_forecasting/configs/dfa.json": "10d32c379e1d1cc48440d8bcb996468e96fbd66997243b6b3c80eff7baa118ba",
+    "pattern_forecasting/configs/directional/PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+    "pattern_forecasting/configs/directional/declarations.sre": "3fd6f450e9173ce072c8ff5a7db95e8aae9ea413d429428ad42533a24a11fb1e",
+    "pattern_forecasting/configs/directional/dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea",
+    "pattern_forecasting/configs/directional/patterns.sre": "03a848ffec93f4e8bc3608d4af14af5cf5b8e6050919420abe30d0b82d8865d0",
+    "pattern_forecasting/configs/multisignal/PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+    "pattern_forecasting/configs/multisignal/declarations.sre": "3fd6f450e9173ce072c8ff5a7db95e8aae9ea413d429428ad42533a24a11fb1e",
+    "pattern_forecasting/configs/multisignal/dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2",
+    "pattern_forecasting/configs/multisignal/patterns.sre": "04e34bd82ab63d5d807d23c5d9002d2dd4229a358c1bb251501effdfeffa8d86",
+    "pattern_forecasting/configs/patterns.sre": "1aa02c543263568fe0583d96679927d015e8f976a0880694ae9cdb334aaab72e",
+    "pattern_forecasting/configs/requirements.txt": "1f9481496bbd85f4d5071fee2a5c0c0243c6a0a8d4d0788b83faf2dfca5d7eee",
+    "pattern_forecasting/scala/ExportPatterns.scala": "f3c12953a2f74ea352a42afa4d649e809ff62ecba6deb57d996a4586b3bda402"
+  },
+  "role": "additional complex-pattern diagnostic",
+  "upstream_submodules": [
+    " b58a0cbe8c2c174d19394153c03504031ac57465 upstream/Wayeb (version0.6.0)",
+    " 9bf8796b223a1a657bc51f49475d6d4fbf616172 upstream/rtcef (v1.0.0)"
+  ],
+  "purpose": "Independent diagnostic replication after failed development superiority gates. Do not reinterpret an unexpected positive holdout as a rescued confirmatory superiority claim.",
+  "primary": "Multisignal short-horizon coordinate codec versus the development-selected strongest identical-precision representation at epsilon=0.002.",
+  "interpretation": "Check reproducibility, correctness, future-year and unseen-entity generalization; preserve all failed gates. New superiority hypotheses require new data.",
+  "uncertainty": "Paired Monday-aligned recorded-clock weekly bootstrap, 1000 resamples, common weather weeks across stations; seed spread separately.",
+  "transport": "Instantaneous reliable auxiliary delivery at each scored query, full business stream, agreed version and state. Application payload bytes only.",
+  "reserves": "Air 2017 and power 2010 remain excluded from this replication.",
+  "datasets": {
+    "air": {
+      "backbone": "short-hgb-31-180-s20261022",
+      "codec_comparator": "zero",
+      "models": {
+        "short-hgb-31-180-s20261022": {
+          "family": "hgb",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.02882321282924159,
+          "brier_complete": 0.028589149989506003,
+          "complete_queries": 48337,
+          "by_pattern": [
+            0.010843611862539468,
+            0.008761099190732419,
+            0.06684234203729426
+          ],
+          "fit_seconds": 26.81248537497595,
+          "fit_rows": 349148,
+          "predict_seconds": 3.917408958019223,
+          "model_sha256": "ecd926bd0bda45d25705766d0adac55252215f1b56c7a420d81fd8a3fb055795"
+        },
+        "short-extra_trees-15-s20261022": {
+          "family": "extra_trees",
+          "setting": [
+            15
+          ],
+          "seed": 20261022,
+          "brier_known": 0.030551615049145758,
+          "brier_complete": 0.030279394524959084,
+          "complete_queries": 48337,
+          "by_pattern": [
+            0.011264479844061502,
+            0.009301736945507665,
+            0.07106456764486944
+          ],
+          "fit_seconds": 200.21120491699548,
+          "fit_rows": 349148,
+          "predict_seconds": 1.3950835420109797,
+          "model_sha256": "ae71a98edfcefc3fce10f10b6f97d9a13de0194d98dd7bf666ec98d8ec007363"
+        },
+        "short-gru-64-0.05-s20261022": {
+          "family": "gru",
+          "setting": [
+            64,
+            0.05
+          ],
+          "seed": 20261022,
+          "brier_known": 0.031148212195822273,
+          "brier_complete": 0.03088011660941206,
+          "complete_queries": 48337,
+          "by_pattern": [
+            0.011735497104547087,
+            0.009149633420599632,
+            0.0725349124995485
+          ],
+          "fit_seconds": 34.42812125000637,
+          "fit_rows": 40000,
+          "predict_seconds": 0.8769138339848723,
+          "model_sha256": "5717bc30458e38156c3e69ab5022e946c00e079a609911d1292bed338f5c19d4",
+          "learning_curve": [
+            {
+              "epoch": 1,
+              "loss": 0.600340269034422,
+              "calibration_brier": 0.029661354199178567
+            },
+            {
+              "epoch": 2,
+              "loss": 0.3003741427312923,
+              "calibration_brier": 0.02895366000699299
+            },
+            {
+              "epoch": 3,
+              "loss": 0.289128070956544,
+              "calibration_brier": 0.028049753139822504
+            },
+            {
+              "epoch": 4,
+              "loss": 0.2852382077069222,
+              "calibration_brier": 0.028108012599988734
+            },
+            {
+              "epoch": 5,
+              "loss": 0.28100362589842154,
+              "calibration_brier": 0.027847031364316606
+            },
+            {
+              "epoch": 6,
+              "loss": 0.2805768994590904,
+              "calibration_brier": 0.028090927378833078
+            },
+            {
+              "epoch": 7,
+              "loss": 0.28044579262974895,
+              "calibration_brier": 0.027681877511773582
+            },
+            {
+              "epoch": 8,
+              "loss": 0.27695553117915045,
+              "calibration_brier": 0.027700602586639356
+            },
+            {
+              "epoch": 9,
+              "loss": 0.2845245790255221,
+              "calibration_brier": 0.028058191221562032
+            },
+            {
+              "epoch": 10,
+              "loss": 0.27487812559061414,
+              "calibration_brier": 0.027760410673083644
+            },
+            {
+              "epoch": 11,
+              "loss": 0.2748963244353669,
+              "calibration_brier": 0.02724211073318989
+            },
+            {
+              "epoch": 12,
+              "loss": 0.2734345776748054,
+              "calibration_brier": 0.027526665495212512
+            },
+            {
+              "epoch": 13,
+              "loss": 0.2753094581863548,
+              "calibration_brier": 0.02805899893379707
+            },
+            {
+              "epoch": 14,
+              "loss": 0.2725481006163585,
+              "calibration_brier": 0.027252007201256492
+            },
+            {
+              "epoch": 15,
+              "loss": 0.2726366359599029,
+              "calibration_brier": 0.02710739786070679
+            },
+            {
+              "epoch": 16,
+              "loss": 0.27105517327031003,
+              "calibration_brier": 0.027092819155925617
+            },
+            {
+              "epoch": 17,
+              "loss": 0.26891575376444227,
+              "calibration_brier": 0.02719093690549814
+            },
+            {
+              "epoch": 18,
+              "loss": 0.26994002072871487,
+              "calibration_brier": 0.02695371516896267
+            },
+            {
+              "epoch": 19,
+              "loss": 0.2666927585496178,
+              "calibration_brier": 0.02713536146227299
+            },
+            {
+              "epoch": 20,
+              "loss": 0.26803457416311094,
+              "calibration_brier": 0.026831468494365837
+            },
+            {
+              "epoch": 21,
+              "loss": 0.2653088726197617,
+              "calibration_brier": 0.027173946089766247
+            },
+            {
+              "epoch": 22,
+              "loss": 0.269867846671539,
+              "calibration_brier": 0.027497934324732125
+            },
+            {
+              "epoch": 23,
+              "loss": 0.2665552945831154,
+              "calibration_brier": 0.02700680373881957
+            },
+            {
+              "epoch": 24,
+              "loss": 0.26570892994162404,
+              "calibration_brier": 0.026857496121943457
+            },
+            {
+              "epoch": 25,
+              "loss": 0.2627351770672617,
+              "calibration_brier": 0.02698763360608937
+            },
+            {
+              "epoch": 26,
+              "loss": 0.264097355589082,
+              "calibration_brier": 0.027289513052020355
+            }
+          ]
+        },
+        "short-business-31-180-s20261022": {
+          "family": "business",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.032682352480136616,
+          "brier_complete": 0.03239778218342826,
+          "complete_queries": 48337,
+          "by_pattern": [
+            0.012278205321253096,
+            0.0099007118750674,
+            0.07584250048577955
+          ],
+          "fit_seconds": 37.265747792000184,
+          "fit_rows": 349148,
+          "predict_seconds": 4.729447874997277,
+          "model_sha256": "f27f9cdf6fd5793166696ba190480bc8c5f5874ec77baae8859c67ca11e9ed0c"
+        },
+        "short-no_state-31-180-s20261022": {
+          "family": "no_state",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.02928469592714461,
+          "brier_complete": 0.02903767185483863,
+          "complete_queries": 48337,
+          "by_pattern": [
+            0.011125446135471848,
+            0.008888116639606456,
+            0.06781763134273239
+          ],
+          "fit_seconds": 38.24438904199633,
+          "fit_rows": 349148,
+          "predict_seconds": 5.96176066697808,
+          "model_sha256": "61106c67f6141f2d9214be221a07a4f71e89ef78159c3568ed5908035ca20c07"
+        }
+      },
+      "cuts_sha256": "0b3a0e4963e0ee1be05c0b8233f3857f541b7819c45a9efb9c80154af55b065c",
+      "development_manifest_sha256": "105cbacac3780a20190d51e4f6170c276a7deeb5e444be339e22cc1b764af50e",
+      "confirmation": [
+        "2016-01-01",
+        "2017-01-01"
+      ],
+      "report_sha256": "c6f5c6d0448b3531f352be5981371b0c9e1c3958ec6a37597422322b048fb29e"
+    },
+    "power": {
+      "backbone": "short-hgb-31-180-s20261022",
+      "codec_comparator": "all",
+      "models": {
+        "short-hgb-31-180-s20261022": {
+          "family": "hgb",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.015746827624758663,
+          "brier_complete": 0.015747106819370825,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0027817836970621115,
+            0.003021902725823235,
+            0.041436796451390666
+          ],
+          "fit_seconds": 19.514930000004824,
+          "fit_rows": 356270,
+          "predict_seconds": 6.250386583007639,
+          "model_sha256": "0e9aa93e91335311f8024633cb013ee13a983731fee9b8e2b281223da2d8645b"
+        },
+        "short-extra_trees-15-s20261022": {
+          "family": "extra_trees",
+          "setting": [
+            15
+          ],
+          "seed": 20261022,
+          "brier_known": 0.015809587914251355,
+          "brier_complete": 0.015809867575648465,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0026241255072157552,
+            0.0030550584786840957,
+            0.0417495797568542
+          ],
+          "fit_seconds": 157.3275866250042,
+          "fit_rows": 356270,
+          "predict_seconds": 4.454901874996722,
+          "model_sha256": "82d1994a6b8f4ac7b1138f069e4fa95c95f13874b1272c8a09e5b7eb9c0bdd7a"
+        },
+        "short-gru-32-0.01-s20261022": {
+          "family": "gru",
+          "setting": [
+            32,
+            0.01
+          ],
+          "seed": 20261022,
+          "brier_known": 0.016532646791101606,
+          "brier_complete": 0.016532954301508297,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0025407946445907244,
+            0.003029419950817098,
+            0.04402772577789697
+          ],
+          "fit_seconds": 20.44773891699151,
+          "fit_rows": 40000,
+          "predict_seconds": 2.0204653330147266,
+          "model_sha256": "7ddb8e7a35ce33ce99f9ee3ac4497fa315007d82e72754cf64b40e7657dfc17c",
+          "learning_curve": [
+            {
+              "epoch": 1,
+              "loss": 0.522425116994713,
+              "calibration_brier": 0.016031588984621252
+            },
+            {
+              "epoch": 2,
+              "loss": 0.15587185266651685,
+              "calibration_brier": 0.015480564215914627
+            },
+            {
+              "epoch": 3,
+              "loss": 0.148010370191894,
+              "calibration_brier": 0.015514741293586775
+            },
+            {
+              "epoch": 4,
+              "loss": 0.14466255978692935,
+              "calibration_brier": 0.015369767638450771
+            },
+            {
+              "epoch": 5,
+              "loss": 0.14135682139592834,
+              "calibration_brier": 0.0151705551177765
+            },
+            {
+              "epoch": 6,
+              "loss": 0.14050350819207444,
+              "calibration_brier": 0.015198464706695562
+            },
+            {
+              "epoch": 7,
+              "loss": 0.1390997936265378,
+              "calibration_brier": 0.015102919397471633
+            },
+            {
+              "epoch": 8,
+              "loss": 0.1379870386629165,
+              "calibration_brier": 0.015096327726178544
+            },
+            {
+              "epoch": 9,
+              "loss": 0.13696599591381942,
+              "calibration_brier": 0.015192565553697336
+            },
+            {
+              "epoch": 10,
+              "loss": 0.13704721620188484,
+              "calibration_brier": 0.015001442538118467
+            },
+            {
+              "epoch": 11,
+              "loss": 0.13584363564283033,
+              "calibration_brier": 0.015075275402591827
+            },
+            {
+              "epoch": 12,
+              "loss": 0.13550385097159615,
+              "calibration_brier": 0.014946938096541776
+            },
+            {
+              "epoch": 13,
+              "loss": 0.13551399800219113,
+              "calibration_brier": 0.014935925957682885
+            },
+            {
+              "epoch": 14,
+              "loss": 0.13496771888642373,
+              "calibration_brier": 0.014967857560865237
+            },
+            {
+              "epoch": 15,
+              "loss": 0.1345212709488748,
+              "calibration_brier": 0.014942704572277352
+            },
+            {
+              "epoch": 16,
+              "loss": 0.13387446784520451,
+              "calibration_brier": 0.014991405719649917
+            },
+            {
+              "epoch": 17,
+              "loss": 0.13476371906603438,
+              "calibration_brier": 0.015033031506769292
+            },
+            {
+              "epoch": 18,
+              "loss": 0.1338453636139254,
+              "calibration_brier": 0.014938622087899442
+            },
+            {
+              "epoch": 19,
+              "loss": 0.13379754144934158,
+              "calibration_brier": 0.01492970870146084
+            }
+          ]
+        },
+        "short-business-31-180-s20261022": {
+          "family": "business",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.016419388021809672,
+          "brier_complete": 0.016419654769177353,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.002641103269337046,
+            0.00307019442839939,
+            0.043546866367692574
+          ],
+          "fit_seconds": 31.844013833993813,
+          "fit_rows": 356270,
+          "predict_seconds": 13.161488542013103,
+          "model_sha256": "ce9a1825d0fe60e27c571fb7a7d33be82355f3c6d7a6854dac6f107fa9a9d2b3"
+        },
+        "short-no_state-31-180-s20261022": {
+          "family": "no_state",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.015728305649010985,
+          "brier_complete": 0.01572858650164968,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0029430867975108895,
+            0.003048287042256273,
+            0.04119354310726583
+          ],
+          "fit_seconds": 35.77815162501065,
+          "fit_rows": 356270,
+          "predict_seconds": 9.603864250006154,
+          "model_sha256": "338abcc17d5c788e36d1eb9ef1bf5b66fcd8c2e678decd0f35d278ea9c5b0d02"
+        }
+      },
+      "cuts_sha256": "807c0c503c39b1beae5c4fbb791a57024cf8f94a2dec3154c448134f89f5f6a9",
+      "development_manifest_sha256": "ce161dff1bba4e46f5e1a8015b586aa7e03c5a3010a0a2a28e2f9f4e684988ab",
+      "confirmation": [
+        "2009-01-01",
+        "2010-01-01"
+      ],
+      "report_sha256": "d969c5599133faa27dc4198466da366e2fac40b82361c279848e0aec7087c366"
+    }
+  }
+}

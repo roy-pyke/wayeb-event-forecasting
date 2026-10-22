@@ -1,0 +1,469 @@
+{
+  "date": "2026-10-22",
+  "code_commit": "56c179b89bbeaea53571101e9ea442bca0da6a8f",
+  "family": "nested",
+  "source_sha256": {
+    "pattern_forecasting/src/patternforecast/__init__.py": "1ce284c052dbaee27d2d5903e7c145a0d38093e54db0e8871c6b64e41ec2c480",
+    "pattern_forecasting/src/patternforecast/affine.py": "de51fb26ac669058cfd431f37d60bd1d4c7a5736a741e69d646d42e943a0c8d9",
+    "pattern_forecasting/src/patternforecast/automata.py": "f2249023f9377533ac375f73c4743be22c7ceeae027e15a3b51821229cd481c8",
+    "pattern_forecasting/src/patternforecast/certificates.py": "05cec4cb126ca340e9e2a27337cfb33a81e3a66c932b9fde136ca12f9c218915",
+    "pattern_forecasting/src/patternforecast/common.py": "d7dc7c09778144b0c50fd30570fa3c77cff0d148233370de8d7c025248d16845",
+    "pattern_forecasting/src/patternforecast/communication.py": "0d43f3c7201a5e3a0b966466e804ba8312deab2f05c716b948fa519406ac7d88",
+    "pattern_forecasting/src/patternforecast/data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+    "pattern_forecasting/src/patternforecast/freeze.py": "4b6a0f57f334978b39ec8cfa6542c62f4c4c22fe31bfe7efc5f11bc276703999",
+    "pattern_forecasting/src/patternforecast/models.py": "4cf4c5496943514f200bd1a367b2ac72581c5802f83f879bd600f98ea789e092",
+    "pattern_forecasting/src/patternforecast/oracle.py": "7edb59ed635da78d4abde90905ebea50f9fa68bdff6e41967e9eb30a09d42d5d",
+    "pattern_forecasting/src/patternforecast/polytope.py": "579ff6a952ef977896d9d692af2992d883a78314ad43edd937e249f49fa99581",
+    "pattern_forecasting/src/patternforecast/refresh.py": "60020944ca1324aec3bbde87301d00c7dde67dc9505688f537b7fcde12064167",
+    "pattern_forecasting/src/patternforecast/wire.py": "93e7d773f776dfd5372dbc14ae020c31bf2b633a652bf8a45cbcbaff8e610878",
+    "pattern_forecasting/scripts/affine_codec.py": "2525e97c83ea9c04fa72ebb5f90d5347b4e76a66e9aeb4ad45c1ec9d4c378a32",
+    "pattern_forecasting/scripts/audit_data.py": "13fcb61ce7441634f09411f659104a73b91ac50d02fabe0622806b320436e92e",
+    "pattern_forecasting/scripts/check_reproducibility.py": "f58a094bec41721996709ef2f5e12fbfa939df1ea280dfd686c203dfc3898d10",
+    "pattern_forecasting/scripts/communicate.py": "e586e33459e3af81dd1b8ea3bf54240e9a721529e47605f2f47c74c63a7997d9",
+    "pattern_forecasting/scripts/compile_codec.py": "162a360cf97dad3c2bd554dd5ae867c1c32dd31351e9a9c2eb4106b01d186c33",
+    "pattern_forecasting/scripts/confirmation.py": "f3993bdfb8a6f7ab244c4a33c128b649dc20f1a62e7f39ba2e8222b5cb337aa0",
+    "pattern_forecasting/scripts/download_models.py": "b8866ca1ce919a31106e3c11e92d3e65b3fe16d0a8785dfb614a620752c15a8f",
+    "pattern_forecasting/scripts/freeze_confirmation.py": "13514ce353342c18464a1f45019cce1dab2ae23670586aa9a9cfae00dee7f941",
+    "pattern_forecasting/scripts/prepare.py": "95cdbb17f539ae37e06e18657d87eff2aea444812c2146ed6b6f70e82c92ca79",
+    "pattern_forecasting/scripts/refresh.py": "09eb861513e8c87cd40de72874efd3e400d5d72a801f0bdb7bd5a06f0166e069",
+    "pattern_forecasting/scripts/summarize.py": "e1bd3b9ea86f046d6d2ab7bce026bf9e5adba6525c5ad9c69c1dca94af6a933d",
+    "pattern_forecasting/scripts/train.py": "d645e74f5104e392c7efda9e0851ba52751699422e3ea5ebcb06db009651a8df",
+    "pattern_forecasting/scripts/verify_wayeb.py": "69a2ce0e51b7ab292f01acc417f1a64c4ee9708a5e50dc2bb0f99ef597be4b0b",
+    "pattern_forecasting/configs/AFFINE_CODEC.json": "2f33324dac209b25a399c1f6045123cd1617331000857e93a85d2aabcfe07268",
+    "pattern_forecasting/configs/EXPLORATORY_FRONTIER.json": "9824f892912a7fa813af04e80b4a4ba3366f569ca80794ebdb8190fe3b872b99",
+    "pattern_forecasting/configs/PROTOCOL.json": "ec482bf523979f15c03d9a2a08f46232648ad32b774cdb1bb97e8d37a6cd0077",
+    "pattern_forecasting/configs/REFRESH_V2.json": "a9cf7af2a8fbbc570b207632a3ca9f58bf7be23ca4e2b029ff41179cd9ca2d05",
+    "pattern_forecasting/configs/SHORT_HORIZON.json": "fb7f0dc25ec29b78dfe30259ae18b841a0c1bc7e8591722ddab8bbe2fca46f1a",
+    "pattern_forecasting/configs/SPARSE_OPTIMIZATION.json": "437b4792aaa57f21d86af8b16865fae18a068c892369fc45532da5a84f3d56a9",
+    "pattern_forecasting/configs/TRAINING.json": "918afe4a7f1724419c7d273aa14adcf0532b0a3d85163de421acbaef8c03ac5b",
+    "pattern_forecasting/configs/declarations.sre": "3fd6f450e9173ce072c8ff5a7db95e8aae9ea413d429428ad42533a24a11fb1e",
+    "pattern_forecasting/configs/dfa.json": "10d32c379e1d1cc48440d8bcb996468e96fbd66997243b6b3c80eff7baa118ba",
+    "pattern_forecasting/configs/directional/PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+    "pattern_forecasting/configs/directional/declarations.sre": "3fd6f450e9173ce072c8ff5a7db95e8aae9ea413d429428ad42533a24a11fb1e",
+    "pattern_forecasting/configs/directional/dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea",
+    "pattern_forecasting/configs/directional/patterns.sre": "03a848ffec93f4e8bc3608d4af14af5cf5b8e6050919420abe30d0b82d8865d0",
+    "pattern_forecasting/configs/multisignal/PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+    "pattern_forecasting/configs/multisignal/declarations.sre": "3fd6f450e9173ce072c8ff5a7db95e8aae9ea413d429428ad42533a24a11fb1e",
+    "pattern_forecasting/configs/multisignal/dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2",
+    "pattern_forecasting/configs/multisignal/patterns.sre": "04e34bd82ab63d5d807d23c5d9002d2dd4229a358c1bb251501effdfeffa8d86",
+    "pattern_forecasting/configs/patterns.sre": "1aa02c543263568fe0583d96679927d015e8f976a0880694ae9cdb334aaab72e",
+    "pattern_forecasting/configs/requirements.txt": "1f9481496bbd85f4d5071fee2a5c0c0243c6a0a8d4d0788b83faf2dfca5d7eee",
+    "pattern_forecasting/scala/ExportPatterns.scala": "f3c12953a2f74ea352a42afa4d649e809ff62ecba6deb57d996a4586b3bda402"
+  },
+  "role": "additional complex-pattern diagnostic",
+  "upstream_submodules": [
+    " b58a0cbe8c2c174d19394153c03504031ac57465 upstream/Wayeb (version0.6.0)",
+    " 9bf8796b223a1a657bc51f49475d6d4fbf616172 upstream/rtcef (v1.0.0)"
+  ],
+  "purpose": "Independent diagnostic replication after failed development superiority gates. Do not reinterpret an unexpected positive holdout as a rescued confirmatory superiority claim.",
+  "primary": "Multisignal short-horizon coordinate codec versus the development-selected strongest identical-precision representation at epsilon=0.002.",
+  "interpretation": "Check reproducibility, correctness, future-year and unseen-entity generalization; preserve all failed gates. New superiority hypotheses require new data.",
+  "uncertainty": "Paired Monday-aligned recorded-clock weekly bootstrap, 1000 resamples, common weather weeks across stations; seed spread separately.",
+  "transport": "Instantaneous reliable auxiliary delivery at each scored query, full business stream, agreed version and state. Application payload bytes only.",
+  "reserves": "Air 2017 and power 2010 remain excluded from this replication.",
+  "datasets": {
+    "air": {
+      "backbone": "short-hgb-31-180-s20261022",
+      "codec_comparator": "all",
+      "models": {
+        "short-hgb-31-180-s20261022": {
+          "family": "hgb",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.009391580886326785,
+          "brier_complete": 0.009337993231415796,
+          "complete_queries": 48349,
+          "by_pattern": [
+            0.006158956396321287,
+            0.010927134413305778,
+            0.011088330109055614
+          ],
+          "fit_seconds": 26.269914125005016,
+          "fit_rows": 354628,
+          "predict_seconds": 4.54653941700235,
+          "model_sha256": "176ec3b288497b7434eeca72e0ed38db72828c1f9944816ca5fee231d9f7d44e"
+        },
+        "short-extra_trees-50-s20261022": {
+          "family": "extra_trees",
+          "setting": [
+            50
+          ],
+          "seed": 20261022,
+          "brier_known": 0.009698559026929133,
+          "brier_complete": 0.009648841633716505,
+          "complete_queries": 48349,
+          "by_pattern": [
+            0.0064388675404902385,
+            0.01124528900563252,
+            0.011411196088894772
+          ],
+          "fit_seconds": 184.2152664589812,
+          "fit_rows": 354628,
+          "predict_seconds": 3.1704846670036204,
+          "model_sha256": "009621d55679a269a85db61e216947188add14a2247ece1f3035d304ea291f8b"
+        },
+        "short-gru-64-0.05-s20261022": {
+          "family": "gru",
+          "setting": [
+            64,
+            0.05
+          ],
+          "seed": 20261022,
+          "brier_known": 0.009997454171267028,
+          "brier_complete": 0.009944416351971361,
+          "complete_queries": 48349,
+          "by_pattern": [
+            0.006698631297445388,
+            0.01156914064364484,
+            0.011724262275866093
+          ],
+          "fit_seconds": 20.575018750008894,
+          "fit_rows": 40000,
+          "predict_seconds": 1.7478655840095598,
+          "model_sha256": "d364112ab92734d5dfbd32a5593e53716f8ff63a292761caec40e35cad5e35cc",
+          "learning_curve": [
+            {
+              "epoch": 1,
+              "loss": 0.5004833684880522,
+              "calibration_brier": 0.01133609615875346
+            },
+            {
+              "epoch": 2,
+              "loss": 0.13042322678279272,
+              "calibration_brier": 0.011059761101941217
+            },
+            {
+              "epoch": 3,
+              "loss": 0.12041019867586938,
+              "calibration_brier": 0.010834769642455996
+            },
+            {
+              "epoch": 4,
+              "loss": 0.11988386125126972,
+              "calibration_brier": 0.010578531532815256
+            },
+            {
+              "epoch": 5,
+              "loss": 0.1147058273229418,
+              "calibration_brier": 0.010674813768298557
+            },
+            {
+              "epoch": 6,
+              "loss": 0.11182453488058682,
+              "calibration_brier": 0.010764234445329505
+            },
+            {
+              "epoch": 7,
+              "loss": 0.11163608088523527,
+              "calibration_brier": 0.010817808717668352
+            },
+            {
+              "epoch": 8,
+              "loss": 0.11280116665212414,
+              "calibration_brier": 0.010592832770970893
+            },
+            {
+              "epoch": 9,
+              "loss": 0.1113935653827613,
+              "calibration_brier": 0.010806549676563793
+            },
+            {
+              "epoch": 10,
+              "loss": 0.10989084464934053,
+              "calibration_brier": 0.01056668804686628
+            },
+            {
+              "epoch": 11,
+              "loss": 0.11367686441804789,
+              "calibration_brier": 0.010902181071933154
+            },
+            {
+              "epoch": 12,
+              "loss": 0.1078566413702844,
+              "calibration_brier": 0.010697736605845502
+            },
+            {
+              "epoch": 13,
+              "loss": 0.11239382426572751,
+              "calibration_brier": 0.010963274197350846
+            },
+            {
+              "epoch": 14,
+              "loss": 0.1059200881591326,
+              "calibration_brier": 0.010441680606499793
+            },
+            {
+              "epoch": 15,
+              "loss": 0.1135781930783127,
+              "calibration_brier": 0.010479239795147142
+            },
+            {
+              "epoch": 16,
+              "loss": 0.12033303091420403,
+              "calibration_brier": 0.010524168548020567
+            },
+            {
+              "epoch": 17,
+              "loss": 0.10904511677313454,
+              "calibration_brier": 0.010371275031287626
+            },
+            {
+              "epoch": 18,
+              "loss": 0.108265494809875,
+              "calibration_brier": 0.010788673628106624
+            },
+            {
+              "epoch": 19,
+              "loss": 0.10457690399658831,
+              "calibration_brier": 0.011158521783695006
+            },
+            {
+              "epoch": 20,
+              "loss": 0.10518071373712413,
+              "calibration_brier": 0.01104905839469568
+            },
+            {
+              "epoch": 21,
+              "loss": 0.10282446811848049,
+              "calibration_brier": 0.010994713927288678
+            },
+            {
+              "epoch": 22,
+              "loss": 0.1038847239334372,
+              "calibration_brier": 0.011187065459101073
+            },
+            {
+              "epoch": 23,
+              "loss": 0.1030581892715602,
+              "calibration_brier": 0.010737492330980722
+            }
+          ]
+        },
+        "short-business-31-180-s20261022": {
+          "family": "business",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.010589742102364194,
+          "brier_complete": 0.010540166123499598,
+          "complete_queries": 48349,
+          "by_pattern": [
+            0.007051587801304647,
+            0.012276944184012817,
+            0.012440342217014597
+          ],
+          "fit_seconds": 39.90252124998369,
+          "fit_rows": 354628,
+          "predict_seconds": 4.474681666994002,
+          "model_sha256": "253600d3d61d532d6d97e4162e0a8bc31b8c1ed6c2d7be40c023215010bd0e6c"
+        },
+        "short-no_state-31-180-s20261022": {
+          "family": "no_state",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.00942007344365901,
+          "brier_complete": 0.009368449191791564,
+          "complete_queries": 48349,
+          "by_pattern": [
+            0.006196399336339082,
+            0.010950408707959451,
+            0.011113091430580688
+          ],
+          "fit_seconds": 37.41623000000254,
+          "fit_rows": 354628,
+          "predict_seconds": 6.737116333999438,
+          "model_sha256": "3f4ed9dd0ff7a9d1b4c839394df60d692bb7c4c03fcc8b1818a0debcbec44155"
+        }
+      },
+      "cuts_sha256": "0b3a0e4963e0ee1be05c0b8233f3857f541b7819c45a9efb9c80154af55b065c",
+      "development_manifest_sha256": "9b67b782b2183c8788dc11a63f6f0958687b9ef18dfea90536540f6692a4f3fa",
+      "confirmation": [
+        "2016-01-01",
+        "2017-01-01"
+      ],
+      "report_sha256": "3f504db29c8a682bda0757f1bb9e3cfbc6f17a55192dbe501e54501346b6d237"
+    },
+    "power": {
+      "backbone": "short-gru-64-0.05-s20261022",
+      "codec_comparator": "all",
+      "models": {
+        "short-hgb-31-180-s20261022": {
+          "family": "hgb",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.0023392747173110536,
+          "brier_complete": 0.0023393191229337594,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0012525920393304689,
+            0.002783734504369662,
+            0.002981497608233035
+          ],
+          "fit_seconds": 22.912989542004652,
+          "fit_rows": 359410,
+          "predict_seconds": 12.316227166011231,
+          "model_sha256": "abe15d86bfd04dbaeecdc025f2d22cbd38a419f7af279de8712bfe6c85535408"
+        },
+        "short-extra_trees-15-s20261022": {
+          "family": "extra_trees",
+          "setting": [
+            15
+          ],
+          "seed": 20261022,
+          "brier_known": 0.002324929083790092,
+          "brier_complete": 0.0023249732226579972,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.001307277948967059,
+            0.0027527447976532266,
+            0.0029147645047499877
+          ],
+          "fit_seconds": 135.86362208399805,
+          "fit_rows": 359410,
+          "predict_seconds": 7.102031292015454,
+          "model_sha256": "eaa266cba4fce12f20c01e984bb9d2fedf83db1cf0f317135d55e75b997d30b3"
+        },
+        "short-gru-64-0.05-s20261022": {
+          "family": "gru",
+          "setting": [
+            64,
+            0.05
+          ],
+          "seed": 20261022,
+          "brier_known": 0.0021651202736071595,
+          "brier_complete": 0.002165161375110574,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0011406679395773197,
+            0.0025874697947615,
+            0.002767223086482662
+          ],
+          "fit_seconds": 33.53278158302419,
+          "fit_rows": 40000,
+          "predict_seconds": 4.77984270802699,
+          "model_sha256": "c5b683c8c7a9f164eb0372d4530154c4d859555fb66377b5f7f630c7d7240a52",
+          "learning_curve": [
+            {
+              "epoch": 1,
+              "loss": 0.4163421804403674,
+              "calibration_brier": 0.002114164290676296
+            },
+            {
+              "epoch": 2,
+              "loss": 0.0868094953107117,
+              "calibration_brier": 0.002122714370920705
+            },
+            {
+              "epoch": 3,
+              "loss": 0.07539605969398082,
+              "calibration_brier": 0.0025143444997060976
+            },
+            {
+              "epoch": 4,
+              "loss": 0.0720128930421381,
+              "calibration_brier": 0.002374345510832715
+            },
+            {
+              "epoch": 5,
+              "loss": 0.06586457327998514,
+              "calibration_brier": 0.002875317619829927
+            },
+            {
+              "epoch": 6,
+              "loss": 0.06394413803244316,
+              "calibration_brier": 0.002027024267052342
+            },
+            {
+              "epoch": 7,
+              "loss": 0.06228703131922816,
+              "calibration_brier": 0.002582832580827623
+            },
+            {
+              "epoch": 8,
+              "loss": 0.0623935812942778,
+              "calibration_brier": 0.002324571251493686
+            },
+            {
+              "epoch": 9,
+              "loss": 0.058111424522497984,
+              "calibration_brier": 0.0028818933474869662
+            },
+            {
+              "epoch": 10,
+              "loss": 0.0633042752448045,
+              "calibration_brier": 0.002088718832553555
+            },
+            {
+              "epoch": 11,
+              "loss": 0.060148295345185676,
+              "calibration_brier": 0.0028362800855199453
+            },
+            {
+              "epoch": 12,
+              "loss": 0.05448412174901253,
+              "calibration_brier": 0.0028422114525661576
+            }
+          ]
+        },
+        "short-business-31-180-s20261022": {
+          "family": "business",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.0023008065712936897,
+          "brier_complete": 0.002300850245896062,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0012403877103243604,
+            0.0027422870538090947,
+            0.0029197449497476136
+          ],
+          "fit_seconds": 31.04163916601101,
+          "fit_rows": 359410,
+          "predict_seconds": 18.05437341699144,
+          "model_sha256": "6d9551410982062cade3c9a464a038825582ba866f0d2483ac350e6502c7fb09"
+        },
+        "short-no_state-31-180-s20261022": {
+          "family": "no_state",
+          "setting": [
+            31,
+            180
+          ],
+          "seed": 20261022,
+          "brier_known": 0.0023627890110685026,
+          "brier_complete": 0.002362832616456314,
+          "complete_queries": 105346,
+          "by_pattern": [
+            0.0012901317402429831,
+            0.002815668048799731,
+            0.002982567244162799
+          ],
+          "fit_seconds": 36.430142957979115,
+          "fit_rows": 359410,
+          "predict_seconds": 21.7937005420099,
+          "model_sha256": "46fe6d16ba89cfe7147e08e03a37f23ab2667a725574fc358b6633e8e16c266a"
+        }
+      },
+      "cuts_sha256": "807c0c503c39b1beae5c4fbb791a57024cf8f94a2dec3154c448134f89f5f6a9",
+      "development_manifest_sha256": "59c8168c5eeb41e68adfb59fa1fd48c5259db3cf6a319b8135906e4d806ca39d",
+      "confirmation": [
+        "2009-01-01",
+        "2010-01-01"
+      ],
+      "report_sha256": "38a24b131dd3e419f98421e82cf34c2fa1c57af72b79f51c9239674c1417950b"
+    }
+  }
+}
