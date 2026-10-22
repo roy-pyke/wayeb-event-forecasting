@@ -10,6 +10,8 @@ sources={str(path.relative_to(ROOT)):sha256(path) for folder in ['src','scripts'
          for path in sorted((PACKAGE/folder).rglob('*'))
          if path.is_file() and path.suffix in ['.py','.json','.sre','.txt','.scala'] and path.name!='FROZEN.json'}
 entry=dict(date='2026-10-22',code_commit=commit,family=FAMILY,source_sha256=sources,
+    role='primary diagnostic replication' if FAMILY=='multisignal' else 'additional complex-pattern diagnostic',
+    upstream_submodules=subprocess.check_output(['git','submodule','status'],cwd=ROOT,text=True).splitlines(),
     purpose='Independent diagnostic replication after failed development superiority gates. Do not reinterpret an unexpected positive holdout as a rescued confirmatory superiority claim.',
     primary='Multisignal short-horizon coordinate codec versus the development-selected strongest identical-precision representation at epsilon=0.002.',
     interpretation='Check reproducibility, correctness, future-year and unseen-entity generalization; preserve all failed gates. New superiority hypotheses require new data.',

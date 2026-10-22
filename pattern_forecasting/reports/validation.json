@@ -1,0 +1,18 @@
+{
+  "scope": "local unit and integration tests, plus clean Linux CI; research-data results are separate",
+  "local": {
+    "nested": "26 passed in 6.54s",
+    "directional": "25 passed, 1 skipped in 7.52s",
+    "multisignal": "25 passed, 1 skipped in 5.88s"
+  },
+  "ci": {
+    "url": "https://github.com/roy-pyke/wayeb-event-forecasting/actions/runs/39874288196",
+    "commit": "22c617642d150d4e20a98081c2035691f9c1d545",
+    "conclusion": "success",
+    "families": [
+      "nested",
+      "directional",
+      "multisignal"
+    ]
+  }
+}
