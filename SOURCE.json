@@ -1,0 +1,31 @@
+{
+  "checked_on": "2026-10-22",
+  "local_paper": {
+    "title": "Event Forecasting with Pattern Markov Chains",
+    "doi": "10.1145/3093742.3093920",
+    "sha256": "2159903b5ca31a55ab2f9ebd212964d18d803ae249d347de1539a5d57327c046"
+  },
+  "repositories": [
+    {
+      "name": "Wayeb",
+      "url": "https://github.com/ElAlev/Wayeb.git",
+      "path": "upstream/Wayeb",
+      "ref": "main snapshot",
+      "commit": "b58a0cbe8c2c174d19394153c03504031ac57465",
+      "license": "Author dual licence; individual research: CC BY-NC-SA-4.0 plus stated terms"
+    },
+    {
+      "name": "rtcef",
+      "url": "https://github.com/manospits/rtcef.git",
+      "path": "upstream/rtcef",
+      "ref": "v1.0.0",
+      "commit": "9bf8796b223a1a657bc51f49475d6d4fbf616172",
+      "license": "LGPL-3.0 at top level; embedded Wayeb retains author terms"
+    }
+  ],
+  "rtcef_archive": {
+    "doi": "10.5281/zenodo.15229227",
+    "url": "https://zenodo.org/records/15229227",
+    "md5": "710fa4531f5c87fd239cee811a445ab8"
+  }
+}

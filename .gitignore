@@ -1,0 +1,14 @@
+.DS_Store
+.tools/
+.venv*/
+.cache/
+__pycache__/
+*.py[cod]
+target/
+project/project/
+.bsp/
+.metals/
+runs/
+artifacts/
+!artifacts/.gitkeep
+

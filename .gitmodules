@@ -1,0 +1,6 @@
+[submodule "upstream/Wayeb"]
+	path = upstream/Wayeb
+	url = https://github.com/ElAlev/Wayeb.git
+[submodule "upstream/rtcef"]
+	path = upstream/rtcef
+	url = https://github.com/manospits/rtcef.git
