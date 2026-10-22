@@ -5,6 +5,29 @@
       "dataset": "air",
       "split": "development",
       "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.001,
+      "comparator": "all",
+      "primary_bytes": 8.932791272128448,
+      "comparator_bytes": 8.962309592424866,
+      "primary_brier": 0.017095474361761735,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.003293606407143934,
+      "relative_byte_saving_ci": [
+        -0.006192923753803254,
+        0.012751486111258526
+      ],
+      "brier_difference": -7.284817812221178e-05,
+      "brier_difference_ci": [
+        -8.543915016681299e-05,
+        -6.107721481999754e-05
+      ],
+      "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261022-e0.001-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-gru-32-0.01-s20261022",
       "epsilon": 0.002,
       "comparator": "all",
       "primary_bytes": 7.675092630712228,
@@ -45,6 +68,75 @@
         -6.135060615780571e-06
       ],
       "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.005,
+      "comparator": "all",
+      "primary_bytes": 6.18270893371758,
+      "comparator_bytes": 6.138060930424043,
+      "primary_brier": 0.017592345882617363,
+      "certificate_violations": 0,
+      "relative_byte_saving": -0.0072739589586401365,
+      "relative_byte_saving_ci": [
+        -0.022714991436973114,
+        0.0062304959531831825
+      ],
+      "brier_difference": -0.0004703876745210181,
+      "brier_difference_ci": [
+        -0.0005289411074997437,
+        -0.00041477421028666083
+      ],
+      "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261022-e0.005-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-gru-32-0.01-s20261023",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.332379580074105,
+      "comparator_bytes": 7.522787155207904,
+      "primary_brier": 0.017050250817576842,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.02531077527588743,
+      "relative_byte_saving_ci": [
+        0.017331547182294158,
+        0.032980660288924074
+      ],
+      "brier_difference": -0.00010708202632859348,
+      "brier_difference_ci": [
+        -0.00013326755921268797,
+        -8.26847637517898e-05
+      ],
+      "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261023-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-gru-32-0.01-s20261024",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 8.149300123507617,
+      "comparator_bytes": 8.457348703170029,
+      "primary_brier": 0.01719137100571357,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.03642377658461071,
+      "relative_byte_saving_ci": [
+        0.03048730575896406,
+        0.04159907891303362
+      ],
+      "brier_difference": -0.0001438789775888745,
+      "brier_difference_ci": [
+        -0.00016852973030804968,
+        -0.00012157755848137363
+      ],
+      "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261024-e0.002-n0.json"
     },
     {
       "family": "multisignal",
@@ -91,6 +183,98 @@
         4.92112516553371e-06
       ],
       "source": "reports/multisignal/codec-air-development-short-hgb-31-180-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.001,
+      "comparator": "all",
+      "primary_bytes": 12.422377463077565,
+      "comparator_bytes": 13.027345381373628,
+      "primary_brier": 0.019677814635666237,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.04643831115132946,
+      "relative_byte_saving_ci": [
+        0.04244777096943965,
+        0.050373154080769075
+      ],
+      "brier_difference": -4.968727884958543e-05,
+      "brier_difference_ci": [
+        -5.761959336710443e-05,
+        -4.225838167683103e-05
+      ],
+      "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261022-e0.001-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.473907513573028,
+      "comparator_bytes": 10.44179733475075,
+      "primary_brier": 0.019888860505317213,
+      "certificate_violations": 0,
+      "relative_byte_saving": -0.0030751582120267518,
+      "relative_byte_saving_ci": [
+        -0.022739704470445755,
+        0.015703926966905455
+      ],
+      "brier_difference": -0.00030923062068168375,
+      "brier_difference_ci": [
+        -0.00036415227009691106,
+        -0.0002559373445129335
+      ],
+      "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.002,
+      "comparator": "zero",
+      "primary_bytes": 10.473907513573028,
+      "comparator_bytes": 11.068956680208057,
+      "primary_brier": 0.019888860505317213,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.053758378845136345,
+      "relative_byte_saving_ci": [
+        0.05207152925471483,
+        0.05538896143815214
+      ],
+      "brier_difference": -6.421538701454482e-06,
+      "brier_difference_ci": [
+        -1.1546506478876221e-05,
+        -1.6071824953498714e-06
+      ],
+      "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.005,
+      "comparator": "all",
+      "primary_bytes": 9.40184707088348,
+      "comparator_bytes": 7.55585823303846,
+      "primary_brier": 0.020021430815205545,
+      "certificate_violations": 0,
+      "relative_byte_saving": -0.2443122648560716,
+      "relative_byte_saving_ci": [
+        -0.269709606349691,
+        -0.21722090258621984
+      ],
+      "brier_difference": -0.0016500700740460714,
+      "brier_difference_ci": [
+        -0.0016926568341103087,
+        -0.001607784374105651
+      ],
+      "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261022-e0.005-n0.json"
     },
     {
       "family": "multisignal",

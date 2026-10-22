@@ -3,6 +3,7 @@
 工作目录为仓库根目录。Python 3.12；作者 Wayeb 的 Java/sbt 部署沿用仓库既有脚本。首次运行：
 
 ```bash
+./setup.sh  # fresh clones: build the pinned author Wayeb jar first
 ./pattern_forecasting/setup.sh
 ./pattern_forecasting/run.sh -m pytest pattern_forecasting/tests -q
 ./pattern_forecasting/run.sh pattern_forecasting/scripts/prepare.py
@@ -47,3 +48,22 @@ PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scri
 ```
 
 模型训练采用固定种子和确定性 CPU 算法；归档对象包含耗时元数据，因此重训文件的 SHA 不承诺逐字节相同。冻结 SHA 用于确认正在评估的确实是选定的那份模型，科学复现应比较预测与统计结果，同时记录运行时版本和硬件差异。GitHub CI 的三个模式族矩阵测试不下载研究数据；正式数据、训练和作者 CLI 核验须按这里的独立入口运行。
+
+## 从发布快照复算确认结果
+
+90 个已训练模型另附在 GitHub 的 `pattern-research-20261022` 研究快照中。`reports/MODEL_ARTIFACT.json` 保存整个归档及每个模型的 SHA。它是实验复现资产，不是宣称新方法已达到论文门槛的产品发布。
+
+在干净 clone 中可仅设置 Python 环境、下载模型及公开数据，然后复算；这条路径不需要重新训练，也不需要为评分启动 Kafka。作者识别引擎的独立核验仍需上面的 Java 构建。
+
+```bash
+python3.12 -m venv .venv-pattern
+.venv-pattern/bin/python -m pip install -r pattern_forecasting/configs/requirements.txt
+./pattern_forecasting/run.sh pattern_forecasting/scripts/download_models.py
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/prepare.py --datasets air power
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/prepare.py --datasets air power --confirmation
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/confirmation.py
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/affine_codec.py --dataset air --split confirmation --backbone short-gru-32-0.01-s20261022 --representations all zero basis
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/affine_codec.py --dataset power --split confirmation --backbone short-gru-64-0.05-s20261022 --representations all zero basis
+```
+
+`check_reproducibility.py` 则在不覆盖冻结模型的前提下，从头重训一个神经模型并比较 2,000 个开发查询；本机实际复验得到零差异。不要删除或修改原冻结记录来让不同模型通过确认校验。新的训练研究应另开协议和输出目录，并与历史确认报告区分。
