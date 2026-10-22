@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-22",
+  "stage": "registered after failed certificate and exact subset gates, before codec experiments",
+  "candidate": "Compile the state and horizon dependent linear span of feasible outcome profiles into a shared coordinate reconstruction map, then transmit only an independent set of forecast coordinates.",
+  "not_claimed_novel": ["linear dimension reduction", "QR pivoting", "quantization", "probability coherence projection", "event-triggered communication"],
+  "specific_research_question": "Do finite-horizon logical dependencies yield useful probability-message compression beyond forced-zero removal, low precision, and certified partial coordinate updates?",
+  "primary_task": "multisignal short horizons, epsilon 0.002, air and power development, then frozen confirmation if the development gate passes",
+  "negative_control": "directional short horizons has no linear dependence beyond impossible coordinates; its codec should not have a structural advantage",
+  "comparators": ["all forecast coordinates", "static-joint independent coordinates", "omit all structurally zero coordinates", "greedy partial updates for each representation"],
+  "shared_capabilities": "Identical full forecasts, current automaton state, joint coherence projection, exact loss certificate, 8/16-bit uniform quantization and float32/64 fallback; identical transport headers and optional sparse masks.",
+  "development_gate": "At least 5% relative application bytes saved versus the best all/zero/static representation on both independent domains, using the same adaptive precision and partial update capabilities; zero loss-bound violations.",
+  "interpretation": "A passed gate supports investigation, not a novelty or publication claim. A failed gate remains in the report. No confirmation tuning.",
+  "transport": "24-byte timestamp/entity/sequence/model header, 2-byte state ID, 1-byte precision/sparse flag, optional 2-byte coordinate mask, then actual serialized coordinates. Reliable in-order business state and delivery before scoring are required.",
+  "hypothesis_source": "Structural rank inspection only: multisignal short ranks 2/4/6 versus 3/6/9 nonzero coordinates; directional rank equals nonzero count. No codec outcome measured yet."
+}
