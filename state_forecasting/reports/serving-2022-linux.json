@@ -1,0 +1,46 @@
+{
+  "scope": "execution-only optimization; frozen learned models, features, calibration and expert rules unchanged",
+  "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
+  "source_sha256": "d07851545a2853872d2ab5307f409c08d4806b3c75ee80567f341b84b8c0f13f",
+  "model_days_checked": 411,
+  "queries": 68197,
+  "max_abs_differences": {
+    "M0": {
+      "raw": 0.0,
+      "calibrated": 0.0
+    },
+    "M1-16": {
+      "raw": 0.0,
+      "calibrated": 0.0
+    },
+    "M2": {
+      "raw": 0.0,
+      "calibrated": 0.0
+    }
+  },
+  "original_performance": {
+    "p50_ms": 37.09346349990028,
+    "p95_ms": 37.51743989998886,
+    "measured_queries": 200,
+    "warmup_queries": 20
+  },
+  "batched_performance": {
+    "p50_ms": 4.144558999996661,
+    "p95_ms": 4.229659049940437,
+    "measured_queries": 200,
+    "warmup_queries": 20
+  },
+  "ensemble_calls_per_query_before": 18,
+  "ensemble_calls_per_query_after": 2,
+  "speedup_p95": 8.870086088976175,
+  "checks": {
+    "relative_reduction": true,
+    "paired_ci": true,
+    "calibration": true,
+    "positive_months": true,
+    "latency": true,
+    "model_size": true,
+    "prediction_equivalence": true
+  },
+  "quality_pass": true
+}

@@ -66,6 +66,8 @@
 
 最终服务入口使用 `BatchedSurvival` 包装冻结模型，将 9 个危险率区间合成一次树模型调用；其源码单独记录哈希。`verify_serving.py` 检查全部日模型在整个确认集上的原始与校准概率逐元素完全相同，再进行同进程性能比较。本机 p95 从 12.55 ms 降至 1.96 ms。该适配器没有重新训练模型，原冻结代码和原 Linux 超时报告保留。一键入口运行这项检查，若等价性或验收条件失败则以非零状态退出。
 
+最终 [Linux CI 39863935297](https://github.com/roy-pyke/wayeb-event-forecasting/actions/runs/39863935297) 在代码提交 `c0e55d4e527354e53fd6d94d5cec99c5a1fccbb0` 上完整通过，包括 27 项测试、从源下载与训练、匹配验证、执行等价检查、压力测试、在线演示和图表。Linux 同进程 p95 从 37.52 ms 降至 4.23 ms，全部 411 个日模型的确认概率逐元素一致；两次 Linux 运行的保存概率和权重也相同。最终验收查看 `serving-2022*.json` 的 `quality_pass`，原始未经批量优化的 `confirmation-2022-linux-original.json` 仍保留失败项。详细平台比较和源码提交见 `reports/reproducibility.json`。
+
 ## 数据来源与标签
 
 数据：[MetroPT-3](https://archive.ics.uci.edu/dataset/791/metropt+3+dataset)，Davari, Veloso, Ribeiro, Gama，DOI 10.24432/C5VW3R，CC BY 4.0。原始 ZIP SHA256：
@@ -105,6 +107,8 @@ Event(instance="apu", kind="Telemetry", event_time=s, arrival_time=t,
 ```
 
 业务事件通过 `accept(event)` 推进作者自动机；遥测只更新上下文。`predict(instance, now)` 输出模式状态、30/60/120 秒完成概率、五个专家的当前权重及 `full_context_pool` / `business_fallback` 来源。收到 `LoadEnd` 或实际经过 horizon 后才更新权重。缺口 `Gap` 使未揭晓标签删失；调用方需要提供可靠的观测覆盖/缺口信息。完整生产系统还需要持久化、流量控制、业务水位线和故障恢复，本原型没有声称具备这些能力。
+
+负反馈还要求该窗口内业务事件流的观测覆盖已被确认；“没收到完成事件”在网络中断时不等于“没有完成”。离线评估利用原始采样记录确定覆盖和删失边界。在线调用方不能把时钟推进到未经确认的覆盖范围，或事后回填一个更早的 `Gap`；本接口没有实现从网络静默自动推断覆盖、撤销已经更新的反馈或接纳晚到业务事件。完整的缺口检测与水位线机制仍是生产接入前的工作。
 
 演示脚本回放保留段前三个完整周期；示例从空业务历史开始，因此示例数值不应当与全历史批量基准逐行等同。
 

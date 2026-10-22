@@ -227,5 +227,133 @@
     },
     "quality_pass": false,
     "interpretation": "Probability performance and semantic checks reproduce. Original unbatched Linux serving exceeds the frozen 20 ms latency threshold. Cross-platform predictions are not bit-identical; numerical differences have not been attributed to one isolated cause."
+  },
+  "final_linux_validation": {
+    "ci_url": "https://github.com/roy-pyke/wayeb-event-forecasting/actions/runs/39863935297",
+    "ci_commit": "c0e55d4e527354e53fd6d94d5cec99c5a1fccbb0",
+    "execution": "success",
+    "unit_tests_passed": 27,
+    "author_deployment_ci": "https://github.com/roy-pyke/wayeb-event-forecasting/actions/runs/39863903156",
+    "mean_brier": {
+      "F0": 0.04277844150361069,
+      "F1": 0.029218966641564273,
+      "F2": 0.027976641723107622
+    },
+    "relative_reduction": 0.3460107301771087,
+    "f2_ece_60s": 0.012246105076165772,
+    "serving": {
+      "scope": "execution-only optimization; frozen learned models, features, calibration and expert rules unchanged",
+      "platform": "Linux-6.8.0-1064-azure-x86_64-with-glibc2.35",
+      "source_sha256": "d07851545a2853872d2ab5307f409c08d4806b3c75ee80567f341b84b8c0f13f",
+      "model_days_checked": 411,
+      "queries": 68197,
+      "max_abs_differences": {
+        "M0": {
+          "raw": 0.0,
+          "calibrated": 0.0
+        },
+        "M1-16": {
+          "raw": 0.0,
+          "calibrated": 0.0
+        },
+        "M2": {
+          "raw": 0.0,
+          "calibrated": 0.0
+        }
+      },
+      "original_performance": {
+        "p50_ms": 37.09346349990028,
+        "p95_ms": 37.51743989998886,
+        "measured_queries": 200,
+        "warmup_queries": 20
+      },
+      "batched_performance": {
+        "p50_ms": 4.144558999996661,
+        "p95_ms": 4.229659049940437,
+        "measured_queries": 200,
+        "warmup_queries": 20
+      },
+      "ensemble_calls_per_query_before": 18,
+      "ensemble_calls_per_query_after": 2,
+      "speedup_p95": 8.870086088976175,
+      "checks": {
+        "relative_reduction": true,
+        "paired_ci": true,
+        "calibration": true,
+        "positive_months": true,
+        "latency": true,
+        "model_size": true,
+        "prediction_equivalence": true
+      },
+      "quality_pass": true
+    },
+    "recognition": {
+      "status": "passed",
+      "matches": 11247,
+      "endpoint_mismatches": 0,
+      "inserted_telemetry_mismatches": 0,
+      "input_sha256": "7b548eb1f0d388b4d71c6600d9236ddced5744c3a8dbc16f32b00ab495585d5e",
+      "table_sha256": "c84c77fa9e907d9936633cb96ad206aca5851a840bd091de3a122d3a59efc420",
+      "author_jar_sha256": "b2c71760288514ee81ef2e399d0f2b7e6d00919ca04582625885f0faf3e3c605"
+    },
+    "repeat_against_previous_linux_run": {
+      "raw_predictions.npz": {
+        "M0": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M1-16": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M2": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      },
+      "predictions.npz": {
+        "M0": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M1-16": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "M2": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      },
+      "fast_predictions.npz": {
+        "F0": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F1": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F2": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      },
+      "fast_weights.npz": {
+        "F0": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F1": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        },
+        "F2": {
+          "equal": true,
+          "max_abs_difference": 0.0
+        }
+      }
+    },
+    "interpretation": "Final accepted system uses the equivalent batched execution adapter. Original unbatched latency failure remains recorded separately; learned prediction functions and frozen protocol were not changed."
   }
 }

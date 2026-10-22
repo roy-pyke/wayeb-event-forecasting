@@ -8,7 +8,7 @@ This repository deploys the authors' implementations. Author repositories are Gi
 
 ## 新研究扩展 / State forecasting
 
-[`state_forecasting/`](state_forecasting/README.md) implements an independently documented dual-stream architecture: fixed Wayeb business-event recognition, causal numeric telemetry, real-time completion probabilities, daily model updates, and delayed-feedback expert aggregation. It includes real MetroPT-3 data evaluation, retained failed experiments, a frozen protocol, reproducible scripts and causal tests. See the [architecture](state_forecasting/docs/DESIGN.md), [research log](state_forecasting/docs/RESEARCH_LOG.md), and [reproduction guide](state_forecasting/docs/REPRODUCIBILITY.md).
+[`state_forecasting/`](state_forecasting/README.md) implements an independently documented dual-stream architecture: fixed Wayeb business-event recognition, causal numeric telemetry, real-time completion probabilities, daily model updates, and delayed-feedback expert aggregation. It includes real MetroPT 2020/2022 evaluation, retained failed experiments, frozen protocols, reproducible scripts and causal tests. The new 2022 confirmation shows a 34.59% lower Brier score against an equally adaptive business-history baseline; this is a new research task, not a claim to outperform the authors' original event-step forecasts. See the [results](state_forecasting/docs/RESULTS.md), [architecture](state_forecasting/docs/DESIGN.md), [research log](state_forecasting/docs/RESEARCH_LOG.md), and [reproduction guide](state_forecasting/docs/REPRODUCIBILITY.md).
 
 ## Sources
 
