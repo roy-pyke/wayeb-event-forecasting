@@ -30,3 +30,11 @@ Build and runtime claims are deferred to the subsequent validation reports.
 - Evaluated the initial model on a separate 400-record test stream; labelled injected adaptation scores and the author's in-sample optimisation scoring explicitly.
 - Verified cleanup stopped all owned child processes; recorded compact evidence in `reports/rtcef-validation.json`.
 
+## 2026-10-22 — 4. Reproduction entry point, documentation and CI
+
+- Added `./reproduce.sh` for the complete build/test/forecast/service sequence and `--core` for the standalone engine.
+- Fixed RTCEF replay/data-window barriers and verified a second complete run, including identical adaptation-window hashes and all candidate parameters/metrics within `1e-10`.
+- Added the literature map, bilingual reproduction guide, validation index and compatibility/evaluation boundaries.
+- Added GitHub Actions to run the full sequence on Ubuntu/JDK 11/Python 3.12, with report/log artifacts and actions pinned to commit SHAs.
+- Added the project to the surrounding research workspace's local navigation README.
+

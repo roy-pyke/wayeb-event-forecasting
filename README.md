@@ -1,5 +1,7 @@
 # Wayeb event forecasting research deployment
 
+[![Reproduce author deployment](https://github.com/roy-pyke/wayeb-event-forecasting/actions/workflows/reproduce.yml/badge.svg)](https://github.com/roy-pyke/wayeb-event-forecasting/actions/workflows/reproduce.yml)
+
 部署作者代码，研究从 **Pattern Markov Chains（模式马尔可夫链）** 到 **Prediction Suffix Trees（预测后缀树，PST）** 和 **RTCEF（运行时自适应复杂事件预测）** 的方法演进。
 
 This repository deploys the authors' implementations. It does not replace them with a new forecasting algorithm. Author repositories are Git submodules pinned to exact commits; deployment tooling, configurations, and validation evidence live here.
@@ -56,6 +58,8 @@ This uses CPython 3.12 in `.venv-rtcef/`, the authors' separate embedded Wayeb e
 The service integration passed, including observed engine scores for retrained model 0 and optimised model 4; see [RTCEF validation](reports/rtcef-validation.json). This proves the exercised service flow works locally. It does not establish real concept-drift performance. The author's optimisation factory currently scores candidates on its training data; the separate held-out check does not change that upstream behaviour.
 
 For all build/validation steps in sequence, run `./reproduce.sh` (`--core` for only standalone Wayeb). See [复现说明 / Reproducibility](docs/REPRODUCIBILITY.md) for environment choices, compatibility fixes and the limits of the validation.
+
+The full RTCEF check also passed twice: input/adaptation-window hashes, held-out counts and model versions agreed, and all optimisation candidate parameters and metrics agreed within `1e-10`. [Validation index](reports/VALIDATION.md) links the compact evidence. The GitHub Actions workflow runs the full reproduction command on Ubuntu with JDK 11 and Python 3.12 after pushes and pull requests, and retains run reports/logs as downloadable artifacts.
 
 ## Licensing
 
