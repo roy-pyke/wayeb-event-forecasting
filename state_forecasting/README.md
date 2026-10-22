@@ -6,6 +6,7 @@
 - [预先固定的评估协议 / Protocol](configs/PROTOCOL.json)
 - [实验决策记录 / Research log](docs/RESEARCH_LOG.md)
 - **[完整结论与结果 / Results](docs/RESULTS.md)**
+- [文献对照与论文可发表性 / Publication assessment](docs/PUBLICATION_ASSESSMENT.md)
 - [一键复现 / Reproduction](docs/REPRODUCIBILITY.md)
 - [最终确认协议 / New confirmation protocol](configs/CONFIRMATION_2022.json)
 
