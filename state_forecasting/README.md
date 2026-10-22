@@ -9,7 +9,7 @@
 - [一键复现 / Reproduction](docs/REPRODUCIBILITY.md)
 - [最终确认协议 / New confirmation protocol](configs/CONFIRMATION_2022.json)
 
-最终架构是“原 Wayeb 识别器 + 日级状态危险率模型 + 事件级快速业务反馈 + 延迟反馈专家组合”。2022 新确认段共 10,326 个实例、68,197 次预测：相对同样获得快速反馈能力的基线，平均 Brier 从 **0.042777 降到 0.027982（降低 34.59%）**；五个月均改善。60 秒 ECE 为 0.012288，两次本机运行的预测 p95 分别约 10.88 和 19.23 ms，逐条预测完全一致。
+最终架构是“原 Wayeb 识别器 + 日级状态危险率模型 + 事件级快速业务反馈 + 延迟反馈专家组合”。2022 新确认段共 10,326 个实例、68,197 次预测：相对同样获得快速反馈能力的基线，平均 Brier 从 **0.042777 降到 0.027982（降低 34.59%）**；五个月均改善。60 秒 ECE 为 0.012288。同机复跑逐条预测完全一致；等价批量推理的本机 p95 约 **1.96 ms**，全部确认概率与冻结原路径完全相同。
 
 ![Confirmation results](reports/confirmation-2022.png)
 
@@ -26,6 +26,7 @@
 | 文件 | 用途 |
 |---|---|
 | [online_fast.py](src/stateforecast/online_fast.py) | 最终双流在线接口；只接收真实事件和实际到达的反馈 |
+| [serving.py](src/stateforecast/serving.py) | 同一树模型的区间输入批量执行；不改变预测函数 |
 | [model.py](src/stateforecast/model.py) | 残余时间危险率和共享保序校准 |
 | [fast_feedback.py](src/stateforecast/fast_feedback.py) | 快速业务结果专家与因果反馈回放 |
 | [rolling.py](src/stateforecast/rolling.py) | 标签按更新时刻截断的滚动训练 |

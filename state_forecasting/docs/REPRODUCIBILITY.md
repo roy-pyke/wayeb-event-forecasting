@@ -13,6 +13,7 @@
 ```bash
 ./state_forecasting/run.sh state_forecasting/scripts/confirm_2022.py --output runs/my-2022
 ./state_forecasting/run.sh state_forecasting/scripts/verify_2022.py
+./state_forecasting/run.sh state_forecasting/scripts/verify_serving.py --run runs/my-2022
 ./state_forecasting/run.sh state_forecasting/scripts/stress_fast.py --run runs/my-2022
 ./state_forecasting/run.sh state_forecasting/scripts/demo_fast.py --run runs/my-2022
 ```
@@ -63,6 +64,8 @@
 
 2022 同机复跑已完成：从每日模型训练重新执行，原始/校准概率、最终 F0/F1/F2 和组合权重逐元素相同，最大绝对差为 0。两次 p95 分别约 10.88 和 19.23 ms，均满足本机门槛；计时受负载影响。原始发布报告保留首次结果，重复结果与比较保存在 [reproducibility.json](../reports/reproducibility.json)。
 
+最终服务入口使用 `BatchedSurvival` 包装冻结模型，将 9 个危险率区间合成一次树模型调用；其源码单独记录哈希。`verify_serving.py` 检查全部日模型在整个确认集上的原始与校准概率逐元素完全相同，再进行同进程性能比较。本机 p95 从 12.55 ms 降至 1.96 ms。该适配器没有重新训练模型，原冻结代码和原 Linux 超时报告保留。一键入口运行这项检查，若等价性或验收条件失败则以非零状态退出。
+
 ## 数据来源与标签
 
 数据：[MetroPT-3](https://archive.ics.uci.edu/dataset/791/metropt+3+dataset)，Davari, Veloso, Ribeiro, Gama，DOI 10.24432/C5VW3R，CC BY 4.0。原始 ZIP SHA256：
@@ -85,10 +88,12 @@ aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a
 
 ```python
 from stateforecast.online_fast import FastStateSidecar
+from stateforecast.serving import BatchedSurvival
 from stateforecast.stream import Event
 
 # table 为 configs/dfa.json；两个模型从同一日的 M0/M2.joblib 加载。
-sidecar = FastStateSidecar(table, context_model=m2, baseline=m0)
+sidecar = FastStateSidecar(table, context_model=BatchedSurvival(m2),
+                          baseline=BatchedSurvival(m0))
 ```
 
 事件形式：

@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from stateforecast.data import PACKAGE,ROOT,CACHE,SENSORS,episodes
 from stateforecast.online_fast import FastStateSidecar
+from stateforecast.serving import BatchedSurvival
 from stateforecast.stream import Event
 
 
@@ -13,7 +14,7 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--run',type=Path,default=ROOT/'runs/state-confirmation-2022');args=ap.parse_args()
     report=json.loads((args.run/'report.json').read_text());date=report['updates'][0]['date']
     m0=joblib.load(args.run/f'{date}-M0.joblib');m2=joblib.load(args.run/f'{date}-M2.joblib')
-    side=FastStateSidecar(json.loads((PACKAGE/'configs/dfa.json').read_text()),m2,m0)
+    side=FastStateSidecar(json.loads((PACKAGE/'configs/dfa.json').read_text()),BatchedSurvival(m2),BatchedSurvival(m0))
     collected=[];lower=pd.Timestamp(date);upper=lower+pd.Timedelta(days=1)
     for chunk in pd.read_csv(CACHE/'metropt2022/dataset_train.csv',usecols=['timestamp','COMP',*SENSORS],chunksize=200000):
         times=pd.to_datetime(chunk.timestamp);mask=(times>=lower)&(times<upper)

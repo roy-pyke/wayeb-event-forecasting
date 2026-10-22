@@ -1,0 +1,46 @@
+{
+  "scope": "execution-only optimization; frozen learned models, features, calibration and expert rules unchanged",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "source_sha256": "d07851545a2853872d2ab5307f409c08d4806b3c75ee80567f341b84b8c0f13f",
+  "model_days_checked": 411,
+  "queries": 68197,
+  "max_abs_differences": {
+    "M0": {
+      "raw": 0.0,
+      "calibrated": 0.0
+    },
+    "M1-16": {
+      "raw": 0.0,
+      "calibrated": 0.0
+    },
+    "M2": {
+      "raw": 0.0,
+      "calibrated": 0.0
+    }
+  },
+  "original_performance": {
+    "p50_ms": 9.483812507824041,
+    "p95_ms": 12.550829139945554,
+    "measured_queries": 200,
+    "warmup_queries": 20
+  },
+  "batched_performance": {
+    "p50_ms": 1.0503545054234564,
+    "p95_ms": 1.9581913729780345,
+    "measured_queries": 200,
+    "warmup_queries": 20
+  },
+  "ensemble_calls_per_query_before": 18,
+  "ensemble_calls_per_query_after": 2,
+  "speedup_p95": 6.409398648742969,
+  "checks": {
+    "relative_reduction": true,
+    "paired_ci": true,
+    "calibration": true,
+    "positive_months": true,
+    "latency": true,
+    "model_size": true,
+    "prediction_equivalence": true
+  },
+  "quality_pass": true
+}
