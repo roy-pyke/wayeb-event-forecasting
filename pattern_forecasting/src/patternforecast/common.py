@@ -1,21 +1,29 @@
 from pathlib import Path
 import hashlib
 import json
+import os
 import numpy as np
 
 PACKAGE = Path(__file__).resolve().parents[2]
 ROOT = PACKAGE.parent
-CACHE = ROOT / '.cache/pattern_forecasting'
-RUNS = ROOT / 'runs/pattern-forecasting'
-NAMES = ('ordered', 'branch_loop', 'overlap_loop')
+FAMILY=os.environ.get('PATTERN_FAMILY','nested')
+if FAMILY not in ('nested','directional','multisignal'): raise ValueError('unknown pattern family')
+CONFIG=PACKAGE/'configs' if FAMILY=='nested' else PACKAGE/'configs'/FAMILY
+CACHE = ROOT / '.cache/pattern_forecasting' if FAMILY=='nested' else ROOT/'.cache/pattern_forecasting'/FAMILY
+RUNS = ROOT / 'runs/pattern-forecasting' if FAMILY=='nested' else ROOT/'runs/pattern-forecasting'/FAMILY
+REPORTS=PACKAGE/'reports' if FAMILY=='nested' else PACKAGE/'reports'/FAMILY
+NAMES = {'nested':('ordered','branch_loop','overlap_loop'),
+         'directional':('rising','falling','excursion'),
+         'multisignal':('response_up','response_down','response_any')}[FAMILY]
 
 
 def protocol():
-    return json.loads((PACKAGE / 'configs/PROTOCOL.json').read_text())
+    return json.loads((CONFIG / 'PROTOCOL.json').read_text())
 
 
 def experiment_cfg(name,profile='long'):
     cfg=protocol()['datasets'][name]
+    cfg['pattern_family']=FAMILY
     if profile=='short':
         cfg['horizon_samples']=json.loads((PACKAGE/'configs/SHORT_HORIZON.json').read_text())['horizon_samples']
     elif profile!='long': raise ValueError('unknown experiment profile')

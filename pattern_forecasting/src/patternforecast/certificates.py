@@ -1,5 +1,6 @@
 """Outcome-free bounds on the excess Brier loss of cached-context forecasts."""
 import numpy as np
+from functools import lru_cache
 
 
 def joint_bound(cached, full, feasible):
@@ -22,10 +23,11 @@ def cdf_bound(cached, full):
     return float(np.max(np.sum(p*p-f*f, axis=1)[:,None]-2*tail,axis=1).mean()/p.shape[1])
 
 
+@lru_cache(maxsize=16)
 def static_nested_profiles(patterns=3,horizons=3):
-    from .automata import independent_profiles
-    y=independent_profiles(patterns,horizons).reshape(-1,patterns,horizons)
-    return y[(np.diff(y,axis=1)>=0).all((1,2))].reshape(-1,patterns*horizons)
+    from .automata import PatternFamily
+    assert patterns==3
+    return PatternFamily().static_profiles(horizons)
 
 
 def batch_bounds(cached,full,states,family,horizons):

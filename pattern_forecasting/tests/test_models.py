@@ -5,7 +5,8 @@ from patternforecast.data import context_indices
 
 def test_coherence_projection_is_feasible_and_nonexpansive_to_feasible_labels():
     rng=np.random.default_rng(73);x=rng.uniform(size=(200,3,3));p=coherent(x)
-    assert (np.diff(p,axis=1)>=-1e-8).all()
+    from patternforecast.automata import PatternFamily
+    for child,parent in PatternFamily().inclusion_pairs(): assert (p[:,child]<=p[:,parent]+1e-8).all()
     assert (np.diff(p,axis=2)>=-1e-8).all()
     from patternforecast.automata import PatternFamily
     y=PatternFamily().feasible(0,(3,6,12)).reshape(-1,3,3)

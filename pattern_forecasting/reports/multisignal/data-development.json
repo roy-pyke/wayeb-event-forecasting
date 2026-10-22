@@ -1,0 +1,347 @@
+{
+  "air": {
+    "dataset": "air",
+    "stage": "development",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+      "dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2"
+    },
+    "raw_sha256": "b04da438b2f331ac0ffd45aebdfec0d20d2367feb5f6948c4b1f7ce1191e33c4",
+    "cuts": {
+      "channels": [
+        0,
+        6
+      ],
+      "scales": [
+        13.0,
+        1.299999999999999
+      ],
+      "threshold": 0.8461538461538479
+    },
+    "features": [
+      "PM2.5",
+      "PM10",
+      "SO2",
+      "NO2",
+      "CO",
+      "O3",
+      "TEMP",
+      "PRES",
+      "DEWP",
+      "RAIN",
+      "WSPM"
+    ],
+    "splits": {
+      "train": {
+        "rows": 79681,
+        "matches": {
+          "response_up": 883,
+          "response_down": 824,
+          "response_any": 1707
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng"
+        ],
+        "q_counts": {
+          "0": 45275,
+          "1": 19174,
+          "2": 6615,
+          "3": 5505,
+          "4": 1336,
+          "5": 1776
+        },
+        "known_fraction": 0.9771882046326393,
+        "positive_fraction": [
+          0.07701920772417571,
+          0.07040376423802464,
+          0.1450205338809035
+        ],
+        "npz_sha256": "cfcfbee3cc478ba775aa956aa830a3ae0be16dc9966e52ca533ede60d5c6e647"
+      },
+      "calibrate": {
+        "rows": 12083,
+        "matches": {
+          "response_up": 136,
+          "response_down": 85,
+          "response_any": 221
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng"
+        ],
+        "q_counts": {
+          "0": 7095,
+          "1": 2637,
+          "2": 850,
+          "3": 1055,
+          "4": 254,
+          "5": 192
+        },
+        "known_fraction": 0.9584632219739395,
+        "positive_fraction": [
+          0.07833836423745867,
+          0.04690431519699812,
+          0.12339080459770115
+        ],
+        "npz_sha256": "e9dc1e84a159f97ca41609dd992f76deee1664338dfa7e76db701891e6c70522"
+      },
+      "development": {
+        "rows": 48580,
+        "matches": {
+          "response_up": 405,
+          "response_down": 400,
+          "response_any": 805
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng"
+        ],
+        "q_counts": {
+          "0": 29578,
+          "1": 10482,
+          "2": 3277,
+          "3": 3554,
+          "4": 644,
+          "5": 1045
+        },
+        "known_fraction": 0.9518411783541466,
+        "positive_fraction": [
+          0.05865903669162745,
+          0.05504646779749139,
+          0.11171813143309581
+        ],
+        "npz_sha256": "a73e8672c0a1b399bf4f289749c5836fc09f494385de4a8286f8fed4ddfc302e"
+      }
+    }
+  },
+  "power": {
+    "dataset": "power",
+    "stage": "development",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+      "dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2"
+    },
+    "raw_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+    "cuts": {
+      "channels": [
+        0,
+        2
+      ],
+      "scales": [
+        0.038000000000000034,
+        0.5900000000000034
+      ],
+      "threshold": 0.762711864406756
+    },
+    "features": [
+      "Global_active_power",
+      "Global_reactive_power",
+      "Voltage",
+      "Global_intensity",
+      "Sub_metering_1",
+      "Sub_metering_2",
+      "Sub_metering_3"
+    ],
+    "splits": {
+      "train": {
+        "rows": 77808,
+        "matches": {
+          "response_up": 3187,
+          "response_down": 3208,
+          "response_any": 6395
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 48162,
+          "1": 17791,
+          "2": 5028,
+          "3": 4013,
+          "4": 1438,
+          "5": 1376
+        },
+        "known_fraction": 0.9993888089199625,
+        "positive_fraction": [
+          0.1258032571837664,
+          0.12563443072702332,
+          0.23039499346321182
+        ],
+        "npz_sha256": "367661ddd355063e36e87da8617741820a76b7c7fca90ca254c1f14ea03eba7f"
+      },
+      "calibrate": {
+        "rows": 26487,
+        "matches": {
+          "response_up": 1265,
+          "response_down": 1201,
+          "response_any": 2466
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 16653,
+          "1": 5931,
+          "2": 1556,
+          "3": 1386,
+          "4": 500,
+          "5": 461
+        },
+        "known_fraction": 0.999504998259104,
+        "positive_fraction": [
+          0.14490052883404683,
+          0.13827925307546055,
+          0.257510135220205
+        ],
+        "npz_sha256": "abdca6192363126802c1b20591e717eebc920ff8b5e01fe6030dd378fef71206"
+      },
+      "development": {
+        "rows": 105356,
+        "matches": {
+          "response_up": 4851,
+          "response_down": 4453,
+          "response_any": 9304
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 63579,
+          "1": 24705,
+          "2": 6453,
+          "3": 6543,
+          "4": 2182,
+          "5": 1894
+        },
+        "known_fraction": 0.9995981877317539,
+        "positive_fraction": [
+          0.1409652587865897,
+          0.13055341022751732,
+          0.24929499454036175
+        ],
+        "npz_sha256": "ff05f6554074a34f72425c7e7bf50b5735b3783f6d3ab765edaf1b5586cb301e"
+      }
+    }
+  },
+  "metro": {
+    "dataset": "metro",
+    "stage": "development",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+      "dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2"
+    },
+    "raw_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+    "cuts": {
+      "channels": [
+        0,
+        6
+      ],
+      "scales": [
+        0.018000000000000682,
+        0.027499999999999858
+      ],
+      "threshold": 0.6666666666666666
+    },
+    "features": [
+      "Reservoirs",
+      "TP2",
+      "TP3",
+      "H1",
+      "DV_pressure",
+      "Oil_temperature",
+      "Motor_current"
+    ],
+    "splits": {
+      "train": {
+        "rows": 104943,
+        "matches": {
+          "response_up": 29,
+          "response_down": 25,
+          "response_any": 54
+        },
+        "entities": [
+          "compressor"
+        ],
+        "q_counts": {
+          "0": 98119,
+          "1": 6577,
+          "2": 89,
+          "3": 140,
+          "4": 10,
+          "5": 8
+        },
+        "known_fraction": 0.9984880681258715,
+        "positive_fraction": [
+          0.0006394085629849246,
+          0.0005503367233651341,
+          0.0011770207378329458
+        ],
+        "npz_sha256": "13af7713a5d81d33437ee3544965efedb16880ea554e4cc4acbdc806d033f458"
+      },
+      "calibrate": {
+        "rows": 41914,
+        "matches": {
+          "response_up": 1,
+          "response_down": 3,
+          "response_any": 4
+        },
+        "entities": [
+          "compressor"
+        ],
+        "q_counts": {
+          "0": 39834,
+          "1": 2075,
+          "2": 3,
+          "5": 2
+        },
+        "known_fraction": 0.9989979481796059,
+        "positive_fraction": [
+          5.572538530123551e-05,
+          0.00016717615590370653,
+          0.00022290154120494204
+        ],
+        "npz_sha256": "5c02cd57a07a4e9e3ed1970880d11a202d5e86c5625145befd01c40223ec7dfd"
+      },
+      "development": {
+        "rows": 61926,
+        "matches": {
+          "response_up": 2,
+          "response_down": 4,
+          "response_any": 6
+        },
+        "entities": [
+          "compressor"
+        ],
+        "q_counts": {
+          "0": 58568,
+          "1": 3352,
+          "2": 5,
+          "4": 1
+        },
+        "known_fraction": 0.9976261990117237,
+        "positive_fraction": [
+          7.553807388702742e-05,
+          0.00015107614777405484,
+          0.00022661422166108224
+        ],
+        "npz_sha256": "380b9aba74231214f2dd8f932c05a03089e4798516ce0b1e17fb0fd700533df5"
+      }
+    }
+  }
+}

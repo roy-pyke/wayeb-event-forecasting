@@ -19,7 +19,7 @@ def replay_policy(data,predictions,bounds,policy,threshold,max_lag=16):
 
 
 def weekly(data,values,valid=None):
-    # Monday-aligned UTC calendar weeks; all stations share the same cluster.
+    # Monday-aligned recorded-clock weeks; source timezone is not asserted.
     week=np.floor((data['t']+3*86400)/(7*86400)).astype(int)
     if valid is None: valid=np.ones(len(week),dtype=bool)
     labels=np.unique(week)

@@ -6,6 +6,7 @@ from sklearn.ensemble import HistGradientBoostingClassifier, ExtraTreesClassifie
 from sklearn.isotonic import IsotonicRegression
 from .data import design, targets
 from .automata import PatternFamily
+from .common import FAMILY
 
 
 def subset(data,indices):
@@ -27,6 +28,10 @@ def coherent(x):
 
     Standard coherence repair, not claimed as a novel contribution.
     """
+    if FAMILY!='nested':
+        from .certificates import static_nested_profiles
+        from .polytope import FeasiblePolytope
+        return FeasiblePolytope(static_nested_profiles()).project(x)
     z=np.asarray(x,dtype=float).copy(); u=np.zeros_like(z); v=np.zeros_like(z)
     for _ in range(200):
         y=isotonic_axis(z+u,1); u=z+u-y
@@ -48,9 +53,12 @@ class Features:
 
     def fit(self,data):
         biz,raw=self.arrays(data)
-        with np.errstate(invalid='ignore'):
-            self.center=np.nanmedian(raw,axis=(0,1))
-            self.scale=np.nanstd(raw,axis=(0,1))
+        if self.business_only:
+            self.center=np.zeros(raw.shape[-1]);self.scale=np.ones(raw.shape[-1])
+        else:
+            with np.errstate(invalid='ignore'):
+                self.center=np.nanmedian(raw,axis=(0,1))
+                self.scale=np.nanstd(raw,axis=(0,1))
         self.center=np.nan_to_num(self.center)
         self.scale=np.where(np.isfinite(self.scale)&(self.scale>1e-6),self.scale,1)
         self.biz_center=np.nanmean(biz,axis=0)
@@ -134,6 +142,7 @@ class Landmark:
             self.calibrators.append(row)
 
     def predict(self,data,lag=0,repair=True):
+        if self.cfg.get('pattern_family','nested')!=FAMILY: raise ValueError('model/family mismatch')
         pred=self.raw_predict(data,lag)
         if self.calibrators is not None:
             for p in range(3):

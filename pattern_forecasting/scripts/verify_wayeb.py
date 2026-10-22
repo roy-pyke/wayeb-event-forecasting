@@ -4,14 +4,14 @@ import re
 import subprocess
 import numpy as np
 import pandas as pd
-from patternforecast.common import ROOT, PACKAGE, CACHE, NAMES, sha256, write_json
+from patternforecast.common import REPORTS,CONFIG,FAMILY,ROOT, PACKAGE, CACHE, NAMES, sha256, write_json
 from patternforecast.automata import PatternFamily
 
-out=ROOT/'runs/pattern-recognition'; out.mkdir(parents=True,exist_ok=True)
+out=ROOT/'runs'/f'pattern-recognition-{FAMILY}'; out.mkdir(parents=True,exist_ok=True)
 conf=out/'engine.conf'
 conf.write_text('include classpath("application.conf")\ndefault.showMatchesForecasts = true\n')
 family=PatternFamily()
-patterns=(PACKAGE/'configs/patterns.sre').read_text().split('&')
+patterns=(CONFIG/'patterns.sre').read_text().split('&')
 streams={'random':np.random.default_rng(20261022).choice(list('ABCD'),10000)}
 for name in ('air','power','metro'):
     frame=pd.read_csv(CACHE/name/'development-business.csv')
@@ -24,7 +24,7 @@ for p,name in enumerate(NAMES):
     pattern=out/f'{name}.sre'; pattern.write_text(patterns[p].strip()+'\n')
     fsm=out/f'{name}.fsm'
     result=subprocess.run([str(ROOT/'wayeb'),'compile',f'--patterns:{pattern}',
-          f'--declarations:{PACKAGE}/configs/declarations.sre',f'--outputFsm:{fsm}'],
+          f'--declarations:{CONFIG}/declarations.sre',f'--countPolicy:{"nonoverlap" if FAMILY=="nested" else "overlap"}',f'--outputFsm:{fsm}'],
           cwd=out,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=180)
     if result.returncode or 'Exception' in result.stdout: raise RuntimeError(result.stdout[-2000:])
     report['patterns'][name]={}
@@ -48,4 +48,4 @@ for p,name in enumerate(NAMES):
         report['patterns'][name][dataset]={'events':len(symbols),'matches':len(expected),
                'endpoint_mismatches':0,'input_sha256':sha256(source)}
         print(name,dataset,len(expected),'passed',flush=True)
-write_json(PACKAGE/'reports/recognition.json',report)
+write_json(REPORTS/'recognition.json',report)

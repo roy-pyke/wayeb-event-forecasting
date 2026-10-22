@@ -1,0 +1,410 @@
+{
+  "air": {
+    "dataset": "air",
+    "stage": "development",
+    "source_identity": {
+      "data.py": "49a34650c676540ce19b90737e8736a554bbb078c5d89766aa9df28f1e46e624",
+      "PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+      "dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea"
+    },
+    "raw_sha256": "b04da438b2f331ac0ffd45aebdfec0d20d2367feb5f6948c4b1f7ce1191e33c4",
+    "cuts": [
+      24.0,
+      60.0,
+      115.0
+    ],
+    "features": [
+      "PM2.5",
+      "PM10",
+      "SO2",
+      "NO2",
+      "CO",
+      "O3",
+      "TEMP",
+      "PRES",
+      "DEWP",
+      "RAIN",
+      "WSPM"
+    ],
+    "splits": {
+      "train": {
+        "rows": 79695,
+        "matches": {
+          "rising": 655,
+          "falling": 625,
+          "excursion": 4094
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng"
+        ],
+        "q_counts": {
+          "0": 946,
+          "1": 1392,
+          "2": 1487,
+          "3": 10411,
+          "4": 229,
+          "5": 640,
+          "6": 7115,
+          "7": 11026,
+          "8": 4646,
+          "9": 8741,
+          "10": 5560,
+          "11": 6840,
+          "12": 4100,
+          "13": 3605,
+          "14": 12957
+        },
+        "known_fraction": 0.9776425399613805,
+        "positive_fraction": [
+          0.057981008510620075,
+          0.05530429568718146,
+          0.3042995697015231
+        ],
+        "npz_sha256": "26b47ab16cf4095a23a5f319fb0f8db018e6d24a753ecf5226593c2419f03ce4"
+      },
+      "calibrate": {
+        "rows": 12091,
+        "matches": {
+          "rising": 93,
+          "falling": 101,
+          "excursion": 464
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng"
+        ],
+        "q_counts": {
+          "0": 454,
+          "1": 275,
+          "2": 614,
+          "3": 1122,
+          "4": 21,
+          "5": 60,
+          "6": 619,
+          "7": 1635,
+          "8": 457,
+          "9": 1064,
+          "10": 1086,
+          "11": 2282,
+          "12": 393,
+          "13": 309,
+          "14": 1700
+        },
+        "known_fraction": 0.958821529328518,
+        "positive_fraction": [
+          0.053365204619416524,
+          0.055793991416309016,
+          0.23336580892887845
+        ],
+        "npz_sha256": "e24fdda3d05c90cfdcdce2a2d5f3d0a96aa254295c08a8aa016f4bc07b51f6c0"
+      },
+      "development": {
+        "rows": 49235,
+        "matches": {
+          "rising": 337,
+          "falling": 291,
+          "excursion": 2327
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng"
+        ],
+        "q_counts": {
+          "0": 980,
+          "1": 2014,
+          "2": 1108,
+          "3": 7113,
+          "4": 121,
+          "5": 208,
+          "6": 3781,
+          "7": 8597,
+          "8": 2896,
+          "9": 4993,
+          "10": 2979,
+          "11": 3423,
+          "12": 2095,
+          "13": 1600,
+          "14": 7327
+        },
+        "known_fraction": 0.9630434537309728,
+        "positive_fraction": [
+          0.04877086708459534,
+          0.04128676496513014,
+          0.2801141610005876
+        ],
+        "npz_sha256": "c1ffff9763a47607528c7fe6eb684a9696dd5bdd72412816c548d8ff9b807922"
+      }
+    }
+  },
+  "power": {
+    "dataset": "power",
+    "stage": "development",
+    "source_identity": {
+      "data.py": "49a34650c676540ce19b90737e8736a554bbb078c5d89766aa9df28f1e46e624",
+      "PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+      "dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea"
+    },
+    "raw_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+    "cuts": [
+      0.252,
+      0.428,
+      1.466
+    ],
+    "features": [
+      "Global_active_power",
+      "Global_reactive_power",
+      "Voltage",
+      "Global_intensity",
+      "Sub_metering_1",
+      "Sub_metering_2",
+      "Sub_metering_3"
+    ],
+    "splits": {
+      "train": {
+        "rows": 77808,
+        "matches": {
+          "rising": 768,
+          "falling": 774,
+          "excursion": 10641
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 16,
+          "1": 88,
+          "2": 414,
+          "3": 12701,
+          "4": 906,
+          "5": 258,
+          "6": 13228,
+          "7": 17473,
+          "8": 2448,
+          "9": 2911,
+          "10": 3322,
+          "11": 1797,
+          "12": 4082,
+          "13": 2493,
+          "14": 15671
+        },
+        "known_fraction": 0.9993331162748189,
+        "positive_fraction": [
+          0.031394287037156125,
+          0.03160570892050984,
+          0.33393914195210395
+        ],
+        "npz_sha256": "461e5fb935ca1b60d74909fe5493f6af994d7ddac279641c7fcdefc36db3c514"
+      },
+      "calibrate": {
+        "rows": 26487,
+        "matches": {
+          "rising": 182,
+          "falling": 181,
+          "excursion": 3095
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 1,
+          "1": 9,
+          "2": 39,
+          "3": 4309,
+          "4": 180,
+          "5": 30,
+          "6": 4979,
+          "7": 2907,
+          "8": 730,
+          "9": 718,
+          "10": 1514,
+          "11": 311,
+          "12": 1636,
+          "13": 1109,
+          "14": 8015
+        },
+        "known_fraction": 0.999412709798937,
+        "positive_fraction": [
+          0.022906146503633,
+          0.022692070368085026,
+          0.3063421513201798
+        ],
+        "npz_sha256": "d59adc9772e1527a74b6e5a7274899cd668aab5d7554fa597b21557b9c377c13"
+      },
+      "development": {
+        "rows": 105356,
+        "matches": {
+          "rising": 757,
+          "falling": 765,
+          "excursion": 13095
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 7,
+          "1": 29,
+          "2": 283,
+          "3": 11897,
+          "4": 1271,
+          "5": 151,
+          "6": 19920,
+          "7": 17049,
+          "8": 4016,
+          "9": 3989,
+          "10": 3538,
+          "11": 1281,
+          "12": 10538,
+          "13": 6607,
+          "14": 24780
+        },
+        "known_fraction": 0.9995306917076916,
+        "positive_fraction": [
+          0.023785180003228757,
+          0.023981665548197577,
+          0.30979299867063365
+        ],
+        "npz_sha256": "a69cf303a98ca3aeec5c807e9159e2cc5dda60bdf1dd3cb332072df70982f87e"
+      }
+    }
+  },
+  "metro": {
+    "dataset": "metro",
+    "stage": "development",
+    "source_identity": {
+      "data.py": "49a34650c676540ce19b90737e8736a554bbb078c5d89766aa9df28f1e46e624",
+      "PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+      "dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea"
+    },
+    "raw_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+    "cuts": [
+      8.53,
+      9.002,
+      9.494
+    ],
+    "features": [
+      "Reservoirs",
+      "TP2",
+      "TP3",
+      "H1",
+      "DV_pressure",
+      "Oil_temperature",
+      "Motor_current"
+    ],
+    "splits": {
+      "train": {
+        "rows": 104943,
+        "matches": {
+          "rising": 2024,
+          "falling": 2004,
+          "excursion": 4117
+        },
+        "entities": [
+          "compressor"
+        ],
+        "q_counts": {
+          "0": 253,
+          "1": 412,
+          "2": 750,
+          "3": 1647,
+          "4": 1,
+          "5": 32,
+          "6": 24065,
+          "7": 172,
+          "8": 8,
+          "9": 1958,
+          "10": 24725,
+          "11": 25681,
+          "12": 24382,
+          "13": 96,
+          "14": 761
+        },
+        "known_fraction": 0.9985283016071158,
+        "positive_fraction": [
+          0.04497723939826759,
+          0.044623146268998555,
+          0.09099728983497259
+        ],
+        "npz_sha256": "4818d50b624ebf303132c87e7cea5d75e9a6a1f8412a14c90f77797e7a98b3ed"
+      },
+      "calibrate": {
+        "rows": 41914,
+        "matches": {
+          "rising": 673,
+          "falling": 666,
+          "excursion": 1401
+        },
+        "entities": [
+          "compressor"
+        ],
+        "q_counts": {
+          "0": 17,
+          "1": 138,
+          "2": 19,
+          "3": 2209,
+          "6": 9060,
+          "7": 931,
+          "8": 22,
+          "9": 696,
+          "10": 9640,
+          "11": 10047,
+          "12": 8894,
+          "13": 4,
+          "14": 237
+        },
+        "known_fraction": 0.9990138537640566,
+        "positive_fraction": [
+          0.03747870528109029,
+          0.03711281116409403,
+          0.0773051847252406
+        ],
+        "npz_sha256": "97132b3beebbf6eeb8b91be9708469bbfbcf295ede8d023ee31d9e1e58070957"
+      },
+      "development": {
+        "rows": 61926,
+        "matches": {
+          "rising": 1028,
+          "falling": 1010,
+          "excursion": 2108
+        },
+        "entities": [
+          "compressor"
+        ],
+        "q_counts": {
+          "0": 128,
+          "1": 231,
+          "2": 209,
+          "3": 3739,
+          "6": 13941,
+          "7": 83,
+          "8": 2,
+          "9": 1039,
+          "10": 14580,
+          "11": 14302,
+          "12": 13311,
+          "13": 1,
+          "14": 360
+        },
+        "known_fraction": 0.9976692611611708,
+        "positive_fraction": [
+          0.0385233784031682,
+          0.038107518991712705,
+          0.0786947865917809
+        ],
+        "npz_sha256": "b424378b8730935e34c8d3c3afef0a7f9503e3aeec7c3f813756ebecc9bad09b"
+      }
+    }
+  }
+}

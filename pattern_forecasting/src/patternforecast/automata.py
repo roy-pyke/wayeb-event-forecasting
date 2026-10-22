@@ -4,13 +4,13 @@ from functools import lru_cache
 import itertools
 import json
 import numpy as np
-from .common import PACKAGE, NAMES
+from .common import CONFIG, NAMES
 
 
 class PatternFamily:
     def __init__(self, payload=None):
         if payload is None:
-            payload = json.loads((PACKAGE/'configs/dfa.json').read_text())
+            payload = json.loads((CONFIG/'dfa.json').read_text())
         self.alphabet = tuple(payload['alphabet'])
         self.tables = [payload['patterns'][n] for n in NAMES]
         start = tuple(t['start'] for t in self.tables)
@@ -41,6 +41,30 @@ class PatternFamily:
     def verify_inclusion(self):
         return bool(np.all(~self.final[:,0] | self.final[:,1]) and
                     np.all(~self.final[:,1] | self.final[:,2]))
+
+    def inclusion_pairs(self):
+        return [(i,j) for i in range(len(self.tables)) for j in range(len(self.tables))
+                if i!=j and np.all(~self.final[:,i]|self.final[:,j])]
+
+    @lru_cache(maxsize=8)
+    def static_profiles(self,horizon_count=3):
+        """Exact time-unbounded joint outcome relations, union over current states.
+
+        Each interval reaches its closure in the augmented (state,hit-mask)
+        graph. This includes Boolean/union constraints, not only inclusions.
+        """
+        nodes={(q,0,0) for q in range(len(self.states))}
+        p=len(self.tables)
+        for position in range(horizon_count):
+            queue=deque(nodes)
+            while queue:
+                q,hits,profile=queue.popleft()
+                for nxt in self.next[q]:
+                    item=(int(nxt),hits|int(self.final_mask[nxt]),profile)
+                    if item not in nodes:nodes.add(item);queue.append(item)
+            nodes={(q,hits,profile|(hits<<(position*p))) for q,hits,profile in nodes}
+        codes=sorted({v for _,_,v in nodes})
+        return np.array([[(c>>(h*p+j))&1 for j in range(p) for h in range(horizon_count)] for c in codes],dtype=float)
 
     @lru_cache(maxsize=256)
     def feasible(self, state, horizons):

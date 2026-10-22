@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-22",
+  "status": "new candidate after rejecting materially useful automaton-tightening claims",
+  "question": "Does exact outcome-certified selection of forecast coordinates save material communication relative to strong certified greedy partial updates?",
+  "comparators": ["whole forecast-vector refresh", "largest absolute forecast change first", "largest immediate certificate improvement first"],
+  "fairness": "Every comparator has the identical predictions, feasible-outcome oracle, complete joint coherence repair, tolerance, metadata, and float32 coordinate format. Greedy candidates may be internally incoherent but publish only after final validation.",
+  "claim_boundary": "The CDF-only exact selector is an ablation of the proposed sparse mechanism, not a claimed existing published system. Automaton gains so far are small and cannot be the main empirical claim.",
+  "primary_comparison": "exact sparse versus the better of the two certified greedy strategies, on the directional short-horizon task at epsilon 0.002; other tolerances are sensitivity only",
+  "development_gate": "At least 5% relative bytes saved on both air and power versus the better greedy method, without changing the tolerance or oracle; otherwise reject practical advantage of exact coordinate optimization.",
+  "holdout_boundary": "No confirmation data has been prepared. Do not open confirmation merely to seek a positive result after a failed development gate."
+}

@@ -1,8 +1,8 @@
 import numpy as np
 from patternforecast.automata import PatternFamily
-from patternforecast.common import PACKAGE,protocol,write_json
+from patternforecast.common import REPORTS,CONFIG,FAMILY,PACKAGE,protocol,write_json
 from patternforecast.data import load,targets
-family=PatternFamily();report={'joint_states':len(family.states),'verified_language_inclusion':family.verify_inclusion(),'datasets':{}}
+family=PatternFamily();report={'joint_states':len(family.states),'verified_inclusion_pairs':family.inclusion_pairs(),'datasets':{}}
 for name,cfg in protocol()['datasets'].items():
     report['datasets'][name]={}
     for split in ('train','calibrate','development'):
@@ -16,4 +16,4 @@ for name,cfg in protocol()['datasets'].items():
         assert bad==0
         report['datasets'][name][split]={'queries':len(y),'fully_observed_queries':int(complete.sum()),
                 'infeasible_labels':bad,'states_observed':len(np.unique(data['q']))}
-write_json(PACKAGE/'reports/data-audit.json',report);print(report)
+write_json(REPORTS/'data-audit.json',report);print(report)

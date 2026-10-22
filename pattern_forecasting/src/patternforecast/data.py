@@ -7,7 +7,7 @@ import urllib.request
 import zipfile
 import numpy as np
 import pandas as pd
-from .common import CACHE, ROOT, PACKAGE, NAMES, protocol, sha256, write_json
+from .common import CACHE, ROOT, PACKAGE, CONFIG, NAMES, protocol, sha256, write_json
 from .automata import PatternFamily
 
 SOURCES = {
@@ -20,7 +20,7 @@ SOURCES = {
 
 
 def download(name):
-    path = CACHE/'raw'/f'{name}.zip'
+    path = ROOT/'.cache/pattern_forecasting/raw'/f'{name}.zip'
     path.parent.mkdir(parents=True, exist_ok=True)
     if name == 'metro' and not path.exists():
         old = ROOT/'.cache/state_forecasting/metropt3.zip'
@@ -71,8 +71,19 @@ def raw_streams(name, cutoff):
 def replay(stamps, values, cuts, cfg, family, entity, segment_offset=0):
     native, spacing = cfg['native_seconds'], cfg['query_every_samples']
     history_length = protocol()['telemetry_history_samples']
-    regime = np.searchsorted(cuts, values[:,0], side='right')
-    regime[~np.isfinite(values[:,0])] = -1
+    multichannel=isinstance(cuts,dict)
+    if multichannel:
+        channels=cuts['channels'];present=np.isfinite(values[:,channels]).all(1)
+        delta=np.zeros((len(values),2));delta[1:]=np.diff(values[:,channels],axis=0)/np.array(cuts['scales'])
+        winner=np.argmax(np.abs(np.nan_to_num(delta)),axis=1)
+        magnitude=np.max(np.abs(np.nan_to_num(delta)),axis=1)
+        signed=delta[np.arange(len(values)),winner]
+        regime=2*winner+(signed<0).astype(int)
+        regime[magnitude<cuts['threshold']]=4  # silence, distinct from missing
+        regime[~present]=-1
+    else:
+        regime = np.searchsorted(cuts, values[:,0], side='right')
+        regime[~np.isfinite(values[:,0])] = -1
     breaks = np.r_[True, (np.diff(stamps) != native) | (regime[:-1] < 0) | (regime[1:] < 0)]
     segments = np.cumsum(breaks) + segment_offset
     output = {k:[] for k in ['t','business','telemetry','residual','observed','coverage','q','segment','entity']}
@@ -92,7 +103,8 @@ def replay(stamps, values, cuts, cfg, family, entity, segment_offset=0):
         rows = []
         for local_i, i in enumerate(ix):
             now = stamps[i]
-            if regime[i] != last_regime:
+            emit=(local_i>0 and regime[i]<4) if multichannel else regime[i]!=last_regime
+            if emit:
                 old = family.states[q]
                 q, matched = family.step(q, family.alphabet[regime[i]])
                 q_changed[np.array(old) != np.array(family.states[q])] = now
@@ -142,14 +154,14 @@ def replay(stamps, values, cuts, cfg, family, entity, segment_offset=0):
 
 def prepare(name, confirmation=False, force=False):
     cfg = protocol()['datasets'][name]
-    if confirmation and not (PACKAGE/'configs/FROZEN.json').exists():
+    if confirmation and not (CONFIG/'FROZEN.json').exists():
         raise RuntimeError('Freeze the development selection before preparing confirmation labels')
     stage = 'confirmation' if confirmation else 'development'
     path = CACHE/name
     path.mkdir(parents=True, exist_ok=True)
     splits = ['confirmation'] if confirmation else ['train','calibrate','development']
     manifest_path = path/f'manifest-{stage}.json'
-    identity = {p.name:sha256(p) for p in [Path(__file__), PACKAGE/'configs/PROTOCOL.json', PACKAGE/'configs/dfa.json']}
+    identity = {p.name:sha256(p) for p in [Path(__file__), CONFIG/'PROTOCOL.json', CONFIG/'dfa.json']}
     if not force and manifest_path.exists():
         old = json.loads(manifest_path.read_text())
         if old['source_identity']==identity and all((path/f'{s}.npz').exists() for s in splits):
@@ -159,16 +171,30 @@ def prepare(name, confirmation=False, force=False):
     allowed = cfg.get('training_entities',[entity for entity,_ in streams])
     cutfile = path/'cuts.json'
     if confirmation:
-        cuts = np.asarray(json.loads(cutfile.read_text())['cuts'])
+        rawcuts=json.loads(cutfile.read_text())['cuts'];cuts=rawcuts if isinstance(rawcuts,dict) else np.asarray(rawcuts)
     else:
         measurements = []
         for entity,frame in streams:
             if entity in allowed:
                 train = frame.loc[(frame.index>=cfg['train'][0]) & (frame.index<cfg['train'][1])]
                 measurements.append(train[cfg['regime_signal']].to_numpy())
-        cuts = np.nanquantile(np.concatenate(measurements),protocol()['regime_quantiles'])
-        if len(np.unique(cuts)) != 3:
-            raise ValueError('Training quantiles do not define four distinct regimes')
+        if cfg.get('eventization_mode')=='dominant_change':
+            changes=[];columns=[cfg['regime_signal']]+[c for c in streams[0][1] if c!=cfg['regime_signal']]
+            channels=[columns.index(c) for c in cfg['change_channels']]
+            for entity,frame in streams:
+                if entity not in allowed:continue
+                sub=frame.loc[(frame.index>=cfg['train'][0])&(frame.index<cfg['train'][1])]
+                values=sub[columns].to_numpy();delta=np.diff(values[:,channels],axis=0)
+                regular=np.diff(sub.index.astype('int64')/1e9)==cfg['native_seconds']
+                changes.append(delta[regular&np.isfinite(delta).all(1)])
+            delta=np.concatenate(changes)
+            scales=np.quantile(np.abs(delta),.75,axis=0)
+            scales=np.where(scales>1e-8,scales,np.maximum(np.std(delta,axis=0),1e-8))
+            threshold=float(np.quantile(np.max(np.abs(delta/scales),axis=1),.5))
+            cuts=dict(channels=channels,scales=scales.tolist(),threshold=max(threshold,1e-8))
+        else:
+            cuts = np.nanquantile(np.concatenate(measurements),protocol()['regime_quantiles'])
+            if len(np.unique(cuts)) != 3: raise ValueError('Training quantiles do not define four distinct regimes')
         write_json(cutfile,dict(cuts=cuts,fit_split='train',entities=allowed))
     family = PatternFamily()
     manifest = dict(dataset=name,stage=stage,source_identity=identity,raw_sha256=sha256(download(name)),

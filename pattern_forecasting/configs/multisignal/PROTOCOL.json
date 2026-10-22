@@ -1,0 +1,211 @@
+{
+  "version": 2,
+  "date": "2026-10-22",
+  "registered_before_new_dataset_forecasting_results": true,
+  "seeds": [
+    20261022,
+    20261023,
+    20261024
+  ],
+  "target": "First strictly future matching endpoint for each fixed streaming regular pattern, in physical time; not an anchored business-case end or fault diagnosis",
+  "alphabet": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "eventization": "A/B are positive/negative dominant changes of channel 1; C/D of channel 2. Normalize changes by training 75th absolute-change quantile, emit largest absolute standardized change when it reaches the training median maximum-change magnitude. One event per native tick at most; silence otherwise. Missing either channel resets coverage.",
+  "regime_quantiles": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "patterns": {
+    "response_up": "AB+C",
+    "response_down": "AB+D",
+    "response_any": "AB+(C|D)"
+  },
+  "pattern_relation": "First two languages have union equal to the third. All static Boolean relations are included in the time-unbounded product baseline, not merely pairwise inclusion.",
+  "datasets": {
+    "air": {
+      "source": "https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data",
+      "doi": "10.24432/C5RK5G",
+      "license": "CC BY 4.0",
+      "regime_signal": "PM2.5",
+      "native_seconds": 3600,
+      "query_every_samples": 1,
+      "horizon_samples": [
+        3,
+        6,
+        12
+      ],
+      "train": [
+        "2013-03-01",
+        "2014-10-01"
+      ],
+      "calibrate": [
+        "2014-10-01",
+        "2015-01-01"
+      ],
+      "development": [
+        "2015-01-01",
+        "2016-01-01"
+      ],
+      "confirmation": [
+        "2016-01-01",
+        "2017-01-01"
+      ],
+      "reserve": [
+        "2017-01-01",
+        "2017-03-01"
+      ],
+      "training_entities": [
+        "Aotizhongxin",
+        "Changping",
+        "Dingling",
+        "Dongsi",
+        "Guanyuan",
+        "Gucheng"
+      ],
+      "unseen_confirmation_entities": [
+        "Huairou",
+        "Nongzhanguan",
+        "Shunyi",
+        "Tiantan",
+        "Wanliu",
+        "Wanshouxigong"
+      ],
+      "eventization_mode": "dominant_change",
+      "change_channels": [
+        "PM2.5",
+        "TEMP"
+      ]
+    },
+    "power": {
+      "source": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+      "doi": "10.24432/C58K54",
+      "license": "CC BY 4.0",
+      "regime_signal": "Global_active_power",
+      "native_seconds": 60,
+      "query_every_samples": 5,
+      "horizon_samples": [
+        5,
+        15,
+        30
+      ],
+      "train": [
+        "2007-01-01",
+        "2007-10-01"
+      ],
+      "calibrate": [
+        "2007-10-01",
+        "2008-01-01"
+      ],
+      "development": [
+        "2008-01-01",
+        "2009-01-01"
+      ],
+      "confirmation": [
+        "2009-01-01",
+        "2010-01-01"
+      ],
+      "reserve": [
+        "2010-01-01",
+        "2010-12-01"
+      ],
+      "eventization_mode": "dominant_change",
+      "change_channels": [
+        "Global_active_power",
+        "Voltage"
+      ]
+    },
+    "metro": {
+      "source": "https://archive.ics.uci.edu/dataset/791/metropt+3+dataset",
+      "doi": "10.24432/C5VW3R",
+      "license": "CC BY 4.0",
+      "regime_signal": "Reservoirs",
+      "native_seconds": 10,
+      "query_every_samples": 3,
+      "horizon_samples": [
+        3,
+        6,
+        12
+      ],
+      "train": [
+        "2020-02-01",
+        "2020-03-15"
+      ],
+      "calibrate": [
+        "2020-03-15",
+        "2020-04-01"
+      ],
+      "development": [
+        "2020-04-01",
+        "2020-05-01"
+      ],
+      "confirmation": [
+        "2020-05-01",
+        "2020-09-01"
+      ],
+      "prior_exposure": "Entire 2020 cohort was previously studied. This is a new-pattern diagnostic replication, not independent confirmation of a newly selected method.",
+      "eventization_mode": "dominant_change",
+      "change_channels": [
+        "Reservoirs",
+        "Motor_current"
+      ]
+    }
+  },
+  "features": "All main forecasting baselines receive identical causal business metadata, all DFA states, and the same bounded telemetry history. Ablations intentionally remove a named information source.",
+  "telemetry_history_samples": 8,
+  "training_sample_cap_per_dataset": 50000,
+  "forecasting_baselines": [
+    "business-only landmark hazard",
+    "same-information HGB landmark hazard",
+    "same-information extra-trees multi-horizon",
+    "same-information attentive GRU time-to-event distribution with censored likelihood and ranking"
+  ],
+  "communication_baselines": [
+    "all telemetry",
+    "periodic",
+    "send-on-delta",
+    "independent Bernoulli worst-loss trigger",
+    "per-pattern monotone-CDF worst-loss trigger",
+    "joint automaton-feasible worst-loss trigger",
+    "whole and sparse forecast updates with CDF, static-language and exact automaton certificates; full joint probability coherence available to every policy"
+  ],
+  "certificate_epsilons": [
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "max_context_lags_queries": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "primary_comparison": "Auxiliary packet rate versus worst-case and observed mean Brier excess relative to the exact same full-context forecaster; equal tolerance and equal-budget frontiers both reported",
+  "certificate_scope": "Deterministic forecast degradation bound conditional on correct business stream, agreed model version, causal query order and delivery before the scored query. Not truth calibration, accuracy guarantee or unlimited-delay guarantee.",
+  "confidence": {
+    "unit": "calendar week, all entities jointly for correlated weather",
+    "replicates": 1000,
+    "level": 0.95
+  },
+  "required_evidence": [
+    "zero recognition endpoint mismatches",
+    "causal prefix and censoring tests",
+    "multiple nonconstant DFA states",
+    "strong same-information predictors",
+    "two independently held-out new domains",
+    "strict joint-certificate improvement over per-pattern certificate somewhere and measured useful cost gain",
+    "all negative and inconclusive results retained"
+  ],
+  "selection_rule": "No confirmation labels, metrics or distributions inspected during selection. Freeze code, sources, hyperparameters and interpretation before confirmation. Failure never retroactively changes the frozen claim.",
+  "pattern_family": "multisignal",
+  "iteration_reason": "Ordinal single-sensor regimes impose highly directed adjacent-state transitions. Test an independently declared two-sensor response motif with alternative endings; keep all prior failures and same frozen holdout boundary.",
+  "selection_gate": "At least 5% relative payload reduction over the time-unbounded static-joint oracle on air AND power development, at epsilon 0.002 short windows, with all strategies receiving full joint probability coherence; otherwise reject dynamic-automaton communication advantage."
+}

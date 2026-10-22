@@ -21,6 +21,10 @@ def test_joint_coherence_projection_and_sparse_patch_are_feasible():
 
 
 def test_short_horizon_exclusion_survives_coordinate_zeroing():
+    from patternforecast.common import FAMILY
+    if FAMILY!='nested':
+        import pytest
+        pytest.skip('specific nested-family witness; general oracle tests cover all families')
     f=PatternFamily();q,_=f.step(f.start,'A');y=f.feasible(q,(1,2,3)).reshape(-1,3,3)
     # A broad match on tick 1 consumes D and resets the shared stream. A branch
     # match would then need A,(B|C),D, so cannot also finish by tick 3.

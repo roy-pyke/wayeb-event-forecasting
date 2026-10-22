@@ -18,7 +18,8 @@ def test_sparse_patch_is_minimum_cardinality_and_obeys_all_feasible_outcomes():
             assert np.array_equal(candidate[~patch],p[~patch])
             for smaller in masks_by_size(9)[:patch.sum()]:
                 trial=np.where(smaller,f,p).reshape(-1,3,3)
-                valid=(np.diff(trial,axis=1)>=-1e-8).all((1,2))&(np.diff(trial,axis=2)>=-1e-8).all((1,2))
+                valid=(np.diff(trial,axis=2)>=-1e-7).all((1,2))
+                for child,parent in family.inclusion_pairs():valid&=(trial[:,child]<=trial[:,parent]+1e-7).all(1)
                 if valid.any(): assert (candidate_bound(trial[valid],f,y,mode)>.02-1e-10).all()
 
 
@@ -28,7 +29,7 @@ def test_forced_zero_projection_preserves_static_order_constraints():
     for hs in [(1,2,3),(3,6,12),(5,15,30)]:
         for q in range(len(family.states)):
             possible=family.feasible(q,hs).max(0).reshape(3,3);out=p*possible
-            assert (np.diff(out,axis=1)>=-1e-8).all()
+            for child,parent in family.inclusion_pairs(): assert (out[:,child]<=out[:,parent]+1e-8).all()
             assert (np.diff(out,axis=2)>=-1e-8).all()
 
 

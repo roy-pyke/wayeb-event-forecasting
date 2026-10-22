@@ -2,7 +2,7 @@
 import argparse,json,time
 import joblib
 import numpy as np
-from patternforecast.common import PACKAGE,RUNS,protocol,write_json,sha256,experiment_cfg
+from patternforecast.common import REPORTS,CONFIG,FAMILY,PACKAGE,RUNS,protocol,write_json,sha256,experiment_cfg
 from patternforecast.data import load
 from patternforecast.models import Landmark,NeuralLandmark,score
 
@@ -16,7 +16,7 @@ for name in args.datasets:
     train,cal,dev=[load(name,split) for split in ('train','calibrate','development')]
     out=RUNS/name;out.mkdir(parents=True,exist_ok=True)
     suffix='' if args.profile=='long' else '-short'
-    report_path=PACKAGE/'reports'/f'models-{name}{suffix}.json'
+    report_path=REPORTS/f'models-{name}{suffix}.json'
     report=json.loads(report_path.read_text()) if report_path.exists() else {'dataset':name,'runs':{},'selection':{}}
     families=args.families
     for family in families:

@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from patternforecast.automata import PatternFamily
-from patternforecast.common import PACKAGE,RUNS,CACHE,protocol,write_json,sha256,experiment_cfg
+from patternforecast.common import REPORTS,CONFIG,FAMILY,PACKAGE,RUNS,CACHE,protocol,write_json,sha256,experiment_cfg
 from patternforecast.data import load
 from patternforecast.certificates import batch_bounds
 from patternforecast.communication import replay_policy,evaluate,block_interval
@@ -12,12 +12,12 @@ parser=argparse.ArgumentParser();parser.add_argument('--datasets',nargs='+',defa
 parser.add_argument('--split',default='development',choices=['development','confirmation'])
 parser.add_argument('--backbone',default=None);args=parser.parse_args()
 family=PatternFamily()
-if args.split=='confirmation' and not (PACKAGE/'configs/FROZEN.json').exists(): raise RuntimeError('not frozen')
+if args.split=='confirmation' and not (CONFIG/'FROZEN.json').exists(): raise RuntimeError('not frozen')
 for name in args.datasets:
     short=args.backbone and args.backbone.startswith('short-')
     cfg=experiment_cfg(name,'short' if short else 'long');data=load(name,args.split);out=RUNS/name
     suffix='-short' if short else ''
-    selection=json.loads((PACKAGE/'reports'/f'models-{name}{suffix}.json').read_text())
+    selection=json.loads((REPORTS/f'models-{name}{suffix}.json').read_text())
     key=args.backbone or selection['communication_backbone'];model_path=out/f'{key}.joblib'
     pred_path=out/f'{key}-{args.split}-lags.npy'
     pred_meta=pred_path.with_suffix('.json')
@@ -69,4 +69,4 @@ for name in args.datasets:
           'scope':'uncompressed application payload; edge sensing and inference not saved'}
     for result in report['policies'].values():
         result['aux_payload_bytes']=int(round(result['aux_packet_rate']*len(data['t'])))*raw_bytes
-    write_json(PACKAGE/'reports'/f'communication-{name}-{args.split}-{key}.json',report)
+    write_json(REPORTS/f'communication-{name}-{args.split}-{key}.json',report)

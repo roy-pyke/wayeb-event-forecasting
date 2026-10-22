@@ -4,14 +4,15 @@ import numpy as np
 from patternforecast.automata import PatternFamily,independent_profiles
 from patternforecast.certificates import joint_bound,cdf_bound,bernoulli_bound
 from patternforecast.data import replay,targets
+from patternforecast.common import protocol,FAMILY
 
 
 def test_author_automata_against_independent_regex():
     family=PatternFamily()
-    regexes=['ABCD','A[BC]+D','A[ABC]*D']
-    assert family.verify_inclusion()
+    regexes=list(protocol()['patterns'].values())
+    assert family.inclusion_pairs()==([(0,1),(0,2),(1,2)] if FAMILY=='nested' else [(0,2),(1,2)])
     rng=np.random.default_rng(7)
-    for letters in [list('AABCBABCDAD'),*rng.choice(list('ABCD'),(20,500))]:
+    for letters in [list('AABCBABCDAD'),list('ABABDABDBA'),*rng.choice(list('ABCD'),(20,500))]:
         word=''; q=family.start
         for letter in letters:
             word+=letter
@@ -22,8 +23,8 @@ def test_author_automata_against_independent_regex():
 
 def test_no_new_match_during_silence():
     family=PatternFamily(); q=family.start
-    for a in 'ABCD': q,_=family.step(q,a)
-    assert family.final[q].all()
+    for a in ('ABBC' if FAMILY=='multisignal' else 'ABCD'): q,_=family.step(q,a)
+    assert family.final[q].any()
     q2,hit=family.step(q,None)
     assert q2==q and not hit.any()
 
@@ -86,3 +87,25 @@ def test_true_profiles_are_automaton_feasible():
     for i in np.flatnonzero(known.all(axis=(1,2))):
         feasible=family.feasible(int(data['q'][i]),(1,2,3))
         assert np.any(np.all(feasible==yy[i].ravel(),axis=1))
+
+
+def test_multisignal_eventization_is_prefix_causal_and_cuts_secondary_gaps():
+    family=PatternFamily();cfg=dict(native_seconds=1,query_every_samples=1)
+    rng=np.random.default_rng(81);values=np.cumsum(rng.normal(size=(100,3)),axis=0)
+    cuts=dict(channels=[0,1],scales=[1.,2.],threshold=.5)
+    data,events,_,_=replay(np.arange(100.),values,cuts,cfg,family,'x')
+    altered=values.copy();altered[60:]*=40
+    other,other_events,_,_=replay(np.arange(100.),altered,cuts,cfg,family,'x')
+    ix=data['t']<60
+    for key in ['business','telemetry','q']:np.testing.assert_array_equal(data[key][ix],other[key][ix])
+    assert [e for e in events if e[2]<60]==[e for e in other_events if e[2]<60]
+    values[60,1]=np.nan
+    gapped,_,_,_=replay(np.arange(100.),values,cuts,cfg,family,'x')
+    ix=gapped['t']<60
+    assert (gapped['coverage'][ix]<=59-gapped['t'][ix]).all()
+
+
+def test_time_unbounded_static_oracle_contains_every_timed_oracle():
+    family=PatternFamily();static=set(map(tuple,family.static_profiles(3)))
+    for q in range(len(family.states)):
+        for hs in [(1,2,3),(3,6,12),(5,15,30)]:assert set(map(tuple,family.feasible(q,hs)))<=static
