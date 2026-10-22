@@ -1,0 +1,143 @@
+{
+  "rows": [
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.675092630712228,
+      "comparator_bytes": 7.74629477151091,
+      "primary_brier": 0.017224753744180272,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.009191767535176698,
+      "relative_byte_saving_ci": [
+        -0.0010785215088432109,
+        0.01913121603384725
+      ],
+      "brier_difference": -0.00016038661481535682,
+      "brier_difference_ci": [
+        -0.00018701863574044288,
+        -0.00013409095134281904
+      ],
+      "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.002,
+      "comparator": "zero",
+      "primary_bytes": 7.675092630712228,
+      "comparator_bytes": 8.01998764923837,
+      "primary_brier": 0.017224753744180272,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.04300443262638887,
+      "relative_byte_saving_ci": [
+        0.03451661626246974,
+        0.05049152124564687
+      ],
+      "brier_difference": -2.3675221261312135e-05,
+      "brier_difference_ci": [
+        -4.386897164488626e-05,
+        -6.135060615780571e-06
+      ],
+      "source": "reports/multisignal/codec-air-development-short-gru-32-0.01-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-hgb-31-180-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.407719226018938,
+      "comparator_bytes": 7.43931659118979,
+      "primary_brier": 0.017367410515376814,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.004247347828733705,
+      "relative_byte_saving_ci": [
+        -0.0070919693092862555,
+        0.015296428027674698
+      ],
+      "brier_difference": -0.00015028795853119087,
+      "brier_difference_ci": [
+        -0.00017119643284469412,
+        -0.0001297375743228924
+      ],
+      "source": "reports/multisignal/codec-air-development-short-hgb-31-180-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "development",
+      "backbone": "short-hgb-31-180-s20261022",
+      "epsilon": 0.002,
+      "comparator": "zero",
+      "primary_bytes": 7.407719226018938,
+      "comparator_bytes": 7.81729106628242,
+      "primary_brier": 0.017367410515376814,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.05239306516678777,
+      "relative_byte_saving_ci": [
+        0.04836029384587181,
+        0.05697271631593555
+      ],
+      "brier_difference": -1.2267163127889502e-05,
+      "brier_difference_ci": [
+        -2.9336380643614e-05,
+        4.92112516553371e-06
+      ],
+      "source": "reports/multisignal/codec-air-development-short-hgb-31-180-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-hgb-31-180-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.524972474277687,
+      "comparator_bytes": 10.820465849121074,
+      "primary_brier": 0.02001545654445347,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.027308747974782444,
+      "relative_byte_saving_ci": [
+        0.011951221357896228,
+        0.041867034729797845
+      ],
+      "brier_difference": -0.0002546392050480767,
+      "brier_difference_ci": [
+        -0.0003026201950487094,
+        -0.00021279424955349824
+      ],
+      "source": "reports/multisignal/codec-power-development-short-hgb-31-180-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-hgb-31-180-s20261022",
+      "epsilon": 0.002,
+      "comparator": "zero",
+      "primary_bytes": 10.524972474277687,
+      "comparator_bytes": 11.12835529063366,
+      "primary_brier": 0.02001545654445347,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.054220304851680945,
+      "relative_byte_saving_ci": [
+        0.051999541552419516,
+        0.05619350037449124
+      ],
+      "brier_difference": -5.543013581646439e-06,
+      "brier_difference_ci": [
+        -1.191323496189696e-05,
+        2.484174223368542e-07
+      ],
+      "source": "reports/multisignal/codec-power-development-short-hgb-31-180-s20261022-e0.002-n0.json"
+    }
+  ],
+  "note": "Pointwise 95% paired weekly intervals; not simultaneous multiple-comparison intervals. Seed spread is separate."
+}

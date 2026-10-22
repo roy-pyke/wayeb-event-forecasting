@@ -1,0 +1,30 @@
+name: Complex-pattern research checks
+on:
+  push:
+    branches: [main]
+    paths: ['pattern_forecasting/**', '.github/workflows/pattern-forecasting.yml']
+  pull_request:
+    paths: ['pattern_forecasting/**', '.github/workflows/pattern-forecasting.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  semantics-and-codec:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        family: [nested, directional, multisignal]
+    env:
+      PATTERN_FAMILY: ${{ matrix.family }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install numerical test dependencies
+        run: |
+          python -m venv .venv-pattern
+          .venv-pattern/bin/python -m pip install numpy==1.26.4 pandas==2.2.2 scipy==1.12.0 scikit-learn==1.4.2 pytest==8.3.5
+      - name: Test semantics, causal inputs, loss bounds and actual message codecs
+        run: ./pattern_forecasting/run.sh -m pytest pattern_forecasting/tests -q

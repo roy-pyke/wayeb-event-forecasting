@@ -12,7 +12,9 @@ p.add_argument('--backbone',default='hgb-31-180-s20261022');p.add_argument('--li
 p.add_argument('--full-coherence',action='store_true')
 p.add_argument('--strategies',nargs='+',default=['whole','sparse'],choices=['whole','sparse','greedy_delta','greedy_loss'])
 p.add_argument('--epsilon',nargs='+',type=float,default=[.002,.005,.01,.02,.05]);a=p.parse_args()
-if a.split=='confirmation' and not (CONFIG/'FROZEN.json').exists(): raise RuntimeError('not frozen')
+if a.split=='confirmation':
+    from patternforecast.freeze import verify_freeze
+    verify_freeze(a.dataset,a.backbone)
 data=load(a.dataset,a.split);cfg=experiment_cfg(a.dataset,'short' if a.backbone.startswith('short-') else 'long')
 path=RUNS/a.dataset/f'{a.backbone}-{a.split}-lags.npy'
 if path.exists(): full=np.load(path,mmap_mode='r')[0].copy()

@@ -27,3 +27,23 @@ PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scri
 原始 UCI 文件只保存于忽略的缓存目录，首次下载及每次复用都核对固定 SHA-256。大模型和中间预测保存在忽略的 `runs/`，仓库保存完整脚本、协议与可审核的数值报告。报告中的按周簇统计保留多站点共享天气的相关性；时间采用数据记录的钟表时间，未擅自推定原始时区。
 
 Python 路径可通过 `WAYEB_PYTHON` 指定。所有主预测器使用同一 20,000 个训练查询及相同缓存年龄增强，共 40,000 个视图；树模型展开风险区间后的训练行数因此更多。Isotonic 校准只使用校准时期，超参数只使用开发时期。注意力 GRU 是公开结构的 PyTorch 任务适配，不是原作者 TensorFlow 实验的精确复现。
+
+坐标编译与编码入口：
+
+```bash
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/compile_codec.py
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/affine_codec.py --dataset air --backbone short-gru-32-0.01-s20261022 --representations all zero basis
+./pattern_forecasting/run.sh pattern_forecasting/scripts/summarize.py
+```
+
+只有在完成开发和种子复验、提交当前源代码之后，才运行 `freeze_confirmation.py`。多通道族使用 `--replicate-seeds`，其余诊断族不加该参数。冻结记录源代码、训练模型、阈值及开发清单的 SHA；`prepare.py --confirmation`、`confirmation.py` 和确认编码实验都会核对冻结身份。生成 `FROZEN.json` 后先提交并 push，再运行确认准备和评分；不得覆盖已有冻结文件。
+
+```bash
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/train.py --datasets air power --profile short --replicates
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/freeze_confirmation.py --replicate-seeds
+# Commit and push the freeze before the following confirmation commands.
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/prepare.py --datasets air power --confirmation
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/confirmation.py
+```
+
+模型训练采用固定种子和确定性 CPU 算法；归档对象包含耗时元数据，因此重训文件的 SHA 不承诺逐字节相同。冻结 SHA 用于确认正在评估的确实是选定的那份模型，科学复现应比较预测与统计结果，同时记录运行时版本和硬件差异。GitHub CI 的三个模式族矩阵测试不下载研究数据；正式数据、训练和作者 CLI 核验须按这里的独立入口运行。

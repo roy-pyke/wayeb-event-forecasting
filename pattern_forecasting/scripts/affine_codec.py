@@ -1,5 +1,5 @@
 """Compare semantic coordinate representations with identical strong codecs."""
-import argparse,json,time
+import argparse,json,time,hashlib
 import joblib
 import numpy as np
 from patternforecast.common import CONFIG,REPORTS,RUNS,FAMILY,write_json,experiment_cfg,sha256
@@ -15,7 +15,9 @@ p.add_argument('--backbone',default='short-hgb-31-180-s20261022')
 p.add_argument('--epsilon',type=float,default=.002);p.add_argument('--limit',type=int,default=0)
 p.add_argument('--representations',nargs='+',default=['all','static','zero','basis'])
 p.add_argument('--no-partial',action='store_true');a=p.parse_args()
-if a.split=='confirmation' and not (CONFIG/'FROZEN.json').exists():raise RuntimeError('not frozen')
+if a.split=='confirmation':
+    from patternforecast.freeze import verify_freeze
+    verify_freeze(a.dataset,a.backbone)
 data=load(a.dataset,a.split);modelpath=RUNS/a.dataset/f'{a.backbone}.joblib'
 cfg=experiment_cfg(a.dataset,'short' if a.backbone.startswith('short-') else 'long')
 full=joblib.load(modelpath).predict(data).astype(np.float32)
@@ -26,13 +28,22 @@ report=dict(dataset=a.dataset,family=FAMILY,split=a.split,backbone=a.backbone,
             partial=not a.no_partial,policies={})
 for representation in a.representations:
     start=time.perf_counter()
-    r=replay(data,full,family,cfg['horizon_samples'],representation,a.epsilon,not a.no_partial)
+    identity=json.dumps(dict(model=sha256(modelpath),dfa=sha256(CONFIG/'dfa.json'),cfg=cfg,representation=representation),sort_keys=True)
+    version=int(hashlib.sha256(identity.encode()).hexdigest()[:8],16)
+    r=replay(data,full,family,cfg['horizon_samples'],representation,a.epsilon,not a.no_partial,version)
     scores=evaluate(data,r['pred'],r['full'],r['sends'],r['certificate'],cfg['horizon_samples'],a.epsilon)
     _,bs,bc=weekly(data,r['bytes'])
     scores.update(bytes_per_query=float(r['bytes'].mean()),total_payload_bytes=int(r['bytes'].sum()),
                   bytes_per_query_ci=block_interval(bs,bc),week_byte_sums=bs,
                   wire_precision_counts={str(int(b)):int(np.sum(r['precision']==b)) for b in np.unique(r['precision'])},
-                  seconds=time.perf_counter()-start,maps=r['maps'])
+                  seconds=time.perf_counter()-start,maps=r['maps'],wire_version=version)
+    if a.split=='confirmation' and a.dataset=='air':
+        seen=np.isin(data['entity'],cfg['training_entities']);scores['station_groups']={}
+        for group,mask in [('seen',seen),('unseen',~seen)]:
+            local=subset(data,np.flatnonzero(mask))
+            values=evaluate(local,r['pred'][mask],r['full'][mask],r['sends'][mask],r['certificate'][mask],cfg['horizon_samples'],a.epsilon)
+            _,group_bytes,_=weekly(local,r['bytes'][mask]);values.update(bytes_per_query=float(r['bytes'][mask].mean()),week_byte_sums=group_bytes)
+            scores['station_groups'][group]=values
     report['policies'][representation]=scores
     print(representation,{k:scores[k] for k in ['bytes_per_query','aux_packet_rate','excess_brier','seconds','wire_precision_counts']},flush=True)
     tag='-full-only' if a.no_partial else ''

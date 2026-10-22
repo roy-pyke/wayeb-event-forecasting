@@ -5,8 +5,9 @@ Only their representation differs. Unquantized reconstruction is structurally
 exact; finite-precision messages are checked after actual serialization.
 """
 import struct
+import zlib
 import numpy as np
-from scipy.linalg import qr
+from scipy.linalg import qr,null_space
 from .wire import HEADER
 
 META=struct.Struct('!HB')
@@ -42,6 +43,33 @@ class CoordinateMap:
     def expand(self,coordinates):
         return np.asarray(coordinates)@self.reconstruct
 
+    @classmethod
+    def compile_from_oracle(cls,oracle,state,horizons):
+        """Counterexample-guided span discovery, at most d(d+1) oracle calls.
+
+        At a fixed iteration, maximize both signs of every basis vector in
+        the current null space. A nonzero witness increases rank. If no such
+        witness exists, all feasible profiles are in the discovered span.
+        The oracle and rank thresholds are numerical, not rational arithmetic.
+        """
+        d=oracle.patterns*len(horizons);profiles=np.zeros((1,d));calls=0
+        while True:
+            complement=null_space(profiles,rcond=1e-10)
+            added=False
+            for normal in complement.T:
+                for sign in [1,-1]:
+                    score,profile=oracle.maximize(state,horizons,(sign*normal).reshape(oracle.patterns,-1),True)
+                    calls+=1
+                    if score>1e-9:
+                        previous=np.linalg.matrix_rank(profiles,tol=1e-10)
+                        profiles=np.vstack([profiles,profile.ravel()])
+                        assert np.linalg.matrix_rank(profiles,tol=1e-10)==previous+1
+                        added=True;break
+                if added:break
+            if not added:break
+        mapping=cls.compile(profiles)
+        return mapping,dict(oracle_calls=calls,witness_profiles=profiles)
+
 
 def pack_values(values,bits):
     values=np.asarray(values,dtype=float)
@@ -75,12 +103,13 @@ def encode_frame(timestamp,entity,sequence,version,state,coordinates,bits,mask=N
     return result+pack_values(coordinates,bits)
 
 
-def decode_frame(packet,version,state,mapping,cached,polytope):
+def decode_frame(packet,version,state,mapping,cached,polytope,expected_sequence=None):
     if len(packet)<27: raise ValueError('truncated frame')
     timestamp,entity,sequence,received_version=HEADER.unpack_from(packet)
     q,flag=META.unpack_from(packet,24)
     if received_version!=version: raise ValueError('model version mismatch')
     if q!=state: raise ValueError('business state mismatch')
+    if expected_sequence is not None and sequence!=expected_sequence:raise ValueError('query sequence mismatch')
     if flag>=8: raise ValueError('unknown encoding')
     bits=PRECISIONS[flag%4];offset=27;sparse=bool(flag&4)
     mask=np.ones(mapping.dimension,dtype=bool)
@@ -116,7 +145,7 @@ def select_message(cached,full,profiles,mapping,polytope,epsilon,metadata,partia
     candidates=[]
     for bits in PRECISIONS:
         frame=encode_frame(*metadata,values,bits)
-        p=decode_frame(frame,version,state,mapping,cached,polytope)[-1]
+        p=decode_frame(frame,version,state,mapping,cached,polytope,sequence)[-1]
         b=loss_bound(p,full,profiles)
         if b<=epsilon+1e-12:candidates.append((len(frame),b,frame,p,bits))
         if partial:
@@ -127,7 +156,7 @@ def select_message(cached,full,profiles,mapping,polytope,epsilon,metadata,partia
                 size=29+int(mask.sum())*(bits//8)
                 if candidates and size>min(c[0] for c in candidates):break
                 frame=encode_frame(*metadata,values,bits,mask)
-                p=decode_frame(frame,version,state,mapping,cached,polytope)[-1]
+                p=decode_frame(frame,version,state,mapping,cached,polytope,sequence)[-1]
                 b=loss_bound(p,full,profiles)
                 if b<=epsilon+1e-12:
                     candidates.append((len(frame),b,frame,p,bits));break
@@ -136,7 +165,7 @@ def select_message(cached,full,profiles,mapping,polytope,epsilon,metadata,partia
     return p,b,frame,bits
 
 
-def replay(data,full,family,horizons,representation,epsilon,partial=True):
+def replay(data,full,family,horizons,representation,epsilon,partial=True,version=1):
     from .polytope import FeasiblePolytope
     sets=[family.feasible(q,tuple(horizons)).astype(float) for q in range(len(family.states))]
     polytopes=[FeasiblePolytope(y) for y in sets]
@@ -149,13 +178,15 @@ def replay(data,full,family,horizons,representation,epsilon,partial=True):
         ix=data['q']==q;ref[ix]=polytopes[q].project(ref[ix])
     pred=np.zeros_like(ref);bounds=np.zeros(len(ref));sizes=np.zeros(len(ref),dtype=int)
     precisions=np.zeros(len(ref),dtype=int);cached=np.zeros(9)
+    entities={str(name):zlib.crc32(str(name).encode('utf-8')) for name in np.unique(data['entity'])}
+    if len(set(entities.values()))!=len(entities):raise ValueError('entity ID collision; configure an explicit registry')
     for i in range(len(ref)):
         q=int(data['q'][i]);poly=polytopes[q]
         if i==0 or data['segment'][i]!=data['segment'][i-1]:cached=np.zeros(9)
         cached=poly.project(cached)
         # Sequence covers every query, not only packets, so a receiver can
         # refuse stale packets. State ID guards against business desynchrony.
-        meta=(int(data['t'][i])*10**9,int(data['entity'][i]),i,1,q)
+        meta=(int(data['t'][i])*10**9,entities[str(data['entity'][i])],i,version,q)
         cached,b,frame,bits=select_message(cached,ref[i],sets[q],maps[q],poly,epsilon,meta,partial)
         pred[i]=cached;bounds[i]=b;sizes[i]=len(frame);precisions[i]=bits
     return dict(pred=pred.reshape(-1,3,3),full=ref.reshape(-1,3,3),certificate=bounds,

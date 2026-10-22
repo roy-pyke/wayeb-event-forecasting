@@ -26,14 +26,43 @@ class MaxPlusOracle:
         if weights is None: weights=np.full(p.shape,1/p.size)
         weights=np.asarray(weights);assert weights.shape==p.shape and (weights>=0).all()
         constants=np.sum(weights*(p*p-f*f));coef=-2*weights*(p-f)
+        return float(constants+self.maximize(state,horizons,coef))
+
+    def maximize(self,state,horizons,coefficients,witness=False):
+        """Maximize a linear reward over feasible labels, optionally with witness.
+
+        The witness is a label profile reached by a real future event path.
+        It permits exact span discovery without enumerating all profiles.
+        """
+        coef=np.asarray(coefficients,dtype=float)
+        assert coef.shape==(self.patterns,len(horizons))
+        assert tuple(sorted(set(horizons)))==tuple(horizons) and min(horizons)>0
         value=np.full(self.state_count*len(self.masks),-np.inf)
         value[int(state)*len(self.masks)]=0
         at={h:i for i,h in enumerate(horizons)}
+        parents=[]
         for tick in range(1,max(horizons)+1):
             nxt=np.full_like(value,-np.inf)
-            np.maximum.at(nxt,self.dest,value[self.src])
+            scores=value[self.src]
+            np.maximum.at(nxt,self.dest,scores)
+            if witness:
+                best=np.full(len(value),len(self.src),dtype=int)
+                valid=np.isfinite(scores)&(scores==nxt[self.dest])
+                edges=np.flatnonzero(valid)
+                np.minimum.at(best,self.dest[edges],edges)
+                parent=np.full(len(value),-1,dtype=int)
+                reachable=best<len(self.src);parent[reachable]=self.src[best[reachable]]
+                parents.append(parent)
             value=nxt
             if tick in at:
                 reward=self.bits@coef[:,at[tick]]
                 value+=np.tile(reward,self.state_count)
-        return float(constants+np.max(value))
+        result=float(np.max(value))
+        if not witness:return result
+        end=int(np.argmax(value));profile=np.zeros_like(coef)
+        for tick in range(max(horizons),0,-1):
+            if tick in at:profile[:,at[tick]]=self.bits[end%len(self.masks)]
+            end=int(parents[tick-1][end]);assert end>=0
+        assert end==int(state)*len(self.masks)
+        assert np.isclose(np.sum(profile*coef),result,atol=1e-10)
+        return result,profile
