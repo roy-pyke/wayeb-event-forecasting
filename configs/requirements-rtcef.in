@@ -1,0 +1,15 @@
+# Compatibility environment for CPython 3.12, macOS arm64 / Linux x86_64.
+# Author requirements are in upstream/rtcef/requirements.txt.
+# NumPy 1.19.5 has no CPython 3.12 wheel; use the final NumPy 1.x series.
+ujson==5.9.0
+simplejson==3.19.2
+kafka-python==2.2.15
+py4j==0.10.9.2
+numpy==1.26.4
+scikit-optimize==0.10.2
+scikit-learn==1.4.2
+scipy==1.12.0
+avro==1.11.3
+fastavro==1.9.7
+lz4==4.3.3
+

@@ -1,0 +1,15 @@
+{
+  "train_seed": 20261022,
+  "test_seed": 20261023,
+  "train_events": 6000,
+  "test_events": 2000,
+  "order": 2,
+  "horizon": 20,
+  "confidence_threshold": 0.6,
+  "interval_max_spread": 10,
+  "classification_window": 2,
+  "pst_p_min": 0.001,
+  "pst_alpha": 0.0,
+  "pst_gamma_min": 0.001,
+  "pst_r": 1.05
+}

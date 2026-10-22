@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "scope": "synthetic deployment/integration validation; not reproduction of published real-data experiments",
+  "created_at_utc": "2026-10-22T20:41:03.857808+00:00",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "sources": [
+    {
+      "name": "Wayeb",
+      "url": "https://github.com/ElAlev/Wayeb.git",
+      "path": "upstream/Wayeb",
+      "ref": "main snapshot",
+      "commit": "b58a0cbe8c2c174d19394153c03504031ac57465",
+      "license": "Author dual licence; individual research: CC BY-NC-SA-4.0 plus stated terms"
+    },
+    {
+      "name": "rtcef",
+      "url": "https://github.com/manospits/rtcef.git",
+      "path": "upstream/rtcef",
+      "ref": "v1.0.0",
+      "commit": "9bf8796b223a1a657bc51f49475d6d4fbf616172",
+      "license": "LGPL-3.0 at top level; embedded Wayeb retains author terms"
+    }
+  ],
+  "config": {
+    "train_seed": 20261022,
+    "test_seed": 20261023,
+    "train_events": 6000,
+    "test_events": 2000,
+    "order": 2,
+    "horizon": 20,
+    "confidence_threshold": 0.6,
+    "interval_max_spread": 10,
+    "classification_window": 2,
+    "pst_p_min": 0.001,
+    "pst_alpha": 0.0,
+    "pst_gamma_min": 0.001,
+    "pst_r": 1.05
+  },
+  "inputs": {
+    "train.csv": {
+      "sha256": "bd3b94f71723b0e29ce85ec6ec4dc6e041f3f45210ba90efdfea6a50238c8a2c",
+      "events": 6000
+    },
+    "test.csv": {
+      "sha256": "7fad8516c10ad6035601ac10ea22dc35b0a95ec8bafe22c92f230bed3ad7b3e2",
+      "events": 2000
+    }
+  },
+  "author_pattern_sha256": "03f7e447da49a3dfc56119eb6f3d85dbf9ced7703161d29e9cd612554a5e4c6c",
+  "run_pattern_sha256": "03f7e447da49a3dfc56119eb6f3d85dbf9ced7703161d29e9cd612554a5e4c6c",
+  "author_declarations_sha256": "8a3458acb92e0324f7dd5b94505cfac1f92fd8548feb2ac9a8b2fbdec770fb8e",
+  "oracle_matches": 631,
+  "engine_matches": 631,
+  "forecasts": {
+    "fmm_interval": {
+      "file": "fmm_interval_pattern.csv",
+      "metrics": {
+        "forecasts": 1369.0,
+        "correct_forecasts": 1019.0,
+        "precision": 0.7443389335281227,
+        "detections": 631.0,
+        "missed": 0.0,
+        "loss_ratio": 0.0,
+        "mean_spread": 0.40175310445580714,
+        "mean_distance": 0.1589793915603533,
+        "mean_interval_score": 3.224555149866449
+      }
+    },
+    "fmm_classification": {
+      "file": "fmm_classification_pattern",
+      "metrics": {
+        "precision": 0.9658119658119658,
+        "recall": 0.7777777777777778,
+        "f1": 0.8616557734204793,
+        "specificity": 0.9204545454545454,
+        "accuracy": 0.8144631117604091,
+        "npv": 0.5890909090909091,
+        "informedness": 0.6982323232323231,
+        "mcc": 0.6224557201213028,
+        "tp": 791.0,
+        "tn": 324.0,
+        "fp": 28.0,
+        "fn": 226.0
+      }
+    },
+    "vmm_interval": {
+      "file": "vmm_interval_pattern.csv",
+      "metrics": {
+        "forecasts": 1368.0,
+        "correct_forecasts": 1019.0,
+        "precision": 0.7448830409356725,
+        "detections": 631.0,
+        "missed": 0.0,
+        "loss_ratio": 0.0,
+        "mean_spread": 0.40131578947368424,
+        "mean_distance": 0.1589793915603533,
+        "mean_interval_score": 3.198681188390158
+      }
+    },
+    "vmm_classification": {
+      "file": "vmm_classification_pattern",
+      "metrics": {
+        "precision": 0.9658119658119658,
+        "recall": 0.7777777777777778,
+        "f1": 0.8616557734204793,
+        "specificity": 0.9202279202279202,
+        "accuracy": 0.814327485380117,
+        "npv": 0.5883424408014571,
+        "informedness": 0.6980056980056979,
+        "mcc": 0.6219348305016658,
+        "tp": 791.0,
+        "tn": 323.0,
+        "fp": 28.0,
+        "fn": 226.0
+      }
+    }
+  },
+  "artifacts": {
+    "pattern.fsm": "e057bf118b33ef9e7c228691b2b230545b0a3e14d15747a14ac8d6ec34814be1",
+    "pattern.mc": "0660dee746082cca6efdd47310ea8317ba3734762ed46f103e9248c2aafe32e3",
+    "pattern.spst": "bb7a8d176042726a710c8149e2b2934fd4168b784e2cc40dd3093265304ac5c8",
+    "wayeb.jar": "0bb519ec154206a103bae94e2311352a7f7cd3836f20197017dc3633a32d0889"
+  },
+  "repeatability": {
+    "runs": 2,
+    "same_input_hashes": true,
+    "forecast_metric_absolute_tolerance": 1e-12,
+    "all_metrics_agree": true
+  },
+  "upstream_tests": {
+    "command": "./scripts/sbt.sh \"core/testOnly Specs.model.waitingTime.WaitingTimeSpec Specs.vmm.PST Specs.srem.NSRAeqSREM\"",
+    "succeeded": 3,
+    "failed": 0
+  }
+}

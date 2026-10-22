@@ -10,3 +10,13 @@
 
 Build and runtime claims are deferred to the subsequent validation reports.
 
+## 2026-10-22 — 2. Author engine build and reproducible forecasting
+
+- Built the author Wayeb 0.6 source into `artifacts/wayeb.jar` with JDK 11, original Scala 2.12.10 and a separate sbt 1.9.9 / assembly 2.2.0 overlay.
+- Ran independent seeded 6,000-event training and 2,000-event evaluation streams through recognition, FMM estimation, PST learning and both interval/classification forecasting methods.
+- Verified all 631 recognition matches with an independent literal-pattern check.
+- Repeated the complete run and verified identical input hashes and all forecast metrics to absolute tolerance `1e-12`.
+- Passed three author tests covering waiting-time intervals, PST and register-automaton semantics.
+- Saved compact evidence in `reports/core-validation.json`; full run artifacts remain in ignored `runs/` directories.
+- Also built RTCEF's separate embedded Wayeb engine and installed the isolated Python compatibility environment. Its service integration is the next milestone.
+

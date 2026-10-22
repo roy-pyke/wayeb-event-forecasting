@@ -1,0 +1,11 @@
+{
+  "java_major": 11,
+  "scala": "2.12.10",
+  "sbt": "1.9.9",
+  "sbt_assembly": "2.2.0",
+  "sbt_launcher_sha256": "99fd0509060b9655ece7c5a34ecd7ecb471986d4191922966100057f6b6f373c",
+  "python_rtcef": "3.12",
+  "kafka": "3.4.0",
+  "kafka_scala_binary": "2.13",
+  "kafka_archive_sha512": "2c405149c065627ce2125088dfcce0a4dc23aebaa72c1157736d5829cb5cbef273c0915ec55d2d8ba38e5e0524f0720f43e07d7d677439cd2ac7bea618caa65b"
+}

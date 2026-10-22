@@ -22,6 +22,28 @@ See [the literature map](docs/LITERATURE.md) for papers, their relationship, and
 
 Completed milestones are committed and pushed directly, as requested. Validation status will be recorded alongside each completed stage.
 
+## Run Wayeb
+
+Requirements: **JDK 11**, Python 3 for the standard-library runner, Git and curl. On macOS the scripts select an installed JDK 11; elsewhere set `WAYEB_JAVA_HOME` or `JAVA_HOME`.
+
+```bash
+git clone --recurse-submodules https://github.com/roy-pyke/wayeb-event-forecasting.git
+cd wayeb-event-forecasting
+./setup.sh
+./run_demo.sh
+./wayeb --help
+```
+
+`setup.sh` downloads a checksum-verified sbt launcher and compiles the pinned author sources using [an isolated build overlay](build/build.sbt). Algorithms and upstream sources remain unchanged. Both the original Scala version (2.12.10) and author library versions are retained; obsolete build plugins are replaced by the pinned packaging tools in [toolchain.json](toolchain.json).
+
+The demo generates 6,000 training events and 2,000 independent test events with fixed seeds, compiles the pattern `A · (B | C)`, learns a full-order Markov chain and a PST, then runs both interval and binary-window forecasting. Parameters are in [configs/demo.json](configs/demo.json). Each `runs/demo-*/` directory contains data, a literal-pattern match oracle, configuration, commands/logs, trained models and `report.json`.
+
+[The recorded validation](reports/core-validation.json) found 631 matches, exactly agreeing with the independent oracle. All forecasting metrics agreed within `1e-12` across two runs. Three author tests passed: waiting-time forecast interval construction, PST behaviour and register-automaton/regular-expression equivalence. These are deployment checks on a small synthetic process, not reproductions of the papers' real-world experiments or a fair benchmark between model families (their warm-up lengths differ).
+
+```bash
+./scripts/sbt.sh 'core/testOnly Specs.model.waitingTime.WaitingTimeSpec Specs.vmm.PST Specs.srem.NSRAeqSREM'
+```
+
 ## Licensing
 
 Wayeb has an author-specific dual licence: individual noncommercial research uses CC BY-NC-SA 4.0 with the additional conditions in [the author's licence](upstream/Wayeb/LICENSE.md), including public research results. RTCEF's top-level licence is LGPL-3.0; its embedded Wayeb code retains its own notices. Upstream code and publications keep their existing licences. This repository is public to share deployment and validation results. No private research data or local credentials belong here.

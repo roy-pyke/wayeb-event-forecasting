@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source "$(dirname "$0")/scripts/common.sh"
+if [[ ! -f "$WAYEB_PROJECT_ROOT/artifacts/wayeb.jar" ]]; then
+  echo 'Run ./setup.sh to build Wayeb first.' >&2
+  exit 1
+fi
+WAYEB_CONFIG_ARGS=()
+if [[ -n "${WAYEB_CONFIG_FILE:-}" ]]; then
+  WAYEB_CONFIG_ARGS+=("-Dconfig.file=$WAYEB_CONFIG_FILE")
+fi
+exec "$WAYEB_JAVA" -Xmx2g "${WAYEB_CONFIG_ARGS[@]}" \
+  -Dlogback.configurationFile="$WAYEB_PROJECT_ROOT/configs/logback.xml" \
+  -jar "$WAYEB_PROJECT_ROOT/artifacts/wayeb.jar" "$@"
+
