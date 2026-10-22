@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from patternforecast.automata import PatternFamily
-from patternforecast.common import PACKAGE,RUNS,CACHE,protocol,write_json,sha256
+from patternforecast.common import PACKAGE,RUNS,CACHE,protocol,write_json,sha256,experiment_cfg
 from patternforecast.data import load
 from patternforecast.certificates import batch_bounds
 from patternforecast.communication import replay_policy,evaluate,block_interval
@@ -14,8 +14,10 @@ parser.add_argument('--backbone',default=None);args=parser.parse_args()
 family=PatternFamily()
 if args.split=='confirmation' and not (PACKAGE/'configs/FROZEN.json').exists(): raise RuntimeError('not frozen')
 for name in args.datasets:
-    cfg=protocol()['datasets'][name];data=load(name,args.split);out=RUNS/name
-    selection=json.loads((PACKAGE/'reports'/f'models-{name}.json').read_text())
+    short=args.backbone and args.backbone.startswith('short-')
+    cfg=experiment_cfg(name,'short' if short else 'long');data=load(name,args.split);out=RUNS/name
+    suffix='-short' if short else ''
+    selection=json.loads((PACKAGE/'reports'/f'models-{name}{suffix}.json').read_text())
     key=args.backbone or selection['communication_backbone'];model_path=out/f'{key}.joblib'
     pred_path=out/f'{key}-{args.split}-lags.npy'
     pred_meta=pred_path.with_suffix('.json')

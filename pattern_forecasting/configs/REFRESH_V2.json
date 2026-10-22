@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "motivation": "Initial HGB/air development experiment found only 0.06%-0.30% relative packet savings over per-pattern CDF certificate, almost entirely static nesting. Do not promote this as sufficient novelty.",
+  "candidate": "Outcome-certified sparse forecast refresh: choose the smallest subset of current forecast coordinates to update while preserving monotone/nested probabilities and a pointwise Brier excess tolerance. All certificate baselines receive the identical candidate refresh actions and payload model.",
+  "receiver": "Maintains forecast vector and updates always-delivered business state. Coordinates structurally impossible from the current state are zeroed, identically for every policy and full forecast. No raw sensor history is transmitted in this variant.",
+  "exact_search": "Enumerate subsets in cardinality order for 9 coordinates. Discard candidates violating CDF or static nesting. Among equally small valid subsets select smallest certificate, then stable bitmask order. No claim of globally optimal long-run scheduling.",
+  "payload": "24 bytes timestamp/entity/sequence metadata + 2-byte 9-coordinate mask + 4 bytes per updated float32 coordinate; full-vector baseline uses 24+36 bytes. Query times and model version agreed out of band.",
+  "safety": "Certificate holds after zeroing and current patch under instantaneous reliable delivery. Gaps reset cache and force full refresh. No maximum-age trigger is needed for loss validity; long cache ages are reported.",
+  "comparison": ["full vector every query", "whole-vector CDF trigger", "whole-vector nested trigger", "whole-vector joint trigger", "sparse CDF trigger", "sparse nested trigger", "sparse joint trigger"],
+  "tolerances": [0.002, 0.005, 0.01, 0.02, 0.05],
+  "selection_boundary": "Only development data may select or reject this mechanism. Air 2016 and power 2009 confirmation remain unopened. Preserve version 1 and failures."
+}

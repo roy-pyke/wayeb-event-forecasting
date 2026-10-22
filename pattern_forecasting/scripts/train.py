@@ -2,20 +2,23 @@
 import argparse,json,time
 import joblib
 import numpy as np
-from patternforecast.common import PACKAGE,RUNS,protocol,write_json,sha256
+from patternforecast.common import PACKAGE,RUNS,protocol,write_json,sha256,experiment_cfg
 from patternforecast.data import load
 from patternforecast.models import Landmark,NeuralLandmark,score
 
 parser=argparse.ArgumentParser();parser.add_argument('--datasets',nargs='+',default=['air','power','metro'])
-parser.add_argument('--replicates',action='store_true');args=parser.parse_args()
+parser.add_argument('--replicates',action='store_true')
+parser.add_argument('--profile',choices=['long','short'],default='long')
+parser.add_argument('--families',nargs='+',default=['hgb','extra_trees','gru','business','no_state']);args=parser.parse_args()
 plan=json.loads((PACKAGE/'configs/TRAINING.json').read_text())
 for name in args.datasets:
-    cfg=protocol()['datasets'][name]
+    cfg=experiment_cfg(name,args.profile)
     train,cal,dev=[load(name,split) for split in ('train','calibrate','development')]
     out=RUNS/name;out.mkdir(parents=True,exist_ok=True)
-    report_path=PACKAGE/'reports'/f'models-{name}.json'
+    suffix='' if args.profile=='long' else '-short'
+    report_path=PACKAGE/'reports'/f'models-{name}{suffix}.json'
     report=json.loads(report_path.read_text()) if report_path.exists() else {'dataset':name,'runs':{},'selection':{}}
-    families=['hgb','extra_trees','gru','business','no_state']
+    families=args.families
     for family in families:
         settings=plan[family] if family in plan else [plan['hgb'][1]]
         seeds=[20261022]
@@ -25,7 +28,7 @@ for name in args.datasets:
             settings=[report['selection'][family]['setting']]
         for setting in settings:
             for seed in seeds:
-                key=f'{family}-'+ '-'.join(map(str,setting))+f'-s{seed}'
+                key=('short-' if args.profile=='short' else '')+f'{family}-'+ '-'.join(map(str,setting))+f'-s{seed}'
                 path=out/f'{key}.joblib'
                 if key in report['runs'] and path.exists(): continue
                 print('FIT',name,key,flush=True)

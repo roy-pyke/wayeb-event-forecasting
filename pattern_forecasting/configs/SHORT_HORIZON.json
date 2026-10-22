@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "registered_before_short_horizon_forecast_results": true,
+  "horizon_samples": [1, 2, 3],
+  "datasets": ["air", "power", "metro"],
+  "motivation": "Long windows permit all static nested label profiles, making dynamic state largely irrelevant. Exhaustive automaton analysis shows 1,2,3 native-step windows retain cross-horizon exclusions after all impossible coordinates are zeroed. E.g. an early broad-pattern completion resets the monitor and may prevent a stricter completion before the final short deadline. Evaluate this as a distinct urgent-forecast task, without replacing or hiding long-window failures.",
+  "physical_units": {"air": "1,2,3 hours", "power": "1,2,3 minutes, queries still every 5 minutes", "metro": "10,20,30 seconds, queries still every 30 seconds"},
+  "baselines": "Repeat the exact same forecasting families and information contract. Primary matched-tolerance comparison uses sparse joint vs sparse static-nested, with static-CDF and whole-vector controls.",
+  "proposed_primary_tolerance": 0.002,
+  "success_gate_before_confirmation": "At least 5% relative payload reduction over sparse static nesting on both new development domains at tolerance 0.002, no pointwise-bound violation, and finite measured cost. Failure is retained; do not weaken the gate after viewing outcomes.",
+  "confirmation_boundary": "2016 air and 2009 power remain unopened until final selection freeze. The short and long tasks share raw data and are not independent domains."
+}

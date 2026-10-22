@@ -14,6 +14,14 @@ def protocol():
     return json.loads((PACKAGE / 'configs/PROTOCOL.json').read_text())
 
 
+def experiment_cfg(name,profile='long'):
+    cfg=protocol()['datasets'][name]
+    if profile=='short':
+        cfg['horizon_samples']=json.loads((PACKAGE/'configs/SHORT_HORIZON.json').read_text())['horizon_samples']
+    elif profile!='long': raise ValueError('unknown experiment profile')
+    return cfg
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, 'rb') as f:
