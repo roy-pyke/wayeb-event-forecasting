@@ -9,9 +9,9 @@ if [[ ! -f "$SBT_LAUNCH" ]]; then
   mv "$SBT_LAUNCH.tmp" "$SBT_LAUNCH"
 fi
 python3 - "$SBT_LAUNCH" <<'PY'
-import hashlib, sys
-actual = hashlib.sha1(open(sys.argv[1], 'rb').read()).hexdigest()
-expected = '2cf01b9cbc25a7a21f5e79bc9e591e8ec8e79bed'
+import hashlib, json, pathlib, sys
+actual = hashlib.sha256(open(sys.argv[1], 'rb').read()).hexdigest()
+expected = json.loads((pathlib.Path(sys.argv[1]).parents[1] / 'toolchain.json').read_text())['sbt_launcher_sha256']
 if actual != expected:
     raise SystemExit('sbt launcher checksum mismatch: ' + actual)
 PY

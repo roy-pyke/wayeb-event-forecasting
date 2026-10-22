@@ -44,6 +44,19 @@ The demo generates 6,000 training events and 2,000 independent test events with 
 ./scripts/sbt.sh 'core/testOnly Specs.model.waitingTime.WaitingTimeSpec Specs.vmm.PST Specs.srem.NSRAeqSREM'
 ```
 
+## Run the later RTCEF implementation
+
+```bash
+./setup_rtcef.sh
+./run_rtcef.sh
+```
+
+This uses CPython 3.12 in `.venv-rtcef/`, the authors' separate embedded Wayeb engine and a checksum-verified local Kafka 3.4.0 broker. The bounded run starts all five author services, trains and evaluates an initial model, then injects explicitly labelled control scores to exercise retraining, three Bayesian optimisation trials and two engine model swaps. All started processes are stopped afterwards. It requires loopback ports 9092, 9093 and 25333–25336 to be free.
+
+The service integration passed, including observed engine scores for retrained model 0 and optimised model 4; see [RTCEF validation](reports/rtcef-validation.json). This proves the exercised service flow works locally. It does not establish real concept-drift performance. The author's optimisation factory currently scores candidates on its training data; the separate held-out check does not change that upstream behaviour.
+
+For all build/validation steps in sequence, run `./reproduce.sh` (`--core` for only standalone Wayeb). See [复现说明 / Reproducibility](docs/REPRODUCIBILITY.md) for environment choices, compatibility fixes and the limits of the validation.
+
 ## Licensing
 
 Wayeb has an author-specific dual licence: individual noncommercial research uses CC BY-NC-SA 4.0 with the additional conditions in [the author's licence](upstream/Wayeb/LICENSE.md), including public research results. RTCEF's top-level licence is LGPL-3.0; its embedded Wayeb code retains its own notices. Upstream code and publications keep their existing licences. This repository is public to share deployment and validation results. No private research data or local credentials belong here.

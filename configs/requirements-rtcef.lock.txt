@@ -2,7 +2,7 @@ avro==1.11.3
 cloudpickle==3.1.2
 fastavro==1.9.7
 joblib==1.6.0
-kafka-python==2.2.15
+kafka-python==2.1.5
 lz4==4.3.3
 numpy==1.26.4
 packaging==26.3

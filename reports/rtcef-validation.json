@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "scope": "bounded author-service integration with injected control scores, not a concept-drift accuracy benchmark",
+  "created_at_utc": "2026-10-22T20:50:55.336455+00:00",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 08:22:19) [Clang 14.0.6 ]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "sources": [
+    {
+      "name": "Wayeb",
+      "url": "https://github.com/ElAlev/Wayeb.git",
+      "path": "upstream/Wayeb",
+      "ref": "main snapshot",
+      "commit": "b58a0cbe8c2c174d19394153c03504031ac57465",
+      "license": "Author dual licence; individual research: CC BY-NC-SA-4.0 plus stated terms"
+    },
+    {
+      "name": "rtcef",
+      "url": "https://github.com/manospits/rtcef.git",
+      "path": "upstream/rtcef",
+      "ref": "v1.0.0",
+      "commit": "9bf8796b223a1a657bc51f49475d6d4fbf616172",
+      "license": "LGPL-3.0 at top level; embedded Wayeb retains author terms"
+    }
+  ],
+  "heldout_counts": {
+    "tp": 206.0,
+    "tn": 0.0,
+    "fp": 95.0,
+    "fn": 0.0
+  },
+  "inputs": {
+    "train.jsonl": "5c41b1e685e12478539f1bafcdfb03d693dcc0e74ac03f630c79d1bad82939dd",
+    "test.jsonl": "e2be848c3e8fac6145222d4e3a3cecd07020bf81a49e5fe5df8b8143727173e9",
+    "stream.jsonl": "57e696cd43bdfcf67677ec87419b16706059c4676a7497f8d947884e0240f98d",
+    "retrain-input.jsonl": "54848d9bbe91a65b66fef9c06746d0383a191f3171557dab7c8b40968eb4f54e",
+    "optimisation-input.jsonl": "fb5b4f50dd93e18d9243b84c0ade16f0e00c427b08bc311f189b6092d2f56829"
+  },
+  "seeds": {
+    "train": 20261022,
+    "test": 20261023,
+    "stream": 20261024
+  },
+  "training_events": 1000,
+  "heldout_events": 400,
+  "streaming_events_sent": 720,
+  "retrained_model_id": 0,
+  "optimised_model_id": 4,
+  "controlled_scores": [
+    0.9,
+    0.7,
+    0.05
+  ],
+  "optimisation_evaluations": 3,
+  "adaptation_dataset_versions": {
+    "retrain": 3,
+    "optimisation": 8
+  },
+  "optimised_parameters": {
+    "order": 2,
+    "confidence": 0.7689989276473662,
+    "pmin": 0.009971567216186448,
+    "gamma": 0.0012593846100140216
+  },
+  "optimisation_candidates": [
+    {
+      "params": {
+        "order": 2,
+        "confidence": 0.7689989276473662,
+        "pmin": 0.009971567216186448,
+        "gamma": 0.0012593846100140216
+      },
+      "metrics": {
+        "tp": 28.0,
+        "tn": 17.0,
+        "fp": 5.0,
+        "fn": 26.0,
+        "mcc": 0.26648740068222837,
+        "f_val": -0.26648740068222837
+      }
+    },
+    {
+      "params": {
+        "order": 1,
+        "confidence": 0.31101644648091287,
+        "pmin": 0.001303797838524911,
+        "gamma": 0.009851293565518091
+      },
+      "metrics": {
+        "tp": 54.0,
+        "tn": 0.0,
+        "fp": 22.0,
+        "fn": 0.0,
+        "mcc": 0.0,
+        "f_val": -0.0
+      }
+    },
+    {
+      "params": {
+        "order": 2,
+        "confidence": 0.5985981998835896,
+        "pmin": 0.007825967279291185,
+        "gamma": 0.00754401235332842
+      },
+      "metrics": {
+        "tp": 48.0,
+        "tn": 7.0,
+        "fp": 15.0,
+        "fn": 6.0,
+        "mcc": 0.24939338843895234,
+        "f_val": -0.24939338843895234
+      }
+    }
+  ],
+  "services": [
+    "kafka",
+    "factory-gateway",
+    "engine-gateway",
+    "collector",
+    "factory",
+    "optimiser",
+    "observer",
+    "engine"
+  ],
+  "jar_sha256": "7fcfa7361330a5dde449a47c2c08316bdbc1508dc3c209d7f9eaaff57191fba0",
+  "configuration_sha256": "9253e76313cf362b27e4619770de3506f74e70cbc6b69bf2bb16edf990cc1fe5",
+  "kafka_python": "2.1.5",
+  "python_requirements_sha256": "772729b484b25e2715652caf80389f19393878ac06d0a90e5532aec6eacde59e",
+  "limitations": [
+    "Adaptation signals are injected, not measured concept drift.",
+    "The author factory's optimisation path evaluates on its assembled training data; its train/test splitting is commented out upstream.",
+    "The independent 400-event held-out evaluation above is a separate deployment check.",
+    "Forward progress and observed model swaps do not prove the paper's lossless adaptation theorem or reproduce its benchmarks."
+  ],
+  "all_children_stopped": true,
+  "repeatability": {
+    "runs": 2,
+    "same_input_and_adaptation_window_hashes": true,
+    "same_heldout_counts_and_model_versions": true,
+    "optimisation_candidate_absolute_tolerance": 1e-10,
+    "all_candidate_params_and_metrics_agree": true
+  }
+}

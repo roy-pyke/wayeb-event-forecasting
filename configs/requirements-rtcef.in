@@ -3,7 +3,7 @@
 # NumPy 1.19.5 has no CPython 3.12 wheel; use the final NumPy 1.x series.
 ujson==5.9.0
 simplejson==3.19.2
-kafka-python==2.2.15
+kafka-python==2.1.5
 py4j==0.10.9.2
 numpy==1.26.4
 scikit-optimize==0.10.2
