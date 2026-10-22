@@ -1,0 +1,84 @@
+{
+  "scope": "author CLI versus exported DFA; random and real business symbols",
+  "author_jar_sha256": "0bb519ec154206a103bae94e2311352a7f7cd3836f20197017dc3633a32d0889",
+  "patterns": {
+    "ordered": {
+      "random": {
+        "events": 10000,
+        "matches": 35,
+        "endpoint_mismatches": 0,
+        "input_sha256": "c59e7a917136f5215429af40699fa065c7b8d1c67fb6e70236297d9897420991"
+      },
+      "air": {
+        "events": 7755,
+        "matches": 200,
+        "endpoint_mismatches": 0,
+        "input_sha256": "6da39015ffdbe561935be992331740049ade31cccaacb81f81358a31e168a081"
+      },
+      "power": {
+        "events": 20000,
+        "matches": 186,
+        "endpoint_mismatches": 0,
+        "input_sha256": "cffb36d59f89f02949dca61a8f5a8810f46b58e308bc169bc0fe19f684fefa15"
+      },
+      "metro": {
+        "events": 6383,
+        "matches": 1025,
+        "endpoint_mismatches": 0,
+        "input_sha256": "5553121f38752dacde6e76eefc3d924d7ed87ab75292b2684ead3f9f22e2c036"
+      }
+    },
+    "branch_loop": {
+      "random": {
+        "events": 10000,
+        "matches": 649,
+        "endpoint_mismatches": 0,
+        "input_sha256": "c59e7a917136f5215429af40699fa065c7b8d1c67fb6e70236297d9897420991"
+      },
+      "air": {
+        "events": 7755,
+        "matches": 363,
+        "endpoint_mismatches": 0,
+        "input_sha256": "6da39015ffdbe561935be992331740049ade31cccaacb81f81358a31e168a081"
+      },
+      "power": {
+        "events": 20000,
+        "matches": 408,
+        "endpoint_mismatches": 0,
+        "input_sha256": "cffb36d59f89f02949dca61a8f5a8810f46b58e308bc169bc0fe19f684fefa15"
+      },
+      "metro": {
+        "events": 6383,
+        "matches": 1030,
+        "endpoint_mismatches": 0,
+        "input_sha256": "5553121f38752dacde6e76eefc3d924d7ed87ab75292b2684ead3f9f22e2c036"
+      }
+    },
+    "overlap_loop": {
+      "random": {
+        "events": 10000,
+        "matches": 1269,
+        "endpoint_mismatches": 0,
+        "input_sha256": "c59e7a917136f5215429af40699fa065c7b8d1c67fb6e70236297d9897420991"
+      },
+      "air": {
+        "events": 7755,
+        "matches": 371,
+        "endpoint_mismatches": 0,
+        "input_sha256": "6da39015ffdbe561935be992331740049ade31cccaacb81f81358a31e168a081"
+      },
+      "power": {
+        "events": 20000,
+        "matches": 428,
+        "endpoint_mismatches": 0,
+        "input_sha256": "cffb36d59f89f02949dca61a8f5a8810f46b58e308bc169bc0fe19f684fefa15"
+      },
+      "metro": {
+        "events": 6383,
+        "matches": 1034,
+        "endpoint_mismatches": 0,
+        "input_sha256": "5553121f38752dacde6e76eefc3d924d7ed87ab75292b2684ead3f9f22e2c036"
+      }
+    }
+  }
+}

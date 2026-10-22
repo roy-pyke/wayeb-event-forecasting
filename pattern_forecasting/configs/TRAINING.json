@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-22",
+  "registered_before_forecasting_training": true,
+  "query_sample": 20000,
+  "augmentation": "20k uniformly sampled query indices, each once full and once random cache age 1..16; at most 40k views, identical per seed across baselines",
+  "hgb": [[15, 100], [31, 180]],
+  "extra_trees": [[15], [50]],
+  "gru": [[32, 0.01], [64, 0.05]],
+  "calibration": "Per-output isotonic on calibration period with half full and half random stale context, followed by standard Dykstra projection enforcing both horizon monotonicity and pattern nesting",
+  "selection": "Select hyperparameters within each family on development complete-query mean Brier; refit selected setting at two further preregistered seeds. Primary communication backbone is best non-business family at seed 20261022; retain all baseline results.",
+  "extra_trees_adaptation": "Use pooled discrete hazards like HGB to account for right-censored partial windows; not a censor-ignorant complete-case regressor",
+  "communication_addition": "Static nested-language feasible-label certificate is an additional strong baseline. At [5,15,30] horizons it is exactly identical to the full automaton certificate for all 11 reachable states, an explicit negative finding.",
+  "seed_replicates": [20261022, 20261023, 20261024],
+  "projection_ablation": "Forecasts already satisfy static nesting; certificate benefits must survive this standard coherence repair. Original unprojected forecasts saved for diagnostic comparison only."
+}

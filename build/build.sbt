@@ -90,3 +90,14 @@ lazy val root = project.in(file("."))
   .settings(publish / skip := true)
   .disablePlugins(AssemblyPlugin)
 
+lazy val patternBridge = project.in(file("patternBridge"))
+  .dependsOn(core)
+  .settings(
+    Compile / scalaSource := repositoryRoot / "pattern_forecasting" / "scala",
+    Compile / mainClass := Some("patternforecast.ExportPatterns"),
+    Compile / run / fork := true,
+    Compile / run / baseDirectory := repositoryRoot,
+    publish / skip := true
+  )
+  .disablePlugins(AssemblyPlugin)
+

@@ -1,0 +1,66 @@
+{
+  "joint_states": 11,
+  "verified_language_inclusion": true,
+  "datasets": {
+    "air": {
+      "train": {
+        "queries": 79695,
+        "fully_observed_queries": 76497,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      },
+      "calibrate": {
+        "queries": 12091,
+        "fully_observed_queries": 11203,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      },
+      "development": {
+        "queries": 49235,
+        "fully_observed_queries": 45964,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      }
+    },
+    "power": {
+      "train": {
+        "queries": 77808,
+        "fully_observed_queries": 77710,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      },
+      "calibrate": {
+        "queries": 26487,
+        "fully_observed_queries": 26457,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      },
+      "development": {
+        "queries": 105356,
+        "fully_observed_queries": 105260,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      }
+    },
+    "metro": {
+      "train": {
+        "queries": 104943,
+        "fully_observed_queries": 104676,
+        "infeasible_labels": 0,
+        "states_observed": 10
+      },
+      "calibrate": {
+        "queries": 41914,
+        "fully_observed_queries": 41844,
+        "infeasible_labels": 0,
+        "states_observed": 9
+      },
+      "development": {
+        "queries": 61926,
+        "fully_observed_queries": 61679,
+        "infeasible_labels": 0,
+        "states_observed": 9
+      }
+    }
+  }
+}
