@@ -43,7 +43,7 @@ def main():
     axes[1,1].invert_yaxis()
     for ax in axes.ravel():
         ax.spines[['top','right']].set_visible(False);ax.grid(axis='y',alpha=.15);ax.set_axisbelow(True)
-    fig.get_layout_engine().set(rect=(0,.055,1,.96))
+    fig.get_layout_engine().set(rect=(0,.07,1,.86))
     fig.text(.02,.012,'M0: business history + time. M1: 16-bin context. M2: numeric context. G1/G2: delayed-feedback mixture with M0.\nOne real compressor; observed load-cycle completion, not fault prediction. Equal-instance weighting; all models use the same causal update policy.',fontsize=9,color='#48525a')
     out=PACKAGE/'reports';fig.savefig(out/'results.png',dpi=180);fig.savefig(out/'results.pdf');plt.close(fig)
 

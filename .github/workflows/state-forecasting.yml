@@ -11,6 +11,10 @@ on:
         description: 'Run the full frozen MetroPT evaluation (downloads 208 MiB)'
         type: boolean
         default: false
+      confirmation_2022:
+        description: 'Run independent 2022 confirmation (downloads 1.6 GB)'
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -48,6 +52,9 @@ jobs:
       - name: Full real-data reproduction
         if: ${{ inputs.real_data == true }}
         run: ./state_forecasting/reproduce.sh runs/state-ci
+      - name: Frozen 2022 confirmation
+        if: ${{ inputs.confirmation_2022 == true }}
+        run: ./state_forecasting/reproduce_2022.sh runs/state-ci-2022
       - name: Upload evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -59,3 +66,6 @@ jobs:
             runs/state-ci/*.json
             runs/state-ci/*.npz
             runs/state-recognition/*.log
+            runs/state-ci-2022/*.json
+            runs/state-ci-2022/*.npz
+            runs/state-recognition-2022/*.log
