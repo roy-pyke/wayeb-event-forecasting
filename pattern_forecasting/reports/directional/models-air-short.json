@@ -1,0 +1,641 @@
+{
+  "dataset": "air",
+  "runs": {
+    "short-hgb-15-100-s20261022": {
+      "family": "hgb",
+      "setting": [
+        15,
+        100
+      ],
+      "seed": 20261022,
+      "brier_known": 0.028964260378651543,
+      "brier_complete": 0.02871225936682206,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.010871502225384744,
+        0.008944416850887637,
+        0.0670542383953357
+      ],
+      "fit_seconds": 15.77175287497812,
+      "fit_rows": 349148,
+      "predict_seconds": 2.6109104999923147,
+      "model_sha256": "614b471729b81df3096be68c76f21c85c1f23fc0e9c0e2bf4bb060e599962444"
+    },
+    "short-hgb-31-180-s20261022": {
+      "family": "hgb",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.02882321282924159,
+      "brier_complete": 0.028589149989506003,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.010843611862539468,
+        0.008761099190732419,
+        0.06684234203729426
+      ],
+      "fit_seconds": 26.81248537497595,
+      "fit_rows": 349148,
+      "predict_seconds": 3.917408958019223,
+      "model_sha256": "ecd926bd0bda45d25705766d0adac55252215f1b56c7a420d81fd8a3fb055795"
+    },
+    "short-extra_trees-15-s20261022": {
+      "family": "extra_trees",
+      "setting": [
+        15
+      ],
+      "seed": 20261022,
+      "brier_known": 0.030551615049145758,
+      "brier_complete": 0.030279394524959084,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011264479844061502,
+        0.009301736945507665,
+        0.07106456764486944
+      ],
+      "fit_seconds": 200.21120491699548,
+      "fit_rows": 349148,
+      "predict_seconds": 1.3950835420109797,
+      "model_sha256": "ae71a98edfcefc3fce10f10b6f97d9a13de0194d98dd7bf666ec98d8ec007363"
+    },
+    "short-extra_trees-50-s20261022": {
+      "family": "extra_trees",
+      "setting": [
+        50
+      ],
+      "seed": 20261022,
+      "brier_known": 0.030652998930998553,
+      "brier_complete": 0.03037040551840165,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011442914234913826,
+        0.009285174533934949,
+        0.07120681841097658
+      ],
+      "fit_seconds": 187.00041433400474,
+      "fit_rows": 349148,
+      "predict_seconds": 1.1334501249948516,
+      "model_sha256": "4dd46b1225f10ff75d81db789ad8a2b3e9b12d6d751d31be4703e42015051486"
+    },
+    "short-gru-32-0.01-s20261022": {
+      "family": "gru",
+      "setting": [
+        32,
+        0.01
+      ],
+      "seed": 20261022,
+      "brier_known": 0.031161868777248945,
+      "brier_complete": 0.03089697220125822,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.01177430892385208,
+        0.008985181646274322,
+        0.07270142671903265
+      ],
+      "fit_seconds": 12.187598541000625,
+      "fit_rows": 40000,
+      "predict_seconds": 0.5952289169945288,
+      "model_sha256": "ba67b1fdc00aa6fef671b9e15371381fb0a4269d80eb326d0cba0c0d8c35f1e5",
+      "learning_curve": [
+        {
+          "epoch": 1,
+          "loss": 0.582510110886791,
+          "calibration_brier": 0.02949560588553072
+        },
+        {
+          "epoch": 2,
+          "loss": 0.26578221177753014,
+          "calibration_brier": 0.028174726564463664
+        },
+        {
+          "epoch": 3,
+          "loss": 0.2546995685824865,
+          "calibration_brier": 0.027548702797153442
+        },
+        {
+          "epoch": 4,
+          "loss": 0.25099634841273105,
+          "calibration_brier": 0.027474316608668052
+        },
+        {
+          "epoch": 5,
+          "loss": 0.24828473450262337,
+          "calibration_brier": 0.02744377963987251
+        },
+        {
+          "epoch": 6,
+          "loss": 0.24676146650616126,
+          "calibration_brier": 0.027314148724995817
+        },
+        {
+          "epoch": 7,
+          "loss": 0.24626175738588163,
+          "calibration_brier": 0.02700429416287192
+        },
+        {
+          "epoch": 8,
+          "loss": 0.24294074492741236,
+          "calibration_brier": 0.027095614252515898
+        },
+        {
+          "epoch": 9,
+          "loss": 0.24620130205456214,
+          "calibration_brier": 0.027425714035705345
+        },
+        {
+          "epoch": 10,
+          "loss": 0.24114830546741245,
+          "calibration_brier": 0.02697924713424662
+        },
+        {
+          "epoch": 11,
+          "loss": 0.2416991512232189,
+          "calibration_brier": 0.026624165084939703
+        },
+        {
+          "epoch": 12,
+          "loss": 0.24051122838937783,
+          "calibration_brier": 0.026881742207933726
+        },
+        {
+          "epoch": 13,
+          "loss": 0.24098619347131706,
+          "calibration_brier": 0.02723497978278998
+        },
+        {
+          "epoch": 14,
+          "loss": 0.238420242750192,
+          "calibration_brier": 0.026326591036881026
+        },
+        {
+          "epoch": 15,
+          "loss": 0.23810404029828083,
+          "calibration_brier": 0.026252719171039187
+        },
+        {
+          "epoch": 16,
+          "loss": 0.23748998475980154,
+          "calibration_brier": 0.026417017586774796
+        },
+        {
+          "epoch": 17,
+          "loss": 0.23599159151692933,
+          "calibration_brier": 0.02657263025756164
+        },
+        {
+          "epoch": 18,
+          "loss": 0.23626486013961745,
+          "calibration_brier": 0.02647439959696377
+        },
+        {
+          "epoch": 19,
+          "loss": 0.23408270212291163,
+          "calibration_brier": 0.02633326813798948
+        },
+        {
+          "epoch": 20,
+          "loss": 0.23522481982466542,
+          "calibration_brier": 0.026321326300537164
+        },
+        {
+          "epoch": 21,
+          "loss": 0.2339172246335428,
+          "calibration_brier": 0.026491967443094164
+        }
+      ]
+    },
+    "short-gru-64-0.05-s20261022": {
+      "family": "gru",
+      "setting": [
+        64,
+        0.05
+      ],
+      "seed": 20261022,
+      "brier_known": 0.031148212195822273,
+      "brier_complete": 0.03088011660941206,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011735497104547087,
+        0.009149633420599632,
+        0.0725349124995485
+      ],
+      "fit_seconds": 34.42812125000637,
+      "fit_rows": 40000,
+      "predict_seconds": 0.8769138339848723,
+      "model_sha256": "5717bc30458e38156c3e69ab5022e946c00e079a609911d1292bed338f5c19d4",
+      "learning_curve": [
+        {
+          "epoch": 1,
+          "loss": 0.600340269034422,
+          "calibration_brier": 0.029661354199178567
+        },
+        {
+          "epoch": 2,
+          "loss": 0.3003741427312923,
+          "calibration_brier": 0.02895366000699299
+        },
+        {
+          "epoch": 3,
+          "loss": 0.289128070956544,
+          "calibration_brier": 0.028049753139822504
+        },
+        {
+          "epoch": 4,
+          "loss": 0.2852382077069222,
+          "calibration_brier": 0.028108012599988734
+        },
+        {
+          "epoch": 5,
+          "loss": 0.28100362589842154,
+          "calibration_brier": 0.027847031364316606
+        },
+        {
+          "epoch": 6,
+          "loss": 0.2805768994590904,
+          "calibration_brier": 0.028090927378833078
+        },
+        {
+          "epoch": 7,
+          "loss": 0.28044579262974895,
+          "calibration_brier": 0.027681877511773582
+        },
+        {
+          "epoch": 8,
+          "loss": 0.27695553117915045,
+          "calibration_brier": 0.027700602586639356
+        },
+        {
+          "epoch": 9,
+          "loss": 0.2845245790255221,
+          "calibration_brier": 0.028058191221562032
+        },
+        {
+          "epoch": 10,
+          "loss": 0.27487812559061414,
+          "calibration_brier": 0.027760410673083644
+        },
+        {
+          "epoch": 11,
+          "loss": 0.2748963244353669,
+          "calibration_brier": 0.02724211073318989
+        },
+        {
+          "epoch": 12,
+          "loss": 0.2734345776748054,
+          "calibration_brier": 0.027526665495212512
+        },
+        {
+          "epoch": 13,
+          "loss": 0.2753094581863548,
+          "calibration_brier": 0.02805899893379707
+        },
+        {
+          "epoch": 14,
+          "loss": 0.2725481006163585,
+          "calibration_brier": 0.027252007201256492
+        },
+        {
+          "epoch": 15,
+          "loss": 0.2726366359599029,
+          "calibration_brier": 0.02710739786070679
+        },
+        {
+          "epoch": 16,
+          "loss": 0.27105517327031003,
+          "calibration_brier": 0.027092819155925617
+        },
+        {
+          "epoch": 17,
+          "loss": 0.26891575376444227,
+          "calibration_brier": 0.02719093690549814
+        },
+        {
+          "epoch": 18,
+          "loss": 0.26994002072871487,
+          "calibration_brier": 0.02695371516896267
+        },
+        {
+          "epoch": 19,
+          "loss": 0.2666927585496178,
+          "calibration_brier": 0.02713536146227299
+        },
+        {
+          "epoch": 20,
+          "loss": 0.26803457416311094,
+          "calibration_brier": 0.026831468494365837
+        },
+        {
+          "epoch": 21,
+          "loss": 0.2653088726197617,
+          "calibration_brier": 0.027173946089766247
+        },
+        {
+          "epoch": 22,
+          "loss": 0.269867846671539,
+          "calibration_brier": 0.027497934324732125
+        },
+        {
+          "epoch": 23,
+          "loss": 0.2665552945831154,
+          "calibration_brier": 0.02700680373881957
+        },
+        {
+          "epoch": 24,
+          "loss": 0.26570892994162404,
+          "calibration_brier": 0.026857496121943457
+        },
+        {
+          "epoch": 25,
+          "loss": 0.2627351770672617,
+          "calibration_brier": 0.02698763360608937
+        },
+        {
+          "epoch": 26,
+          "loss": 0.264097355589082,
+          "calibration_brier": 0.027289513052020355
+        }
+      ]
+    },
+    "short-business-31-180-s20261022": {
+      "family": "business",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.032682352480136616,
+      "brier_complete": 0.03239778218342826,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.012278205321253096,
+        0.0099007118750674,
+        0.07584250048577955
+      ],
+      "fit_seconds": 37.265747792000184,
+      "fit_rows": 349148,
+      "predict_seconds": 4.729447874997277,
+      "model_sha256": "f27f9cdf6fd5793166696ba190480bc8c5f5874ec77baae8859c67ca11e9ed0c"
+    },
+    "short-no_state-31-180-s20261022": {
+      "family": "no_state",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.02928469592714461,
+      "brier_complete": 0.02903767185483863,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011125446135471848,
+        0.008888116639606456,
+        0.06781763134273239
+      ],
+      "fit_seconds": 38.24438904199633,
+      "fit_rows": 349148,
+      "predict_seconds": 5.96176066697808,
+      "model_sha256": "61106c67f6141f2d9214be221a07a4f71e89ef78159c3568ed5908035ca20c07"
+    }
+  },
+  "selection": {
+    "hgb": {
+      "key": "short-hgb-31-180-s20261022",
+      "family": "hgb",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.02882321282924159,
+      "brier_complete": 0.028589149989506003,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.010843611862539468,
+        0.008761099190732419,
+        0.06684234203729426
+      ],
+      "fit_seconds": 26.81248537497595,
+      "fit_rows": 349148,
+      "predict_seconds": 3.917408958019223,
+      "model_sha256": "ecd926bd0bda45d25705766d0adac55252215f1b56c7a420d81fd8a3fb055795"
+    },
+    "extra_trees": {
+      "key": "short-extra_trees-15-s20261022",
+      "family": "extra_trees",
+      "setting": [
+        15
+      ],
+      "seed": 20261022,
+      "brier_known": 0.030551615049145758,
+      "brier_complete": 0.030279394524959084,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011264479844061502,
+        0.009301736945507665,
+        0.07106456764486944
+      ],
+      "fit_seconds": 200.21120491699548,
+      "fit_rows": 349148,
+      "predict_seconds": 1.3950835420109797,
+      "model_sha256": "ae71a98edfcefc3fce10f10b6f97d9a13de0194d98dd7bf666ec98d8ec007363"
+    },
+    "gru": {
+      "key": "short-gru-64-0.05-s20261022",
+      "family": "gru",
+      "setting": [
+        64,
+        0.05
+      ],
+      "seed": 20261022,
+      "brier_known": 0.031148212195822273,
+      "brier_complete": 0.03088011660941206,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011735497104547087,
+        0.009149633420599632,
+        0.0725349124995485
+      ],
+      "fit_seconds": 34.42812125000637,
+      "fit_rows": 40000,
+      "predict_seconds": 0.8769138339848723,
+      "model_sha256": "5717bc30458e38156c3e69ab5022e946c00e079a609911d1292bed338f5c19d4",
+      "learning_curve": [
+        {
+          "epoch": 1,
+          "loss": 0.600340269034422,
+          "calibration_brier": 0.029661354199178567
+        },
+        {
+          "epoch": 2,
+          "loss": 0.3003741427312923,
+          "calibration_brier": 0.02895366000699299
+        },
+        {
+          "epoch": 3,
+          "loss": 0.289128070956544,
+          "calibration_brier": 0.028049753139822504
+        },
+        {
+          "epoch": 4,
+          "loss": 0.2852382077069222,
+          "calibration_brier": 0.028108012599988734
+        },
+        {
+          "epoch": 5,
+          "loss": 0.28100362589842154,
+          "calibration_brier": 0.027847031364316606
+        },
+        {
+          "epoch": 6,
+          "loss": 0.2805768994590904,
+          "calibration_brier": 0.028090927378833078
+        },
+        {
+          "epoch": 7,
+          "loss": 0.28044579262974895,
+          "calibration_brier": 0.027681877511773582
+        },
+        {
+          "epoch": 8,
+          "loss": 0.27695553117915045,
+          "calibration_brier": 0.027700602586639356
+        },
+        {
+          "epoch": 9,
+          "loss": 0.2845245790255221,
+          "calibration_brier": 0.028058191221562032
+        },
+        {
+          "epoch": 10,
+          "loss": 0.27487812559061414,
+          "calibration_brier": 0.027760410673083644
+        },
+        {
+          "epoch": 11,
+          "loss": 0.2748963244353669,
+          "calibration_brier": 0.02724211073318989
+        },
+        {
+          "epoch": 12,
+          "loss": 0.2734345776748054,
+          "calibration_brier": 0.027526665495212512
+        },
+        {
+          "epoch": 13,
+          "loss": 0.2753094581863548,
+          "calibration_brier": 0.02805899893379707
+        },
+        {
+          "epoch": 14,
+          "loss": 0.2725481006163585,
+          "calibration_brier": 0.027252007201256492
+        },
+        {
+          "epoch": 15,
+          "loss": 0.2726366359599029,
+          "calibration_brier": 0.02710739786070679
+        },
+        {
+          "epoch": 16,
+          "loss": 0.27105517327031003,
+          "calibration_brier": 0.027092819155925617
+        },
+        {
+          "epoch": 17,
+          "loss": 0.26891575376444227,
+          "calibration_brier": 0.02719093690549814
+        },
+        {
+          "epoch": 18,
+          "loss": 0.26994002072871487,
+          "calibration_brier": 0.02695371516896267
+        },
+        {
+          "epoch": 19,
+          "loss": 0.2666927585496178,
+          "calibration_brier": 0.02713536146227299
+        },
+        {
+          "epoch": 20,
+          "loss": 0.26803457416311094,
+          "calibration_brier": 0.026831468494365837
+        },
+        {
+          "epoch": 21,
+          "loss": 0.2653088726197617,
+          "calibration_brier": 0.027173946089766247
+        },
+        {
+          "epoch": 22,
+          "loss": 0.269867846671539,
+          "calibration_brier": 0.027497934324732125
+        },
+        {
+          "epoch": 23,
+          "loss": 0.2665552945831154,
+          "calibration_brier": 0.02700680373881957
+        },
+        {
+          "epoch": 24,
+          "loss": 0.26570892994162404,
+          "calibration_brier": 0.026857496121943457
+        },
+        {
+          "epoch": 25,
+          "loss": 0.2627351770672617,
+          "calibration_brier": 0.02698763360608937
+        },
+        {
+          "epoch": 26,
+          "loss": 0.264097355589082,
+          "calibration_brier": 0.027289513052020355
+        }
+      ]
+    },
+    "business": {
+      "key": "short-business-31-180-s20261022",
+      "family": "business",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.032682352480136616,
+      "brier_complete": 0.03239778218342826,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.012278205321253096,
+        0.0099007118750674,
+        0.07584250048577955
+      ],
+      "fit_seconds": 37.265747792000184,
+      "fit_rows": 349148,
+      "predict_seconds": 4.729447874997277,
+      "model_sha256": "f27f9cdf6fd5793166696ba190480bc8c5f5874ec77baae8859c67ca11e9ed0c"
+    },
+    "no_state": {
+      "key": "short-no_state-31-180-s20261022",
+      "family": "no_state",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.02928469592714461,
+      "brier_complete": 0.02903767185483863,
+      "complete_queries": 48337,
+      "by_pattern": [
+        0.011125446135471848,
+        0.008888116639606456,
+        0.06781763134273239
+      ],
+      "fit_seconds": 38.24438904199633,
+      "fit_rows": 349148,
+      "predict_seconds": 5.96176066697808,
+      "model_sha256": "61106c67f6141f2d9214be221a07a4f71e89ef78159c3568ed5908035ca20c07"
+    }
+  },
+  "communication_backbone": "short-hgb-31-180-s20261022"
+}

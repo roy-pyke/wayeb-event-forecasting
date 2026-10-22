@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-22",
+  "status": "secondary exploration motivated by the already failed primary development gate",
+  "epsilons": [0.001, 0.002, 0.005],
+  "models": {"air": "short-gru-32-0.01-s20261022", "power": "short-gru-64-0.05-s20261022"},
+  "policies": ["all", "basis"],
+  "question": "How do empirical mean Brier degradation and application bytes trade off?",
+  "interpretation": "Different epsilons give different worst-case guarantees. Similar observed mean error does not imply equal guarantees. Curves are descriptive, not an achieved fixed-budget causal policy, and do not replace the failed 5 percent primary gate.",
+  "confirmation": "If evaluated there, freeze this complete grid before any confirmation outcome and report every point. No selection of tolerances from confirmation outcomes."
+}

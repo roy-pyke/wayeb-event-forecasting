@@ -1,0 +1,69 @@
+{
+  "dataset": "metro",
+  "runs": {
+    "short-hgb-15-100-s20261022": {
+      "family": "hgb",
+      "setting": [
+        15,
+        100
+      ],
+      "seed": 20261022,
+      "brier_known": 0.003745217503579541,
+      "brier_complete": 0.0037451385267101784,
+      "complete_queries": 61863,
+      "by_pattern": [
+        0.0019447874218511503,
+        0.0032643037651064566,
+        0.006026561323781016
+      ],
+      "fit_seconds": 11.87318291599513,
+      "fit_rows": 356930,
+      "predict_seconds": 1.1635188339860179,
+      "model_sha256": "2a04509c638f4ae080207ddfad9d4591c2435436e176d74eae440745b39fc316"
+    },
+    "short-hgb-31-180-s20261022": {
+      "family": "hgb",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.003659867159429016,
+      "brier_complete": 0.0036607806947874075,
+      "complete_queries": 61863,
+      "by_pattern": [
+        0.0018802453384071543,
+        0.0032455465741215556,
+        0.005853809565758339
+      ],
+      "fit_seconds": 19.70082541697775,
+      "fit_rows": 356930,
+      "predict_seconds": 2.2908529579872265,
+      "model_sha256": "e43fc7430b360a320d93aee8fd7470cd2d2569910ca6c12623e1bb4b2163ec1b"
+    }
+  },
+  "selection": {
+    "hgb": {
+      "key": "short-hgb-31-180-s20261022",
+      "family": "hgb",
+      "setting": [
+        31,
+        180
+      ],
+      "seed": 20261022,
+      "brier_known": 0.003659867159429016,
+      "brier_complete": 0.0036607806947874075,
+      "complete_queries": 61863,
+      "by_pattern": [
+        0.0018802453384071543,
+        0.0032455465741215556,
+        0.005853809565758339
+      ],
+      "fit_seconds": 19.70082541697775,
+      "fit_rows": 356930,
+      "predict_seconds": 2.2908529579872265,
+      "model_sha256": "e43fc7430b360a320d93aee8fd7470cd2d2569910ca6c12623e1bb4b2163ec1b"
+    }
+  },
+  "communication_backbone": "short-hgb-31-180-s20261022"
+}

@@ -15,6 +15,7 @@
 | [Kumar 等，2026](https://onlinelibrary.wiley.com/doi/10.1155/jece/2164804) | 频谱感知中联合交叉熵、Brier 与通信稀疏正则 | 将 Brier 和通信成本放在同一目标中不是新概念 | 经验加权训练正则与无需结果标签的确定性增量证书不同；该差别仍需有实际收益 |
 | [AutoMon，SIGMOD 2022，作者项目](https://github.com/hsivan/automon) | 从函数代码自动派生分布式安全监控约束，按精度要求减少通信 | 自动构造确定性通信触发约束不是新概念 | 多节点平均向量的函数监控，与单实体多个未来事件概率的联合损失及消息编码问题不同；不能据此声称通用系统更优 |
 | [Poupart 与 Boutilier，NIPS 2004](https://papers.neurips.cc/paper_files/paper/2004/file/81c2f886f91e18fe16d6f4e865877cb6-Paper.pdf)，§4 | 用不变子空间压缩 POMDP 信念状态，保留预测奖励和后续压缩状态所需信息 | 用基、秩和概率结构进行线性无损压缩不是新理论 | 当前候选从有限期限、无拟合概率的事件语言产生预测输出空间；不承担 POMDP 控制或保持转移不变性的任务 |
+| [Predictive Representations of State，NIPS 14](https://proceedings.neurips.cc/paper/2001/file/1e4d36177d71bbb3558e43af9577d70e-Paper.pdf) 与 [IJCAI 2021 的明确公式](https://www.ijcai.org/proceedings/2021/0299.pdf) | 用核心未来测试的预测概率表示状态，线性恢复其他测试概率 | “只保留一组独立预测概率”这个抽象思想已有直接先例 | 当前编译针对给定事件语言、状态和有限期限，对所有允许的未来流成立；不学习整个生成过程的 PSR。这个限定差别仍不自动构成足够的论文贡献 |
 | [Liu 等，Optimizing Error-Bounded Lossy Compression for Scientific Data with Diverse Constraints](https://www.yuanjianliu.net/files/2022TPDS-preprint.pdf) | 科学数据压缩中保留用户指定的范围、区域与精度约束 | 带约束且带误差界的压缩不是空白方向 | 事件语言派生的概率等式、逐可行结果评分增量、在线选择消息是否发送需要具体区分 |
 | [KRAKEN，DEBS 2026，作者机构摘要](https://www.bifold.berlin/impact-transfer/publications/view/publication-detail/kraken-joint-optimization-of-operator-placement-and-communication-for-distributed-stream-processing) | 对分布式流算子位置和 all-push/push-pull 通信联合规划，权衡元组量与延迟 | 联合考虑执行位置与通信不是本工作的独创概念 | 本项目固定执行位置、预测模型和业务流，研究辅助概率消息内容；不能把它当作完成同一预测任务的直接数值基线 |
 

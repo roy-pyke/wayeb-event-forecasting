@@ -1,0 +1,15 @@
+{
+  "family": "multisignal",
+  "dataset": "air",
+  "backbone": "short-gru-32-0.01-s20261022",
+  "model_sha256": "1201cc2cab1c276ac66d2db30f25211fce892f462c259e16577d48f8900a6f9f",
+  "test_queries": 2000,
+  "seconds": 24.851192875008564,
+  "max_absolute_prediction_difference": 0.0,
+  "bit_identical_predictions": true,
+  "original_prediction_sha256": "4966069acee1c80bb697cf13e1ab651956e1a32d17e73bead61964bccdfa6d90",
+  "retrained_prediction_sha256": "4966069acee1c80bb697cf13e1ab651956e1a32d17e73bead61964bccdfa6d90",
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "note": "Same host, pinned CPU runtime and seed; does not assert bit identity across hardware or a publication reproduction."
+}
