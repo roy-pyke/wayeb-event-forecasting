@@ -1,0 +1,25 @@
+{
+  "architecture": "F2: raw and calibrated business/context experts plus fast business feedback expert",
+  "selected_before_confirmation_results": true,
+  "hashes": {
+    "src/stateforecast/__init__.py": "c6eea198b49dcb2813d829c9b7aa97d6dd35d0d5eefaa310aea8c2a58619ef78",
+    "src/stateforecast/adaptive_pool.py": "decd1ac1891fe027766a0eef74af524190870873f2f97de60f0a523020149dec",
+    "src/stateforecast/data.py": "1e1d2155e419c8b243bad01d36632f91a9c0838ed184bdc1f422563c2529274b",
+    "src/stateforecast/evaluate.py": "d1c6cde1a6d29efe0236e4325ebc4d86ac6c73e6d7e2dee77a57233164c806f1",
+    "src/stateforecast/experiment.py": "3e616cce1699f2d0cf1d6e5df2063849ce9fcc1e57aac34ae407af6ac5e0e3ef",
+    "src/stateforecast/fast_feedback.py": "9aa01728492999d2408615e078750bcb817ec18fc79d28d3fa819a5b08dd1371",
+    "src/stateforecast/metro2022.py": "f3d911932860f60c5cc819ce27d9f39ad6c18f25c8fe2d46b476f516193722e8",
+    "src/stateforecast/mixer.py": "6f548fe007638d990ce545e6a0cd90f95dd4290f80bf751da1736e7289a157f9",
+    "src/stateforecast/model.py": "ea7a8196a9114185f9020f6c2795d0621c5e94dbb9a6fe039af4fe430d84376a",
+    "src/stateforecast/online.py": "ae67424cafc3dac0f10ff40da1d072e5a6d6ef994b3dc0379f9282f09648cc57",
+    "src/stateforecast/online_fast.py": "355fa122b1ee632d84323e68f0a2dada90009784826409e55f604cd4bd17ad3e",
+    "src/stateforecast/rolling.py": "91decf7892e53e0a5539f923fc5ddeb8fd7774222620f116394b6bc97118d27d",
+    "src/stateforecast/stream.py": "e64c76f3026313067197435e8ceae5a2d7b5f2093144ca41738d979931274bbf",
+    "scripts/confirm_2022.py": "7cb0dcf5e4304450f8b158d71fe4ef30a13234fb5d52403ddcb37bfadba81ca7",
+    "scripts/evaluate_fast.py": "6dc81828bf58a39876a2c0e8ae4c77c99b392a73afb12034ad42f90216dd07e1",
+    "configs/CONFIRMATION_2022.json": "83e6c755013a937520dcf0a5808f6d66ea68566cc4fc35d911569ebf5249cced",
+    "configs/PROTOCOL.json": "ebd281dcad8a115290c3a6745cd53d97aa5dc85dcf524b5398a165275f0a44f0",
+    "configs/requirements.lock.txt": "81cc50a4c91b85259086f7de2553764723a06ca858988f263b69a8b6f350f2a0",
+    "configs/dfa.json": "c84c77fa9e907d9936633cb96ad206aca5851a840bd091de3a122d3a59efc420"
+  }
+}

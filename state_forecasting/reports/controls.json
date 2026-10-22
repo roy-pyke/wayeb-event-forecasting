@@ -853,13 +853,13 @@
       "mean_context_weight": 0.9313392982672748
     },
     "comparison": {
-      "mean_improvement": 0.12059567442320986,
+      "mean_improvement": 0.12059567442320936,
       "ci95": [
-        0.11787721474671836,
-        0.1256526748888513
+        0.11636806484355552,
+        0.12500772862232462
       ],
-      "days": 3,
-      "replicates": 1000
+      "replicates": 1000,
+      "independent_instances": 1000
     }
   },
   "independent_noise_context": {
@@ -1626,13 +1626,13 @@
       "mean_context_weight": 0.5128599348824189
     },
     "comparison": {
-      "mean_improvement": 0.0010016687805503915,
+      "mean_improvement": 0.0010016687805503902,
       "ci95": [
-        0.0006206371036046121,
-        0.0015761514390587863
+        0.0005227807791284949,
+        0.0014845958017069912
       ],
-      "days": 3,
-      "replicates": 1000
+      "replicates": 1000,
+      "independent_instances": 1000
     }
   },
   "interpretation": "Mechanism controls, not real industrial accuracy. Hidden work integrates forward; no final-duration normalization."

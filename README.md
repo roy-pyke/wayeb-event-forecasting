@@ -4,7 +4,11 @@
 
 部署作者代码，研究从 **Pattern Markov Chains（模式马尔可夫链）** 到 **Prediction Suffix Trees（预测后缀树，PST）** 和 **RTCEF（运行时自适应复杂事件预测）** 的方法演进。
 
-This repository deploys the authors' implementations. It does not replace them with a new forecasting algorithm. Author repositories are Git submodules pinned to exact commits; deployment tooling, configurations, and validation evidence live here.
+This repository deploys the authors' implementations. Author repositories are Git submodules pinned to exact commits; deployment tooling, configurations, and validation evidence live here. The separate [state forecasting research extension](state_forecasting/README.md) adds a context-based predictor while preserving the tested author's recognition semantics.
+
+## 新研究扩展 / State forecasting
+
+[`state_forecasting/`](state_forecasting/README.md) implements an independently documented dual-stream architecture: fixed Wayeb business-event recognition, causal numeric telemetry, real-time completion probabilities, daily model updates, and delayed-feedback expert aggregation. It includes real MetroPT-3 data evaluation, retained failed experiments, a frozen protocol, reproducible scripts and causal tests. See the [architecture](state_forecasting/docs/DESIGN.md), [research log](state_forecasting/docs/RESEARCH_LOG.md), and [reproduction guide](state_forecasting/docs/REPRODUCIBILITY.md).
 
 ## Sources
 

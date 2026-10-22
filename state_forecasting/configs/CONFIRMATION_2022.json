@@ -1,0 +1,39 @@
+{
+  "dataset": "MetroPT 2022, Zenodo record 6854240 version 1",
+  "source_url": "https://zenodo.org/records/6854240/files/dataset_train.csv?download=1",
+  "source_doi": "10.5281/zenodo.6854240",
+  "source_md5": "83c713c0f8a6c2f24418cca999b2a8eb",
+  "source_bytes": 1646201046,
+  "registered_before_2022_model_results": true,
+  "warmup": ["2022-01-01", "2022-01-15"],
+  "confirmation": ["2022-01-15", "2022-06-01"],
+  "target": "same observed LoadStart -> LoadEnd business pattern, native observation timestamps",
+  "horizons_seconds": [30, 60, 120],
+  "landmark_min_spacing_seconds": 20,
+  "gap_censor_seconds": 60,
+  "strategy": {
+    "daily_training_window_days": 14,
+    "calibration_days": 2,
+    "iterations": 180,
+    "leaves": 15,
+    "eta": 2.0,
+    "share": 0.02,
+    "fast_beta_decay": 0.98,
+    "fast_age_and_previous_duration_edges": [30, 60, 120, 300],
+    "selected": "F2",
+    "baseline": "F0: raw/calibrated M0 plus identical fast business-outcome expert",
+    "context": "F2: F0 experts plus raw/calibrated M2"
+  },
+  "criteria": {
+    "relative_brier_reduction_vs_F0": 0.20,
+    "paired_day_bootstrap_improvement_ci_lower_above": 0.0,
+    "ECE_60s_at_most": 0.05,
+    "positive_months_at_least": 4,
+    "single_query_p95_ms_at_most": 20,
+    "models_MiB_at_most": 25,
+    "match_endpoint_mismatches": 0,
+    "causality_failures": 0
+  },
+  "interpretation": "2020 post-holdout revisions are exploratory. 2022 is a new confirmation cohort; no performance tuning on it. Same process/domain, a separate acquisition period, not an independent fleet of machines.",
+  "licensing": "Author-hosted public download; retain source attribution, do not relicense or redistribute the raw file in this repository. Zenodo v1 page does not show an explicit licence."
+}
