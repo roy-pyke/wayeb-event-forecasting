@@ -16,6 +16,11 @@ class ConstantModel:
 
 
 class ModelTests(unittest.TestCase):
+    def test_empty_calibration_preserves_uncalibrated_model(self):
+        m=StateSurvival('M0',[30,60,120])
+        m.calibrate({'X':np.empty((0,20))},[30,60,120])
+        self.assertIsNone(m.calibrator)
+
     def test_censored_horizon_never_becomes_false_negative(self):
         d = dict(residual=np.array([20,20,80]), observed=np.array([False,True,False]))
         y, known = targets(d,[10,30,60,120])

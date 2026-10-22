@@ -18,6 +18,7 @@ def main():
     ap.add_argument('--output',type=Path,required=True)
     args=ap.parse_args()
     frozen=json.loads((PACKAGE/'configs/FROZEN.json').read_text())
+    assert sha256(__file__)==frozen['evaluation_script_sha256']
     for path,digest in frozen['source_hashes'].items():
         if sha256(PACKAGE/path)!=digest:raise ValueError(f'frozen source changed: {path}')
     protocol=json.loads((PACKAGE/'configs/PROTOCOL.json').read_text())
@@ -71,7 +72,7 @@ def main():
         'model_size':report['performance']['combined_expert_model_MiB']<=checks['saved_model_size_MiB_at_most'],
         'latency':report['performance']['single_query_prediction_p95_ms']<=checks['single_query_latency_p95_ms_at_most'],
         'no_early_feedback':all(v['early_feedback']==0 for v in report['feedback'].values()),
-        'causal_daily_training':all(u['train_latest_information']<=u['update_time'] and u['calibration_latest_information']<=u['update_time'] for u in model_report['updates'])}
+        'causal_daily_training':all(u['train_latest_information']<=u['update_time'] and (u['calibration_latest_information'] is None or u['calibration_latest_information']<=u['update_time']) for u in model_report['updates'])}
     report['quality_pass']=all(report['quality_checks'].values())
     report['independent_checks_required']=['reports/recognition.json','unittest results','controls and stress reports']
     np.savez_compressed(args.output/'all_predictions.npz',**predictions)

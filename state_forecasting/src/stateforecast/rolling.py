@@ -49,11 +49,13 @@ def replay(pool, evaluation, protocol, out, window_days=14, calibration_days=2,
         train_ids = set(train["instance"])
         assert not train_ids.intersection(calibration["instance"])
         # Train and calibration labels are clipped above; query rows start now.
-        assert calibration["time"].max() < now <= evaluation["time"][target].min()
+        assert (not len(calibration["time"]) or calibration["time"].max() < now)
+        assert now <= evaluation["time"][target].min()
         audit = dict(update_time=float(now), date=str(pd.Timestamp(now, unit="s").date()),
                      train_queries=len(train["time"]), calibration_queries=len(calibration["time"]),
                      train_latest_information=float(np.max(train["time"]+train["residual"])),
-                     calibration_latest_information=float(np.max(calibration["time"]+calibration["residual"])),
+                     calibration_latest_information=float(np.max(calibration["time"]+calibration["residual"])) if len(calibration["time"]) else None,
+                     calibration_policy="identity_if_empty_otherwise_shared_isotonic",
                      first_query=float(evaluation["time"][target].min()), models={})
         start_time = time.perf_counter()
         for mode, name in [("M0", "M0"), ("M1", "M1-16"), ("M2", "M2")]:

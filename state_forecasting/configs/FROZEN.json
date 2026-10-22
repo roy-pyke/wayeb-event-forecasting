@@ -14,11 +14,12 @@
     "src/stateforecast/evaluate.py": "d1c6cde1a6d29efe0236e4325ebc4d86ac6c73e6d7e2dee77a57233164c806f1",
     "src/stateforecast/experiment.py": "3e616cce1699f2d0cf1d6e5df2063849ce9fcc1e57aac34ae407af6ac5e0e3ef",
     "src/stateforecast/mixer.py": "6f548fe007638d990ce545e6a0cd90f95dd4290f80bf751da1736e7289a157f9",
-    "src/stateforecast/model.py": "49682ff2bbb5f0474b73ce61950bb5e951ef05b3836c3d0b3ca121491b93d672",
+    "src/stateforecast/model.py": "ea7a8196a9114185f9020f6c2795d0621c5e94dbb9a6fe039af4fe430d84376a",
     "src/stateforecast/online.py": "ae67424cafc3dac0f10ff40da1d072e5a6d6ef994b3dc0379f9282f09648cc57",
-    "src/stateforecast/rolling.py": "959729cd6c97db688a0ef6be60c2c636fb4de1f8b30f88084e57230353eda4e2",
+    "src/stateforecast/rolling.py": "91decf7892e53e0a5539f923fc5ddeb8fd7774222620f116394b6bc97118d27d",
     "src/stateforecast/stream.py": "e64c76f3026313067197435e8ceae5a2d7b5f2093144ca41738d979931274bbf"
   },
-  "evaluation_script_sha256": "c292cc8c63e6f743b35f78cb8669d84808b4a1a02d261dc7ddf3573f02d8d51e",
-  "evidence": "reports/development-v3.json; eta and share not searched"
+  "evaluation_script_sha256": "d4088e646c4d7afe7a895ff959fdfc076cdf7512dfb41f0ffa0dc62b76bd5ad9",
+  "evidence": "reports/development-v3.json; eta and share not searched",
+  "repair": "Empty calibration guard after execution failure; no aggregate holdout metrics available. No hyperparameters changed."
 }

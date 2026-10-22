@@ -69,9 +69,15 @@ class StateSurvival:
         return result
 
     def calibrate(self, data, horizons):
+        if len(data["X"]) == 0:
+            self.calibrator = None
+            return self
         raw = self.predict_cdf(data["X"], horizons, calibrated=False)
         y, known = targets(data, horizons)
         w = np.broadcast_to(instance_weights(data)[:, None], raw.shape)
+        if not known.any():
+            self.calibrator = None
+            return self
         self.calibrator = IsotonicRegression(y_min=1e-6, y_max=1-1e-6, out_of_bounds="clip")
         self.calibrator.fit(raw[known], y[known], sample_weight=w[known])
         return self

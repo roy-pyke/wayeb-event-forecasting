@@ -51,8 +51,13 @@ def main():
             pred[mode]=model.predict_cdf(datasets[2]['X'],h)
         pred['G2'],_,audit=causal_mix(datasets[2],pred['M0'],pred['M2'],h)
         name='informative_physical_progress' if informative else 'independent_noise_context'
+        # Synthetic instances are independently generated; resample instances,
+        # not the arbitrary three calendar days occupied by the simulator.
+        bootstrap_data=dict(datasets[2],start=datasets[2]['instance']*86400)
+        comparison=paired_bootstrap(bootstrap_data,pred['M0'],pred['G2'],h)
+        comparison['independent_instances']=comparison.pop('days')
         report[name]=dict(models={n:metrics(datasets[2],p,h) for n,p in pred.items()},feedback=audit,
-                          comparison=paired_bootstrap(datasets[2],pred['M0'],pred['G2'],h))
+                          comparison=comparison)
         print(name,{n:round(m['mean_brier'],5) for n,m in report[name]['models'].items()},flush=True)
     report['interpretation']='Mechanism controls, not real industrial accuracy. Hidden work integrates forward; no final-duration normalization.'
     (PACKAGE/'reports/controls.json').write_text(json.dumps(report,indent=2)+'\n')
