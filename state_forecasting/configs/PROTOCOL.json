@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "registered_before_model_results": true,
+  "seed": 20261022,
+  "dataset": "UCI MetroPT-3, 791, actual sensor measurements",
+  "target": "Observed LoadStart then LoadEnd, within fixed wall-clock horizons",
+  "business_pattern": "LoadStart -> LoadEnd",
+  "horizons_seconds": [30, 60, 120],
+  "hazard_edges_seconds": [10, 20, 30, 45, 60, 90, 120, 180, 300],
+  "landmark_min_spacing_seconds": 20,
+  "gap_censor_seconds": 60,
+  "splits": {
+    "train": ["2020-02-01", "2020-03-01"],
+    "select": ["2020-03-01", "2020-03-15"],
+    "calibrate": ["2020-03-15", "2020-04-01"],
+    "development": ["2020-04-01", "2020-05-01"],
+    "holdout": ["2020-05-01", "2020-09-01"]
+  },
+  "split_policy": "whole instances; omit instances crossing boundaries; no final holdout model selection",
+  "models": ["M0 time-aware business-history baseline", "M1 quantized identical context", "M2 continuous identical context"],
+  "quantization_bins": [4, 8, 16],
+  "primary_metric": "equal-instance weighted mean Brier across 30, 60, 120 seconds",
+  "bootstrap": {"unit": "calendar day block", "replicates": 1000, "confidence": 0.95},
+  "excellence_criteria": {
+    "relative_brier_reduction_vs_M0_at_least": 0.20,
+    "paired_day_bootstrap_improvement_lower_bound_above": 0.0,
+    "primary_60s_equal_width_ECE_at_most": 0.05,
+    "positive_vs_M0_months_at_least": 3,
+    "business_match_endpoint_mismatches": 0,
+    "causal_prefix_test_failures": 0,
+    "saved_model_size_MiB_at_most": 25,
+    "single_query_latency_p95_ms_at_most": 20
+  },
+  "continuous_precision_claim": "Only claim an M2 advantage over best M1 if paired confidence interval excludes zero; no required superiority by decree.",
+  "iteration_policy": "Record every development result and diagnostic change; freeze before holdout. A failed holdout is evidence of failure, not an invitation to repeatedly tune on it.",
+  "limitations": ["one compressor", "not fault forecasting", "arrival times unrecorded", "no universal novelty claim", "observed completion timestamps have sampling resolution"]
+}
