@@ -1,0 +1,18 @@
+{
+  "scope": "actual Wayeb CLI differential endpoint validation",
+  "datasets": {
+    "metropt": {
+      "matches": 16738,
+      "endpoint_mismatches": 0,
+      "input_sha256": "cb24a398b9b03efff530e06e0f87ceab8bfcc7a8916eee6154c5bb12e145fb46"
+    },
+    "random": {
+      "matches": 1076,
+      "endpoint_mismatches": 0,
+      "input_sha256": "f502e3cad4ebc82bbd52037244b69a19bfbeb585e42368c1e50869c20e3c431c"
+    }
+  },
+  "table_sha256": "c84c77fa9e907d9936633cb96ad206aca5851a840bd091de3a122d3a59efc420",
+  "author_jar_sha256": "0bb519ec154206a103bae94e2311352a7f7cd3836f20197017dc3633a32d0889",
+  "status": "passed"
+}

@@ -73,6 +73,18 @@ lazy val adaptive = project.in(file("adaptive"))
     )
   )
 
+// Research adapter only; uses the original core classes without changing them.
+lazy val stateBridge = project.in(file("stateBridge"))
+  .dependsOn(core)
+  .settings(
+    Compile / scalaSource := repositoryRoot / "state_forecasting" / "scala",
+    Compile / mainClass := Some("stateforecast.ExportDFA"),
+    Compile / run / fork := true,
+    Compile / run / baseDirectory := repositoryRoot,
+    publish / skip := true
+  )
+  .disablePlugins(AssemblyPlugin)
+
 lazy val root = project.in(file("."))
   .aggregate(core, adaptive)
   .settings(publish / skip := true)

@@ -1,0 +1,23 @@
+{
+  "scope" : "type-only-dsfa-no-window",
+  "start" : 1,
+  "finals" : [ 3 ],
+  "alphabet" : [ "LoadStart", "LoadEnd", "Gap" ],
+  "transitions" : {
+    "1" : {
+      "LoadStart" : 2,
+      "LoadEnd" : 1,
+      "Gap" : 1
+    },
+    "2" : {
+      "LoadStart" : 2,
+      "LoadEnd" : 3,
+      "Gap" : 1
+    },
+    "3" : {
+      "LoadStart" : 2,
+      "LoadEnd" : 1,
+      "Gap" : 1
+    }
+  }
+}
