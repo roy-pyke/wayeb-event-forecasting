@@ -1,0 +1,461 @@
+{
+  "scope": "Operational perfect recovery-notice diagnostic, not a trained predictor or production causal estimate",
+  "policy_world_runs": 720,
+  "selection": {
+    "protocol_sha256": "04180207c4ef0c27e0164fe878a76cf833fc6df6b96687ce4d3266ef74da49b3",
+    "created_utc": "2026-10-23T23:40:08.686601+00:00",
+    "setting": "every_4",
+    "development_mean_kwh": {
+      "every_1": 20.456799999999998,
+      "every_2": 20.581599999999998,
+      "every_4": 20.644,
+      "backoff": 20.5088
+    }
+  },
+  "groups": {
+    "no_pause_36A": {
+      "means_kwh": {
+        "current_mpc": 14.0868,
+        "every_slot": 14.081599999999998,
+        "notice_15min": 14.081599999999998,
+        "notice_full": 14.081599999999998,
+        "offline": 14.0868,
+        "selected_causal": 14.081599999999998
+      },
+      "mean_wasted_reservation_kwh": {
+        "current_mpc": 0.0,
+        "every_slot": 0.0,
+        "notice_15min": 0.0,
+        "notice_full": 0.0,
+        "offline": 0.0,
+        "selected_causal": 0.0
+      },
+      "selected_minus_every_slot": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "notice15_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "noticefull_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.00519999999999996,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.1039999999999992,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.015599999999999881
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 19
+      }
+    },
+    "no_pause_60A": {
+      "means_kwh": {
+        "current_mpc": 22.718799999999995,
+        "every_slot": 22.526400000000002,
+        "notice_15min": 22.526400000000002,
+        "notice_full": 22.526400000000002,
+        "offline": 22.718799999999995,
+        "selected_causal": 22.526400000000002
+      },
+      "mean_wasted_reservation_kwh": {
+        "current_mpc": 0.0,
+        "every_slot": 0.0,
+        "notice_15min": 0.0,
+        "notice_full": 0.0,
+        "offline": 0.0,
+        "selected_causal": 0.0
+      },
+      "selected_minus_every_slot": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "notice15_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "noticefull_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.19239999999999996,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 1.8719999999999999,
+        "bootstrap_95pct_kwh": [
+          0.025999999999999978,
+          0.4315999999999999
+        ],
+        "positive": 4,
+        "negative": 0,
+        "zero": 16
+      }
+    },
+    "no_pause_180A": {
+      "means_kwh": {
+        "current_mpc": 29.952000000000005,
+        "every_slot": 29.952000000000005,
+        "notice_15min": 29.952000000000005,
+        "notice_full": 29.952000000000005,
+        "offline": 29.952000000000005,
+        "selected_causal": 29.952000000000005
+      },
+      "mean_wasted_reservation_kwh": {
+        "current_mpc": 0.0,
+        "every_slot": 0.0,
+        "notice_15min": 0.0,
+        "notice_full": 0.0,
+        "offline": 0.0,
+        "selected_causal": 0.0
+      },
+      "selected_minus_every_slot": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "notice15_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "noticefull_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      }
+    },
+    "pause_36A": {
+      "means_kwh": {
+        "current_mpc": 14.0868,
+        "every_slot": 13.291199999999998,
+        "notice_15min": 13.665600000000001,
+        "notice_full": 13.675999999999998,
+        "offline": 14.0868,
+        "selected_causal": 13.6136
+      },
+      "mean_wasted_reservation_kwh": {
+        "current_mpc": 0.0,
+        "every_slot": 0.7904,
+        "notice_15min": 0.41079999999999994,
+        "notice_full": 0.4004,
+        "offline": 0.0,
+        "selected_causal": 0.4628
+      },
+      "selected_minus_every_slot": {
+        "seeds": 20,
+        "mean_kwh": 0.32239999999999985,
+        "median_kwh": 0.3639999999999999,
+        "min_kwh": 0.0,
+        "max_kwh": 1.1440000000000001,
+        "bootstrap_95pct_kwh": [
+          0.19240000000000013,
+          0.45772999999999936
+        ],
+        "positive": 14,
+        "negative": 0,
+        "zero": 6
+      },
+      "notice15_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.051999999999999866,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.3119999999999994,
+        "bootstrap_95pct_kwh": [
+          0.015599999999999881,
+          0.0987999999999996
+        ],
+        "positive": 6,
+        "negative": 0,
+        "zero": 14
+      },
+      "noticefull_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.06239999999999988,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.3119999999999994,
+        "bootstrap_95pct_kwh": [
+          0.02079999999999993,
+          0.1091999999999997
+        ],
+        "positive": 7,
+        "negative": 0,
+        "zero": 13
+      },
+      "offline_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.47319999999999995,
+        "median_kwh": 0.41600000000000037,
+        "min_kwh": 0.0,
+        "max_kwh": 1.2479999999999993,
+        "bootstrap_95pct_kwh": [
+          0.29106999999999983,
+          0.6759999999999999
+        ],
+        "positive": 14,
+        "negative": 0,
+        "zero": 6
+      }
+    },
+    "pause_60A": {
+      "means_kwh": {
+        "current_mpc": 22.443199999999997,
+        "every_slot": 21.049599999999995,
+        "notice_15min": 21.528,
+        "notice_full": 21.538399999999996,
+        "offline": 22.573199999999996,
+        "selected_causal": 21.137999999999995
+      },
+      "mean_wasted_reservation_kwh": {
+        "current_mpc": 0.0,
+        "every_slot": 1.3052,
+        "notice_15min": 0.8371999999999999,
+        "notice_full": 0.8267999999999999,
+        "offline": 0.0,
+        "selected_causal": 0.8892
+      },
+      "selected_minus_every_slot": {
+        "seeds": 20,
+        "mean_kwh": 0.08840000000000021,
+        "median_kwh": 0.1039999999999992,
+        "min_kwh": -0.8320000000000007,
+        "max_kwh": 1.144000000000002,
+        "bootstrap_95pct_kwh": [
+          -0.1611999999999993,
+          0.3432000000000002
+        ],
+        "positive": 10,
+        "negative": 5,
+        "zero": 5
+      },
+      "notice15_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.38999999999999985,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 1.975999999999999,
+        "bootstrap_95pct_kwh": [
+          0.12479999999999976,
+          0.6863999999999993
+        ],
+        "positive": 8,
+        "negative": 0,
+        "zero": 12
+      },
+      "noticefull_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.40039999999999976,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 1.975999999999999,
+        "bootstrap_95pct_kwh": [
+          0.14039999999999964,
+          0.6917299999999993
+        ],
+        "positive": 9,
+        "negative": 0,
+        "zero": 11
+      },
+      "offline_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 1.4351999999999996,
+        "median_kwh": 1.248000000000001,
+        "min_kwh": 0.0,
+        "max_kwh": 5.3039999999999985,
+        "bootstrap_95pct_kwh": [
+          0.8839999999999998,
+          2.0332
+        ],
+        "positive": 15,
+        "negative": 0,
+        "zero": 5
+      }
+    },
+    "pause_180A": {
+      "means_kwh": {
+        "current_mpc": 28.802799999999998,
+        "every_slot": 28.802799999999998,
+        "notice_15min": 28.802799999999998,
+        "notice_full": 28.802799999999998,
+        "offline": 28.802799999999998,
+        "selected_causal": 28.802799999999998
+      },
+      "mean_wasted_reservation_kwh": {
+        "current_mpc": 0.0,
+        "every_slot": 6.791199999999999,
+        "notice_15min": 6.791199999999999,
+        "notice_full": 6.791199999999999,
+        "offline": 0.0,
+        "selected_causal": 6.791199999999999
+      },
+      "selected_minus_every_slot": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "notice15_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "noticefull_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_selected": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      }
+    }
+  }
+}

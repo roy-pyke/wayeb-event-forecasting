@@ -1,5 +1,7 @@
 # 作者基线闭环验证
 
+本页保留 B1 阶段、数值重分配容差修正之前的集成记录。当前 setup 安装 C2 完整修正版，其再次验证结果在 `reports/c2/native_baseline.json`；后续数值缺陷及修正见 `C1_FAILURE_DIAGNOSIS.md`。
+
 实际执行固定版本的 ACN-Sim、AdaCharge 和 CLARABEL；没有替代求解器的 stub。六个集成场景共 352 次非空调度，检查 pilot/actual 约束、6A 档位、能量守恒和请求上界，全部通过。六个语义测试通过。此处是集成验证，不是原论文实验复现。
 
 ## 两类修正
@@ -28,4 +30,4 @@
 - 第一轮完整求解成功后，保存估计历史遇到 NumPy int64 JSON 序列化错误。显式转换时间和边界数值后重跑全部场景。
 - 最初只加探测下限不足以修复恢复停滞；保留这个失败对照并加入量化一致的基线。
 
-复现：`python acn_research/scripts/setup.py`，然后用 `.tools/acn/venv/bin/python acn_research/scripts/validate_native.py`。详细汇总在 `reports/native_baseline.json`，完整轨迹生成于忽略目录 `artifacts/acn/native/`。
+当前复现：用 Python 3.12 运行 `acn_research/scripts/setup.py`，然后用 `.tools/acn/venv/bin/python acn_research/scripts/validate_native.py`。当前汇总在 `reports/c2/native_baseline.json`，轨迹在忽略目录 `artifacts/acn/native/c2/`。B1 历史记录 `reports/native_baseline.json` 不覆盖。

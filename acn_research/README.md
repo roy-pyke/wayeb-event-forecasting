@@ -13,7 +13,7 @@
 
 作者 Wayeb/RTCEF 子模块保持原固定版本。ACN/adacharge 采用独立固定源码与显式补丁；各自许可证分别适用。
 
-结论入口：[结果与边界](docs/RESULTS.md)。请求全量审计见 [FULL_OFFICE_AUDIT.md](docs/FULL_OFFICE_AUDIT.md)，设计与失败记录见 [RESEARCH_LOG.md](docs/RESEARCH_LOG.md)。最终强基线评估是 `reports/c2/`；根 `reports/value_*` 保留有数值缺陷的 C1 诊断，不能与最终结果混用。
+结论入口：[结果与边界](docs/RESULTS.md)。请求全量审计见 [FULL_OFFICE_AUDIT.md](docs/FULL_OFFICE_AUDIT.md)，设计与失败记录见 [RESEARCH_LOG.md](docs/RESEARCH_LOG.md)。修正的作者与当前状态信息评估在 `reports/c2/`，最终实用探测比较在 `reports/probing_p2/`；根 `reports/value_*` 和 `reports/probing/` 保留旧诊断，不能与最终结果混用。
 
 ## 从仓库根目录复现
 
@@ -33,6 +33,9 @@ $ACN_PY acn_research/scripts/run_value.py --revision c2 --phase development
 $ACN_PY acn_research/scripts/run_value.py --revision c2 --phase evaluation
 $ACN_PY acn_research/scripts/analyze_value.py --revision c2
 $ACN_PY acn_research/scripts/feedback_sensitivity.py
+$ACN_PY acn_research/scripts/probing_value.py --revision p2 --phase development
+$ACN_PY acn_research/scripts/probing_value.py --revision p2 --phase evaluation
+$ACN_PY acn_research/scripts/plot_final.py
 ```
 
 在已有本机部署直接使用 `.tools/acn/venv/bin/python`；重新运行 setup 也使用该解释器即可。下载有缓存并逐文件校验，不使用私密 token。原始用户请求、逐用户关联和完整轨迹保存在忽略目录；GitHub 包含代码、协议、来源、补丁和汇总，不含这些原始数据。受镜像/API 可用性影响，下载可能失败，脚本会中止，不静默跳过文件。
