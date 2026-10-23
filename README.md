@@ -12,6 +12,8 @@ This repository deploys the authors' implementations. Author repositories are Gi
 
 ## Sources
 
+The subsequent [probability-query study](query_forecasting/README.md) investigates numerical inference for many event patterns under one frozen telemetry-conditioned neural source. It retains failed mechanisms, compares conventional query/particle/control-variate methods, and tests transition-closed occupancy constraints. This is ongoing research with no independent confirmation claim. [Source-model snapshots](https://github.com/roy-pyke/wayeb-event-forecasting/releases/tag/query-sources-20261022) and [reproduction instructions](query_forecasting/docs/REPRODUCTION.md) are available.
+
 | Implementation | Fixed revision | Purpose |
 | --- | --- | --- |
 | [ElAlev/Wayeb](https://github.com/ElAlev/Wayeb) | `b58a0cbe8c2c174d19394153c03504031ac57465` | Full-order Markov forecasting, variable-order PST forecasting, symbolic automata and register transducers |

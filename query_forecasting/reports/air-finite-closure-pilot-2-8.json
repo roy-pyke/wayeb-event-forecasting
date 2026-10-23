@@ -1,0 +1,34 @@
+{
+  "domain": "air",
+  "mode": "finite-closure-pilot-2-8",
+  "origins": 2,
+  "replicates": 8,
+  "methods": [
+    "finite_occupancy"
+  ],
+  "status": "mechanism audit; final comparison requires completed Q3/Q4 and serial timings",
+  "results": [
+    {
+      "budget": 512,
+      "method": "finite_occupancy",
+      "mse": null,
+      "infeasible_runs": 16,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 0,
+      "rows": 223.0,
+      "seconds": 0.03512444537409465
+    },
+    {
+      "budget": 2048,
+      "method": "finite_occupancy",
+      "mse": 2.8039731131707663e-08,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 101,
+      "rows": 2048.0,
+      "seconds": 0.28987145831524685
+    }
+  ],
+  "max_mass_error": 2.3314683517128287e-15,
+  "max_moment_error": 1.2340660177773133e-15
+}
