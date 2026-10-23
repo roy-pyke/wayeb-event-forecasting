@@ -1,0 +1,7 @@
+{
+  "downloaded_release_archive_sha256": "f7d4121fa9574ad72186ceb239f499c473c0a12600ddebf02988e3f2e92980b5",
+  "empty_directory_restored_models": 90,
+  "all_individual_checksums_match": true,
+  "release_url": "https://github.com/roy-pyke/wayeb-event-forecasting/releases/tag/pattern-research-20261022",
+  "scope": "Actual public asset download and empty-directory restoration; Python runtime is the current host, not a clean operating-system test."
+}

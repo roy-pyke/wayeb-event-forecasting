@@ -1,0 +1,35 @@
+{
+  "joint_states": 11,
+  "verified_inclusion_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "datasets": {
+    "air": {
+      "confirmation": {
+        "queries": 97686,
+        "fully_observed_queries": 95657,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      }
+    },
+    "power": {
+      "confirmation": {
+        "queries": 104236,
+        "fully_observed_queries": 104224,
+        "infeasible_labels": 0,
+        "states_observed": 11
+      }
+    }
+  }
+}

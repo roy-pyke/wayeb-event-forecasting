@@ -1,0 +1,133 @@
+{
+  "air": {
+    "dataset": "air",
+    "stage": "confirmation",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+      "dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2"
+    },
+    "raw_sha256": "b04da438b2f331ac0ffd45aebdfec0d20d2367feb5f6948c4b1f7ce1191e33c4",
+    "cuts": {
+      "channels": [
+        0,
+        6
+      ],
+      "scales": [
+        13.0,
+        1.299999999999999
+      ],
+      "threshold": 0.8461538461538479
+    },
+    "features": [
+      "PM2.5",
+      "PM10",
+      "SO2",
+      "NO2",
+      "CO",
+      "O3",
+      "TEMP",
+      "PRES",
+      "DEWP",
+      "RAIN",
+      "WSPM"
+    ],
+    "splits": {
+      "confirmation": {
+        "rows": 97437,
+        "matches": {
+          "response_up": 786,
+          "response_down": 865,
+          "response_any": 1651
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng",
+          "Huairou",
+          "Nongzhanguan",
+          "Shunyi",
+          "Tiantan",
+          "Wanliu",
+          "Wanshouxigong"
+        ],
+        "q_counts": {
+          "0": 60963,
+          "1": 19237,
+          "2": 5969,
+          "3": 7430,
+          "4": 1493,
+          "5": 2345
+        },
+        "known_fraction": 0.9536726294939294,
+        "positive_fraction": [
+          0.05708863393388869,
+          0.06012632092984844,
+          0.115778233262144
+        ],
+        "npz_sha256": "de166f90f7e60475f9af347500040420cb727ddf09973c6677e44a05b546edd0"
+      }
+    }
+  },
+  "power": {
+    "dataset": "power",
+    "stage": "confirmation",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "a5185f410f8c78811c14f51e48df5f79445f6d68ce7c36426566b5ec8816a0c7",
+      "dfa.json": "d7e2967137ed1b79f91107f93844e54cc6dbd502fd3878758b73e7c4a95bf1d2"
+    },
+    "raw_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+    "cuts": {
+      "channels": [
+        0,
+        2
+      ],
+      "scales": [
+        0.038000000000000034,
+        0.5900000000000034
+      ],
+      "threshold": 0.762711864406756
+    },
+    "features": [
+      "Global_active_power",
+      "Global_reactive_power",
+      "Voltage",
+      "Global_intensity",
+      "Sub_metering_1",
+      "Sub_metering_2",
+      "Sub_metering_3"
+    ],
+    "splits": {
+      "confirmation": {
+        "rows": 104236,
+        "matches": {
+          "response_up": 4662,
+          "response_down": 4697,
+          "response_any": 9359
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 62706,
+          "1": 24772,
+          "2": 6129,
+          "3": 6518,
+          "4": 2107,
+          "5": 2004
+        },
+        "known_fraction": 0.9995906724484184,
+        "positive_fraction": [
+          0.13824079850280724,
+          0.13910414333706608,
+          0.25597479246973015
+        ],
+        "npz_sha256": "19e74fc26b159d9de9c85b630dd06dde7c30be433a41dcea7c8a4e22282f6f98"
+      }
+    }
+  }
+}

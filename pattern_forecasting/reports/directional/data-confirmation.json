@@ -1,0 +1,139 @@
+{
+  "air": {
+    "dataset": "air",
+    "stage": "confirmation",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+      "dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea"
+    },
+    "raw_sha256": "b04da438b2f331ac0ffd45aebdfec0d20d2367feb5f6948c4b1f7ce1191e33c4",
+    "cuts": [
+      24.0,
+      60.0,
+      115.0
+    ],
+    "features": [
+      "PM2.5",
+      "PM10",
+      "SO2",
+      "NO2",
+      "CO",
+      "O3",
+      "TEMP",
+      "PRES",
+      "DEWP",
+      "RAIN",
+      "WSPM"
+    ],
+    "splits": {
+      "confirmation": {
+        "rows": 97686,
+        "matches": {
+          "rising": 609,
+          "falling": 620,
+          "excursion": 4552
+        },
+        "entities": [
+          "Aotizhongxin",
+          "Changping",
+          "Dingling",
+          "Dongsi",
+          "Guanyuan",
+          "Gucheng",
+          "Huairou",
+          "Nongzhanguan",
+          "Shunyi",
+          "Tiantan",
+          "Wanliu",
+          "Wanshouxigong"
+        ],
+        "q_counts": {
+          "0": 2224,
+          "1": 4234,
+          "2": 2863,
+          "3": 13215,
+          "4": 127,
+          "5": 431,
+          "6": 7274,
+          "7": 16487,
+          "8": 4597,
+          "9": 9150,
+          "10": 4301,
+          "11": 9733,
+          "12": 6269,
+          "13": 4556,
+          "14": 12225
+        },
+        "known_fraction": 0.9568174218072873,
+        "positive_fraction": [
+          0.04514046520273531,
+          0.04547973018863204,
+          0.275901728379285
+        ],
+        "npz_sha256": "c1382067c31e95657b53201dbf5cca86cbd74a44a277c451389b74a6787675b0"
+      }
+    }
+  },
+  "power": {
+    "dataset": "power",
+    "stage": "confirmation",
+    "source_identity": {
+      "data.py": "48483b784ffe80d9224911c99b22f29a19b8b6c41fc115b2561ad5904b455635",
+      "PROTOCOL.json": "d1fee6b5804848c2ce74f43a7da0adeca20852708f9c0ed8e3368c5579dc74c3",
+      "dfa.json": "4c95cf42a24a85699a671c396e0c3d71f37227356e8ff6e5477f0a6573e77fea"
+    },
+    "raw_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+    "cuts": [
+      0.252,
+      0.428,
+      1.466
+    ],
+    "features": [
+      "Global_active_power",
+      "Global_reactive_power",
+      "Voltage",
+      "Global_intensity",
+      "Sub_metering_1",
+      "Sub_metering_2",
+      "Sub_metering_3"
+    ],
+    "splits": {
+      "confirmation": {
+        "rows": 104236,
+        "matches": {
+          "rising": 771,
+          "falling": 778,
+          "excursion": 13424
+        },
+        "entities": [
+          "household"
+        ],
+        "q_counts": {
+          "0": 101,
+          "1": 15,
+          "2": 139,
+          "3": 12034,
+          "4": 1240,
+          "5": 155,
+          "6": 20104,
+          "7": 12139,
+          "8": 5116,
+          "9": 4170,
+          "10": 3128,
+          "11": 1352,
+          "12": 12336,
+          "13": 6746,
+          "14": 25461
+        },
+        "known_fraction": 0.9994467682310654,
+        "positive_fraction": [
+          0.024573798187682384,
+          0.02474338299288384,
+          0.32391720978150623
+        ],
+        "npz_sha256": "017f98ee0438b2ed89cf9aea876123f09003595706805276413d21bcd4f3e7b2"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "family": "nested",
+      "rank": 9,
+      "all_coordinate_order": true,
+      "identity_map": true
+    },
+    {
+      "family": "directional",
+      "rank": 9,
+      "all_coordinate_order": true,
+      "identity_map": true
+    },
+    {
+      "family": "multisignal",
+      "rank": 9,
+      "all_coordinate_order": true,
+      "identity_map": true
+    }
+  ],
+  "interpretation": "The static coordinate codec is exactly the all-coordinate codec at three horizons for these families, including the same ordering and reconstruction matrix."
+}
