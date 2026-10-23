@@ -1,0 +1,97 @@
+{
+  "domain": "power",
+  "mode": "overflow-pilot-2-8",
+  "origins": 2,
+  "replicates": 8,
+  "methods": [
+    "harmonic",
+    "mass",
+    "known_bits",
+    "uniform"
+  ],
+  "results": [
+    {
+      "budget": 512,
+      "method": "harmonic",
+      "mse": 5.578021918811492e-06,
+      "rows": 512.0,
+      "seconds": 0.03577047931321431,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 4.0
+    },
+    {
+      "budget": 512,
+      "method": "mass",
+      "mse": 0.0033897859076110165,
+      "rows": 512.0,
+      "seconds": 0.020719640622701263,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 4.0
+    },
+    {
+      "budget": 512,
+      "method": "known_bits",
+      "mse": 7.28571407763257e-05,
+      "rows": 512.0,
+      "seconds": 0.029819770748872543,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 4.0
+    },
+    {
+      "budget": 512,
+      "method": "uniform",
+      "mse": 9.779146079504086e-06,
+      "rows": 512.0,
+      "seconds": 0.03519210937702155,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 4.0
+    },
+    {
+      "budget": 2048,
+      "method": "harmonic",
+      "mse": 2.2920569623737588e-06,
+      "rows": 2048.0,
+      "seconds": 0.1314671301861381,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 2.5
+    },
+    {
+      "budget": 2048,
+      "method": "mass",
+      "mse": 0.0004574815538054135,
+      "rows": 2048.0,
+      "seconds": 0.06867259112914326,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 2.5
+    },
+    {
+      "budget": 2048,
+      "method": "known_bits",
+      "mse": 6.6099265499362235e-06,
+      "rows": 2048.0,
+      "seconds": 0.10273961468556081,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 2.5
+    },
+    {
+      "budget": 2048,
+      "method": "uniform",
+      "mse": 1.9878158167000626e-06,
+      "rows": 2048.0,
+      "seconds": 0.1298193646252912,
+      "family_incoherent_runs": 0,
+      "overflow_run_fraction": 1.0,
+      "overflow_steps_mean": 2.5
+    }
+  ],
+  "comparison_status": "Q3 and overflow controls must all be included; this file alone is not a gate result",
+  "max_mass_error": 3.552713678800501e-15,
+  "max_moment_error": 2.6808694424552276e-15
+}
