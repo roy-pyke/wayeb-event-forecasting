@@ -18,6 +18,6 @@ jobs:
       - name: Install test dependencies
         run: |
           python -m venv .venv-pattern
-          .venv-pattern/bin/python -m pip install numpy==1.26.4 pandas==2.2.2 scipy==1.12.0 pytest==8.3.5
+          .venv-pattern/bin/python -m pip install numpy==1.26.4 pandas==2.2.2 scipy==1.12.0 scikit-learn==1.4.2 pytest==8.3.5
       - name: Verify compiled queries and inference estimators
         run: ./query_forecasting/run.sh -m pytest query_forecasting/tests -q
