@@ -1,0 +1,14 @@
+{
+  "release": "query-sources-20261022",
+  "download_url": "https://github.com/roy-pyke/wayeb-event-forecasting/releases/download/query-sources-20261022/query-sources-20261022.tar.gz",
+  "restored_files": {
+    "air/world.pt": "0b0b1a6f23cf364d67bfc06dcc70a80b6633006fd141517b4c70845fe624a5a5",
+    "power/world.pt": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b"
+  },
+  "expected_files": {
+    "air/world.pt": "0b0b1a6f23cf364d67bfc06dcc70a80b6633006fd141517b4c70845fe624a5a5",
+    "power/world.pt": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b"
+  },
+  "passed": true,
+  "scope": "fresh empty destination; checked full archive and member hashes before writing"
+}

@@ -1,0 +1,89 @@
+{
+  "domain": "air",
+  "mode": "particle-control",
+  "origins": 48,
+  "replicates": 32,
+  "methods": [
+    "systematic",
+    "stratified",
+    "discrete",
+    "discrete_ordered"
+  ],
+  "status": "strong conventional controls, not a proposed novel contribution",
+  "results": [
+    {
+      "budget": 512,
+      "method": "systematic",
+      "mse": 0.00015003882497614717,
+      "family_incoherent_runs": 0,
+      "rows": 446.5455729166667,
+      "proxy_rows": 0.0,
+      "seconds": 0.005359841192349298
+    },
+    {
+      "budget": 512,
+      "method": "stratified",
+      "mse": 0.00022005025266283603,
+      "family_incoherent_runs": 0,
+      "rows": 441.2604166666667,
+      "proxy_rows": 0.0,
+      "seconds": 0.005250045206594223
+    },
+    {
+      "budget": 512,
+      "method": "discrete",
+      "mse": 0.00013060646465881502,
+      "family_incoherent_runs": 0,
+      "rows": 512.0,
+      "proxy_rows": 0.0,
+      "seconds": 0.005135876892874573
+    },
+    {
+      "budget": 512,
+      "method": "discrete_ordered",
+      "mse": 8.799727028820233e-05,
+      "family_incoherent_runs": 0,
+      "rows": 512.0,
+      "proxy_rows": 0.0,
+      "seconds": 0.015210868545182166
+    },
+    {
+      "budget": 2048,
+      "method": "systematic",
+      "mse": 1.405708887224062e-05,
+      "family_incoherent_runs": 0,
+      "rows": 1677.5885416666667,
+      "proxy_rows": 0.0,
+      "seconds": 0.021617299351760266
+    },
+    {
+      "budget": 2048,
+      "method": "stratified",
+      "mse": 1.9175827121047707e-05,
+      "family_incoherent_runs": 0,
+      "rows": 1648.0240885416667,
+      "proxy_rows": 0.0,
+      "seconds": 0.021204805449201558
+    },
+    {
+      "budget": 2048,
+      "method": "discrete",
+      "mse": 1.0297316225378014e-05,
+      "family_incoherent_runs": 0,
+      "rows": 2048.0,
+      "proxy_rows": 0.0,
+      "seconds": 0.022072543371583226
+    },
+    {
+      "budget": 2048,
+      "method": "discrete_ordered",
+      "mse": 5.275762324921402e-06,
+      "family_incoherent_runs": 0,
+      "rows": 2048.0,
+      "proxy_rows": 0.0,
+      "seconds": 0.0558876316918789
+    }
+  ],
+  "max_mass_error": 1.2656542480726785e-14,
+  "max_moment_error": 0.0
+}

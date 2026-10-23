@@ -1,0 +1,314 @@
+{
+  "scope": "development only, same frozen source/query/input/budget; no unopened years",
+  "bootstrap": "5000 paired-origin bootstrap resamples, fixed selected comparator and reselected best comparator both reported",
+  "runtime": "Concurrent experiment times are descriptive; serial timing is required separately.",
+  "domains": {
+    "air": {
+      "missing": [
+        "moment-basis-v2",
+        "markov-control"
+      ],
+      "methods": {
+        "balanced/harmonic": {
+          "mse": 2.3601455520363277e-06,
+          "seconds_concurrent": 0.45985900687107534,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "balanced/mass": {
+          "mse": 0.0006149425299637677,
+          "seconds_concurrent": 0.15883765869013663,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "balanced/monitor_we": {
+          "mse": 1.0768740314774948e-05,
+          "seconds_concurrent": 0.040369985963783016,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "balanced/mc": {
+          "mse": 9.154744014508032e-05,
+          "seconds_concurrent": 0.014815781973140929,
+          "rows": 768.9010416666666,
+          "infeasible_runs": 0
+        },
+        "balanced/potential": {
+          "mse": 1.5602430346487518e-05,
+          "seconds_concurrent": 0.07391954866621593,
+          "rows": 768.9010416666666,
+          "infeasible_runs": 0
+        },
+        "balanced/potential_lhs": {
+          "mse": 8.334033588523768e-06,
+          "seconds_concurrent": 0.07474059362897378,
+          "rows": 775.685546875,
+          "infeasible_runs": 0
+        },
+        "balanced/potential_family_projected": {
+          "mse": 1.5128638513044068e-05,
+          "seconds_concurrent": 0.07435712578482405,
+          "rows": 768.9010416666666,
+          "infeasible_runs": 0
+        },
+        "balanced/potential_lhs_family_projected": {
+          "mse": 8.027404056815483e-06,
+          "seconds_concurrent": 0.07518173023894785,
+          "rows": 775.685546875,
+          "infeasible_runs": 0
+        },
+        "balanced/independent_monitor_pool": {
+          "mse": 5.124013462974981e-05,
+          "seconds_concurrent": 0.09633735509053547,
+          "rows": 1685.423828125,
+          "infeasible_runs": 0
+        },
+        "balanced/surrogate_only": {
+          "mse": 0.006514919359984735,
+          "seconds_concurrent": 0.00039711331154042756,
+          "rows": 1.0,
+          "infeasible_runs": 0
+        },
+        "overflow/harmonic": {
+          "mse": 3.270256878725872e-06,
+          "seconds_concurrent": 0.12700596273706802,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "overflow/mass": {
+          "mse": 2.958747562932972e-05,
+          "seconds_concurrent": 0.06999759451755001,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "overflow/known_bits": {
+          "mse": 2.9100844589713745e-06,
+          "seconds_concurrent": 0.09962232775164163,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "overflow/uniform": {
+          "mse": 3.0312543160977747e-06,
+          "seconds_concurrent": 0.12755774822005606,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "particle-control/systematic": {
+          "mse": 1.405708887224062e-05,
+          "seconds_concurrent": 0.021617299351760266,
+          "rows": 1677.5885416666667,
+          "infeasible_runs": 0
+        },
+        "particle-control/stratified": {
+          "mse": 1.9175827121047707e-05,
+          "seconds_concurrent": 0.021204805449201558,
+          "rows": 1648.0240885416667,
+          "infeasible_runs": 0
+        },
+        "particle-control/discrete": {
+          "mse": 1.0297316225378014e-05,
+          "seconds_concurrent": 0.022072543371583226,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "particle-control/discrete_ordered": {
+          "mse": 5.275762324921402e-06,
+          "seconds_concurrent": 0.0558876316918789,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        }
+      },
+      "gates": {
+        "Q3": {
+          "candidate": "balanced/harmonic",
+          "best_comparator": "overflow/known_bits",
+          "relative_mse_reduction": 0.18897695743491694,
+          "paired_origin_95_fixed": [
+            -0.458033501384052,
+            0.5509436362636816
+          ],
+          "paired_origin_95_reselected_best": [
+            -0.5481528359388864,
+            0.5506242704068353
+          ],
+          "mse_gate": false,
+          "inference_status": "provisional; stronger runs pending",
+          "concurrent_time_ratio": 4.61602350847998
+        },
+        "Q4": {
+          "candidate": "overflow/harmonic",
+          "best_comparator": "balanced/harmonic",
+          "relative_mse_reduction": -0.38561660991810554,
+          "paired_origin_95_fixed": [
+            -1.680614269400197,
+            0.3165056669169766
+          ],
+          "paired_origin_95_reselected_best": [
+            -1.680614269400197,
+            -0.005770998020766235
+          ],
+          "mse_gate": false,
+          "inference_status": "provisional; stronger runs pending",
+          "concurrent_time_ratio": 0.27618457144338376
+        },
+        "Q5": {
+          "status": "missing or infeasible"
+        }
+      }
+    },
+    "power": {
+      "missing": [
+        "moment-basis-v2",
+        "markov-control"
+      ],
+      "methods": {
+        "balanced/harmonic": {
+          "mse": 1.8548694853576266e-06,
+          "seconds_concurrent": 0.4498188415459102,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "balanced/mass": {
+          "mse": 0.001923674904741677,
+          "seconds_concurrent": 0.1555107246637514,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "balanced/monitor_we": {
+          "mse": 9.684272862740637e-05,
+          "seconds_concurrent": 0.03892998121225825,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "balanced/mc": {
+          "mse": 0.00013035573790701283,
+          "seconds_concurrent": 0.019552891000538846,
+          "rows": 1240.888671875,
+          "infeasible_runs": 0
+        },
+        "balanced/potential": {
+          "mse": 6.191114353106315e-06,
+          "seconds_concurrent": 0.11490530370637468,
+          "rows": 1240.888671875,
+          "infeasible_runs": 0
+        },
+        "balanced/potential_lhs": {
+          "mse": 3.956428969139256e-06,
+          "seconds_concurrent": 0.11551206695046783,
+          "rows": 1246.6438802083333,
+          "infeasible_runs": 0
+        },
+        "balanced/potential_family_projected": {
+          "mse": 6.190980528066713e-06,
+          "seconds_concurrent": 0.11504499997261064,
+          "rows": 1240.888671875,
+          "infeasible_runs": 0
+        },
+        "balanced/potential_lhs_family_projected": {
+          "mse": 3.956363853665077e-06,
+          "seconds_concurrent": 0.11558713737012265,
+          "rows": 1246.6438802083333,
+          "infeasible_runs": 0
+        },
+        "balanced/independent_monitor_pool": {
+          "mse": 0.00012600637483933428,
+          "seconds_concurrent": 0.10415996512792465,
+          "rows": 1630.9544270833333,
+          "infeasible_runs": 0
+        },
+        "balanced/surrogate_only": {
+          "mse": 0.000995452773145616,
+          "seconds_concurrent": 0.00039466959884748576,
+          "rows": 1.0,
+          "infeasible_runs": 0
+        },
+        "overflow/harmonic": {
+          "mse": 2.626606052366791e-06,
+          "seconds_concurrent": 0.12151169710714764,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "overflow/mass": {
+          "mse": 0.00014319215969624388,
+          "seconds_concurrent": 0.06730419618404919,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "overflow/known_bits": {
+          "mse": 4.161616398806255e-06,
+          "seconds_concurrent": 0.09557795542699903,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "overflow/uniform": {
+          "mse": 2.7100360579548803e-06,
+          "seconds_concurrent": 0.12116619841617648,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "particle-control/systematic": {
+          "mse": 2.8749357254716216e-05,
+          "seconds_concurrent": 0.023627697141250792,
+          "rows": 1908.3515625,
+          "infeasible_runs": 0
+        },
+        "particle-control/stratified": {
+          "mse": 3.916038619699892e-05,
+          "seconds_concurrent": 0.022775538073744883,
+          "rows": 1848.1360677083333,
+          "infeasible_runs": 0
+        },
+        "particle-control/discrete": {
+          "mse": 2.6863289047628053e-05,
+          "seconds_concurrent": 0.022567935968368147,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        },
+        "particle-control/discrete_ordered": {
+          "mse": 1.4978999277639364e-05,
+          "seconds_concurrent": 0.05689284838962294,
+          "rows": 2048.0,
+          "infeasible_runs": 0
+        }
+      },
+      "gates": {
+        "Q3": {
+          "candidate": "balanced/harmonic",
+          "best_comparator": "overflow/harmonic",
+          "relative_mse_reduction": 0.29381511792138204,
+          "paired_origin_95_fixed": [
+            0.04898339280339158,
+            0.48428681714465127
+          ],
+          "paired_origin_95_reselected_best": [
+            0.04177329809422013,
+            0.48428681714465127
+          ],
+          "mse_gate": true,
+          "inference_status": "provisional; stronger runs pending",
+          "concurrent_time_ratio": 3.7018563007087706
+        },
+        "Q4": {
+          "candidate": "overflow/harmonic",
+          "best_comparator": "balanced/harmonic",
+          "relative_mse_reduction": -0.41605976760158425,
+          "paired_origin_95_fixed": [
+            -0.9390623287679031,
+            -0.051506365813900085
+          ],
+          "paired_origin_95_reselected_best": [
+            -0.9390623287679031,
+            -0.05201155622250676
+          ],
+          "mse_gate": false,
+          "inference_status": "provisional; stronger runs pending",
+          "concurrent_time_ratio": 0.2701347428879226
+        },
+        "Q5": {
+          "status": "missing or infeasible"
+        }
+      }
+    }
+  },
+  "independent_confirmation": "NOT RUN; remaining years closed"
+}
