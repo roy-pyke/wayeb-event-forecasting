@@ -1,0 +1,43 @@
+{
+  "scope": "Deterministic real-reallocator diagnostic, not a full scheduling experiment",
+  "cases": [
+    {
+      "version": "pinned_strict",
+      "continuous_sum_amp": 36.0,
+      "underflow_amp": 0.0,
+      "discrete_sum_amp": 36.0
+    },
+    {
+      "version": "pinned_strict",
+      "continuous_sum_amp": 35.99999999,
+      "underflow_amp": 1e-08,
+      "discrete_sum_amp": 30.0
+    },
+    {
+      "version": "pinned_strict",
+      "continuous_sum_amp": 35.999,
+      "underflow_amp": 0.001,
+      "discrete_sum_amp": 30.0
+    },
+    {
+      "version": "tolerance_1e-5",
+      "continuous_sum_amp": 36.0,
+      "underflow_amp": 0.0,
+      "discrete_sum_amp": 36.0
+    },
+    {
+      "version": "tolerance_1e-5",
+      "continuous_sum_amp": 35.99999999,
+      "underflow_amp": 1e-08,
+      "discrete_sum_amp": 36.0
+    },
+    {
+      "version": "tolerance_1e-5",
+      "continuous_sum_amp": 35.999,
+      "underflow_amp": 0.001,
+      "discrete_sum_amp": 30.0
+    }
+  ],
+  "physical_feeder_amp": 36,
+  "assertions": "passed"
+}

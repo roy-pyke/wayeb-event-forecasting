@@ -1,0 +1,1134 @@
+{
+  "scope": "Fixed held-out synthetic acceptance worlds; not production benefit or a learned predictor evaluation",
+  "worlds": 120,
+  "policy_world_runs": 1080,
+  "native_solver_calls": 2410,
+  "constraint_violations": 0,
+  "selection": {
+    "created_utc": "2026-10-23T23:20:47.894511+00:00",
+    "protocol_sha256": "657788d80b317180a9fb97935515791f0e592a3798f9594ac046308d0984da3f",
+    "development_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "duration_slots": 2,
+    "selected_causal_policy": "edf",
+    "current_mpc_duration_mean_kwh": {
+      "2": 21.146666666666665,
+      "4": 21.146666666666665,
+      "6": 21.146666666666665,
+      "8": 21.146666666666665
+    },
+    "causal_policy_mean_kwh": {
+      "causal_mpc": 20.3632,
+      "edf": 20.37013333333333,
+      "llf": 20.148266666666665,
+      "native": 18.8552
+    },
+    "scope": "Global development selection only. Same duration in every held-out MPC. No per-test-world best choice."
+  },
+  "groups": {
+    "no_pause_36A": {
+      "mean_requested_kwh": 29.879199999999997,
+      "means": {
+        "causal_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.022702372845378654
+        },
+        "current_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.021611927100457208
+        },
+        "edf": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.5,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00022545824467664496
+        },
+        "lead1_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.029315825150115372
+        },
+        "lead3_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.022484020801493844
+        },
+        "llf": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 0.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00028769594791805506
+        },
+        "native": {
+          "delivered_kwh": 11.668800000000001,
+          "shortfall_kwh": 18.2104,
+          "fully_served": 0.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.09179401869187129
+        },
+        "offline": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00108043119835197
+        },
+        "resume_oracle_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.021735685452585987
+        }
+      },
+      "paired": {
+        "current_mpc_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead1_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead3_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_native": {
+          "seeds": 20,
+          "mean_kwh": 2.1736000000000004,
+          "median_kwh": 2.235999999999999,
+          "min_kwh": 1.6639999999999997,
+          "max_kwh": 2.4960000000000004,
+          "bootstrap_95pct_kwh": [
+            2.0644,
+            2.2724
+          ],
+          "positive": 20,
+          "negative": 0,
+          "zero": 0
+        }
+      },
+      "action_differences_from_current_mpc": {
+        "lead1_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "lead3_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "resume_oracle_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        }
+      }
+    },
+    "no_pause_60A": {
+      "mean_requested_kwh": 29.879199999999997,
+      "means": {
+        "causal_mpc": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 3.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.02178813755454025
+        },
+        "current_mpc": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 3.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.022736104045179624
+        },
+        "edf": {
+          "delivered_kwh": 22.49,
+          "shortfall_kwh": 7.3892,
+          "fully_served": 2.85,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00019926261447831504
+        },
+        "lead1_mpc": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 3.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.022867564548505432
+        },
+        "lead3_mpc": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 3.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.021962312550749576
+        },
+        "llf": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 0.55,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00023219799331849998
+        },
+        "native": {
+          "delivered_kwh": 20.607599999999998,
+          "shortfall_kwh": 9.271600000000001,
+          "fully_served": 0.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.07633314359700304
+        },
+        "offline": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 3.15,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.001165918697370165
+        },
+        "resume_oracle_mpc": {
+          "delivered_kwh": 22.619999999999997,
+          "shortfall_kwh": 7.259200000000002,
+          "fully_served": 3.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.022102529101539356
+        }
+      },
+      "paired": {
+        "current_mpc_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.12999999999999973,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 1.5599999999999987,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.3275999999999998
+          ],
+          "positive": 3,
+          "negative": 0,
+          "zero": 17
+        },
+        "lead1_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead3_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.12999999999999973,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 1.5599999999999987,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.3275999999999998
+          ],
+          "positive": 3,
+          "negative": 0,
+          "zero": 17
+        },
+        "offline_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_native": {
+          "seeds": 20,
+          "mean_kwh": 2.0124,
+          "median_kwh": 2.0279999999999987,
+          "min_kwh": 1.3520000000000003,
+          "max_kwh": 2.392000000000003,
+          "bootstrap_95pct_kwh": [
+            1.8824,
+            2.1319999999999997
+          ],
+          "positive": 20,
+          "negative": 0,
+          "zero": 0
+        }
+      },
+      "action_differences_from_current_mpc": {
+        "lead1_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "lead3_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "resume_oracle_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        }
+      }
+    },
+    "no_pause_180A": {
+      "mean_requested_kwh": 29.879199999999997,
+      "means": {
+        "causal_mpc": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.013148808391997533
+        },
+        "current_mpc": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.012846729296143116
+        },
+        "edf": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00019095215538978
+        },
+        "lead1_mpc": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.012808989701443296
+        },
+        "lead3_mpc": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.012656745643471318
+        },
+        "llf": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00021973325638094992
+        },
+        "native": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.04483878550527147
+        },
+        "offline": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.0008334521902724501
+        },
+        "resume_oracle_mpc": {
+          "delivered_kwh": 29.77,
+          "shortfall_kwh": 0.1092,
+          "fully_served": 5.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.012650539691094248
+        }
+      },
+      "paired": {
+        "current_mpc_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead1_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead3_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_native": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        }
+      },
+      "action_differences_from_current_mpc": {
+        "lead1_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "lead3_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "resume_oracle_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        }
+      }
+    },
+    "pause_36A": {
+      "mean_requested_kwh": 29.879199999999997,
+      "means": {
+        "causal_mpc": {
+          "delivered_kwh": 12.776399999999999,
+          "shortfall_kwh": 17.102800000000002,
+          "fully_served": 0.75,
+          "wasted_reserved_kwh": 1.066,
+          "runtime_seconds": 0.019960968813393216
+        },
+        "current_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.2,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.019553768698824525
+        },
+        "edf": {
+          "delivered_kwh": 12.911599999999998,
+          "shortfall_kwh": 16.967599999999997,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.9308,
+          "runtime_seconds": 0.00018605220247986
+        },
+        "lead1_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.25,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.019312104207347098
+        },
+        "lead3_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.05,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.019164927201927598
+        },
+        "llf": {
+          "delivered_kwh": 12.6568,
+          "shortfall_kwh": 17.2224,
+          "fully_served": 0.05,
+          "wasted_reserved_kwh": 1.1856,
+          "runtime_seconds": 0.00021530625526788998
+        },
+        "native": {
+          "delivered_kwh": 10.8004,
+          "shortfall_kwh": 19.078799999999998,
+          "fully_served": 0.0,
+          "wasted_reserved_kwh": 0.7072,
+          "runtime_seconds": 0.06987890624150164
+        },
+        "offline": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.15,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.0009832832991377798
+        },
+        "resume_oracle_mpc": {
+          "delivered_kwh": 13.842400000000001,
+          "shortfall_kwh": 16.036800000000003,
+          "fully_served": 1.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.01923014584463087
+        }
+      },
+      "paired": {
+        "current_mpc_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.9308000000000003,
+          "median_kwh": 0.8320000000000007,
+          "min_kwh": 0.0,
+          "max_kwh": 1.7680000000000007,
+          "bootstrap_95pct_kwh": [
+            0.7280000000000001,
+            1.1388000000000003
+          ],
+          "positive": 19,
+          "negative": 0,
+          "zero": 1
+        },
+        "lead1_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead3_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.9308000000000003,
+          "median_kwh": 0.8320000000000007,
+          "min_kwh": 0.0,
+          "max_kwh": 1.7680000000000007,
+          "bootstrap_95pct_kwh": [
+            0.7280000000000001,
+            1.1388000000000003
+          ],
+          "positive": 19,
+          "negative": 0,
+          "zero": 1
+        },
+        "offline_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_native": {
+          "seeds": 20,
+          "mean_kwh": 3.0420000000000003,
+          "median_kwh": 3.016,
+          "min_kwh": 2.1839999999999993,
+          "max_kwh": 3.639999999999999,
+          "bootstrap_95pct_kwh": [
+            2.8964,
+            3.1824
+          ],
+          "positive": 20,
+          "negative": 0,
+          "zero": 0
+        }
+      },
+      "action_differences_from_current_mpc": {
+        "lead1_mpc": {
+          "worlds_with_different_actions": 11,
+          "different_dispatch_slots": 60
+        },
+        "lead3_mpc": {
+          "worlds_with_different_actions": 14,
+          "different_dispatch_slots": 70
+        },
+        "resume_oracle_mpc": {
+          "worlds_with_different_actions": 14,
+          "different_dispatch_slots": 80
+        }
+      }
+    },
+    "pause_60A": {
+      "mean_requested_kwh": 29.879199999999997,
+      "means": {
+        "causal_mpc": {
+          "delivered_kwh": 20.976800000000004,
+          "shortfall_kwh": 8.9024,
+          "fully_served": 2.35,
+          "wasted_reserved_kwh": 1.5652,
+          "runtime_seconds": 0.020091599860461384
+        },
+        "current_mpc": {
+          "delivered_kwh": 22.474399999999996,
+          "shortfall_kwh": 7.4048,
+          "fully_served": 2.75,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.019648162549128694
+        },
+        "edf": {
+          "delivered_kwh": 20.914399999999997,
+          "shortfall_kwh": 8.9648,
+          "fully_served": 2.5,
+          "wasted_reserved_kwh": 1.4612000000000003,
+          "runtime_seconds": 0.000189012399641745
+        },
+        "lead1_mpc": {
+          "delivered_kwh": 22.458799999999997,
+          "shortfall_kwh": 7.420400000000001,
+          "fully_served": 2.65,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.019776320850360164
+        },
+        "lead3_mpc": {
+          "delivered_kwh": 22.458799999999997,
+          "shortfall_kwh": 7.420400000000001,
+          "fully_served": 2.7,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.019635324910632284
+        },
+        "llf": {
+          "delivered_kwh": 20.872799999999998,
+          "shortfall_kwh": 9.0064,
+          "fully_served": 0.6,
+          "wasted_reserved_kwh": 1.6847999999999999,
+          "runtime_seconds": 0.00021549580269487005
+        },
+        "native": {
+          "delivered_kwh": 19.151600000000002,
+          "shortfall_kwh": 10.727599999999999,
+          "fully_served": 0.25,
+          "wasted_reserved_kwh": 1.2116,
+          "runtime_seconds": 0.06982530199747997
+        },
+        "offline": {
+          "delivered_kwh": 22.5628,
+          "shortfall_kwh": 7.3164,
+          "fully_served": 2.8,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.0009536124387522649
+        },
+        "resume_oracle_mpc": {
+          "delivered_kwh": 22.484799999999996,
+          "shortfall_kwh": 7.3944,
+          "fully_served": 2.8,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.01941070625325659
+        }
+      },
+      "paired": {
+        "current_mpc_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 1.5600000000000005,
+          "median_kwh": 1.6639999999999997,
+          "min_kwh": 0.0,
+          "max_kwh": 2.7040000000000006,
+          "bootstrap_95pct_kwh": [
+            1.2480000000000007,
+            1.8461300000000007
+          ],
+          "positive": 19,
+          "negative": 0,
+          "zero": 1
+        },
+        "lead1_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": -0.015599999999999881,
+          "median_kwh": 0.0,
+          "min_kwh": -0.3119999999999976,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.04679999999999964,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 19
+        },
+        "lead3_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": -0.015599999999999881,
+          "median_kwh": 0.0,
+          "min_kwh": -0.3119999999999976,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.04679999999999964,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 19
+        },
+        "resume_oracle_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.01039999999999992,
+          "median_kwh": 0.0,
+          "min_kwh": -0.3119999999999976,
+          "max_kwh": 0.519999999999996,
+          "bootstrap_95pct_kwh": [
+            -0.04679999999999964,
+            0.0779999999999994
+          ],
+          "positive": 1,
+          "negative": 1,
+          "zero": 18
+        },
+        "offline_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 1.6484,
+          "median_kwh": 1.716000000000001,
+          "min_kwh": 0.0,
+          "max_kwh": 3.6400000000000006,
+          "bootstrap_95pct_kwh": [
+            1.31027,
+            2.0020000000000002
+          ],
+          "positive": 19,
+          "negative": 0,
+          "zero": 1
+        },
+        "offline_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.08839999999999985,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.9359999999999999,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.22359999999999972
+          ],
+          "positive": 2,
+          "negative": 0,
+          "zero": 18
+        },
+        "resume_oracle_mpc_minus_native": {
+          "seeds": 20,
+          "mean_kwh": 3.3332000000000006,
+          "median_kwh": 3.432000000000002,
+          "min_kwh": 2.184000000000001,
+          "max_kwh": 4.471999999999998,
+          "bootstrap_95pct_kwh": [
+            3.0732000000000013,
+            3.5827999999999998
+          ],
+          "positive": 20,
+          "negative": 0,
+          "zero": 0
+        }
+      },
+      "action_differences_from_current_mpc": {
+        "lead1_mpc": {
+          "worlds_with_different_actions": 16,
+          "different_dispatch_slots": 104
+        },
+        "lead3_mpc": {
+          "worlds_with_different_actions": 19,
+          "different_dispatch_slots": 140
+        },
+        "resume_oracle_mpc": {
+          "worlds_with_different_actions": 19,
+          "different_dispatch_slots": 146
+        }
+      }
+    },
+    "pause_180A": {
+      "mean_requested_kwh": 29.879199999999997,
+      "means": {
+        "causal_mpc": {
+          "delivered_kwh": 27.8616,
+          "shortfall_kwh": 2.0176000000000003,
+          "fully_served": 4.95,
+          "wasted_reserved_kwh": 2.3348,
+          "runtime_seconds": 0.018157677247654595
+        },
+        "current_mpc": {
+          "delivered_kwh": 28.272399999999998,
+          "shortfall_kwh": 1.6067999999999998,
+          "fully_served": 5.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.017571610389859372
+        },
+        "edf": {
+          "delivered_kwh": 27.8616,
+          "shortfall_kwh": 2.0176000000000003,
+          "fully_served": 4.95,
+          "wasted_reserved_kwh": 2.3348,
+          "runtime_seconds": 0.00020980629778928503
+        },
+        "lead1_mpc": {
+          "delivered_kwh": 28.272399999999998,
+          "shortfall_kwh": 1.6067999999999998,
+          "fully_served": 5.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.017405572801362682
+        },
+        "lead3_mpc": {
+          "delivered_kwh": 28.272399999999998,
+          "shortfall_kwh": 1.6067999999999998,
+          "fully_served": 5.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.01690364375826897
+        },
+        "llf": {
+          "delivered_kwh": 27.8616,
+          "shortfall_kwh": 2.0176000000000003,
+          "fully_served": 4.95,
+          "wasted_reserved_kwh": 2.3348,
+          "runtime_seconds": 0.00023852294543753495
+        },
+        "native": {
+          "delivered_kwh": 27.3468,
+          "shortfall_kwh": 2.5324,
+          "fully_served": 4.8,
+          "wasted_reserved_kwh": 2.3348,
+          "runtime_seconds": 0.05363592700159638
+        },
+        "offline": {
+          "delivered_kwh": 28.272399999999998,
+          "shortfall_kwh": 1.6067999999999998,
+          "fully_served": 5.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.00086473744595418
+        },
+        "resume_oracle_mpc": {
+          "delivered_kwh": 28.272399999999998,
+          "shortfall_kwh": 1.6067999999999998,
+          "fully_served": 5.0,
+          "wasted_reserved_kwh": 0.0,
+          "runtime_seconds": 0.016959758245502547
+        }
+      },
+      "paired": {
+        "current_mpc_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.4108000000000004,
+          "median_kwh": 0.41600000000000037,
+          "min_kwh": 0.0,
+          "max_kwh": 1.2479999999999976,
+          "bootstrap_95pct_kwh": [
+            0.2597400000000005,
+            0.5616000000000001
+          ],
+          "positive": 14,
+          "negative": 0,
+          "zero": 6
+        },
+        "lead1_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "lead3_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "offline_minus_edf": {
+          "seeds": 20,
+          "mean_kwh": 0.4108000000000004,
+          "median_kwh": 0.41600000000000037,
+          "min_kwh": 0.0,
+          "max_kwh": 1.2479999999999976,
+          "bootstrap_95pct_kwh": [
+            0.2597400000000005,
+            0.5616000000000001
+          ],
+          "positive": 14,
+          "negative": 0,
+          "zero": 6
+        },
+        "offline_minus_current_mpc": {
+          "seeds": 20,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 20
+        },
+        "resume_oracle_mpc_minus_native": {
+          "seeds": 20,
+          "mean_kwh": 0.9255999999999999,
+          "median_kwh": 0.8320000000000007,
+          "min_kwh": 0.0,
+          "max_kwh": 2.1839999999999975,
+          "bootstrap_95pct_kwh": [
+            0.6084000000000003,
+            1.2323999999999997
+          ],
+          "positive": 16,
+          "negative": 0,
+          "zero": 4
+        }
+      },
+      "action_differences_from_current_mpc": {
+        "lead1_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "lead3_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        },
+        "resume_oracle_mpc": {
+          "worlds_with_different_actions": 0,
+          "different_dispatch_slots": 0
+        }
+      }
+    }
+  },
+  "evaluation_csv_sha256": "c6b7a7939c849872563c41e5c53d8ffc55fb524228d5a1a44fe79ef1b05f3910",
+  "uncertainty": "Paired 2000-resample bootstrap over simulation seeds within each condition/capacity, not physical sites or telemetry rows"
+}
