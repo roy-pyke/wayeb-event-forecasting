@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-22",
+  "registered_before_comparator_results": true,
+  "source": "Q1 trained model; unchanged 48 origins/domain, three families, horizons 2/4/6, budgets 128/512, 32 replicates",
+  "comparators": {
+    "arithmetic": "Randomly shifted regular lattice of N=floor(budget/H) codes in [0,1), inverse arithmetic decoding; natural token order; no invalid ordinary last-step Rao-Blackwell on dependent arithmetic codes",
+    "arithmetic_permuted": "Same as arithmetic, with independent uniformly permuted token order at each depth, common across samples; permutations drawn before code shift",
+    "sobol": "Owen-style scrambled Sobol H-dimensional points, first N points of next-power-of-two design; semantic stopping and last-decidable-step marginalization",
+    "lhs": "Independent Latin-hypercube coordinates at each future depth; same semantic stopping and last-step marginalization; STMC-inspired discrete-source baseline, not original software reproduction",
+    "hidden_cluster": "Same exact pooling frontier, KMeans clusters equal in number to semantic pools; features include recurrent state, last symbol, DFA state, already recorded output bits and depth. Normalize each feature block by sqrt(dimension); neural coordinates standardized over the frontier. n_init=5, max_iter=100, fixed seed=20261023. All clustering time counted. Same exact source-mixture sampling and allocation."
+  },
+  "gate": "Semantic pooling must retain the original >=20% MSE improvement and positive paired 95% interval in both domains against the best of ALL baselines. Independently timed serial reruns replace contended timing for the <=2x runtime gate."
+}
