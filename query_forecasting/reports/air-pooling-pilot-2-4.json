@@ -1,0 +1,175 @@
+{
+  "domain": "air",
+  "mode": "pooling-pilot-2-4",
+  "origins": 2,
+  "replicates": 4,
+  "methods": [
+    "single",
+    "depth",
+    "symbol",
+    "mass_buckets",
+    "semantic"
+  ],
+  "results": [
+    {
+      "budget": 128,
+      "method": "single",
+      "mse": 9.952809288505723e-05,
+      "family_mse": [
+        0.00010675010723136213,
+        0.00017073394956623362,
+        2.110022185757595e-05
+      ],
+      "rows": 72.625,
+      "seconds": 0.0033960069607322416,
+      "incoherent_runs": 0,
+      "groups": 1.0,
+      "frontier": 75.5
+    },
+    {
+      "budget": 128,
+      "method": "depth",
+      "mse": 5.9576864655400156e-05,
+      "family_mse": [
+        8.529485237385211e-05,
+        8.817636553815701e-05,
+        5.25937605419135e-06
+      ],
+      "rows": 97.83333333333333,
+      "seconds": 0.0038269131691777147,
+      "incoherent_runs": 0,
+      "groups": 4.5,
+      "frontier": 75.5
+    },
+    {
+      "budget": 128,
+      "method": "symbol",
+      "mse": 0.00012548475007736527,
+      "family_mse": [
+        0.00016490241447243278,
+        0.00020500753530372582,
+        6.5443004559372325e-06
+      ],
+      "rows": 76.79166666666667,
+      "seconds": 0.003416418293151461,
+      "incoherent_runs": 0,
+      "groups": 5.0,
+      "frontier": 75.5
+    },
+    {
+      "budget": 128,
+      "method": "mass_buckets",
+      "mse": 0.000149044363360533,
+      "family_mse": [
+        0.00012423910251486476,
+        0.00030746641721776874,
+        1.5427570348965498e-05
+      ],
+      "rows": 77.29166666666667,
+      "seconds": 0.0034868143714750963,
+      "incoherent_runs": 0,
+      "groups": 7.666666666666667,
+      "frontier": 75.5
+    },
+    {
+      "budget": 128,
+      "method": "semantic",
+      "mse": 4.040983852932352e-05,
+      "family_mse": [
+        4.313048256628626e-05,
+        6.282777798441688e-05,
+        1.5271255037267414e-05
+      ],
+      "rows": 87.20833333333333,
+      "seconds": 0.0036467829607621147,
+      "incoherent_runs": 0,
+      "groups": 7.666666666666667,
+      "frontier": 75.5
+    },
+    {
+      "budget": 512,
+      "method": "single",
+      "mse": 4.335536051227857e-06,
+      "family_mse": [
+        2.2279252964980153e-06,
+        1.0655842960406724e-05,
+        1.228398967788327e-07
+      ],
+      "rows": 261.375,
+      "seconds": 0.017183618037961423,
+      "incoherent_runs": 0,
+      "groups": 1.0,
+      "frontier": 228.5
+    },
+    {
+      "budget": 512,
+      "method": "depth",
+      "mse": 2.14370351533681e-06,
+      "family_mse": [
+        1.2667008823667976e-06,
+        5.1335500129560815e-06,
+        3.0859650687551216e-08
+      ],
+      "rows": 401.2083333333333,
+      "seconds": 0.019712335042034585,
+      "incoherent_runs": 0,
+      "groups": 4.0,
+      "frontier": 228.5
+    },
+    {
+      "budget": 512,
+      "method": "symbol",
+      "mse": 4.398965464805448e-06,
+      "family_mse": [
+        3.032349388849932e-06,
+        1.0116595441100558e-05,
+        4.7951564465854666e-08
+      ],
+      "rows": 273.875,
+      "seconds": 0.017321338623636013,
+      "incoherent_runs": 0,
+      "groups": 5.0,
+      "frontier": 228.5
+    },
+    {
+      "budget": 512,
+      "method": "mass_buckets",
+      "mse": 2.726906999089547e-06,
+      "family_mse": [
+        2.034836678290828e-06,
+        5.916866454145779e-06,
+        2.2901786483203507e-07
+      ],
+      "rows": 281.8333333333333,
+      "seconds": 0.018520248247417232,
+      "incoherent_runs": 0,
+      "groups": 11.0,
+      "frontier": 228.5
+    },
+    {
+      "budget": 512,
+      "method": "semantic",
+      "mse": 5.649708221327598e-07,
+      "family_mse": [
+        1.0942856127047246e-06,
+        5.534566648065707e-07,
+        4.717018888698431e-08
+      ],
+      "rows": 329.125,
+      "seconds": 0.018549807373346994,
+      "incoherent_runs": 0,
+      "groups": 11.0,
+      "frontier": 228.5
+    }
+  ],
+  "primary": {
+    "best_baseline": "Q1_semantic",
+    "relative_mse_reduction": 0.7144949499907421,
+    "query_bootstrap_95_interval": [
+      0.4040127922076243,
+      0.7870197715311188
+    ],
+    "time_ratio": 0.5654280432805394,
+    "passed": true
+  }
+}
