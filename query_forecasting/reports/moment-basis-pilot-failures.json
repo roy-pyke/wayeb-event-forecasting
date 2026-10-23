@@ -1,0 +1,12 @@
+{
+  "stage": "engineering pilot, before full Q5 development",
+  "v1_power": {
+    "status": "failed",
+    "location": "origin 0, budget 2048, repetition and policy not captured by old logging",
+    "error": "numpy.linalg.LinAlgError: SVD did not converge",
+    "resolution": "separate local-basis compressor plus gesvd fallback; old frozen source unchanged"
+  },
+  "v1_air": "retained air-moment-basis-pilot-2-8.json",
+  "v2": "separate cache identity, all controls use the same changed compression kernel",
+  "statistical_test": "Dirichlet coordinate with zero sampled inclusions has zero empirical SE; normal coordinate diagnostic replaced by uniform-weight experiment, preserving exact moment assertions"
+}
