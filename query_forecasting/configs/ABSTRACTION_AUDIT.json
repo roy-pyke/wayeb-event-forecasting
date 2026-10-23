@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-22",
+  "registered_before_results": true,
+  "motivation": "The closest ablation is a cheaper semantic abstraction, not another generic sampler. Trace MSE depends on marginal variances; full joint feasible-output sets might be unnecessary.",
+  "methods": {
+    "known_bits": "Group by the already recorded output code only.",
+    "marginal_support": "Group by bitwise AND and bitwise OR of all feasible output vectors: fixed zero, fixed one, and uncertain coordinates. Ignore joint constraints.",
+    "monitor_state": "Group by the complete deterministic monitor tuple (depth, DFA state, accumulated hit mask, recorded output code). Keep all source states separate within each group."
+  },
+  "common": "The identical Q2 mass frontier, exact source-mixture sampling, union-output variance bound, budget fallback, and allocation. No model-state averaging.",
+  "development": "48 origins per domain, all 3 original families, horizon 2/4/6, budget 512, 32 repetitions. Count every model row and timing. Reuse only exact reference, never candidate draws.",
+  "decision": "Apply the unchanged >=20% gain requirement against the best enlarged baseline set. If marginal support or monitor-state pooling matches the candidate, reject a full joint-language mechanism claim even if pooling beats all generic baselines. Record group-count equivalence and oracle variance decomposition. Do not open reserves on a failed mechanism audit."
+}
