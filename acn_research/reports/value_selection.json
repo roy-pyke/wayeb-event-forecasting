@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-23T23:20:47.894511+00:00",
+  "protocol_sha256": "657788d80b317180a9fb97935515791f0e592a3798f9594ac046308d0984da3f",
+  "development_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+  ],
+  "duration_slots": 2,
+  "selected_causal_policy": "edf",
+  "current_mpc_duration_mean_kwh": {
+    "2": 21.146666666666665,
+    "4": 21.146666666666665,
+    "6": 21.146666666666665,
+    "8": 21.146666666666665
+  },
+  "causal_policy_mean_kwh": {
+    "causal_mpc": 20.3632,
+    "edf": 20.37013333333333,
+    "llf": 20.148266666666665,
+    "native": 18.8552
+  },
+  "scope": "Global development selection only. Same duration in every held-out MPC. No per-test-world best choice."
+}

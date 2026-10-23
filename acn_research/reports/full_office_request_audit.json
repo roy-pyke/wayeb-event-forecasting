@@ -1,0 +1,63 @@
+{
+  "scope": "Descriptive extension over all 1474 static office recordings. New files are same site, not an independent deployment.",
+  "groups": {
+    "development_128": {
+      "sessions": 128,
+      "rows": 616230,
+      "metadata_matches": 117,
+      "first_alarm_sessions": 70,
+      "outcome_unplug_without_observed_resumption": 41,
+      "request_known_at_alarm": 11,
+      "outcome_resumed": 22,
+      "outcome_censored_file_end": 1,
+      "outcome_censored_gap": 6,
+      "known_request_valid_counter": 11,
+      "known_request_remaining_ge_0p1": 9,
+      "known_request_already_satisfied": 2,
+      "known_unmet_request_and_future_declared_departure": 9,
+      "resumed_with_request_known": 5,
+      "resumed_with_known_unmet_request": 5,
+      "resumed_eligible_at_alarm": 5,
+      "resumed_eligible_before_declared_departure": 5,
+      "resumed_eligible_and_pilot_ge_6": 5,
+      "resumed_eligible_with_observed_extra_ge_0p1": 2
+    },
+    "new_1346_same_site": {
+      "sessions": 1346,
+      "rows": 6976117,
+      "metadata_matches": 1183,
+      "first_alarm_sessions": 768,
+      "outcome_unplug_without_observed_resumption": 552,
+      "request_known_at_alarm": 100,
+      "outcome_resumed": 184,
+      "outcome_censored_file_end": 2,
+      "outcome_censored_gap": 30,
+      "known_request_valid_counter": 99,
+      "known_request_remaining_ge_0p1": 78,
+      "known_request_already_satisfied": 21,
+      "known_unmet_request_and_future_declared_departure": 60,
+      "resumed_with_request_known": 47,
+      "resumed_with_known_unmet_request": 43,
+      "resumed_eligible_at_alarm": 36,
+      "resumed_eligible_before_declared_departure": 31,
+      "resumed_eligible_and_pilot_ge_6": 36,
+      "resumed_eligible_with_observed_extra_ge_0p1": 7
+    }
+  },
+  "original_128_alarm_parity": "passed",
+  "source": {
+    "tree_sha": "851d1158df75988922ab20f45b6b283c96d2645b",
+    "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+    "files": 1474,
+    "bytes": 66522047,
+    "manifest_sha256": "db15e54f70e8e2033e58bb3460d8998b2a25cdaa621af5ebe0bd0b31246656a3",
+    "scope": "Complete pinned static office tree, not all live ACN sessions"
+  },
+  "limitations": [
+    "User request is declared intent, not verified physical battery demand",
+    "Current resume after a positive pilot is observational; no causal benefit inferred",
+    "Counter validity checked only through alarm; future counter used only for descriptive outcomes",
+    "No receive timestamps; modifiedAt is earliest documented submission availability",
+    "New 1346 are a file-disjoint same-site audit, not model performance confirmation"
+  ]
+}

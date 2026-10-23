@@ -1,0 +1,8 @@
+{
+  "tree_sha": "851d1158df75988922ab20f45b6b283c96d2645b",
+  "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+  "files": 1474,
+  "bytes": 66522047,
+  "manifest_sha256": "db15e54f70e8e2033e58bb3460d8998b2a25cdaa621af5ebe0bd0b31246656a3",
+  "scope": "Complete pinned static office tree, not all live ACN sessions"
+}
