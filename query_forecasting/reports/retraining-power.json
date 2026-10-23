@@ -1,0 +1,13 @@
+{
+  "domain": "power",
+  "selected_sha256_before": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b",
+  "selected_sha256_after": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b",
+  "retrained_sha256": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b",
+  "max_parameter_difference": 0.0,
+  "normalization_equal": true,
+  "epoch_loss_records_identical": true,
+  "source_sha256": "b80fe78526f98b44ddc486e3966d3e4cc98adcdd4f9424510e5000eada097afa",
+  "torch": "2.5.1",
+  "scope": "Same-machine deterministic retraining, not cross-platform bitwise equivalence",
+  "passed": true
+}
