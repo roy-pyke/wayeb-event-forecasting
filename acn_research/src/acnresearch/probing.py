@@ -5,8 +5,8 @@ from acnresearch.value import recovery_notices,summarize
 
 
 class ProbeEDF:
-    def __init__(self,public,interval=1,backoff=False):
-        self.public=public; self.interval=interval; self.backoff=backoff
+    def __init__(self,public,interval=1,backoff=False,fill_spare=False):
+        self.public=public; self.interval=interval; self.backoff=backoff; self.fill_spare=fill_spare
         n=len(public.demand)
         self.active=np.ones(n,bool); self.last_attempt=np.full(n,-100000,int)
         self.wait=np.ones(n,int); self.eta=np.full(n,-1,int)
@@ -41,13 +41,21 @@ class ProbeEDF:
         action=np.zeros(len(cap),int); budget=p.feeder
         for i in order:
             action[i]=min(int(cap[i]),budget); budget-=action[i]
+        if self.fill_spare:
+            # Serving known-active cars has priority. Any remaining pilot budget
+            # can test unknown acceptance at no displacement cost; never throttle
+            # a paused car merely to conserve capacity that nobody else can use.
+            for i in order:
+                if p.departure[i]<=t: continue
+                add=min(max(0,min(p.max_units,int(remaining[i]))-action[i]),budget)
+                action[i]+=add; budget-=add
         return action
 
 
-def run_probe(world,setting='every_1',lead=None):
+def run_probe(world,setting='every_1',lead=None,fill_spare=False):
     p=world.public; n=len(p.demand)
     controller=ProbeEDF(p,interval=int(setting[-1]) if setting.startswith('every_') else 1,
-                        backoff=setting=='backoff')
+                        backoff=setting=='backoff',fill_spare=fill_spare)
     pilot=np.zeros((n,p.slots),int); actual=pilot.copy(); remaining=p.demand.copy()
     start=time.perf_counter()
     for t in range(p.slots):

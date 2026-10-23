@@ -1,0 +1,55 @@
+{
+  "version": "P2-spare-capacity-before-fresh-evaluation",
+  "motivation": "Current-state oracle removes the sensing problem. Test whether recovery notice helps an actual causal controller by avoiding probe reservations or restoring nominal pilot promptly.",
+  "world": "Unchanged C2 six-vehicle synthetic exogenous-acceptance model; not a learned physical response",
+  "development_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+  ],
+  "evaluation_seeds": [
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519
+  ],
+  "feeder_amp": [
+    36,
+    60,
+    180
+  ],
+  "causal_candidates": [
+    "probe every 1, 2, or 4 control slots",
+    "exponential failed-probe backoff 1 to 2 to 4 slots"
+  ],
+  "selection": "One global causal policy selected by development mean delivered kWh; freeze before evaluating seeds 400-419",
+  "oracle_contract": "Same selected EDF and only past commands/actual response. A recovery notice can be used only after positive pilot produced zero current. No current-state oracle, no notice of future pause onset. Exact recovery notices become available 15 minutes before recovery or throughout the observed pause. A known future recovery stops probes before ETA and restores nominal eligibility at ETA.",
+  "controls": "Include selected causal probe policy, original every-slot probe EDF, current-state MPC and full-information offline optimum; no-pause control on the same seed/capacity pairs",
+  "metrics": "Paired delivered kWh, wasted reservation, total shortfall, fully served sessions, runtime, capacity and energy checks; bootstrap 2000 times by seed",
+  "limits": "Perfect notification is not an implemented predictor and fixed-policy oracle is not a universal information upper bound. Test whether a mechanism has conditional opportunity, not production effectiveness or novelty. No retuning from evaluation outcomes.",
+  "change": "P1 exposed artificial throttling with abundant feeder capacity. Add the same causal spare-budget fill to every controller: after active/probe allocations, allocate residual feeder budget up to connected unmet sessions nominal rates. No future input is used. Re-select on development and evaluate fresh seeds 500-519. Preserve P1 diagnostics.",
+  "additional_check": "At 180A all causal and notice controllers must match the offline bound, because all six nominal pilots fit simultaneously."
+}

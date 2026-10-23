@@ -13,10 +13,12 @@ from analyze_value import paired_summary
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--phase',choices=['development','evaluation'],required=True)
-    args=ap.parse_args(); path=HERE/'configs/PROBING_PROTOCOL.json'; cfg=json.loads(path.read_text())
+    ap.add_argument('--revision',choices=['p1','p2'],default='p1')
+    args=ap.parse_args(); path=HERE/('configs/PROBING_PROTOCOL_P2.json' if args.revision=='p2' else 'configs/PROBING_PROTOCOL.json'); cfg=json.loads(path.read_text())
     protohash=hashlib.sha256(path.read_bytes()).hexdigest()
-    out=HERE/'reports/probing'; out.mkdir(exist_ok=True)
-    traces=ROOT/'artifacts/acn/probing'/args.phase; traces.mkdir(parents=True,exist_ok=True)
+    subdir='probing_p2' if args.revision=='p2' else 'probing'
+    out=HERE/'reports'/subdir; out.mkdir(exist_ok=True)
+    traces=ROOT/'artifacts/acn'/subdir/args.phase; traces.mkdir(parents=True,exist_ok=True)
     if args.phase=='development':
         policies={s:(s,None) for s in ['every_1','every_2','every_4','backoff']}
         seeds=cfg['development_seeds']; conditions=['pause']
@@ -36,8 +38,10 @@ def main():
                     current,_=run_policy(w,'current_mpc',duration=2)
                     local.append(dict(policy='current_mpc',**current))
                 for name,(setting,lead) in policies.items():
-                    result,trace=run_probe(w,setting,lead)
+                    result,trace=run_probe(w,setting,lead,fill_spare=args.revision=='p2')
                     assert result['delivered_kwh']<=bound['delivered_kwh']+1e-6
+                    if args.revision=='p2' and cap==180:
+                        assert abs(result['delivered_kwh']-bound['delivered_kwh'])<1e-6
                     local.append(dict(policy=name,**result))
                     np.savez_compressed(traces/f'{condition}-{cap}-{seed}-{name}.npz',**trace)
                 rows.extend(dict(condition=condition,feeder_amp=cap,seed=seed,**r) for r in local)

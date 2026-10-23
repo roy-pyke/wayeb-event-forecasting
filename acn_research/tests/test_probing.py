@@ -21,3 +21,11 @@ def test_sparse_probes_do_not_read_future_acceptance():
         _,x=run_probe(World(w.public,a),setting)
         _,y=run_probe(World(w.public,b),setting)
         assert np.array_equal(x['pilot'][:,:10],y['pilot'][:,:10])
+
+
+def test_spare_capacity_avoids_unnecessary_recovery_throttling():
+    w=make_world(100,180)
+    optimum,_=run_policy(w,'offline')
+    for setting in ['every_1','every_2','every_4','backoff']:
+        result,_=run_probe(w,setting,fill_spare=True)
+        assert abs(result['delivered_kwh']-optimum['delivered_kwh'])<1e-8
