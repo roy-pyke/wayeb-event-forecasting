@@ -1,0 +1,168 @@
+{
+  "scope": "Native ACN-Sim and corrected AdaCharge integration fixtures with real CLARABEL solves; simulated exogenous response, not measured production benefit.",
+  "cases": [
+    {
+      "estimation": false,
+      "discrete_6A_pilots": false,
+      "probe_floor_amp": 0,
+      "pause": true,
+      "up_increment_amp": 1,
+      "delivered_kwh": [
+        1.999999999995295,
+        1.999999999993396,
+        1.999999999993396
+      ],
+      "total_delivered_kwh": 5.999999999982087,
+      "shortfall_kwh": 1.7912782368512126e-11,
+      "actual_peak_amp": 39.99999982567354,
+      "pilot_peak_amp": 39.99999987078217,
+      "capacity_amp": 40,
+      "recovered_vehicle_energy_after_resume_kwh": 1.5377778145258347,
+      "solver_calls": 52,
+      "runtime_seconds": 0.14428404095815495,
+      "warnings": [],
+      "patch_lookup_verified": true,
+      "energy_and_feasibility_assertions": "passed"
+    },
+    {
+      "estimation": true,
+      "discrete_6A_pilots": false,
+      "probe_floor_amp": 0,
+      "pause": true,
+      "up_increment_amp": 1,
+      "delivered_kwh": [
+        1.9999999994498738,
+        1.9999999615681416,
+        1.9999999615681419
+      ],
+      "total_delivered_kwh": 5.9999999225861576,
+      "shortfall_kwh": 7.74138424475268e-08,
+      "actual_peak_amp": 39.999999810837885,
+      "pilot_peak_amp": 39.999999810837885,
+      "capacity_amp": 40,
+      "recovered_vehicle_energy_after_resume_kwh": 1.5377778139804126,
+      "solver_calls": 60,
+      "runtime_seconds": 0.1699487500009127,
+      "warnings": [],
+      "patch_lookup_verified": true,
+      "energy_and_feasibility_assertions": "passed"
+    },
+    {
+      "estimation": true,
+      "discrete_6A_pilots": true,
+      "probe_floor_amp": 0,
+      "pause": true,
+      "up_increment_amp": 1,
+      "delivered_kwh": [
+        0.4159999999999999,
+        1.9968000000000008,
+        1.9968000000000006
+      ],
+      "total_delivered_kwh": 4.409600000000001,
+      "shortfall_kwh": 1.590399999999999,
+      "actual_peak_amp": 36.0,
+      "pilot_peak_amp": 36.0,
+      "capacity_amp": 36,
+      "recovered_vehicle_energy_after_resume_kwh": 0.0,
+      "solver_calls": 60,
+      "runtime_seconds": 0.16241595800966024,
+      "warnings": [],
+      "patch_lookup_verified": true,
+      "energy_and_feasibility_assertions": "passed"
+    },
+    {
+      "estimation": true,
+      "discrete_6A_pilots": true,
+      "probe_floor_amp": 6,
+      "pause": true,
+      "up_increment_amp": 1,
+      "delivered_kwh": [
+        1.0400000000000007,
+        1.9968000000000015,
+        1.9968000000000015
+      ],
+      "total_delivered_kwh": 5.033600000000003,
+      "shortfall_kwh": 0.9663999999999966,
+      "actual_peak_amp": 36.0,
+      "pilot_peak_amp": 36.0,
+      "capacity_amp": 36,
+      "recovered_vehicle_energy_after_resume_kwh": 0.624,
+      "solver_calls": 60,
+      "runtime_seconds": 0.15991704200860113,
+      "warnings": [],
+      "patch_lookup_verified": true,
+      "energy_and_feasibility_assertions": "passed"
+    },
+    {
+      "estimation": true,
+      "discrete_6A_pilots": true,
+      "probe_floor_amp": 6,
+      "pause": true,
+      "up_increment_amp": 6,
+      "delivered_kwh": [
+        1.9968000000000008,
+        1.9967999999999988,
+        1.9967999999999988
+      ],
+      "total_delivered_kwh": 5.990399999999998,
+      "shortfall_kwh": 0.009600000000001607,
+      "actual_peak_amp": 36.0,
+      "pilot_peak_amp": 36.0,
+      "capacity_amp": 36,
+      "recovered_vehicle_energy_after_resume_kwh": 1.5808,
+      "solver_calls": 60,
+      "runtime_seconds": 0.1674806249793619,
+      "warnings": [],
+      "patch_lookup_verified": true,
+      "energy_and_feasibility_assertions": "passed"
+    },
+    {
+      "estimation": true,
+      "discrete_6A_pilots": true,
+      "probe_floor_amp": 6,
+      "pause": false,
+      "up_increment_amp": 1,
+      "delivered_kwh": [
+        1.9968000000000015,
+        1.9968000000000015,
+        1.9968000000000015
+      ],
+      "total_delivered_kwh": 5.990400000000005,
+      "shortfall_kwh": 0.00959999999999539,
+      "actual_peak_amp": 36.0,
+      "pilot_peak_amp": 36.0,
+      "capacity_amp": 36,
+      "recovered_vehicle_energy_after_resume_kwh": 0.7488,
+      "solver_calls": 60,
+      "runtime_seconds": 0.16261916601797566,
+      "warnings": [],
+      "patch_lookup_verified": true,
+      "energy_and_feasibility_assertions": "passed"
+    }
+  ],
+  "all_assertions_passed": true,
+  "request_contract": "Energy and planned departure disclosed at arrival in these fixtures; actual departure hidden by declared-request interface.",
+  "source_revisions": {
+    "acnportal": {
+      "repository": "https://github.com/zach401/acnportal.git",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "license": "upstream LICENSE.txt, BSD-style"
+    },
+    "adacharge": {
+      "repository": "https://github.com/zach401/adacharge.git",
+      "commit": "b7d5fddb25e842333fc2b404d32dd3477ca47297",
+      "license": "upstream LICENSE.txt, academic and other non-commercial purposes"
+    },
+    "static_data": {
+      "repository": "https://github.com/tongxin-li/ACN-Data-Static",
+      "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+      "reference_protocol": "reference/acn_probe/protocol.json"
+    },
+    "api": {
+      "url": "https://ev.caltech.edu/api/v1/",
+      "public_demo_documentation": "https://acnportal.readthedocs.io/en/latest/tutorials/acnsim/lesson1.html",
+      "private_token_environment_variable": "ACN_API_TOKEN",
+      "credential_storage": "never in tracked files or reports"
+    }
+  }
+}

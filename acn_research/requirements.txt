@@ -10,3 +10,4 @@ requests==2.32.3
 pytz==2025.2
 typing_extensions==4.14.0
 pytest==8.3.5
+setuptools==80.9.0
