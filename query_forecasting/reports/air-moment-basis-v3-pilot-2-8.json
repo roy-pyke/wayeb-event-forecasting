@@ -1,0 +1,139 @@
+{
+  "domain": "air",
+  "mode": "moment-basis-v3-pilot-2-8",
+  "origins": 2,
+  "replicates": 8,
+  "methods": [
+    "harmonic",
+    "uniform",
+    "known_bits",
+    "occupancy",
+    "occupancy_symbol",
+    "markov_balanced"
+  ],
+  "status": "mechanism audit; final comparison requires completed Q3/Q4 and serial timings",
+  "results": [
+    {
+      "budget": 512,
+      "method": "harmonic",
+      "mse": 8.832099059668938e-06,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 27,
+      "rows": 512.0,
+      "seconds": 0.03977162750197749
+    },
+    {
+      "budget": 512,
+      "method": "uniform",
+      "mse": 1.5751687634566717e-06,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 27,
+      "rows": 512.0,
+      "seconds": 0.03963636980915908
+    },
+    {
+      "budget": 512,
+      "method": "known_bits",
+      "mse": 0.00010199701779147442,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 15,
+      "rows": 512.0,
+      "seconds": 0.03344741143882857
+    },
+    {
+      "budget": 512,
+      "method": "occupancy",
+      "mse": 4.386003411326857e-07,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 49,
+      "rows": 512.0,
+      "seconds": 0.05472159369310248
+    },
+    {
+      "budget": 512,
+      "method": "occupancy_symbol",
+      "mse": null,
+      "infeasible_runs": 16,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 0,
+      "rows": 223.0,
+      "seconds": 0.03279738037963398
+    },
+    {
+      "budget": 512,
+      "method": "markov_balanced",
+      "mse": 1.7357637787666377e-06,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 0,
+      "rows": 512.0,
+      "seconds": 0.0378030338742974
+    },
+    {
+      "budget": 2048,
+      "method": "harmonic",
+      "mse": 1.701163797543806e-06,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 27,
+      "rows": 2048.0,
+      "seconds": 0.13932076056335063
+    },
+    {
+      "budget": 2048,
+      "method": "uniform",
+      "mse": 2.8077814274324424e-07,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 27,
+      "rows": 2048.0,
+      "seconds": 0.14035021625386435
+    },
+    {
+      "budget": 2048,
+      "method": "known_bits",
+      "mse": 4.675191337079619e-05,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 16,
+      "rows": 2048.0,
+      "seconds": 0.12480880993462051
+    },
+    {
+      "budget": 2048,
+      "method": "occupancy",
+      "mse": 3.882898442116236e-08,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 49,
+      "rows": 2048.0,
+      "seconds": 0.18863580731522234
+    },
+    {
+      "budget": 2048,
+      "method": "occupancy_symbol",
+      "mse": 2.383208824274735e-08,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 109,
+      "rows": 2048.0,
+      "seconds": 0.37856577850288886
+    },
+    {
+      "budget": 2048,
+      "method": "markov_balanced",
+      "mse": 3.0520445666072776e-07,
+      "infeasible_runs": 0,
+      "family_incoherent_feasible_runs": 0,
+      "max_rank": 0,
+      "rows": 2048.0,
+      "seconds": 0.14097116675293364
+    }
+  ],
+  "max_mass_error": 8.881784197001252e-15,
+  "max_moment_error": 1.0334499754585247e-14
+}
