@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "role": "Additional comparator required by the closest-work audit; registered before results",
+  "literature": "Boyd et al. NeurIPS 2022, section 4.2 and appendix C: exact search mass plus restricted importance sampling of the remaining space",
+  "adapter": "Use the identical mass-priority prefix frontier and settled exact contributions as Q2. On unresolved prefixes, construct one viable-positive-query proposal per output coordinate. Select a proposal uniformly; select a prefix proportional to its exact source mass among prefixes viable for that proposal; continue with viability-restricted source transitions. Weight by the balance mixture of ALL proposal likelihoods, including the prefix-selection normalizer. Add settled mass exactly.",
+  "difference_from_author_code": "A multi-query monitor adapter with a fixed model-row budget, not a reproduction of the author's tail-splitting beam-search software. The common search tree isolates residual inference; published tail-splitting search remains a separate implementation gap.",
+  "methods": ["hybrid importance raw", "hybrid importance projected onto root output polytope"],
+  "development": "Unchanged 48 origins/domain, 3 original query families, horizons 2/4/6, budgets 128/512, 32 replicates; same sources and exact references",
+  "cost": "All prefix and continuation recurrent rows counted. Fixed sample count floor((budget-expansions)/maximum live suffix length), no stopping based on realized sample costs.",
+  "gate": "Retain the existing >=20% MSE reduction versus the best of ALL comparators in both domains. If this comparator reverses the result, record failure and keep reserves closed.",
+  "diagnostic": "On indices 0,4,...44, compute exact conditional first and second moments of the Rao-Blackwellized continuation estimator. Decompose pooled variance into within-history and between-history terms. These offline oracle calls do not enter deployment estimates and cannot select parameters."
+}
