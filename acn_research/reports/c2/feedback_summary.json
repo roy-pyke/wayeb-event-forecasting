@@ -1,0 +1,242 @@
+{
+  "scope": "Matched synthetic worlds with 1-minute instead of 5-minute feedback and dispatch; finer action space changes too",
+  "protocol_sha256": "ea45051411d938d7cf0a6562e9f1fdaa29931dcdeeb5feb9bd7b38328a2b563d",
+  "policy_world_runs": 240,
+  "baseline": "edf",
+  "groups": {
+    "36": {
+      "means_kwh": {
+        "current_mpc": 13.982799999999997,
+        "edf": 13.4108,
+        "offline": 13.982799999999997,
+        "resume_oracle_mpc": 13.982799999999997
+      },
+      "current_minus_causal_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.5719999999999998,
+        "median_kwh": 0.45760000000000023,
+        "min_kwh": 0.0,
+        "max_kwh": 1.5391999999999992,
+        "bootstrap_95pct_kwh": [
+          0.4035199999999997,
+          0.7550399999999997
+        ],
+        "positive": 18,
+        "negative": 0,
+        "zero": 2
+      },
+      "current_minus_causal_5min": {
+        "seeds": 20,
+        "mean_kwh": 0.8008,
+        "median_kwh": 0.7800000000000002,
+        "min_kwh": 0.0,
+        "max_kwh": 2.2880000000000003,
+        "bootstrap_95pct_kwh": [
+          0.5668,
+          1.066
+        ],
+        "positive": 17,
+        "negative": 0,
+        "zero": 3
+      },
+      "oracle_minus_current_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_current_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "fast_minus_slow_causal": {
+        "seeds": 20,
+        "mean_kwh": 0.2287999999999993,
+        "median_kwh": 0.3327999999999989,
+        "min_kwh": -0.06240000000000201,
+        "max_kwh": 0.7487999999999992,
+        "bootstrap_95pct_kwh": [
+          0.13311999999999954,
+          0.3338399999999989
+        ],
+        "positive": 12,
+        "negative": 2,
+        "zero": 6
+      }
+    },
+    "60": {
+      "means_kwh": {
+        "current_mpc": 22.859199999999994,
+        "edf": 21.83688,
+        "offline": 22.890399999999993,
+        "resume_oracle_mpc": 22.859199999999994
+      },
+      "current_minus_causal_1min": {
+        "seeds": 20,
+        "mean_kwh": 1.0223199999999992,
+        "median_kwh": 0.9567999999999994,
+        "min_kwh": 0.35360000000000014,
+        "max_kwh": 2.558399999999999,
+        "bootstrap_95pct_kwh": [
+          0.8267999999999995,
+          1.2553059999999996
+        ],
+        "positive": 20,
+        "negative": 0,
+        "zero": 0
+      },
+      "current_minus_causal_5min": {
+        "seeds": 20,
+        "mean_kwh": 1.5184000000000002,
+        "median_kwh": 1.5079999999999991,
+        "min_kwh": 0.5200000000000031,
+        "max_kwh": 3.120000000000001,
+        "bootstrap_95pct_kwh": [
+          1.2844000000000002,
+          1.7835999999999999
+        ],
+        "positive": 20,
+        "negative": 0,
+        "zero": 0
+      },
+      "oracle_minus_current_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_current_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.03119999999999994,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.6239999999999988,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.09359999999999982
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 19
+      },
+      "fast_minus_slow_causal": {
+        "seeds": 20,
+        "mean_kwh": 0.5012799999999997,
+        "median_kwh": 0.5823999999999998,
+        "min_kwh": 0.0,
+        "max_kwh": 0.6656000000000013,
+        "bootstrap_95pct_kwh": [
+          0.40765399999999935,
+          0.5834399999999997
+        ],
+        "positive": 19,
+        "negative": 0,
+        "zero": 1
+      }
+    },
+    "180": {
+      "means_kwh": {
+        "current_mpc": 28.7248,
+        "edf": 28.64992,
+        "offline": 28.7248,
+        "resume_oracle_mpc": 28.7248
+      },
+      "current_minus_causal_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.07487999999999957,
+        "median_kwh": 0.08319999999999794,
+        "min_kwh": 0.0,
+        "max_kwh": 0.166400000000003,
+        "bootstrap_95pct_kwh": [
+          0.0499199999999993,
+          0.09983999999999985
+        ],
+        "positive": 14,
+        "negative": 0,
+        "zero": 6
+      },
+      "current_minus_causal_5min": {
+        "seeds": 20,
+        "mean_kwh": 0.39519999999999894,
+        "median_kwh": 0.4159999999999986,
+        "min_kwh": 0.0,
+        "max_kwh": 0.8320000000000007,
+        "bootstrap_95pct_kwh": [
+          0.25999999999999995,
+          0.5251999999999987
+        ],
+        "positive": 15,
+        "negative": 0,
+        "zero": 5
+      },
+      "oracle_minus_current_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "offline_minus_current_1min": {
+        "seeds": 20,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 20
+      },
+      "fast_minus_slow_causal": {
+        "seeds": 20,
+        "mean_kwh": 0.3203199999999994,
+        "median_kwh": 0.3327999999999989,
+        "min_kwh": 0.0,
+        "max_kwh": 0.6656000000000013,
+        "bootstrap_95pct_kwh": [
+          0.21319999999999922,
+          0.4243199999999995
+        ],
+        "positive": 15,
+        "negative": 0,
+        "zero": 5
+      }
+    }
+  }
+}

@@ -10,6 +10,8 @@ import numpy as np
 from scipy.optimize import linprog
 from scipy.sparse import eye, hstack, kron, vstack
 
+SOLVER_DIAGNOSTICS=[]
+
 
 @dataclass
 class PublicWorld:
@@ -69,6 +71,17 @@ def flow_plan(remaining, caps, feeder, departure=None, early=True):
         reward+=secondary*.24/(1.011*max(1,caps.sum()))
     opt=linprog(-reward.ravel(),A_ub=mat,b_ub=rhs,
                 bounds=np.column_stack([np.zeros(n*h),caps.ravel()]),method='highs')
+    if not opt.success:
+        # The zero allocation always makes this nonnegative flow LP feasible.
+        # Preserve the exact objective/constraints; retry the numerical backend
+        # without presolve, never accept an unknown-status solution.
+        initial=opt.message
+        opt=linprog(-reward.ravel(),A_ub=mat,b_ub=rhs,
+                    bounds=np.column_stack([np.zeros(n*h),caps.ravel()]),
+                    method='highs-ds',options={'presolve':False})
+        SOLVER_DIAGNOSTICS.append({'initial_message':initial,'retry_message':opt.message,
+                                   'retry_success':bool(opt.success),'remaining':remaining.tolist(),
+                                   'caps':caps.tolist(),'feeder':int(feeder)})
     if not opt.success: raise RuntimeError(opt.message)
     plan=opt.x.reshape(n,h)
     assert np.max(np.abs(plan-np.rint(plan)))<1e-6, 'Non-integral solution'

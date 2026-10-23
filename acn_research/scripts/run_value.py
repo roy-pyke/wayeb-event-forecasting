@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[2]; HERE=ROOT/'acn_research'
 sys.path.insert(0,str(HERE/'src'))
-from acnresearch.value import make_world,run_policy,run_native
+from acnresearch.value import make_world,run_policy,run_native,SOLVER_DIAGNOSTICS
 
 
 def main():
@@ -63,6 +63,7 @@ def main():
             print(args.phase,condition,cap,'complete',flush=True)
     table=pd.DataFrame(results)
     table.to_csv(report_dir/f'value_{args.phase}.csv',index=False)
+    (report_dir/f'solver_diagnostics_{args.phase}.json').write_text(json.dumps(SOLVER_DIAGNOSTICS,indent=2)+'\n')
     if args.phase=='development':
         current=table[table.policy.eq('current_mpc')].groupby('duration_slots').delivered_kwh.mean()
         duration=int(current.idxmax())

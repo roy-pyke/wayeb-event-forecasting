@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[2]; HERE=ROOT/'acn_research'
 sys.path.insert(0,str(HERE/'src'))
-from acnresearch.value import make_world,refine_world,run_native,run_policy
+from acnresearch.value import make_world,refine_world,run_native,run_policy,SOLVER_DIAGNOSTICS
 from analyze_value import paired_summary
 
 
@@ -32,6 +32,7 @@ def main():
     result={'scope':'Matched synthetic worlds with 1-minute instead of 5-minute feedback and dispatch; finer action space changes too',
             'protocol_sha256':hashlib.sha256((HERE/'configs/FEEDBACK_PROTOCOL.json').read_bytes()).hexdigest(),
             'policy_world_runs':len(rows),'baseline':baseline,'groups':{}}
+    (HERE/'reports/c2/solver_diagnostics_feedback.json').write_text(json.dumps(SOLVER_DIAGNOSTICS,indent=2)+'\n')
     for cap,g in df.groupby('feeder_amp'):
         p=g.pivot(index='seed',columns='policy',values='delivered_kwh')
         s=slow[slow.feeder_amp.eq(cap)&slow.condition.eq('pause')].pivot(index='seed',columns='policy',values='delivered_kwh')
