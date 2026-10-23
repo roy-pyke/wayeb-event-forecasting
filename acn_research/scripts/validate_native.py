@@ -17,7 +17,7 @@ def main():
              dict(estimation=True, discrete=True, probe_floor=6, up_increment=6),
              dict(estimation=True, discrete=True, probe_floor=6, pause=False)]
     results = []
-    store = ROOT / 'artifacts/acn/native'; store.mkdir(parents=True, exist_ok=True)
+    store = ROOT / 'artifacts/acn/native/c2'; store.mkdir(parents=True, exist_ok=True)
     for i, case in enumerate(cases):
         result, traces = run_native_fixture(**case)
         results.append(result)
@@ -28,7 +28,8 @@ def main():
               'cases': results, 'all_assertions_passed': True,
               'request_contract': 'Energy and planned departure disclosed at arrival in these fixtures; actual departure hidden by declared-request interface.',
               'source_revisions': json.loads((HERE/'configs/SOURCES.json').read_text())}
-    (HERE/'reports/native_baseline.json').write_text(json.dumps(report, indent=2)+'\n')
+    output=HERE/'reports/c2'; output.mkdir(parents=True, exist_ok=True)
+    (output/'native_baseline.json').write_text(json.dumps(report, indent=2)+'\n')
 
 
 if __name__ == '__main__': main()

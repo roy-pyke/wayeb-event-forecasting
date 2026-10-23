@@ -1,0 +1,24 @@
+--- a/adacharge/postprocessing.py
++++ b/adacharge/postprocessing.py
+@@ -176,8 +176,8 @@
+                 rates[i, 0], infrastructure.allowable_pilots[i]
+             )
+             if (
+-                np.sum(new_rates) <= peak_limit
+-                and new_rates[i] <= ub[i]
++                np.sum(new_rates) <= peak_limit + 1e-5
++                and new_rates[i] <= ub[i] + 1e-5
+                 and infrastructure_constraints_feasible(new_rates, infrastructure)
+             ):
+                 rates[:, 0] = new_rates
+@@ -248,8 +248,8 @@
+                 rounded_rates[i, 0], infrastructure.allowable_pilots[i]
+             )
+             if (
+-                np.sum(new_rates) <= peak_limit
+-                and new_rates[i] <= ub[i]
++                np.sum(new_rates) <= peak_limit + 1e-5
++                and new_rates[i] <= ub[i] + 1e-5
+                 and infrastructure_constraints_feasible(new_rates, infrastructure)
+             ):
+                 rounded_rates[:, 0] = new_rates

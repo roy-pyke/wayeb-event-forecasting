@@ -3,6 +3,9 @@
   "numpy": "1.26.4",
   "pandas": "2.2.3",
   "cvxpy": "1.6.5",
+  "setuptools": "80.9.0",
+  "clarabel": "0.10.0",
+  "scipy": "1.13.1",
   "solvers": [
     "CLARABEL",
     "ECOS",
@@ -16,5 +19,10 @@
     "to": "upper_bounds.get(session.session_id, float(\"inf\"))",
     "original_sha256": "5eaadb81149f31f34a7915897786481b1a101f685e029255b671d7edad1de67a",
     "patched_sha256": "624173cd1f823ae359abc6f6c348bb3cf57517705572e83430462026859959bf"
+  },
+  "quantization_patch": {
+    "original_sha256": "0d39715f643d2e5dc0fe898ffcc0f251ab96895d25153bf3c172e2055deb6998",
+    "tolerance_amp": 1e-05,
+    "patched_sha256": "ef6142c739b63a1a74952727ce652866d6188b1611a5c2cdf71c057962c41631"
   }
 }

@@ -14,11 +14,22 @@ from acnresearch.value import make_world,run_policy,run_native
 
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--phase',choices=['development','evaluation'],required=True)
+    parser.add_argument('--revision',choices=['c1','c2'],default='c1')
     args=parser.parse_args()
-    protocol=HERE/'configs/VALUE_PROTOCOL.json'; cfg=json.loads(protocol.read_text())
+    protocol=HERE/('configs/VALUE_PROTOCOL_C2.json' if args.revision=='c2' else 'configs/VALUE_PROTOCOL.json'); cfg=json.loads(protocol.read_text())
+    report_dir=HERE/'reports'/('c2' if args.revision=='c2' else '')
+    report_dir.mkdir(parents=True,exist_ok=True)
     protohash=hashlib.sha256(protocol.read_bytes()).hexdigest()
-    trace_dir=ROOT/'artifacts/acn/value'/args.phase; trace_dir.mkdir(parents=True,exist_ok=True)
-    freeze=HERE/'reports/value_selection.json'
+    trace_dir=ROOT/'artifacts/acn/value'/('c2' if args.revision=='c2' else '')/args.phase; trace_dir.mkdir(parents=True,exist_ok=True)
+    freeze=report_dir/'value_selection.json'
+    if args.revision=='c2':
+        import inspect,adacharge.postprocessing
+        assert '<= peak_limit + 1e-5' in inspect.getsource(adacharge.postprocessing)
+    from types import SimpleNamespace
+    from acnportal.acnsim.interface import SessionInfo
+    from acnportal.algorithms.preprocessing import apply_upper_bound_estimate
+    test_session=SessionInfo('station','session',5,0,0,10,10,0)
+    assert np.all(apply_upper_bound_estimate(SimpleNamespace(get_maximum_rates=lambda _:{'session':11}),[test_session])[0].max_rates==11)
     if args.phase=='development':
         seeds=cfg['development_seeds']; conditions=['pause']
         # One duration is selected on current-state MPC, then used by all MPCs.
@@ -51,7 +62,7 @@ def main():
                 results.extend(rows)
             print(args.phase,condition,cap,'complete',flush=True)
     table=pd.DataFrame(results)
-    table.to_csv(HERE/f'reports/value_{args.phase}.csv',index=False)
+    table.to_csv(report_dir/f'value_{args.phase}.csv',index=False)
     if args.phase=='development':
         current=table[table.policy.eq('current_mpc')].groupby('duration_slots').delivered_kwh.mean()
         duration=int(current.idxmax())

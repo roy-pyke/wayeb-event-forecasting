@@ -1,6 +1,13 @@
 from itertools import product
 import numpy as np
-from acnresearch.value import PublicWorld,World,flow_plan,MPC,run_policy
+from acnresearch.value import PublicWorld,World,flow_plan,MPC,run_policy,make_world,refine_world
+
+
+def test_feedback_refinement_preserves_physical_world():
+    slow=make_world(300,36); fast=refine_world(slow)
+    assert np.allclose(slow.public.demand*slow.public.quantum_kwh,fast.public.demand*fast.public.quantum_kwh)
+    assert np.array_equal(slow.public.departure*5,fast.public.departure)
+    assert np.array_equal(slow.acceptance,fast.acceptance[:,::5])
 
 
 def test_flow_bound_matches_exhaustive_discrete_actions():

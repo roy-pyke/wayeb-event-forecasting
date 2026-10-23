@@ -1,0 +1,94 @@
+{
+  "version": "C2-quantization-numerics-before-new-seeds",
+  "purpose": "Separate recovery anticipation from current-state observability and broken feedback; conditional simulation, not production causality",
+  "real_extension": "Audit all 1474 pinned office recordings; label original 128 as development; use first 0.5A/60s alarm, gaps over 15s censored; requests and delivered-energy counter at alarm only; no outcome-based file selection",
+  "world": {
+    "vehicles": 6,
+    "slots": 24,
+    "period_minutes": 5,
+    "voltage": 208,
+    "pilot_amp": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      30
+    ],
+    "feeder_amp": [
+      36,
+      60,
+      180
+    ],
+    "arrival_slot": 0,
+    "departure_slots_inclusive": [
+      12,
+      24
+    ],
+    "request_charge_quanta_inclusive": [
+      20,
+      75
+    ],
+    "paused_vehicles": 3,
+    "pause_start_slots_inclusive": [
+      3,
+      7
+    ],
+    "pause_duration_slots_inclusive": [
+      2,
+      8
+    ]
+  },
+  "development_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+  ],
+  "evaluation_seeds": [
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319
+  ],
+  "negative_control": "No-pause worlds at the same evaluation seeds and capacities; 180A is also a no-congestion control",
+  "realistic_feedback": [
+    "corrected native AdaCharge with 6A probing and 6A recovery increments",
+    "command-aware EDF and least-laxity with one-step 6A probing and immediate restoration when a probe succeeds"
+  ],
+  "information_experiment": "All MPC variants see current acceptance before action, accurately declared requests and departures. Same deterministic min-cost flow MPC; only recovery notice differs. Active vehicles have no notice of future pause. Paused vehicles receive exact recovery time only within 0,1,3 or unlimited lead slots. No notice is itself extra information in positive-lead oracle policies and must be labeled. Current-state baseline has no future notice.",
+  "baseline_duration_candidates_slots": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "selection": "Select one duration and one causal controller globally using development mean delivered energy; freeze before evaluating seeds 200-219; never pick the best controller per evaluation world",
+  "primary": "Paired total delivered kWh difference; also report requested-energy shortfall, fully served sessions, runtime and constraint violations",
+  "bound": "Full-information same-action offline max flow; includes future pause onsets so it is broader than recovery information. Integer capacities and requests; validate LP integrality and objective against brute force on tiny worlds.",
+  "interpretation": "A fixed controller oracle may hurt and is not EVPI. No trained recovery predictor or real-world gain claimed. Seeds are independent simulations, not independent physical sites. No tariff, switching cost, battery taper or action-induced acceptance dynamics modeled.",
+  "uncertainty": "Paired bootstrap 2000 resamples clustered by seed, not time rows; report all capacities separately and preserve negative effects",
+  "change_from_c1": "Only native numerical peak/ub comparison tolerance 1e-5 A. Re-run development selection, then evaluate new seeds 300-319. C1 results retained. All other worlds and rules unchanged."
+}

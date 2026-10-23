@@ -12,6 +12,15 @@ def test_distinct_station_and_session_keys_apply_bound():
     assert np.all(result[0].max_rates == 11)
 
 
+def test_quantization_underflow_reproducer():
+    import importlib.util
+    from pathlib import Path
+    path=Path(__file__).resolve().parents[1]/'scripts/quantization_probe.py'
+    spec=importlib.util.spec_from_file_location('quantization_probe',path)
+    module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    assert len(module.compare())==6
+
+
 def test_new_action_regenerates_response_and_future_cap_cannot_change_prefix():
     a = AvailabilityBattery(10, [32]*10+[0]*10)
     b = AvailabilityBattery(10, [32]*20)

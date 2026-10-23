@@ -1,0 +1,10 @@
+{
+  "version": "F1-before-C2-evaluation",
+  "purpose": "Check whether current-observability headroom shrinks with faster ordinary feedback and dispatch",
+  "worlds": "Exactly the C2 paused worlds, seeds 300-319 at 36, 60, 180 A",
+  "change": "Split each 5-minute slot into five 1-minute slots. Repeat exogenous acceptance, multiply departure indices and demand quanta by 5. Physical energy requests and pause times remain identical. The finer action space is acknowledged.",
+  "policies": ["C2 development-selected causal controller", "EDF", "current-state MPC", "full recovery-notice MPC", "offline optimum"],
+  "duration": "Keep the C2 selected assumed pause duration in physical minutes, not slot count",
+  "metrics": "Paired energy differences and bootstrap by seed; compare current-state minus causal controller at 1 minute vs 5 minutes. Do not infer a production gain or isolate sensing latency from finer dispatch.",
+  "selection": "No new controller selection or parameter tuning"
+}

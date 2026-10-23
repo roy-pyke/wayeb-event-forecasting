@@ -44,6 +44,15 @@ def make_world(seed, feeder_amp, pause=True):
     return World(PublicWorld(demand,departure,feeder_amp//6,horizon),acceptance)
 
 
+def refine_world(world,period=1):
+    p=world.public
+    assert p.period%period==0
+    factor=p.period//period
+    public=PublicWorld(p.demand*factor,p.departure*factor,p.feeder,p.slots*factor,
+                       period,p.voltage,p.max_units)
+    return World(public,np.repeat(world.acceptance,factor,axis=1))
+
+
 def flow_plan(remaining, caps, feeder, departure=None, early=True):
     """Integer network-flow LP. Secondary reward is < 0.25 total unit."""
     remaining=np.asarray(remaining,dtype=float); caps=np.asarray(caps,dtype=float)

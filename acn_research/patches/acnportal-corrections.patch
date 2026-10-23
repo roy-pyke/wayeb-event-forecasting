@@ -1,0 +1,11 @@
+--- a/acnportal/algorithms/preprocessing.py
++++ b/acnportal/algorithms/preprocessing.py
+@@ -95,7 +95,7 @@
+     upper_bounds = ub_estimator.get_maximum_rates(active_sessions)
+     for j, session in enumerate(new_sessions):
+         session.max_rates = np.minimum(
+-            session.max_rates, upper_bounds.get(session.station_id, float("inf"))
++            session.max_rates, upper_bounds.get(session.session_id, float("inf"))
+         )
+         new_sessions[j] = reconcile_max_and_min(session)
+         if np.any(session.max_rates < 32):
