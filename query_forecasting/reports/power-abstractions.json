@@ -1,0 +1,63 @@
+{
+  "domain": "power",
+  "origins": 48,
+  "replicates": 32,
+  "budget": 512,
+  "methods": [
+    "known_bits",
+    "marginal_support",
+    "monitor_state"
+  ],
+  "box_partition_equal_queries": 68,
+  "queries": 144,
+  "results": [
+    {
+      "method": "known_bits",
+      "mse": 3.0228833251939557e-05,
+      "family_mse": [
+        3.1275617496894595e-05,
+        5.1901302637278475e-05,
+        7.509579621645571e-06
+      ],
+      "rows": 315.01649305555554,
+      "seconds": 0.019780590288089824,
+      "groups": 4.854166666666667,
+      "incoherent_runs": 0
+    },
+    {
+      "method": "marginal_support",
+      "mse": 1.240741224341911e-05,
+      "family_mse": [
+        1.2217883799432991e-05,
+        2.1794817378652137e-05,
+        3.2095355521721977e-06
+      ],
+      "rows": 357.1990017361111,
+      "seconds": 0.020644660630580347,
+      "groups": 9.972222222222221,
+      "incoherent_runs": 0
+    },
+    {
+      "method": "monitor_state",
+      "mse": 9.498018520073333e-06,
+      "family_mse": [
+        9.506327264768394e-06,
+        1.7237965826524742e-05,
+        1.749762468926861e-06
+      ],
+      "rows": 415.14171006944446,
+      "seconds": 0.021791979086313203,
+      "groups": 35.21527777777778,
+      "incoherent_runs": 0
+    }
+  ],
+  "mechanism_gate": {
+    "best_baseline": "monitor_state",
+    "relative_mse_reduction": -0.2469146336650747,
+    "origin_bootstrap_95": [
+      -0.30870435964267773,
+      -0.19067543713173418
+    ],
+    "passed": false
+  }
+}
