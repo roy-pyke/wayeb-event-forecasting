@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "cvxpy": "1.6.5",
+  "solvers": [
+    "CLARABEL",
+    "ECOS",
+    "ECOS_BB",
+    "OSQP",
+    "SCIPY",
+    "SCS"
+  ],
+  "patch": {
+    "from": "upper_bounds.get(session.station_id, float(\"inf\"))",
+    "to": "upper_bounds.get(session.session_id, float(\"inf\"))",
+    "original_sha256": "5eaadb81149f31f34a7915897786481b1a101f685e029255b671d7edad1de67a",
+    "patched_sha256": "624173cd1f823ae359abc6f6c348bb3cf57517705572e83430462026859959bf"
+  }
+}

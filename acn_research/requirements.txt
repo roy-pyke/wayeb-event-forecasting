@@ -1,0 +1,12 @@
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+scikit-learn==1.5.2
+cvxpy==1.6.5
+clarabel==0.10.0
+ecos==2.0.14
+matplotlib==3.9.4
+requests==2.32.3
+pytz==2025.2
+typing_extensions==4.14.0
+pytest==8.3.5

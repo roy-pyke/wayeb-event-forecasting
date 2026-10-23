@@ -1,0 +1,107 @@
+{
+  "status": "Exploratory data audit, not a hypothesis confirmation or performance benchmark",
+  "repo": "tongxin-li/ACN-Data-Static",
+  "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+  "selection": "128 minimum SHA256(seed|relative_path) among 1474 office gzip files; no selection by current, duration, target or outcome",
+  "sessions": 128,
+  "rows": 616230,
+  "first_observation": "2019-03-29T20:49:24+00:00",
+  "last_observation": "2020-11-25T01:14:10+00:00",
+  "state_row_counts": {
+    "NOT CHARGING": 247445,
+    "ADAPTIVE": 366625,
+    "IDLE": 1562,
+    "READY": 472,
+    "UNPLUGGED": 126
+  },
+  "timestamp_step_seconds": {
+    "n": 616102,
+    "min": 0.0,
+    "median": 4.0,
+    "p90": 4.0,
+    "max": 1096.0
+  },
+  "sessions_with_gaps_over_15_seconds": 17,
+  "sessions_with_nonincreasing_timestamps": 1,
+  "terminal_energy_reset_sessions": 124,
+  "sessions_with_unplug_record": 125,
+  "last_current_to_unplug_minutes": {
+    "n": 122,
+    "min": 0.05,
+    "median": 8.05,
+    "p90": 386.99833333333333,
+    "max": 603.1333333333333
+  },
+  "sessions_last_observed_active_to_first_unplug_over_30_minutes": 59,
+  "gap_free_last_observed_active_to_first_unplug_minutes": {
+    "n": 116,
+    "min": 0.05,
+    "median": 0.6333333333333333,
+    "p90": 353.18333333333334,
+    "max": 603.1333333333333
+  },
+  "sessions_with_pilot_changes_inside_adaptive": 111,
+  "pilot_changes_inside_adaptive_total": 3584,
+  "inactivity_alarm_outcomes": {
+    "0.5": {
+      "alarms": 117,
+      "fully_observed_outcomes": 110,
+      "resumed": 54,
+      "resumed_sessions": 22,
+      "censored": 7,
+      "resumed_fraction_of_fully_observed_alarms": 0.4909090909090909,
+      "pilot_ge_6_alarms": 110,
+      "pilot_ge_6_resumed": 54,
+      "first_alarm_per_file_outcomes": {
+        "unplug_without_observed_resumption": 41,
+        "resumed": 22,
+        "censored_gap": 6,
+        "censored_file_end": 1
+      }
+    },
+    "0.1": {
+      "alarms": 100,
+      "fully_observed_outcomes": 93,
+      "resumed": 38,
+      "resumed_sessions": 17,
+      "censored": 7,
+      "resumed_fraction_of_fully_observed_alarms": 0.40860215053763443,
+      "pilot_ge_6_alarms": 93,
+      "pilot_ge_6_resumed": 38,
+      "first_alarm_per_file_outcomes": {
+        "unplug_without_observed_resumption": 46,
+        "resumed": 17,
+        "censored_gap": 6,
+        "censored_file_end": 1
+      }
+    },
+    "1.0": {
+      "alarms": 118,
+      "fully_observed_outcomes": 111,
+      "resumed": 54,
+      "resumed_sessions": 22,
+      "censored": 7,
+      "resumed_fraction_of_fully_observed_alarms": 0.4864864864864865,
+      "pilot_ge_6_alarms": 111,
+      "pilot_ge_6_resumed": 54,
+      "first_alarm_per_file_outcomes": {
+        "unplug_without_observed_resumption": 42,
+        "resumed": 22,
+        "censored_gap": 6,
+        "censored_file_end": 1
+      }
+    }
+  },
+  "limitations": [
+    "no state-of-charge or requested energy in static files",
+    "no server arrival time",
+    "session file boundaries use retrospective full recordings",
+    "completion means last observed above-threshold current, not physical full battery or customer demand fulfillment",
+    "one workplace and hash sample only; no population or causality claim"
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  }
+}

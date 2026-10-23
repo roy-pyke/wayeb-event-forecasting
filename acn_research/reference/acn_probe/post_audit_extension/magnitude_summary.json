@@ -1,0 +1,86 @@
+{
+  "status": "Post-audit descriptive extension; thresholds and analyses are not preregistered confirmation tests",
+  "selection": "First primary-threshold alarm in each session; retain sessions whose first alarm had observed outcome resumed. One record per selected session.",
+  "source_sample_sessions": 128,
+  "primary_threshold_amp": 0.5,
+  "primary_alarm_count": 117,
+  "sessions_with_any_primary_alarm": 70,
+  "sessions_whose_first_primary_alarm_resumed": 22,
+  "auditable_selected_sessions": 22,
+  "unusable_selected_sessions": 0,
+  "description_thresholds": {
+    "observed_high_segment_seconds": 60,
+    "extra_energy_kwh": 0.1
+  },
+  "first_high_segment": {
+    "observed_span_seconds": {
+      "n": 22,
+      "min": 0.0,
+      "median": 305.5,
+      "max": 6031.0
+    },
+    "right_censored": 2,
+    "completed_single_positive_sample": 3,
+    "completed_observed_span_under_60_seconds": 4,
+    "observed_span_at_least_60_seconds": 17,
+    "stop_reasons": {
+      "observed_at_or_below_threshold": 19,
+      "censored_nonincreasing_timestamp": 1,
+      "censored_gap": 1,
+      "observed_unplug": 1
+    }
+  },
+  "extra_energy_after_first_resumption": {
+    "definition": "From first resumed row until before first UNPLUGGED, first >15 s/non-increasing gap, missing current, missing/negative power, or file end. Excludes the final interval to unplug. Includes subsequent low/high current segments within that observed window.",
+    "min_endpoint_integral_kwh": {
+      "n": 22,
+      "min": 0.0,
+      "median": 0.1844852777777775,
+      "max": 7.7806322222221995
+    },
+    "trapezoid_integral_kwh": {
+      "n": 22,
+      "min": 0.0,
+      "median": 0.19226034722222213,
+      "max": 7.804604999999996
+    },
+    "counter_increment_same_window_kwh": {
+      "n": 22,
+      "min": 0.0,
+      "median": 0.19155916669500028,
+      "max": 7.764809722219999
+    },
+    "min_endpoint_integral_at_least_0p1_kwh": 14,
+    "valid_counter_comparisons": 22,
+    "counter_increment_at_least_0p1_kwh": 14,
+    "both_min_integral_and_counter_at_least_0p1_kwh": 14,
+    "counter_minus_min_endpoint_kwh": {
+      "n": 22,
+      "min": -0.015822500002200535,
+      "median": 0.006628333355555238,
+      "max": 0.029337777782276753
+    },
+    "right_censored_energy_windows": 2,
+    "stop_reasons": {
+      "observed_first_unplug_final_interval_excluded": 20,
+      "censored_nonincreasing_timestamp": 1,
+      "censored_gap": 1
+    }
+  },
+  "limitations": [
+    "Selected on observed recovery; not a population recovery probability or general event-rate estimate.",
+    "Discrete observed high span does not prove continuous analog current stayed above threshold between samples.",
+    "End-point minimum quadrature is conservative relative to trapezoidal integration but is not a certified lower bound on the unobserved physical path.",
+    "A short first high segment can be followed by further recovery; energy describes the entire later continuous observation window, not only that first segment.",
+    "Counter comparison rejects internal decreases and excludes terminal reset. No full-session maximum or negative reset increment is used.",
+    "Magnitude alone does not establish control benefit, unmet demand, battery state, or a failure of the deployed controller."
+  ],
+  "provenance": {
+    "repo": "tongxin-li/ACN-Data-Static",
+    "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+    "protocol_sha256": "d0fa1904061e4b45fa44da2022e85ab6880164aa33a3661db2920837ebb2d747",
+    "alarms_csv_sha256": "c1e458f79357a0cd9439338dc3c2a222285db60cd50a966926e0872e5742b6ed",
+    "download_manifest_sha256": "a61d74d51c7dee5dc2eba173c30bad2ae561f2529dd3f1eb2887ff8b47c91c74",
+    "script_sha256": "1f1fe7d42466e4c92b7fab3e0c8526db8ef9c363b5611ccf2746249bf02f842f"
+  }
+}

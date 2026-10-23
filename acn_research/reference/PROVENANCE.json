@@ -1,0 +1,16 @@
+{
+  "archive_filename": "Wayeb_Research_Evidence_2026-10-23.zip",
+  "archive_sha256": "c9011920285ea963c112c0fb0f26a2360331c3c63293658aef9f4e5c9fed64a7",
+  "selected_files_sha256": {
+    "acn_probe/audit_summary.json": "4b92981d3a82ac2b1e97b1c563077b0220b7238c88c2218bf6a6b108237cce66",
+    "acn_probe/inactivity_alarms.csv": "c1e458f79357a0cd9439338dc3c2a222285db60cd50a966926e0872e5742b6ed",
+    "acn_probe/post_audit_extension/first_resumption_magnitude.csv": "e3fc77780e33f48a19c39817e8d754ea3ef2fbd02a365cd0113f7b07aa597527",
+    "acn_probe/post_audit_extension/magnitude_summary.json": "15b4e926dd34bae9d59edf384c4b8b56bce2ca810f7767c4c8a2bf7a2c5ae1a7",
+    "acn_probe/protocol.json": "d0fa1904061e4b45fa44da2022e85ab6880164aa33a3661db2920837ebb2d747",
+    "acn_probe/session_audit.csv": "93a0e42b8e44be29cbb06d9fe392e0098cd1cd1949d3863bf26f16b7422fae67",
+    "audit/ACN_ADVERSARIAL_REVIEW.md": "7e43d47c873084bec5293a47e0993d7c5193b72c4f8b251764f0941f260eed3e",
+    "ev/rampdown_repro/proposed_fix.patch": "0e9eaa3d118b6d584f62cc40aa3c34ed23f42dfd901edab19bbddbcd0d6853b3",
+    "ev/rampdown_repro/source_manifest.json": "fb9a637d923ed762142b72634f9d7b0ee66121953c8eef052cd43fe510bebecb"
+  },
+  "purpose": "Unmodified review evidence; developmental and descriptive, not new confirmation data."
+}

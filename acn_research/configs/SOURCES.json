@@ -1,0 +1,6 @@
+{
+  "acnportal": {"repository": "https://github.com/zach401/acnportal.git", "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623", "license": "upstream LICENSE.txt, BSD-style"},
+  "adacharge": {"repository": "https://github.com/zach401/adacharge.git", "commit": "b7d5fddb25e842333fc2b404d32dd3477ca47297", "license": "upstream LICENSE.txt, academic and other non-commercial purposes"},
+  "static_data": {"repository": "https://github.com/tongxin-li/ACN-Data-Static", "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f", "reference_protocol": "reference/acn_probe/protocol.json"},
+  "api": {"url": "https://ev.caltech.edu/api/v1/", "public_demo_documentation": "https://acnportal.readthedocs.io/en/latest/tutorials/acnsim/lesson1.html", "private_token_environment_variable": "ACN_API_TOKEN", "credential_storage": "never in tracked files or reports"}
+}

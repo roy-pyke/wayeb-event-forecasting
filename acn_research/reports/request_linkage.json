@@ -1,0 +1,63 @@
+{
+  "scope": "Exploratory linkage and request availability, not a forecast evaluation",
+  "matched_selected_sessions": 117,
+  "selected_sessions": 128,
+  "first_alarm_outcomes_and_request_availability": {
+    "unplug_without_observed_resumption": {
+      "sessions": 41,
+      "metadata_matched": 41,
+      "any_request": 4,
+      "available_request_at_alarm": 4
+    },
+    "resumed": {
+      "sessions": 22,
+      "metadata_matched": 21,
+      "any_request": 8,
+      "available_request_at_alarm": 5
+    },
+    "censored_gap": {
+      "sessions": 6,
+      "metadata_matched": 6,
+      "any_request": 2,
+      "available_request_at_alarm": 2
+    },
+    "censored_file_end": {
+      "sessions": 1,
+      "metadata_matched": 1,
+      "any_request": 0,
+      "available_request_at_alarm": 0
+    }
+  },
+  "first_record_minus_metadata_connection_seconds": {
+    "n": 117,
+    "min": 0.0,
+    "median": 3.0,
+    "max": 4.0,
+    "absolute_p95": 3.0
+  },
+  "first_unplug_minus_metadata_disconnect_seconds": {
+    "n": 114,
+    "min": -6.0,
+    "median": -1.0,
+    "max": 0.0,
+    "absolute_p95": 1.0
+  },
+  "retrospective_counter_max_minus_metadata_delivered_kwh": {
+    "n": 117,
+    "min": -21.784758888890003,
+    "median": 0.0005591666999968936,
+    "max": 0.0009991666999979998,
+    "absolute_p95": 0.0009830555539995342
+  },
+  "energy_mismatch_over_0p01_kwh": 3,
+  "energy_mismatch_without_unplug": 3,
+  "request_available_at_first_record": 2,
+  "matched_recordings_without_unplug": 3,
+  "recordings_end_before_metadata_disconnect": 3,
+  "limitations": [
+    "117 exact identifier matches do not prove identical extraction versions",
+    "Only submission-time availability is known; no receive timestamps",
+    "Unknown requests remain unknown; no final-energy imputation",
+    "Small requested-and-resumed subset cannot validate a control forecasting model"
+  ]
+}

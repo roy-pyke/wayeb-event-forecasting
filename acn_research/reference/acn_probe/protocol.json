@@ -1,0 +1,1061 @@
+{
+  "name": "Real charging event semantics audit",
+  "registered_utc": "2026-10-23T22:13:50.913289+00:00",
+  "status": "Exploratory data audit, not a hypothesis confirmation or performance benchmark",
+  "scope": "office_01 only, initial three schema examples already inspected",
+  "repo": "tongxin-li/ACN-Data-Static",
+  "commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+  "selection": "128 minimum SHA256(seed|relative_path) among 1474 office gzip files; no selection by current, duration, target or outcome",
+  "seed": "application-audit-2026-10-23-v1",
+  "universe_n": 1474,
+  "selected_n": 128,
+  "planned_checks": [
+    "schema and content hashes",
+    "timestamp order and gaps",
+    "terminal counter reset",
+    "last positive current versus unplug time (distinct observable endpoints)",
+    "current and command variability within the same reported state",
+    "zero-current episodes followed by resumed current",
+    "causal-prefix invariance under future suffix perturbations"
+  ],
+  "primary_current_threshold_amp": 0.5,
+  "sensitivity_threshold_amp": [
+    0.1,
+    1.0
+  ],
+  "inactive_alarm_seconds": 60,
+  "large_gap_seconds": 15,
+  "limitations": [
+    "no state-of-charge or requested energy in static files",
+    "no server arrival time",
+    "session file boundaries use retrospective full recordings",
+    "completion means last observed above-threshold current, not physical full battery or customer demand fulfillment",
+    "one workplace and hash sample only; no population or causality claim"
+  ],
+  "selection_manifest": [
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-11-18T19-05-31-339098.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a54beb93e6a85e37b9d7756ca32d40eb295bd1d",
+      "size": 45431,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/2a54beb93e6a85e37b9d7756ca32d40eb295bd1d"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-09-05T19-43-24-151587.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b8f9ab663aa023b46aa306e367bdbbc7ca1a121",
+      "size": 91810,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/5b8f9ab663aa023b46aa306e367bdbbc7ca1a121"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-11-11T23-59-00-083524.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39536c15fd747a37bd606e6fc08caef76135344e",
+      "size": 16713,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/39536c15fd747a37bd606e6fc08caef76135344e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-10-18T22-48-35-579654.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bcba805ad24c5a29b14141a75dc79d894dfa320f",
+      "size": 20628,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/bcba805ad24c5a29b14141a75dc79d894dfa320f"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-02-21T21-09-05-719934.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ee6ce040e016119c36c79116519123249c00285",
+      "size": 4247,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/2ee6ce040e016119c36c79116519123249c00285"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-11-24T23-05-49-580881.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e8cfb6cb7e0b879d2f2a7352b9460eeb8bdd1dc",
+      "size": 23705,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/0e8cfb6cb7e0b879d2f2a7352b9460eeb8bdd1dc"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-09-04T21-55-29-770980.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43734b4c469d4cedd393c4ac57e835a7a40cf4d2",
+      "size": 18670,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/43734b4c469d4cedd393c4ac57e835a7a40cf4d2"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2020-01-02T16-04-14-220073.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9b18427908f799024a0558df501038a5b33915c",
+      "size": 52755,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/f9b18427908f799024a0558df501038a5b33915c"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-10-21T15-24-40-246574.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a11451f72b6de1ddd843ee8419add490530751c6",
+      "size": 21695,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a11451f72b6de1ddd843ee8419add490530751c6"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-07-16T14-39-12-218824.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63ef567a97aa72b311438fdd73a805212a6b26ad",
+      "size": 101030,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/63ef567a97aa72b311438fdd73a805212a6b26ad"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-11-01T17-25-02-756655.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86c2647012eda0d679f210e86eb0ee866f7fe57a",
+      "size": 19488,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/86c2647012eda0d679f210e86eb0ee866f7fe57a"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-12-10T15-28-19-268424.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c114287d4e09de6e8843e7a7d957efc3d5192a5a",
+      "size": 76636,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/c114287d4e09de6e8843e7a7d957efc3d5192a5a"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-11-08T14-56-35-917020.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cb53d1dd338a7df8701fd4f25bd0e6a418a8901",
+      "size": 32790,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/0cb53d1dd338a7df8701fd4f25bd0e6a418a8901"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2019-04-26T18-44-46-780905.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcd3d3cef5c2a5366deb2c4543d736884bd89522",
+      "size": 71793,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/fcd3d3cef5c2a5366deb2c4543d736884bd89522"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-02-12T19-36-38-749924.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e276cd087aceeea417347d48664b3f9ac4a1090",
+      "size": 583,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/9e276cd087aceeea417347d48664b3f9ac4a1090"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2019-07-31T18-38-05-074870.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8f0cce0ed729a8a02a23bb6f9070fdd56c15688",
+      "size": 42203,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/e8f0cce0ed729a8a02a23bb6f9070fdd56c15688"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-01-06T17-25-24-196130.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4057c41a99633037ec5bb7cc56307d3aec830632",
+      "size": 58063,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/4057c41a99633037ec5bb7cc56307d3aec830632"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-09-30T20-11-12-946393.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd26190d144816eb978ae021a7c1190ad586651b",
+      "size": 19102,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/cd26190d144816eb978ae021a7c1190ad586651b"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-06-15T15-31-39-564070.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "953d6cb01058713a6f57c10d384334d8283c8262",
+      "size": 93540,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/953d6cb01058713a6f57c10d384334d8283c8262"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-05-12T15-43-51-456680.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7eaaca97eb00e5291d3e452d546e009bdb18ff74",
+      "size": 91503,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7eaaca97eb00e5291d3e452d546e009bdb18ff74"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2020-01-03T19-40-50-200031.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "756b3a9cfc54b373f25bf34c826cab394a558fa8",
+      "size": 53832,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/756b3a9cfc54b373f25bf34c826cab394a558fa8"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2020-02-07T21-12-33-235305.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8350dd322bcc9da80243f0ccdaa3b88eabb8b0f9",
+      "size": 84831,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/8350dd322bcc9da80243f0ccdaa3b88eabb8b0f9"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-05-15T15-40-03-403581.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b022be6a645d4b31542427134f25125ee0b8d3d3",
+      "size": 69184,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/b022be6a645d4b31542427134f25125ee0b8d3d3"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-10-28T14-49-39-394720.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1af10c53af73f618509d5390c3fc5d9be4f4227",
+      "size": 74570,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/b1af10c53af73f618509d5390c3fc5d9be4f4227"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-01-21T22-18-36-295593.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "460cfb2e9be1b63cef6fa6080cbf9e450211e1cb",
+      "size": 62546,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/460cfb2e9be1b63cef6fa6080cbf9e450211e1cb"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-01-09T17-56-22-978154.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9920a29448a7c6f69257319d7f71a6a7bd6ba18",
+      "size": 24840,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/f9920a29448a7c6f69257319d7f71a6a7bd6ba18"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-11-22T16-08-22-631432.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c019e59ba231091e235a052b7335c13aad9d711",
+      "size": 51129,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/0c019e59ba231091e235a052b7335c13aad9d711"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-12-11T18-59-25-575587.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01e9ef3e6c7dfbdfa48374e94eef8f45749fdd4b",
+      "size": 10784,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/01e9ef3e6c7dfbdfa48374e94eef8f45749fdd4b"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1637-2019-05-24T20-28-57-173289.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b0f6fd9bf93ea804c04eb80d380a1c552424866",
+      "size": 2948,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/8b0f6fd9bf93ea804c04eb80d380a1c552424866"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-04-27T00-37-50-327982.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "879b08763a5d4a42ffbcd5c6897b450438502c33",
+      "size": 41117,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/879b08763a5d4a42ffbcd5c6897b450438502c33"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-12-13T17-00-09-958595.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c421275171c9cf8cf61bb58c3aa6bc1479a81edf",
+      "size": 19925,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/c421275171c9cf8cf61bb58c3aa6bc1479a81edf"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-02-25T15-50-16-493012.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adbf8497778f0f2816d5284f9b1c56fff166216f",
+      "size": 56168,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/adbf8497778f0f2816d5284f9b1c56fff166216f"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2020-02-20T19-50-11-963353.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7953cbda8568f3bac96abb8e966e308d0e9d4d04",
+      "size": 43929,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7953cbda8568f3bac96abb8e966e308d0e9d4d04"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-03-12T15-28-11-053395.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0db85ed1536eb1c18493efe2b9ba9f71d02826a8",
+      "size": 83345,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/0db85ed1536eb1c18493efe2b9ba9f71d02826a8"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-02-14T19-26-56-955256.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7804972b7e69dc44d0dce202550fe0f64cb492a",
+      "size": 64512,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/b7804972b7e69dc44d0dce202550fe0f64cb492a"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-10-24T15-39-05-913266.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71e6df4ae7fa6358f3a43fbed589428a46e2a654",
+      "size": 26047,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/71e6df4ae7fa6358f3a43fbed589428a46e2a654"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-09-20T15-44-35-508198.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dba1a47a9dae4e471c2dd99cb1ad64ac1a6dbb8f",
+      "size": 62551,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/dba1a47a9dae4e471c2dd99cb1ad64ac1a6dbb8f"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2020-01-06T22-23-41-383756.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3233a0fa2d59e1f6b59d0a5affd1af31cb2e5ef5",
+      "size": 20464,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/3233a0fa2d59e1f6b59d0a5affd1af31cb2e5ef5"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-06-24T16-38-43-224215.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe7f779387bd9209fa7cfb3e3fa36e7227d6a38f",
+      "size": 2994,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/fe7f779387bd9209fa7cfb3e3fa36e7227d6a38f"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-03-05T14-45-48-776952.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c8ae1397140afc89a6b0b938b4a182f7f6aa149",
+      "size": 53331,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/4c8ae1397140afc89a6b0b938b4a182f7f6aa149"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-12-05T17-54-57-892478.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4459d90a1b67681722af192c1cc4eb366ae8f8c4",
+      "size": 47969,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/4459d90a1b67681722af192c1cc4eb366ae8f8c4"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2019-10-08T19-02-11-557903.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cabeaf272335291b953d678519f8e9bbf27a5be",
+      "size": 36635,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7cabeaf272335291b953d678519f8e9bbf27a5be"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-12-17T20-00-59-145543.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8277cf1e03219a4a6841a2d2c85c34697b85109",
+      "size": 44094,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/f8277cf1e03219a4a6841a2d2c85c34697b85109"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-08-06T16-42-47-886625.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7587c24812ae3a7ca8ae35bfe29f003285c20af0",
+      "size": 17051,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7587c24812ae3a7ca8ae35bfe29f003285c20af0"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2020-01-17T18-31-34-957412.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7280ae537d0e8a14a4566ea203c617a9c77784f2",
+      "size": 256,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7280ae537d0e8a14a4566ea203c617a9c77784f2"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-01-03T21-42-17-290713.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e80251fc7908f2738a9a5bd16ef55a11331ce53",
+      "size": 81335,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/1e80251fc7908f2738a9a5bd16ef55a11331ce53"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-02-06T19-21-08-202768.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0af0e6591af6b1d84a2b42a0a547ecca5fb5344",
+      "size": 51807,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a0af0e6591af6b1d84a2b42a0a547ecca5fb5344"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-08-15T23-38-21-053975.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "575303c55e730ef8febae0389b2f60c1da867934",
+      "size": 15037,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/575303c55e730ef8febae0389b2f60c1da867934"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-09-17T15-26-44-255649.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8419d3950806834ff6139f5edd68ae33d1f778e9",
+      "size": 54626,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/8419d3950806834ff6139f5edd68ae33d1f778e9"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2020-07-11T18-29-46-288665.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7e9525210b1d225b253b51908ef60318044e5cb",
+      "size": 376,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/d7e9525210b1d225b253b51908ef60318044e5cb"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2020-02-28T20-50-37-270657.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a45b291598fe711f92562933eed7612bdcc696f",
+      "size": 24930,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/3a45b291598fe711f92562933eed7612bdcc696f"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-08-14T14-21-55-243869.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0dc46e36444238180fb7d52a8032b18fc599a39",
+      "size": 85153,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/c0dc46e36444238180fb7d52a8032b18fc599a39"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-03-29T20-49-20-589006.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a73250e27d1d580c1b57fe8c568738ac0f05193",
+      "size": 25157,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/6a73250e27d1d580c1b57fe8c568738ac0f05193"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-05-13T17-54-13-870270.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a691dbf1c599966c67ed34e8d60013d686ca0264",
+      "size": 74056,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a691dbf1c599966c67ed34e8d60013d686ca0264"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2020-01-29T16-13-56-466813.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72c03f683543a2926aca5077664af72b6db8669e",
+      "size": 61656,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/72c03f683543a2926aca5077664af72b6db8669e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-07-23T16-16-12-696514.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5568a722c1ff197566cc7fbc39ceffa44b9a2e2f",
+      "size": 49566,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/5568a722c1ff197566cc7fbc39ceffa44b9a2e2f"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-01-17T14-55-48-221746.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ad8f041ed69f599d1f196b45ea40ee436c60f05",
+      "size": 19203,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/3ad8f041ed69f599d1f196b45ea40ee436c60f05"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-03-12T21-56-57-439191.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eedd9c53adea2f5d4d406b810f448242d44847ab",
+      "size": 11401,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/eedd9c53adea2f5d4d406b810f448242d44847ab"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-04-26T00-21-37-878788.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb42f81670979b482736c289a020ed00f0b28669",
+      "size": 32875,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/bb42f81670979b482736c289a020ed00f0b28669"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-09-26T18-28-51-896970.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51d2fb6a5ae813a690e7bfba84ce96f195d5e3b8",
+      "size": 39923,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/51d2fb6a5ae813a690e7bfba84ce96f195d5e3b8"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-07-05T21-23-11-155550.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1e2507a825adc90fcffe2de530f176a064f7d9a",
+      "size": 46988,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a1e2507a825adc90fcffe2de530f176a064f7d9a"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-09-20T20-48-17-990377.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60be30d0491865c6169b77987c5a0eec637797c3",
+      "size": 337,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/60be30d0491865c6169b77987c5a0eec637797c3"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-10-17T14-25-46-084134.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24cc1b9592ae3b1e530e3d1ff90588dde195a49e",
+      "size": 40736,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/24cc1b9592ae3b1e530e3d1ff90588dde195a49e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-12-31T21-35-42-590441.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c520ab2db1c4fc4f4a61815d7a23cd481795bd4e",
+      "size": 60531,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/c520ab2db1c4fc4f4a61815d7a23cd481795bd4e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-02-13T17-17-37-951668.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a44c0013e34527101674fd56992332f612cce41e",
+      "size": 196,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a44c0013e34527101674fd56992332f612cce41e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2020-01-22T19-17-31-560058.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d09783cd9b90a03101c2059a75f2755d4503979",
+      "size": 56893,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7d09783cd9b90a03101c2059a75f2755d4503979"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-12-11T22-58-39-564504.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3e3dcbb1756ec13a7e8da7776cf6beaad4edcbe",
+      "size": 23926,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/b3e3dcbb1756ec13a7e8da7776cf6beaad4edcbe"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2020-01-17T17-45-44-326311.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c954409c27b61970530ffc3eaf40b27fa18648ec",
+      "size": 8276,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/c954409c27b61970530ffc3eaf40b27fa18648ec"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-09-09T18-15-58-715544.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2843ba6f5c4151e62351e046bf1fa83f2c51d5d4",
+      "size": 52188,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/2843ba6f5c4151e62351e046bf1fa83f2c51d5d4"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-08-08T22-59-12-076873.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85c95036dc42fa01888693a5eb0e009276e917ea",
+      "size": 25620,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/85c95036dc42fa01888693a5eb0e009276e917ea"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-09-14T16-39-23-062094.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2abd220469b2801a4c8ac9cb4360723aab96f0fa",
+      "size": 225,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/2abd220469b2801a4c8ac9cb4360723aab96f0fa"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-09-18T20-48-15-230928.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce3f37cea80a7df57c12f27f8141f1cd31ea8082",
+      "size": 76079,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/ce3f37cea80a7df57c12f27f8141f1cd31ea8082"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-01-31T17-25-32-222950.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b7cccd43c9c1549d7c3d2a4c0a46839ab544b99",
+      "size": 94332,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/4b7cccd43c9c1549d7c3d2a4c0a46839ab544b99"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-03-02T18-51-52-609313.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb483d4b0af8846e7ed02f7312ee2907206b39c1",
+      "size": 39212,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/cb483d4b0af8846e7ed02f7312ee2907206b39c1"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-11-08T00-32-31-864162.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "057de440fbcc4526af74d0ba7d5c46990c792d6b",
+      "size": 281,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/057de440fbcc4526af74d0ba7d5c46990c792d6b"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-01-28T16-08-08-179619.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f83f3b0574d80de41aa45489e91c59b436eeae29",
+      "size": 48385,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/f83f3b0574d80de41aa45489e91c59b436eeae29"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2020-02-04T15-52-52-628722.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56f1b6dc397e19b69690a2c31e49e8345215f36a",
+      "size": 51861,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/56f1b6dc397e19b69690a2c31e49e8345215f36a"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-12-13T16-17-00-939647.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b964115f85688bc51b55dc2b5b67601346285fd",
+      "size": 47480,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7b964115f85688bc51b55dc2b5b67601346285fd"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2019-08-27T15-27-15-571202.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "acad80947d6f1fbbad40e77c83c527ace71a686e",
+      "size": 32780,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/acad80947d6f1fbbad40e77c83c527ace71a686e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2019-09-24T18-31-50-542660.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51d3d4b4b34f8ca67ac648fbba018ebb4230b855",
+      "size": 60609,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/51d3d4b4b34f8ca67ac648fbba018ebb4230b855"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-12-20T16-46-16-906258.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36b49b7e73e2a8708a4c4df4ff10ef1634c223bc",
+      "size": 50306,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/36b49b7e73e2a8708a4c4df4ff10ef1634c223bc"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-08-13T21-28-10-312766.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ed75d4467803b1e2a9fa38081f3101087a7a0fd",
+      "size": 35566,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/0ed75d4467803b1e2a9fa38081f3101087a7a0fd"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-11-12T20-16-34-674441.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75f62b3387b2db7e8ad2d24b268198990d30b12d",
+      "size": 19702,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/75f62b3387b2db7e8ad2d24b268198990d30b12d"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-06-11T16-15-43-440994.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2391795a34ab8eef05bdb9fb2be356d7fe52cffd",
+      "size": 72637,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/2391795a34ab8eef05bdb9fb2be356d7fe52cffd"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-01-27T18-12-11-786911.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "970aa554a5dbf5eaa22a2f7493bf850dafcd3702",
+      "size": 46288,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/970aa554a5dbf5eaa22a2f7493bf850dafcd3702"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-12-27T21-29-44-344250.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95a81dd02ec8ff52ce529ec05ec089d2b03e016e",
+      "size": 71856,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/95a81dd02ec8ff52ce529ec05ec089d2b03e016e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-11-26T19-43-29-505302.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca518d82434013756ef92144b95fdcfc2da66ca9",
+      "size": 67327,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/ca518d82434013756ef92144b95fdcfc2da66ca9"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-01-13T15-37-14-041584.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e95d8909a4d3003a9cb046a90ca8c3dcb772aa69",
+      "size": 54598,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/e95d8909a4d3003a9cb046a90ca8c3dcb772aa69"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-04-08T15-26-02-134684.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6184039177d84c02a0fff24cff115dfa696a5ce1",
+      "size": 53291,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/6184039177d84c02a0fff24cff115dfa696a5ce1"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-08-22T01-54-18-246071.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77e8cbf604fdd58a978406df8f65ece1e49ce915",
+      "size": 475,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/77e8cbf604fdd58a978406df8f65ece1e49ce915"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-07-09T19-40-28-397587.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d92076a7f16568b7821a9ec8859fd8defaea6c0c",
+      "size": 29756,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/d92076a7f16568b7821a9ec8859fd8defaea6c0c"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-06-12T20-42-33-230415.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ab687515945d43a00ffbc64b307b4a1106d2083",
+      "size": 49659,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/6ab687515945d43a00ffbc64b307b4a1106d2083"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-09-30T15-28-27-603286.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47a1a4013a5c661f75c08f1eb56dfe78ac03f7c3",
+      "size": 32092,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/47a1a4013a5c661f75c08f1eb56dfe78ac03f7c3"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2020-01-13T22-43-02-488298.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec69bba205cc2d8e56d99a5aecff0df51123937d",
+      "size": 33025,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/ec69bba205cc2d8e56d99a5aecff0df51123937d"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-05-14T16-36-09-279407.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55e1aa095a37950c8a5b586a5906320649a2865b",
+      "size": 36348,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/55e1aa095a37950c8a5b586a5906320649a2865b"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-10-16T22-49-57-822085.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a125df540d0e57300dd55c0fae7551203acf25d",
+      "size": 22347,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/8a125df540d0e57300dd55c0fae7551203acf25d"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-07-22T14-26-43-352894.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "813f303d830a45a88bdfdaaf5dd305ddb5333408",
+      "size": 77276,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/813f303d830a45a88bdfdaaf5dd305ddb5333408"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2020-02-21T17-33-19-342693.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70cb531472b0f65d12c7568db4040f44548147cf",
+      "size": 371,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/70cb531472b0f65d12c7568db4040f44548147cf"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-07-08T20-50-18-138258.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a75b84e4d0d8d9037ff2cafa0117326ec405eafa",
+      "size": 74961,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a75b84e4d0d8d9037ff2cafa0117326ec405eafa"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2020-10-12T16-30-14-049488.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7db857c024b90e0c934550c9932a6898489fdfb",
+      "size": 4742,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a7db857c024b90e0c934550c9932a6898489fdfb"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-01-08T20-28-34-644229.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8c5d704a9938de24dacae57e620a7e668c061ac",
+      "size": 4962,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/c8c5d704a9938de24dacae57e620a7e668c061ac"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-04-27T15-21-06-682417.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00265e8ed66f99d3cac7b99c07f5e8cc1ce63a55",
+      "size": 95942,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/00265e8ed66f99d3cac7b99c07f5e8cc1ce63a55"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-12-12T19-53-01-180469.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "201b2747b0a278024e14aba41b1b17e9a0764683",
+      "size": 39722,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/201b2747b0a278024e14aba41b1b17e9a0764683"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-10-08T18-01-23-464871.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49f9ec29005d01203c7ac136b7bb744a8e3d83dd",
+      "size": 47719,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/49f9ec29005d01203c7ac136b7bb744a8e3d83dd"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2019-10-02T16-38-20-871772.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "baafe5acf6081eb108f882ad4516212a42350514",
+      "size": 92518,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/baafe5acf6081eb108f882ad4516212a42350514"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-06-10T15-34-00-732233.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b2a33afdc7344e7c31c0c864b40f5eb4379849e",
+      "size": 70701,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/2b2a33afdc7344e7c31c0c864b40f5eb4379849e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2020-02-14T16-07-01-554826.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce2e9366655faf4ea0604a077f3192d19841a1b1",
+      "size": 55345,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/ce2e9366655faf4ea0604a077f3192d19841a1b1"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2019-05-03T22-14-13-790006.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cdb3cc52072e9513fbfea75b700935b3dbed25e",
+      "size": 36543,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/0cdb3cc52072e9513fbfea75b700935b3dbed25e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-10-01T20-25-58-876334.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34a176f25ca75af70f49a8064a31df3df6447b78",
+      "size": 8063,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/34a176f25ca75af70f49a8064a31df3df6447b78"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-11-14T22-00-50-243655.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "305ccd82566757d02f0f44fa8974ab2849c03e92",
+      "size": 20445,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/305ccd82566757d02f0f44fa8974ab2849c03e92"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-08-12T16-45-13-696175.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca87bd411211173a313202ffa00b6aa4564b0c75",
+      "size": 49962,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/ca87bd411211173a313202ffa00b6aa4564b0c75"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-04-05T16-20-51-232863.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cb5323a94106293c0200852d12d82df06ea4b0d",
+      "size": 40030,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/7cb5323a94106293c0200852d12d82df06ea4b0d"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-08-22T01-55-52-775411.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05d244247f7b3f6a5ebb13171c0725b4fa6046fc",
+      "size": 385,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/05d244247f7b3f6a5ebb13171c0725b4fa6046fc"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-05-16T16-03-06-800014.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2a8bd956b21e20f81c720c983624a4a11417f34",
+      "size": 76821,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a2a8bd956b21e20f81c720c983624a4a11417f34"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-06-12T16-20-40-143562.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71f2a31c77a413f5c27c77382069791ea3f8542e",
+      "size": 37441,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/71f2a31c77a413f5c27c77382069791ea3f8542e"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2020-02-12T19-41-57-878044.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ecbef3415cf7f5f9d7e6bd89f45246d08143c0",
+      "size": 30432,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/d4ecbef3415cf7f5f9d7e6bd89f45246d08143c0"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1635-2020-03-04T14-57-18-033813.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eecfe243ec09ffd48549c2e64a74fa3830be928",
+      "size": 72228,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/5eecfe243ec09ffd48549c2e64a74fa3830be928"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-09-25T18-36-28-964715.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a8c8f3fef15c6bf139e8c91cf36fd2cfd9acdb7",
+      "size": 37543,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/1a8c8f3fef15c6bf139e8c91cf36fd2cfd9acdb7"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-11-08T17-30-37-339709.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf22c3bc2eaab288e399d32d60bc0ae18a4bfab7",
+      "size": 65612,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/bf22c3bc2eaab288e399d32d60bc0ae18a4bfab7"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1639-2020-01-22T16-31-49-349169.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfd69597038957bbfeb4c82c8332a5583d81b2a1",
+      "size": 98690,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/dfd69597038957bbfeb4c82c8332a5583d81b2a1"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1636-2019-11-20T19-23-16-880163.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e4f448dbfdabfc64c7219a19280ef21898bc742",
+      "size": 61502,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/3e4f448dbfdabfc64c7219a19280ef21898bc742"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1640-2020-02-12T21-54-35-204257.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e99792a9ae09fa1029176370db515d8ed028a18",
+      "size": 13457,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/4e99792a9ae09fa1029176370db515d8ed028a18"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-08-01T15-33-19-022359.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9a4d403d3372fc60238c911243c1770faf855f2",
+      "size": 41100,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/a9a4d403d3372fc60238c911243c1770faf855f2"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1637-2019-12-06T21-24-01-932721.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef1bdaa40b4375e24024fbf31bff63d5b570a3de",
+      "size": 82773,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/ef1bdaa40b4375e24024fbf31bff63d5b570a3de"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-12-13T15-37-52-979287.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "967b2ef9c089f4cc01ca73a952e57551dc5b40f9",
+      "size": 56746,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/967b2ef9c089f4cc01ca73a952e57551dc5b40f9"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1638-2019-09-06T22-07-54-495296.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563e8173dc69e9bb894475d6f3f6134147bac0a2",
+      "size": 9752,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/563e8173dc69e9bb894475d6f3f6134147bac0a2"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1633-2019-04-10T22-27-23-356550.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de64932045a20c1522d90a434ea1dc6aa621a0d3",
+      "size": 13251,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/de64932045a20c1522d90a434ea1dc6aa621a0d3"
+    },
+    {
+      "path": "Parking_Lot_01/19-102-260-1634-2019-08-08T20-28-15-024248.csv.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0e6e9ed3cd7e3c78b69f84328056f08e8510876",
+      "size": 50716,
+      "url": "https://api.github.com/repos/tongxin-li/ACN-Data-Static/git/blobs/e0e6e9ed3cd7e3c78b69f84328056f08e8510876"
+    }
+  ]
+}

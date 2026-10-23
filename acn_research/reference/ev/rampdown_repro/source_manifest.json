@@ -1,0 +1,116 @@
+{
+  "upstream_commits": {
+    "acnportal": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+    "adacharge": "b7d5fddb25e842333fc2b404d32dd3477ca47297"
+  },
+  "sources": [
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/__init__.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/__init__.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/__init__.py",
+      "sha256": "00f2943e212ed55b2dd577892de92d3d7723d07fa6221099d486419cd682b4b9",
+      "bytes": 168
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/base_algorithm.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/base_algorithm.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/base_algorithm.py",
+      "sha256": "c95a748ed32666702df0ad81f3db2d83cbeac701eb922328e720afe8635ddc41",
+      "bytes": 4190
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/uncontrolled_charging.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/uncontrolled_charging.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/uncontrolled_charging.py",
+      "sha256": "6975ae83f895b6f1c1e2b148636702a5e2ddace3cfa7f526fb44783872210e1c",
+      "bytes": 1542
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/sorted_algorithms.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/sorted_algorithms.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/sorted_algorithms.py",
+      "sha256": "335dbc86ed49921de93ec550bb0a4a4a709833b5601f27cc5f9e032adc99fea8",
+      "bytes": 21670
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/upper_bound_estimator.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/upper_bound_estimator.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/upper_bound_estimator.py",
+      "sha256": "e532831c81de5c723e03ac60f5cfaf12beb5b98dec7cb91c307509e6e8ea5dee",
+      "bytes": 5189
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/preprocessing.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/preprocessing.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/preprocessing.py",
+      "sha256": "5eaadb81149f31f34a7915897786481b1a101f685e029255b671d7edad1de67a",
+      "bytes": 7383
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/utils.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/utils.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/utils.py",
+      "sha256": "7907279feddc3d1a8d2692fc61be0463786484be0d3403d27d77b1d9133c78cb",
+      "bytes": 3163
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/algorithms/postprocessing.py",
+      "local_path": "vendor/acnportal/acnportal/algorithms/postprocessing.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/algorithms/postprocessing.py",
+      "sha256": "9f4b0053ba335d3b494f5e115f1ad415184313fd64e8c66e163f34f1177e9f0c",
+      "bytes": 1620
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "acnportal/acnsim/interface.py",
+      "local_path": "vendor/acnportal/acnportal/acnsim/interface.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/acnportal/acnsim/interface.py",
+      "sha256": "453001378bd436930940118c9da077e5ec504a0cb103db52fc0a7efecc21ace4",
+      "bytes": 28107
+    },
+    {
+      "repository": "https://github.com/zach401/acnportal",
+      "commit": "14e723b11339e56ca3afd2bf4969f9e4bc8c2623",
+      "upstream_path": "LICENSE.txt",
+      "local_path": "vendor/acnportal/LICENSE.txt",
+      "raw_url": "https://raw.githubusercontent.com/zach401/acnportal/14e723b11339e56ca3afd2bf4969f9e4bc8c2623/LICENSE.txt",
+      "sha256": "34256c87b252573d30203b02ee12407bfbf2169684adfef3a3ea4f9bb9e0db5f",
+      "bytes": 1488
+    },
+    {
+      "repository": "https://github.com/zach401/adacharge",
+      "commit": "b7d5fddb25e842333fc2b404d32dd3477ca47297",
+      "upstream_path": "adacharge/adacharge.py",
+      "local_path": "vendor/adacharge/adacharge/adacharge.py",
+      "raw_url": "https://raw.githubusercontent.com/zach401/adacharge/b7d5fddb25e842333fc2b404d32dd3477ca47297/adacharge/adacharge.py",
+      "sha256": "3ba854f673ea7a1d01e57e099a97f0f2efd220f945cd45c93c4887f97986ad92",
+      "bytes": 11351
+    },
+    {
+      "repository": "https://github.com/zach401/adacharge",
+      "commit": "b7d5fddb25e842333fc2b404d32dd3477ca47297",
+      "upstream_path": "LICENSE.txt",
+      "local_path": "vendor/adacharge/LICENSE.txt",
+      "raw_url": "https://raw.githubusercontent.com/zach401/adacharge/b7d5fddb25e842333fc2b404d32dd3477ca47297/LICENSE.txt",
+      "sha256": "9f417be1e06f7473eb9ddb2d71c47e3ed644197916c7f9953c21a40486a8f3a7",
+      "bytes": 2420
+    }
+  ]
+}
