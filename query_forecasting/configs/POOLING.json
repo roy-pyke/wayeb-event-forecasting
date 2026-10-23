@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-22",
+  "stage": "second structural candidate; development only",
+  "motivation": "Singleton prefix strata require a continuation for every live prefix. Pool source histories without equating their predictive states, so additional exact prefix expansion remains affordable.",
+  "candidate": "Group frontier prefixes by the exact set of feasible complete output bit-vectors. Preserve each prefix mass, recurrent source state, last token and monitor state. Draw a prefix within a group proportional to exact mass, then independently continue that original source state.",
+  "tree_policy": "Highest exact prefix mass; common to all pooling policies; expand at most budget/4 model rows; settle singleton output sets immediately. No outcome samples used in tree construction.",
+  "pool_policies": ["one residual pool", "prefix-depth pools", "last-symbol pools", "mass-ranked equal-count buckets matching semantic pool count", "semantic output-set pools"],
+  "allocation": "All pools receive the same union-output variance bound and greedy integer allocation per worst-case suffix cost. If mandatory pool samples exceed the remaining budget, combine smallest-mass pools into one tail until affordable. No optional stopping of sample averages.",
+  "same_data_and_source": "Use Q1 models and exactly the same development origins, horizons, seeds and budgets. Retain Q1 baselines and results.",
+  "replicates": 32,
+  "primary_gate": "At budget 512, at least 20 percent lower aggregate MSE than every Q1 baseline and the best nonsemantic pooling policy in each domain; paired origin-bootstrap 95 percent gain lower bound > 0; zero coherence violations; wall time <= 2x best baseline. No claim until closest-work comparison is complete.",
+  "additional_requirements_if_positive": ["compare hidden-state clustering and arithmetic or quasi-Monte Carlo sampling", "larger horizons and held-out query structures", "freeze an independent confirmation before opening reserve data"],
+  "novelty_scope": "Candidate task-specific compiler and source-history mixture partition, not new total probability, stratification, Neyman allocation, or general rare-event sampling theory."
+}
