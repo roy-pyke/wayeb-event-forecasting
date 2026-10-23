@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-22",
+  "purpose": "Exclude poor generic resampling as the explanation of gains over mass-only nullspace flight and joint-bin weighted ensemble.",
+  "methods": ["systematic resampling after exact full-symbol expansion", "stratified resampling after the same expansion", "Fearnhead-Clifford discrete-particle threshold resampling", "same discrete-particle method with recursive query-potential ordering"],
+  "details": "Preserve high-weight histories deterministically, choose the remaining constant weight c by sum(min(1,w_i/c))=N, and systematically sample the remaining light histories. Query ordering recursively splits the current harmonic feature cloud on its largest weighted-variance coordinate; it is an ordinary ordered-stratification adapter, not a new proposal.",
+  "information": "Same source, origins, queries, exact branching, early stopping, native clock, shared-prefix merging, and total model-call budgets as Q3-Q5. Order uses current states and root surrogate only, with its construction time counted.",
+  "development": "48 origins/domain, budgets [512,2048], 32 replicates, four families, horizons [2,4,8]. Pilot first 2 origins/8 repetitions.",
+  "decision": "All methods enter the strongest-baseline gate; mass-only flight is not treated as a sufficient generic particle baseline. No reserve access."
+}
