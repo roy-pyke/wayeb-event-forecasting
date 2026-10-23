@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-22",
+  "role": "Additional development challenge, registered before its results; not an untouched test",
+  "origins": "indices 0,4,8,...,44 of the unchanged 48 development origins in each domain",
+  "horizons": [2,4,8],
+  "budgets": [512,2048],
+  "replicates": 32,
+  "families": ["nested","directional","multisignal","heldout_structure"],
+  "heldout_structure": {
+    "reentry": "A(B|C)*DA",
+    "paired_loop": "(AB|BA)+(C|D)",
+    "return": "(A|B)C+(A|B)"
+  },
+  "counting_policy_new_family": "overlap; pinned author CLI export and independent endpoint replay required",
+  "methods": ["Q1 mass strata", "Q1 semantic strata", "single pool", "depth pools", "semantic pools", "hidden-state cluster pools", "arithmetic", "scrambled Sobol"],
+  "reference": "Exact horizon-8 prefix enumeration, same model; no approximate reference",
+  "gate": "Semantic pools retain >=20% MSE gain against best baseline in both domains at budget 2048, plus positive paired 95% interval. Inspect all family-level results; any material reversal limits the claim. Independent confirmation requires this and the main development gate to pass.",
+  "scope": "Future structures are absent from generative training objectives. Learned next-symbol source is frozen. This evaluates query transfer and horizon stress, not new real-data independence."
+}

@@ -1,0 +1,5 @@
+;(IsEventTypePredicate(A),*(+(IsEventTypePredicate(B),IsEventTypePredicate(C))),IsEventTypePredicate(D),IsEventTypePredicate(A)){order:0}{window:0}
+&
+;(+(;(IsEventTypePredicate(A),IsEventTypePredicate(B)),;(IsEventTypePredicate(B),IsEventTypePredicate(A))),*(+(;(IsEventTypePredicate(A),IsEventTypePredicate(B)),;(IsEventTypePredicate(B),IsEventTypePredicate(A)))),+(IsEventTypePredicate(C),IsEventTypePredicate(D))){order:0}{window:0}
+&
+;(+(IsEventTypePredicate(A),IsEventTypePredicate(B)),IsEventTypePredicate(C),*(IsEventTypePredicate(C)),+(IsEventTypePredicate(A),IsEventTypePredicate(B))){order:0}{window:0}
