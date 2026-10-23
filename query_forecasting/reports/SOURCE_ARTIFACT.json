@@ -1,0 +1,12 @@
+{
+  "release_tag": "query-sources-20261022",
+  "url": "https://github.com/roy-pyke/wayeb-event-forecasting/releases/download/query-sources-20261022/query-sources-20261022.tar.gz",
+  "archive_sha256": "b93c3f2270fd855984b3196766c98cbbc9030d8eaf51f04e616f539b4ea5e8cd",
+  "files": {
+    "air/world.pt": "0b0b1a6f23cf364d67bfc06dcc70a80b6633006fd141517b4c70845fe624a5a5",
+    "power/world.pt": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b"
+  },
+  "scope": "Frozen model sources only; not a claim of successful new inference method",
+  "training_protocol": "query_forecasting/configs/PROTOCOL.json",
+  "dependencies": "pattern_forecasting/configs/requirements.txt"
+}
