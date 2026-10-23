@@ -38,6 +38,17 @@
 - [Bansal 等：Competitive Algorithms for Generalized k-Server in Uniform Metrics](https://doi.org/10.1145/3568677)，§3 明确讨论从阶段剩余可行状态均匀抽样以及标准 uniform-MTS 分析。因此不能将这一随机选择机制包装成新算法。
 - [Bubeck 与 Rabani：Parametrized Metrical Task Systems](https://arxiv.org/abs/1904.03874)，已有 subset chasing / MSS 形式化及竞争分析。
 - [Bubeck 等：Metrical Service Systems with Transformations](https://arxiv.org/abs/2009.08266)，已有免费环境变换的更一般形式。这里固定索引、随 q 改变解码输出，仍可还原为普通索引空间的 MSS；不声称解决该论文的广义变换难题。
+- [Seidel 等：A Window-based Periodic Event-triggered Consensus Scheme for Multi-agent Systems](https://people.kth.se/~dimos/pdfs/TCNS_Seidel_23.pdf)，作者 PDF 第 7 页（P6）明确指出，较不保守的触发规则不必导致闭环中更少的触发次数。因此“点态放松不保证闭环节省”这一一般警示已有直接先例；本文有理数 Brier 反例只是可复核的特定实例与任意大比值构造，不能据此声称首次发现该现象。其历史窗口控制方法也说明“利用过去的余量”并非新的宽泛方向。
 - 概率码本属于经典向量量化（vector quantization）；已有 PSR、信念压缩、proper-score 一致性来源见 RELATED_WORK。
 
 尚无足够证据证明该组合的发表新颖性或实用优越性。登记开发门槛后再运行；如果被同码本、同信息强基线否定，则保存失败并停止把它当作成功机制。
+
+## 开发检验结果
+
+五个随机种子平均后，空气阶段策略为 6.460 字节/查询，历史 16 步 minimax 为 6.095；候选多用 5.98% 字节。用电为 8.111 对 7.931，多用 2.27%。阶段交集相对无阶段记忆的均匀抽样只节省 1.19%/1.50%。这些比较仍有平均 Brier 的权衡，不能说某策略在全部指标上支配其他策略。
+
+相对原完整坐标量化方案，码本候选少用 16.61%/22.32% 在线字节，但空气平均 Brier 增加 0.000221，并且同一码本的普通历史参照也能获得通信节省。因此这些比例不构成阶段机制独立贡献的证据。加入首次码本分发后，候选成本是空气 6.744、用电 8.133 字节/查询。
+
+码本覆盖率为 88.72%/89.35%；不被码本覆盖时的共同退路，占候选在线字节约 59.03%/46.76%。这限制了仅改索引选择的收益。阶段候选在覆盖区间的索引消息数约为同码本离线最少次数的 1.334/1.344 倍；接近一个诊断下界也不等于胜过实际强基线。
+
+**开发门槛失败，2017/2010 储备保持关闭。** 结果和五种子范围见 `reports/safe-codebook-comparisons.json`。不会把经典 MSS 的保证、普通码本压缩的收益或新的反例分别包装为足以投稿的原创建议。

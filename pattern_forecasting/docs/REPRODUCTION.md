@@ -23,7 +23,7 @@ PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scri
 
 `--profile short` 的窗口为各数据集的 1、2、3 个原生时间单位；查询频率不变。数据准备文件包含下一次匹配时间与观测覆盖，因而多个窗口共用同一因果特征和事件流，但它们不是独立数据实验。
 
-确认集只有在相应配置目录存在 `FROZEN.json` 时才允许生成。该文件应记录最终代码、模型、数据源、超参数、主要比较与失败解释的冻结；当前开发迭代中尚未创建。不得把旧 2020 MetroPT 数据称为独立确认，也不得在看见确认结果后改主要声明。
+确认集只有在相应配置目录存在 `FROZEN.json` 时才允许生成。三个模式族的冻结已于提交 `8e59fbf5f6c75fb538edf97fb2fc3a2fc7496387` 完成，随后才运行 2016/2009 确认。文件记录源代码、模型、数据源、超参数、主要比较与失败解释。不得把旧 2020 MetroPT 数据称为独立确认，也不得在看见确认结果后改主要声明。
 
 原始 UCI 文件只保存于忽略的缓存目录，首次下载及每次复用都核对固定 SHA-256。大模型和中间预测保存在忽略的 `runs/`，仓库保存完整脚本、协议与可审核的数值报告。报告中的按周簇统计保留多站点共享天气的相关性；时间采用数据记录的钟表时间，未擅自推定原始时区。
 
@@ -67,3 +67,16 @@ PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scri
 ```
 
 `check_reproducibility.py` 则在不覆盖冻结模型的前提下，从头重训一个神经模型并比较 2,000 个开发查询；本机实际复验得到零差异。不要删除或修改原冻结记录来让不同模型通过确认校验。新的训练研究应另开协议和输出目录，并与历史确认报告区分。
+
+## 后续安全码本反证与精确反例
+
+这轮只使用原开发时期。`SAFE_CODEBOOK.json` 在性能实验前以 `f60d624` 提交，代码在 `9a88d54` 提交；原冻结文件所列源代码未修改。两个码本各含 64 个九维 float32 条目，完整数值和训练/模型指纹已保存为 `reports/multisignal/safe-codebook-{air,power}.json`，不需要额外下载模型资产。
+
+```bash
+./pattern_forecasting/run.sh pattern_forecasting/scripts/closed_loop_counterexample.py
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/safe_codebook_experiment.py --dataset air
+PATTERN_FAMILY=multisignal ./pattern_forecasting/run.sh pattern_forecasting/scripts/safe_codebook_experiment.py --dataset power
+./pattern_forecasting/run.sh pattern_forecasting/scripts/summarize_safe_codebook.py
+```
+
+`safe_codebook_experiment.py` 故意没有储备集参数。门槛失败后不打开空气 2017 年和用电 2010 年。随机候选和随机参照均平均登记的五个种子；确定性参照各执行一次。离线最少切换动态规划仅作下界，不参与因果方法的胜负评比。应用消息为实际 28 字节索引帧或原量化回退帧，初始码本的 2,304 字节/实体另计，网络层封装、重传和无线能耗未测量。
