@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-22",
+  "registered_when": "Q5 full development is running; its full results not yet available",
+  "motivation": "Q5's exactness class is larger than the IID potential used by previous control-variate baselines. A favorable result may merely reflect a weak surrogate in those baselines.",
+  "strong_control": "Build a time-dependent first-order symbol-Markov surrogate using 1+5*(H-1) calls to the same frozen neural source. At each depth, query all last symbols after the deterministically greedy representative prefix. These calls and proxy construction time count against the total budget and runtime.",
+  "methods": ["same-Markov-potential additive control variate", "same control with stepwise Latin hypercube draws", "both with per-family feasibility projection, explicitly not full joint projection", "positive full-history balancing of the same Markov potential using the Q5 recombination kernel"],
+  "guarantee": "The proxy is exact for every time-inhomogeneous first-order source regardless of the chosen representative prefix; under arbitrary neural histories the additive correction and balanced estimator remain unbiased. Generic potentials and control variates are prior work, not a proposed novelty.",
+  "protocol": "Use all 48 development origins/domain, horizons [2,4,8], 36 simultaneous outputs, budgets [512,2048], 32 repeats. Pilot 2 origins/8 repeats for implementation only. No future observed symbols enter the proxy.",
+  "decision": "Include every control as a comparator to Q5's previously registered >=20% per-domain MSE gate and runtime gate. Do not remove signed estimators because the candidate additionally guarantees coherence. If these controls remove the advantage, reject the need for the higher-dimensional occupancy mechanism.",
+  "reserve": "Air2017 and power2010 remain closed until all development/novelty/runtime gates pass."
+}
