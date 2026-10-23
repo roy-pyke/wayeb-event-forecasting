@@ -1,0 +1,108 @@
+{
+  "domain": "air",
+  "mode": "markov-control",
+  "origins": 48,
+  "replicates": 32,
+  "methods": [
+    "balanced",
+    "cv",
+    "lhs",
+    "cv_family_projected",
+    "lhs_family_projected"
+  ],
+  "status": "strong conventional controls, not a proposed novel contribution",
+  "results": [
+    {
+      "budget": 512,
+      "method": "balanced",
+      "mse": 3.5214803059946544e-06,
+      "family_incoherent_runs": 0,
+      "rows": 512.0,
+      "proxy_rows": 36.0,
+      "seconds": 0.03862773507027365
+    },
+    {
+      "budget": 512,
+      "method": "cv",
+      "mse": 7.01535801189742e-06,
+      "family_incoherent_runs": 206,
+      "rows": 272.9563802083333,
+      "proxy_rows": 36.0,
+      "seconds": 0.024211524901507648
+    },
+    {
+      "budget": 512,
+      "method": "lhs",
+      "mse": 4.7041026894560225e-06,
+      "family_incoherent_runs": 230,
+      "rows": 278.7740885416667,
+      "proxy_rows": 36.0,
+      "seconds": 0.02485105145152981
+    },
+    {
+      "budget": 512,
+      "method": "cv_family_projected",
+      "mse": 6.983080542889898e-06,
+      "family_incoherent_runs": 0,
+      "rows": 272.9563802083333,
+      "proxy_rows": 36.0,
+      "seconds": 0.02423150857744834
+    },
+    {
+      "budget": 512,
+      "method": "lhs_family_projected",
+      "mse": 4.68181773805668e-06,
+      "family_incoherent_runs": 0,
+      "rows": 278.7740885416667,
+      "proxy_rows": 36.0,
+      "seconds": 0.02474490294800565
+    },
+    {
+      "budget": 2048,
+      "method": "balanced",
+      "mse": 1.305988556572437e-06,
+      "family_incoherent_runs": 0,
+      "rows": 2048.0,
+      "proxy_rows": 36.0,
+      "seconds": 0.1404055283713698
+    },
+    {
+      "budget": 2048,
+      "method": "cv",
+      "mse": 1.2764358559964234e-06,
+      "family_incoherent_runs": 120,
+      "rows": 794.6341145833334,
+      "proxy_rows": 36.0,
+      "seconds": 0.07240432885195484
+    },
+    {
+      "budget": 2048,
+      "method": "lhs",
+      "mse": 9.221800504111146e-07,
+      "family_incoherent_runs": 106,
+      "rows": 800.4915364583334,
+      "proxy_rows": 36.0,
+      "seconds": 0.07310776504709793
+    },
+    {
+      "budget": 2048,
+      "method": "cv_family_projected",
+      "mse": 1.2762116768006722e-06,
+      "family_incoherent_runs": 0,
+      "rows": 794.6341145833334,
+      "proxy_rows": 36.0,
+      "seconds": 0.07222818540255578
+    },
+    {
+      "budget": 2048,
+      "method": "lhs_family_projected",
+      "mse": 9.215480813066465e-07,
+      "family_incoherent_runs": 0,
+      "rows": 800.4915364583334,
+      "proxy_rows": 36.0,
+      "seconds": 0.0730506578704535
+    }
+  ],
+  "max_mass_error": 1.7408297026122455e-13,
+  "max_moment_error": 2.71390413397396e-13
+}
