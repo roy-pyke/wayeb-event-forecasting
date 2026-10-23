@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-22",
+  "status": "engineering optimization registered while Q5-v2 full results are pending",
+  "evidence": "Profiling 5 first-order occupancy queries puts about 89% of time in compression and 27% in its SVDs. Many one-hot and recorded-deadline columns are constant on the current cloud.",
+  "change": "Before invoking the unchanged local-basis compressor, remove exactly constant feature columns: their moments are already implied by total mass. No approximate feature selection, lower rank tolerance, changed source, changed budget, or new hyperparameter.",
+  "verification": "Validate all original moments after compression, including removed columns; test positivity, mass, support and rank. Removing redundant rows can alter numerical pivot ties and therefore random histories, so do not copy old MSE measurements to the optimized implementation if estimates differ.",
+  "fairness": "Apply the same wrapper to harmonic, uniform, known_bits, zero-order occupancy, first-order occupancy, and the positive Markov-potential comparator. Preserve old implementations and all results. Retain other baseline results because their computations are unchanged.",
+  "gate": "The original >=20% MSE improvement in both domains, positive paired-origin confidence bounds, positive-path coherence, no rank failures, and <=2x serial runtime gate remain. This is an implementation optimization, not an additional novelty claim.",
+  "data": "Existing 48 origins/domain only. Reserves stay closed."
+}
