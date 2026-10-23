@@ -31,3 +31,14 @@
 | [Deville & Tillé，2004，Cube method](https://libra.unine.ch/entities/publication/f0a9a172-55e3-4763-b37c-f004ad27891b)；[Fast Compression of MCMC Output，2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8393937/) | 保持辅助变量矩的随机抽样/压缩已有成熟基础。任何后续正权控制量方案必须明确承认这一来源。 |
 
 Q2 判断：完整联合输出集合的必要性已被更近的监控状态和边际支持集消融否定。文献差别加泛用采样优势不够支撑当前论文主张。
+
+
+## Q3–Q5 的范围收缩
+
+[Poupart 与 Boutilier，NeurIPS 2002，§2.3、§3.1–3.2](https://proceedings.neurips.cc/paper_files/paper/2002/file/14ea0d5b0cf49525d1866cb1e95ada5d-Paper.pdf) 已给出保持奖励的转移不变子空间、Krylov 构造和 self-sufficient marginal families。故“保持边缘量便能精确预测未来”“最小转移闭合空间”不能作为本项目新定理。当前占用量闭合证明是其有限事件查询场景下的直接应用。该文研究信念压缩；本候选另外要求对任意非马尔可夫神经源保留完整历史、正质量、无偏和逐次联合路径一致性，这一具体组合是否有足够新颖性尚待审查。
+
+[Poupart、Ortiz 与 Boutilier，UAI 2001](https://arxiv.org/pdf/1301.2305) 已有价值导向粒子采样及根据决策误差自适应样本量。再次排除“针对下游任务分配采样预算”的宽泛创新措辞。
+
+[MPCR，JCP 2020，§2.2](https://arxiv.org/html/1702.05198v3) 先分箱、再以约束优化保存物理矩。[Factored Particles，UAI 2002](https://arxiv.org/pdf/1301.0590) 将投影粒子重新组合并明确承认该近似的偏差。这些都是必要对照，而非因为应用领域不同就可以忽略。
+
+Q5 同时加入时间变化的一阶马尔可夫代理：在确定的贪心代表前缀上查询所有可能末符号，每个 8 步查询预先用 36 个真实源调用，全部计入预算。它支持已有加性控制变量/LHS 和正权调和矩传播。它们是更强的常规对照，不将该代理构造另包装为新贡献。

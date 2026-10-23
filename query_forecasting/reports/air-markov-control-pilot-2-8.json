@@ -1,0 +1,108 @@
+{
+  "domain": "air",
+  "mode": "markov-control-pilot-2-8",
+  "origins": 2,
+  "replicates": 8,
+  "methods": [
+    "balanced",
+    "cv",
+    "lhs",
+    "cv_family_projected",
+    "lhs_family_projected"
+  ],
+  "status": "strong conventional controls, not a proposed novel contribution",
+  "results": [
+    {
+      "budget": 512,
+      "method": "balanced",
+      "mse": 2.547962560865766e-06,
+      "family_incoherent_runs": 0,
+      "rows": 512.0,
+      "proxy_rows": 36.0,
+      "seconds": 0.039347924443063675
+    },
+    {
+      "budget": 512,
+      "method": "cv",
+      "mse": 8.431741121677074e-06,
+      "family_incoherent_runs": 5,
+      "rows": 238.5,
+      "proxy_rows": 36.0,
+      "seconds": 0.021283981752276304
+    },
+    {
+      "budget": 512,
+      "method": "lhs",
+      "mse": 5.991624899547505e-06,
+      "family_incoherent_runs": 8,
+      "rows": 235.8125,
+      "proxy_rows": 36.0,
+      "seconds": 0.02145622650277801
+    },
+    {
+      "budget": 512,
+      "method": "cv_family_projected",
+      "mse": 8.381377512150224e-06,
+      "family_incoherent_runs": 0,
+      "rows": 238.5,
+      "proxy_rows": 36.0,
+      "seconds": 0.02138969793850265
+    },
+    {
+      "budget": 512,
+      "method": "lhs_family_projected",
+      "mse": 5.706543406909695e-06,
+      "family_incoherent_runs": 0,
+      "rows": 235.8125,
+      "proxy_rows": 36.0,
+      "seconds": 0.021741028562246356
+    },
+    {
+      "budget": 2048,
+      "method": "balanced",
+      "mse": 3.835665003642586e-07,
+      "family_incoherent_runs": 0,
+      "rows": 2048.0,
+      "proxy_rows": 36.0,
+      "seconds": 0.13563941155734938
+    },
+    {
+      "budget": 2048,
+      "method": "cv",
+      "mse": 1.2872749908248969e-06,
+      "family_incoherent_runs": 2,
+      "rows": 614.3125,
+      "proxy_rows": 36.0,
+      "seconds": 0.05810235400531383
+    },
+    {
+      "budget": 2048,
+      "method": "lhs",
+      "mse": 6.609492567777097e-07,
+      "family_incoherent_runs": 0,
+      "rows": 611.0625,
+      "proxy_rows": 36.0,
+      "seconds": 0.058498466312812525
+    },
+    {
+      "budget": 2048,
+      "method": "cv_family_projected",
+      "mse": 1.2872544655283269e-06,
+      "family_incoherent_runs": 0,
+      "rows": 614.3125,
+      "proxy_rows": 36.0,
+      "seconds": 0.05872675793762028
+    },
+    {
+      "budget": 2048,
+      "method": "lhs_family_projected",
+      "mse": 6.609492567777071e-07,
+      "family_incoherent_runs": 0,
+      "rows": 611.0625,
+      "proxy_rows": 36.0,
+      "seconds": 0.058832414191783755
+    }
+  ],
+  "max_mass_error": 7.926992395823618e-14,
+  "max_moment_error": 7.964976063683932e-14
+}
