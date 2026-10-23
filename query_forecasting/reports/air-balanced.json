@@ -1,0 +1,194 @@
+{
+  "domain": "air",
+  "mode": "balanced",
+  "origins": 48,
+  "replicates": 32,
+  "outputs": 36,
+  "methods": [
+    "harmonic",
+    "mass",
+    "monitor_we",
+    "mc",
+    "potential",
+    "potential_lhs",
+    "potential_family_projected",
+    "potential_lhs_family_projected",
+    "independent_monitor_pool",
+    "surrogate_only"
+  ],
+  "coherence_note": "Family projections enforce each family polytope only. Positive path estimators additionally have a joint constructive mass certificate.",
+  "results": [
+    {
+      "budget": 512,
+      "method": "harmonic",
+      "mse": 1.3120629543930378e-05,
+      "rows": 512.0,
+      "seconds": 0.05823192225970312,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "mass",
+      "mse": 0.002749101094881193,
+      "rows": 512.0,
+      "seconds": 0.030801001556407453,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "monitor_we",
+      "mse": 0.0004378569413201021,
+      "rows": 512.0,
+      "seconds": 0.009393263095015906,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "mc",
+      "mse": 0.0004648252759145413,
+      "rows": 251.32161458333334,
+      "seconds": 0.00383174818207029,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "potential",
+      "mse": 7.768416661107115e-05,
+      "rows": 251.32161458333334,
+      "seconds": 0.025109876569805085,
+      "family_incoherent_runs": 802
+    },
+    {
+      "budget": 512,
+      "method": "potential_lhs",
+      "mse": 4.26055410225876e-05,
+      "rows": 256.9635416666667,
+      "seconds": 0.02577519064321147,
+      "family_incoherent_runs": 772
+    },
+    {
+      "budget": 512,
+      "method": "potential_family_projected",
+      "mse": 7.378254535937483e-05,
+      "rows": 251.32161458333334,
+      "seconds": 0.025708454988640977,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "potential_lhs_family_projected",
+      "mse": 3.97547692077983e-05,
+      "rows": 256.9635416666667,
+      "seconds": 0.026132062087242502,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "independent_monitor_pool",
+      "mse": 0.0007957297328399416,
+      "rows": 411.6744791666667,
+      "seconds": 0.021958928925926102,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "surrogate_only",
+      "mse": 0.006514919359984735,
+      "rows": 1.0,
+      "seconds": 0.00038574390218097204,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "harmonic",
+      "mse": 2.3601455520363277e-06,
+      "rows": 2048.0,
+      "seconds": 0.45985900687107534,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "mass",
+      "mse": 0.0006149425299637677,
+      "rows": 2048.0,
+      "seconds": 0.15883765869013663,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "monitor_we",
+      "mse": 1.0768740314774948e-05,
+      "rows": 2048.0,
+      "seconds": 0.040369985963783016,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "mc",
+      "mse": 9.154744014508032e-05,
+      "rows": 768.9010416666666,
+      "seconds": 0.014815781973140929,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "potential",
+      "mse": 1.5602430346487518e-05,
+      "rows": 768.9010416666666,
+      "seconds": 0.07391954866621593,
+      "family_incoherent_runs": 652
+    },
+    {
+      "budget": 2048,
+      "method": "potential_lhs",
+      "mse": 8.334033588523768e-06,
+      "rows": 775.685546875,
+      "seconds": 0.07474059362897378,
+      "family_incoherent_runs": 627
+    },
+    {
+      "budget": 2048,
+      "method": "potential_family_projected",
+      "mse": 1.5128638513044068e-05,
+      "rows": 768.9010416666666,
+      "seconds": 0.07435712578482405,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "potential_lhs_family_projected",
+      "mse": 8.027404056815483e-06,
+      "rows": 775.685546875,
+      "seconds": 0.07518173023894785,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "independent_monitor_pool",
+      "mse": 5.124013462974981e-05,
+      "rows": 1685.423828125,
+      "seconds": 0.09633735509053547,
+      "family_incoherent_runs": 0
+    },
+    {
+      "budget": 2048,
+      "method": "surrogate_only",
+      "mse": 0.006514919359984735,
+      "rows": 1.0,
+      "seconds": 0.00039711331154042756,
+      "family_incoherent_runs": 0
+    }
+  ],
+  "primary": {
+    "best_baseline": "potential_lhs_family_projected",
+    "relative_mse_reduction": 0.7059889429593992,
+    "origin_bootstrap_95": [
+      0.5897782777096194,
+      0.8060166416211249
+    ],
+    "time_ratio": 6.116632397385897,
+    "passed": false
+  },
+  "max_mass_error": 8.659739592076221e-15,
+  "max_moment_error": 1.2545303337829772e-14
+}
