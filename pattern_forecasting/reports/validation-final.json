@@ -1,0 +1,36 @@
+{
+  "scope": "Local tests, actual research runs, source identity and clean Linux CI; not a deployment-energy benchmark",
+  "local_tests": {
+    "nested": "32 passed",
+    "directional": "31 passed, 1 expected skip",
+    "multisignal": "31 passed, 1 expected skip"
+  },
+  "python": "3.12.7",
+  "system": "Darwin",
+  "architecture": "arm64",
+  "test_source_commit": "9a88d5410dc7c76898c817242d6c1815f0ef443c",
+  "linux_ci": {
+    "commit": "6e1ff98e8c83e21f04b77ce2c60cc1e2f35faaae",
+    "url": "https://github.com/roy-pyke/wayeb-event-forecasting/actions/runs/39877000841",
+    "status": "success"
+  },
+  "confirmation_identity": "All recorded source/model/threshold hashes reverified for all three families and both datasets after codebook experiments",
+  "codebook_policy_runs": 28,
+  "codebook_run_certificate_violations": 0,
+  "exact_counterexample": "Fraction arithmetic; 1/10/100/1000 repetitions yield 2/20/200/2000 versus 1 packet",
+  "artifact_checks": {
+    "local_document_links": "passed",
+    "complete_report_sets": "passed",
+    "all_registered_gates": "failed, explicitly retained",
+    "scientific_figures": "PNG rendered and visually inspected; PDF counterparts generated",
+    "upstream_revisions": "unchanged"
+  },
+  "source_sha256": {
+    "src/patternforecast/safe_codebook.py": "bcd97ef688b29f9a1183bfc259b8adca4cf71a9687ed43becf0c7b00dfaa1005",
+    "scripts/safe_codebook_experiment.py": "ce359a780899ab754b390eb98c5becc5a1e81ddf47ff689fe7ed7804f260bded",
+    "scripts/summarize_safe_codebook.py": "dad663a3ba5ed5febe1201dddfaada29a911bb8c107cae3939f10cc1e32db010",
+    "scripts/closed_loop_counterexample.py": "0a210a5c531bea8def7afdbea9c1ccd7b73035b6cfd4f926f48d122da5afec11",
+    "scripts/build_evidence_report.py": "1fb833aaf55cec0422bbf1a48ff98809e01b4a55805f8ead44753ec4c0bc7700",
+    "scripts/paper_figures.py": "8a415a8be1f04875a77d705a731e38834a4eb99f4ed2f6faafcb06357c881e5f"
+  }
+}

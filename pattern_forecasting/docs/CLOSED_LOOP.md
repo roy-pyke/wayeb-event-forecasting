@@ -19,6 +19,8 @@
 
 精确 Fraction 算术和重复序列检查见 `scripts/closed_loop_counterexample.py`。此结论解释了一种可能的失败机制，不单独证明真实实验中的全部损失都由它造成。
 
+![精确反例与包数](../reports/figures/closed-loop-counterexample.png)
+
 ## 下一候选：安全预测码字的在线选择
 
 为避免只优化当前消息长度，考虑固定共享码本（codebook）`c_1,…,c_M`。接收者保留码字索引 j，依据当前业务自动机状态 q，输出 `g(q,j)=Proj(conv(Y_q),c_j)`。原始码字始终保留，不能递归投影上次的投影结果。

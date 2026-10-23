@@ -65,6 +65,12 @@ For all build/validation steps in sequence, run `./reproduce.sh` (`--core` for o
 
 The full RTCEF check also passed twice: input/adaptation-window hashes, held-out counts and model versions agreed, and all optimisation candidate parameters and metrics agreed within `1e-10`. [Validation index](reports/VALIDATION.md) links the compact evidence. The GitHub Actions workflow runs the full reproduction command on Ubuntu with JDK 11 and Python 3.12 after pushes and pull requests, and retains run reports/logs as downloadable artifacts.
 
+## Research extension: complex patterns and forecast communication
+
+The separate [pattern_forecasting/ study](pattern_forecasting/README.md) evaluates three complex-pattern families, same-information tree/neural baselines, actual message codecs, and frozen future-year/unseen-station tests. Its four candidate mechanisms did **not** pass their registered superiority gates. The primary independent-coordinate codec saves only 0.34%/0.64% of bytes on the two confirmation domains, with uncertainty intervals including zero; it has a small secondary Brier improvement. This is a reproducible research artifact with negative results, not an established new superior method.
+
+[Results](pattern_forecasting/docs/RESULTS.md), [claim audit](pattern_forecasting/docs/PAPER_READINESS.md), [research draft](pattern_forecasting/docs/RESEARCH_NOTE.md), and [reproduction instructions](pattern_forecasting/docs/REPRODUCTION.md) document the evidence and limitations. All 90 model files are available in the checksum-verified [research snapshot](https://github.com/roy-pyke/wayeb-event-forecasting/releases/tag/pattern-research-20261022). The authors' pinned implementations and licences remain separate.
+
 ## Licensing
 
 Wayeb has an author-specific dual licence: individual noncommercial research uses CC BY-NC-SA 4.0 with the additional conditions in [the author's licence](upstream/Wayeb/LICENSE.md), including public research results. RTCEF's top-level licence is LGPL-3.0; its embedded Wayeb code retains its own notices. Upstream code and publications keep their existing licences. This repository is public to share deployment and validation results. No private research data or local credentials belong here.

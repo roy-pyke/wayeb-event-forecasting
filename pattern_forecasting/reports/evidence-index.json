@@ -1,0 +1,396 @@
+{
+  "primary_codec": [
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.492985210956824,
+      "comparator_bytes": 7.518273345854245,
+      "primary_brier": 0.01769790412382132,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.003363556196232964,
+      "relative_byte_saving_ci": [
+        -0.0032360239812632085,
+        0.009994179445410561
+      ],
+      "brier_difference": -0.00018710863622021026,
+      "brier_difference_ci": [
+        -0.00020943889804018038,
+        -0.00016556343176452428
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.725708968110826,
+      "comparator_bytes": 10.794974864730035,
+      "primary_brier": 0.019930389802050724,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.00641649447888204,
+      "relative_byte_saving_ci": [
+        -0.01179907762030577,
+        0.02374344898933916
+      ],
+      "brier_difference": -0.00030599444414355567,
+      "brier_difference_ci": [
+        -0.000357684956982189,
+        -0.0002587416401751558
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261022-e0.002-n0.json"
+    }
+  ],
+  "predictor_comparisons": [
+    {
+      "family": "nested",
+      "dataset": "air",
+      "preselected": "short-hgb-31-180-s20261022",
+      "scores": {
+        "hgb": 0.008571588625839567,
+        "extra_trees": 0.008498553600431356,
+        "gru": 0.008859678442001062,
+        "business": 0.009379849484835773,
+        "no_state": 0.00860547565815208
+      }
+    },
+    {
+      "family": "nested",
+      "dataset": "power",
+      "preselected": "short-gru-64-0.05-s20261022",
+      "scores": {
+        "hgb": 0.0023669197595100216,
+        "extra_trees": 0.0024072890135082075,
+        "gru": 0.0022980016736481716,
+        "business": 0.002421353018664675,
+        "no_state": 0.002434860772475539
+      }
+    },
+    {
+      "family": "directional",
+      "dataset": "air",
+      "preselected": "short-hgb-31-180-s20261022",
+      "scores": {
+        "hgb": 0.028604808414033057,
+        "extra_trees": 0.030120153556755448,
+        "gru": 0.030890119688317678,
+        "business": 0.03231904244623137,
+        "no_state": 0.028860770827183444
+      }
+    },
+    {
+      "family": "directional",
+      "dataset": "power",
+      "preselected": "short-hgb-31-180-s20261022",
+      "scores": {
+        "hgb": 0.016394360711228642,
+        "extra_trees": 0.016609639000413814,
+        "gru": 0.017014028721633104,
+        "business": 0.017030001447303007,
+        "no_state": 0.01644747340160647
+      }
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "preselected": "short-gru-32-0.01-s20261022",
+      "scores": {
+        "hgb": 0.01739608798088481,
+        "extra_trees": 0.017609373595402263,
+        "gru": 0.017478050199368843,
+        "business": 0.018111769763851475,
+        "no_state": 0.01754069657864454
+      }
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "preselected": "short-gru-64-0.05-s20261022",
+      "scores": {
+        "hgb": 0.019570005383447907,
+        "extra_trees": 0.01958285286731412,
+        "gru": 0.019543479935608534,
+        "business": 0.020042264856380963,
+        "no_state": 0.01975669398998457
+      }
+    }
+  ],
+  "recognition_checks": [
+    {
+      "family": "nested",
+      "pattern": "ordered",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "ordered",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "ordered",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "ordered",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "branch_loop",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "branch_loop",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "branch_loop",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "branch_loop",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "overlap_loop",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "overlap_loop",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "overlap_loop",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "nested",
+      "pattern": "overlap_loop",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "rising",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "rising",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "rising",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "rising",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "falling",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "falling",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "falling",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "falling",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "excursion",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "excursion",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "excursion",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "directional",
+      "pattern": "excursion",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_up",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_up",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_up",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_up",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_down",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_down",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_down",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_down",
+      "stream": "metro",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_any",
+      "stream": "random",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_any",
+      "stream": "air",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_any",
+      "stream": "power",
+      "mismatches": 0
+    },
+    {
+      "family": "multisignal",
+      "pattern": "response_any",
+      "stream": "metro",
+      "mismatches": 0
+    }
+  ],
+  "label_audits": [
+    {
+      "family": "nested",
+      "dataset": "air",
+      "queries": 97686,
+      "fully_observed_queries": 95657,
+      "infeasible_labels": 0,
+      "states_observed": 11
+    },
+    {
+      "family": "nested",
+      "dataset": "power",
+      "queries": 104236,
+      "fully_observed_queries": 104224,
+      "infeasible_labels": 0,
+      "states_observed": 11
+    },
+    {
+      "family": "directional",
+      "dataset": "air",
+      "queries": 97686,
+      "fully_observed_queries": 95649,
+      "infeasible_labels": 0,
+      "states_observed": 15
+    },
+    {
+      "family": "directional",
+      "dataset": "power",
+      "queries": 104236,
+      "fully_observed_queries": 104224,
+      "infeasible_labels": 0,
+      "states_observed": 15
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "queries": 97437,
+      "fully_observed_queries": 95331,
+      "infeasible_labels": 0,
+      "states_observed": 6
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "queries": 104236,
+      "fully_observed_queries": 104224,
+      "infeasible_labels": 0,
+      "states_observed": 6
+    }
+  ],
+  "codebook_gate_passed": false,
+  "research_status": "No registered candidate has established the claimed strong-baseline superiority; method-paper readiness not established.",
+  "reserves": "Air 2017 Jan-Feb and power 2010 Jan-Nov remain unused.",
+  "caveat": "Candidate selection occurred on development; original confirmation was frozen diagnostic replication after failed development gates."
+}
