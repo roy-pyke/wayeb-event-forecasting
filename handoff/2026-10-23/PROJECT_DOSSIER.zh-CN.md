@@ -2,6 +2,8 @@
 
 整理日期：2026-10-23（America/Los_Angeles）。研究代码基准：`96751ca`。本次工作只读取现有文件、统计已保存结果并制作交接材料；未恢复训练或采样，未打开储备年份，未重跑性能测试。本文中的过程按“问题—依据—设计变更—检验—结论”组织，便于外部导师审查。
 
+后续补充：用户希望从真实开源工业事件流应用出发，让 GPT Pro 自主研究。已联网补充的事实与未知项见 `APPLICATION_CONTEXT.md` 和 `APPLICATION_SOURCES.json`；以下实验经过与结论保持原样，其中的后续建议属于当时记录。
+
 ## 1. 阅读入口与当前判断
 
 仓库：[roy-pyke/wayeb-event-forecasting](https://github.com/roy-pyke/wayeb-event-forecasting)。本地根目录：`/Users/ruiwang/Desktop/Library/research/projects/Wayeb/`。本文引用路径若无特别说明，均相对于这个根目录；ZIP 内保留相同目录结构。
@@ -18,6 +20,7 @@
 随附文件：
 
 - `GPT6_PRO_PROMPT.md`：直接发给 GPT‑6 Pro 的评审任务。
+- `APPLICATION_CONTEXT.md`、`APPLICATION_SOURCES.json`：修改 prompt 时补充的真实应用背景、证据范围及读取来源，不预设新路线。
 - `SEND_TO_GPT6_PRO.md`：prompt 与本交接正文的合并版，单文件即可提供主要上下文。
 - `SOURCE_DOCUMENTS.md`：原有设计、研究日志、结果、文献和复现文档逐字汇编；保留历史时点的表述，不代表所有“正在运行”现在仍在运行。
 - `FILE_INVENTORY.md`、`FILE_MANIFEST.json`：全部本仓库文件及上游固定版本的文件清单；关键 Python 符号索引帮助定位实现。

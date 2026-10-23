@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-23 America/Los_Angeles",
+  "scope": "Factual application background for a revised user-voice prompt. No route ranking, experiment execution, production verification or public-log acquisition.",
+  "code_files": [
+    {
+      "repository": "apache/streampipes",
+      "path": "README.md",
+      "url": "https://github.com/apache/streampipes/blob/dev/README.md",
+      "git_blob_sha": "f63e50f4b3e16b719c76f71400754adf610b7e54",
+      "read_scope": "readme"
+    },
+    {
+      "repository": "apache/streampipes",
+      "path": "installer/compose/README.md",
+      "url": "https://github.com/apache/streampipes/blob/dev/installer/compose/README.md",
+      "git_blob_sha": "8f79240c155afbd5f381eedea10544692ac10f46",
+      "read_scope": "first 65 lines"
+    },
+    {
+      "repository": "lf-edge/ekuiper",
+      "path": "README.md",
+      "url": "https://github.com/lf-edge/ekuiper/blob/master/README.md",
+      "git_blob_sha": "72ba590104570bd61ef7160376ea8c4727266c59",
+      "read_scope": "readme"
+    },
+    {
+      "repository": "lf-edge/ekuiper",
+      "path": "LICENSE",
+      "url": "https://github.com/lf-edge/ekuiper/blob/master/LICENSE",
+      "git_blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "read_scope": "first 9 lines"
+    },
+    {
+      "repository": "lf-edge/ekuiper",
+      "path": "docs/en_US/edgex/edgex_rule_engine_tutorial.md",
+      "url": "https://github.com/lf-edge/ekuiper/blob/master/docs/en_US/edgex/edgex_rule_engine_tutorial.md",
+      "git_blob_sha": "5e585fe8b1da65b0a296a81e04d8ae49d686551f",
+      "read_scope": "tutorial"
+    },
+    {
+      "repository": "fledge-iot/fledge",
+      "path": "README.rst",
+      "url": "https://github.com/fledge-iot/fledge/blob/develop/README.rst",
+      "git_blob_sha": "70765330861318d80856faabf567ca56741d5c5f",
+      "read_scope": "readme"
+    },
+    {
+      "repository": "fledge-iot/fledge",
+      "path": "LICENSE",
+      "url": "https://github.com/fledge-iot/fledge/blob/develop/LICENSE",
+      "git_blob_sha": "6c795f798242df7f186c8aaed807dbb74085caee",
+      "read_scope": "first 9 lines"
+    },
+    {
+      "repository": "fledge-power/fledgepower-deployment",
+      "path": "README.md",
+      "url": "https://github.com/fledge-power/fledgepower-deployment/blob/main/README.md",
+      "git_blob_sha": "a7b7f9fbd07ed711d2bdb13f3ad140caf87a2fac",
+      "read_scope": "readme"
+    },
+    {
+      "repository": "fledge-power/fledgepower-deployment",
+      "path": "LICENSE",
+      "url": "https://github.com/fledge-power/fledgepower-deployment/blob/main/LICENSE",
+      "git_blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "read_scope": "first 9 lines"
+    },
+    {
+      "repository": "thingsboard/thingsboard",
+      "path": "README.md",
+      "url": "https://github.com/thingsboard/thingsboard/blob/master/README.md",
+      "git_blob_sha": "36396310d9b042d1ddafcd4395cc7bfc9e27bf92",
+      "read_scope": "readme"
+    },
+    {
+      "repository": "thingsboard/thingsboard",
+      "path": "LICENSE",
+      "url": "https://github.com/thingsboard/thingsboard/blob/master/LICENSE",
+      "git_blob_sha": "b3e8d85c74abdc76e5a4a6a4e476639521582346",
+      "read_scope": "license file"
+    },
+    {
+      "repository": "EVerest/EVerest",
+      "path": "README.md",
+      "url": "https://github.com/EVerest/EVerest/blob/main/README.md",
+      "git_blob_sha": "10eb662b4a033aba4318e36000ba74f99109572b",
+      "read_scope": "readme"
+    },
+    {
+      "repository": "EVerest/EVerest",
+      "path": "interfaces/evse_manager.yaml",
+      "url": "https://github.com/EVerest/EVerest/blob/main/interfaces/evse_manager.yaml",
+      "git_blob_sha": "6c44c05a42182a352d8c5e3795afba6672c7bbd7",
+      "read_scope": "interface file"
+    }
+  ],
+  "primary_pages": [
+    {
+      "url": "https://lf-edge.atlassian.net/wiki/spaces/FLEDGE/pages/15040959/Use%2BCases",
+      "supports": "Community account of UC Davis/Opus One deployment; does not establish public raw data."
+    },
+    {
+      "url": "https://lfenergy.org/lf-energy-summit-recap-and-video-an-intelligent-edge-for-energy-automation-fledgepower-in-rte-substations-jeas-iiot-61850/",
+      "supports": "LF Energy account of RTE/JEA substation uses."
+    },
+    {
+      "url": "https://lfenergy.org/lf-energy-advances-ev-charging-security-with-independent-everest-audit/",
+      "supports": "Project adoption and audit account; adoption scale not independently verified here."
+    },
+    {
+      "url": "https://thingsboard.io/case-studies/dacor/",
+      "supports": "Vendor account of machine motor-state collection and production monitoring."
+    },
+    {
+      "url": "https://thingsboard.io/blog/one-thingsboard-source-available/",
+      "supports": "Version-specific licensing transition, September 29 2026."
+    },
+    {
+      "url": "https://streampipes.apache.org/blog/2025/04/30/usage-based-maintanence/",
+      "supports": "Concrete packaging-machine counting/notification tutorial; no named deployment or public full data verified."
+    },
+    {
+      "url": "https://www.edgexfoundry.org/use-cases/case-study-3/",
+      "supports": "Explicit customer PoC, includes commercial Edge Central and drivers."
+    },
+    {
+      "url": "https://www.emqx.com/zh/blog/industrial-iot-data-collection-cleaning-and-control",
+      "supports": "Integration tutorial with a simulator, not a verified production dataset."
+    }
+  ],
+  "unresolved": [
+    "Actual availability and licensing of trainable production event traces.",
+    "Whether users in the cited applications need probabilistic forecasting.",
+    "Case-specific deployed versions and custom-application source.",
+    "Whether Q5/Q6 solve an actual bottleneck in any cited system."
+  ],
+  "identity_note": "Git blob SHA identifies a file read, not a deployment commit. Repository default branches and web pages may change."
+}

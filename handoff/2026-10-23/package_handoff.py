@@ -61,7 +61,7 @@ with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
     for row in manifest['files']:
         assert hashlib.sha256(z.read(row['path'])).hexdigest()==row['sha256']
-for name in ['SEND_TO_GPT6_PRO.md','GPT6_PRO_PROMPT.md','PROJECT_DOSSIER.zh-CN.md',
+for name in ['SEND_TO_GPT6_PRO.md','GPT6_PRO_PROMPT.md','APPLICATION_CONTEXT.md','APPLICATION_SOURCES.json','PROJECT_DOSSIER.zh-CN.md',
              'QUERY_CODE_CONTEXT.md','SOURCE_DOCUMENTS.md','README.md']:
     shutil.copyfile(HERE/name,args.output/name)
 result={'archive':str(archive),'bytes':archive.stat().st_size,
