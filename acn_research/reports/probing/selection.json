@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "a7d015439c7cc7290fe9d4a87eed5a4e5c3778f2f04001a8850bce3ee0354565",
+  "created_utc": "2026-10-23T23:37:26.855096+00:00",
+  "setting": "every_2",
+  "development_mean_kwh": {
+    "every_1": 20.37013333333333,
+    "every_2": 20.415200000000002,
+    "every_4": 20.380533333333332,
+    "backoff": 20.158666666666665
+  }
+}
