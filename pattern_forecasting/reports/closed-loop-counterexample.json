@@ -1,0 +1,138 @@
+{
+  "scope": "Exact rational counterexample; not a data or forecast-quality claim",
+  "epsilon": "1/10",
+  "forecasts": [
+    [
+      "29/100",
+      "43/100"
+    ],
+    [
+      "4/25",
+      "12/25"
+    ],
+    [
+      "41/100",
+      "12/25"
+    ],
+    [
+      "21/50",
+      "6/25"
+    ],
+    [
+      "11/100",
+      "11/25"
+    ]
+  ],
+  "strong_outcomes": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "weak_outcomes": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "strong_packets": 2,
+  "weak_packets": 1,
+  "trace": [
+    {
+      "t": 1,
+      "full": [
+        0.16,
+        0.48
+      ],
+      "strong_bound": "113/2000",
+      "strong_bound_float": 0.0565,
+      "strong_send": false,
+      "weak_bound": "113/2000",
+      "weak_bound_float": 0.0565,
+      "weak_send": false
+    },
+    {
+      "t": 2,
+      "full": [
+        0.41,
+        0.48
+      ],
+      "strong_bound": "221/4000",
+      "strong_bound_float": 0.05525,
+      "strong_send": false,
+      "weak_bound": "421/4000",
+      "weak_bound_float": 0.10525,
+      "weak_send": true
+    },
+    {
+      "t": 3,
+      "full": [
+        0.42,
+        0.24
+      ],
+      "strong_bound": "59/400",
+      "strong_bound_float": 0.1475,
+      "strong_send": true,
+      "weak_bound": "369/4000",
+      "weak_bound_float": 0.09225,
+      "weak_send": false
+    },
+    {
+      "t": 4,
+      "full": [
+        0.11,
+        0.44
+      ],
+      "strong_bound": "4283/20000",
+      "strong_bound_float": 0.21415,
+      "strong_send": true,
+      "weak_bound": "241/2500",
+      "weak_bound_float": 0.0964,
+      "weak_send": false
+    }
+  ],
+  "reverse_bound": "5917/20000",
+  "repeated": [
+    {
+      "repeats": 1,
+      "strong_packets": 2,
+      "weak_packets": 1
+    },
+    {
+      "repeats": 10,
+      "strong_packets": 20,
+      "weak_packets": 1
+    },
+    {
+      "repeats": 100,
+      "strong_packets": 200,
+      "weak_packets": 1
+    },
+    {
+      "repeats": 1000,
+      "strong_packets": 2000,
+      "weak_packets": 1
+    }
+  ],
+  "conclusion": "No finite multiplicative closed-loop packet domination follows from pointwise certificate tightening."
+}

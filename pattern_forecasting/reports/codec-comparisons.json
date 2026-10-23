@@ -3,6 +3,144 @@
     {
       "family": "multisignal",
       "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.001,
+      "comparator": "all",
+      "primary_bytes": 8.524646694787402,
+      "comparator_bytes": 8.639490132085347,
+      "primary_brier": 0.017607411331878934,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.013292848946194202,
+      "relative_byte_saving_ci": [
+        0.008764633386256344,
+        0.017853179848206144
+      ],
+      "brier_difference": -8.123617978399861e-05,
+      "brier_difference_ci": [
+        -9.198485462325639e-05,
+        -7.058638209113692e-05
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261022-e0.001-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.492985210956824,
+      "comparator_bytes": 7.518273345854245,
+      "primary_brier": 0.01769790412382132,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.003363556196232964,
+      "relative_byte_saving_ci": [
+        -0.0032360239812632085,
+        0.009994179445410561
+      ],
+      "brier_difference": -0.00018710863622021026,
+      "brier_difference_ci": [
+        -0.00020943889804018038,
+        -0.00016556343176452428
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.002,
+      "comparator": "zero",
+      "primary_bytes": 7.492985210956824,
+      "comparator_bytes": 7.8254359226987695,
+      "primary_brier": 0.01769790412382132,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.04248334725706804,
+      "relative_byte_saving_ci": [
+        0.03758542849906174,
+        0.04745107753242086
+      ],
+      "brier_difference": -1.8462455181850884e-05,
+      "brier_difference_ci": [
+        -3.1608655167314186e-05,
+        -5.967576633612269e-06
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261022",
+      "epsilon": 0.005,
+      "comparator": "all",
+      "primary_bytes": 6.082617486170551,
+      "comparator_bytes": 5.98672988700391,
+      "primary_brier": 0.018055450978076988,
+      "certificate_violations": 0,
+      "relative_byte_saving": -0.016016690409700107,
+      "relative_byte_saving_ci": [
+        -0.025072975613220888,
+        -0.007093332170597616
+      ],
+      "brier_difference": -0.0005827147690924579,
+      "brier_difference_ci": [
+        -0.0006599753433193085,
+        -0.000512418864156008
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261022-e0.005-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261023",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.015733243018566,
+      "comparator_bytes": 7.201052988084609,
+      "primary_brier": 0.01762439885981382,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.025735089767105812,
+      "relative_byte_saving_ci": [
+        0.020081802207932677,
+        0.03135545935188311
+      ],
+      "brier_difference": -0.00013566113505500757,
+      "brier_difference_ci": [
+        -0.00015904018353710874,
+        -0.00011060894062079062
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261023-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
+      "split": "confirmation",
+      "backbone": "short-gru-32-0.01-s20261024",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 7.962652791034206,
+      "comparator_bytes": 8.204470580990794,
+      "primary_brier": 0.017332727966645388,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.029473905423814006,
+      "relative_byte_saving_ci": [
+        0.024330014286058754,
+        0.035032921813645784
+      ],
+      "brier_difference": -0.00019147391742905043,
+      "brier_difference_ci": [
+        -0.00021833360140704813,
+        -0.00016568469084258304
+      ],
+      "source": "reports/multisignal/codec-air-confirmation-short-gru-32-0.01-s20261024-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "air",
       "split": "development",
       "backbone": "short-gru-32-0.01-s20261022",
       "epsilon": 0.001,
@@ -187,6 +325,144 @@
     {
       "family": "multisignal",
       "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.001,
+      "comparator": "all",
+      "primary_bytes": 12.800750220653134,
+      "comparator_bytes": 13.430676541693849,
+      "primary_brier": 0.019718011073065277,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.04690205434440986,
+      "relative_byte_saving_ci": [
+        0.04338863688335852,
+        0.0504302782260903
+      ],
+      "brier_difference": -4.9903090675450235e-05,
+      "brier_difference_ci": [
+        -5.513263816775717e-05,
+        -4.489314230056921e-05
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261022-e0.001-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.725708968110826,
+      "comparator_bytes": 10.794974864730035,
+      "primary_brier": 0.019930389802050724,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.00641649447888204,
+      "relative_byte_saving_ci": [
+        -0.01179907762030577,
+        0.02374344898933916
+      ],
+      "brier_difference": -0.00030599444414355567,
+      "brier_difference_ci": [
+        -0.000357684956982189,
+        -0.0002587416401751558
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.002,
+      "comparator": "zero",
+      "primary_bytes": 10.725708968110826,
+      "comparator_bytes": 11.342434475613032,
+      "primary_brier": 0.019930389802050724,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.05437329250860623,
+      "relative_byte_saving_ci": [
+        0.05305487671605358,
+        0.05571526648992232
+      ],
+      "brier_difference": -9.052743707330807e-06,
+      "brier_difference_ci": [
+        -1.3429433663816964e-05,
+        -4.949953806128394e-06
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261022-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261022",
+      "epsilon": 0.005,
+      "comparator": "all",
+      "primary_bytes": 9.604675927702521,
+      "comparator_bytes": 7.714196630722591,
+      "primary_brier": 0.020065938287591536,
+      "certificate_violations": 0,
+      "relative_byte_saving": -0.24506496106812992,
+      "relative_byte_saving_ci": [
+        -0.27296921636595123,
+        -0.21860188167662994
+      ],
+      "brier_difference": -0.0015918250737950827,
+      "brier_difference_ci": [
+        -0.0016367138164478457,
+        -0.0015484479246547767
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261022-e0.005-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261023",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 11.021528070915998,
+      "comparator_bytes": 11.537837215549331,
+      "primary_brier": 0.020567993320353303,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.04474921382471164,
+      "relative_byte_saving_ci": [
+        0.039951600804202174,
+        0.049218650840905855
+      ],
+      "brier_difference": -0.00017107005615623477,
+      "brier_difference_ci": [
+        -0.0001937201365275961,
+        -0.00014952044523626666
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261023-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "confirmation",
+      "backbone": "short-gru-64-0.05-s20261024",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.37722092175448,
+      "comparator_bytes": 10.715232741087533,
+      "primary_brier": 0.019805853800050933,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.031544981569737285,
+      "relative_byte_saving_ci": [
+        0.02051845278492841,
+        0.041672489712748735
+      ],
+      "brier_difference": -0.0002351602587880447,
+      "brier_difference_ci": [
+        -0.00026790122716462687,
+        -0.00020083638125294195
+      ],
+      "source": "reports/multisignal/codec-power-confirmation-short-gru-64-0.05-s20261024-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
       "split": "development",
       "backbone": "short-gru-64-0.05-s20261022",
       "epsilon": 0.001,
@@ -275,6 +551,52 @@
         -0.001607784374105651
       ],
       "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261022-e0.005-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-gru-64-0.05-s20261023",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.83131478036372,
+      "comparator_bytes": 11.260298416796386,
+      "primary_brier": 0.020695772957999875,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.038097004231501974,
+      "relative_byte_saving_ci": [
+        0.031695285896722686,
+        0.04368949849695852
+      ],
+      "brier_difference": -0.00017386467834854674,
+      "brier_difference_ci": [
+        -0.00020075054519388765,
+        -0.0001483094961646478
+      ],
+      "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261023-e0.002-n0.json"
+    },
+    {
+      "family": "multisignal",
+      "dataset": "power",
+      "split": "development",
+      "backbone": "short-gru-64-0.05-s20261024",
+      "epsilon": 0.002,
+      "comparator": "all",
+      "primary_bytes": 10.151410455977828,
+      "comparator_bytes": 10.36395649037549,
+      "primary_brier": 0.01983263941256409,
+      "certificate_violations": 0,
+      "relative_byte_saving": 0.02050819439420093,
+      "relative_byte_saving_ci": [
+        0.00800549789982911,
+        0.03274381389435969
+      ],
+      "brier_difference": -0.00025067667894938805,
+      "brier_difference_ci": [
+        -0.00028528669220680326,
+        -0.0002164530547776478
+      ],
+      "source": "reports/multisignal/codec-power-development-short-gru-64-0.05-s20261024-e0.002-n0.json"
     },
     {
       "family": "multisignal",
