@@ -1,18 +1,18 @@
 # 给 GPT‑6 Pro 的 Wayeb 研究交接包
 
-先上传 `SEND_TO_GPT6_PRO.md`，其中已包含以用户口吻写的背景与想法、联网补充的应用事实、完整主交接说明和当前结果表。
+先上传 `SEND_TO_GPT6_PRO.md`，其中已包含以用户口吻写的背景与想法、用户要求、完整主交接说明和当前结果表。
 如支持 ZIP，再上传 `wayeb-gpt6-pro-handoff-2026-10-23.zip`，供核查全部代码、协议、原始报告与保存的查询检查点。
 
 本次 prompt 修订撤下了指定检索步骤、候选数量、工作顺序和输出模板。它陈述经历、错误、问题与用户希望贴近真实开源工业应用的想法，由 GPT Pro 自主研究和判断。交接正文中原有的下一步建议保留为历史记录。
 
 若只能附加少数文本文件，顺序是：
 
-1. `SEND_TO_GPT6_PRO.md`：用户想法、应用事实与完整研究经历。
+1. `SEND_TO_GPT6_PRO.md`：用户想法、要求与完整研究经历。
 2. `QUERY_CODE_CONTEXT.md`：Q5/Q6、当前强基线和关键测试的逐文件完整代码。
 3. `SOURCE_DOCUMENTS.md`：全部原设计/日志/结果/文献/复现文档及登记协议。
 4. `AUDIT.json`、`FILE_INVENTORY.md`：核对结果身份和完整项目结构。
 
-`APPLICATION_CONTEXT.md` 可单独阅读；`APPLICATION_SOURCES.json` 保存13份已读代码文件的身份和8个原始案例/公告来源。应用部署、教程、PoC和模拟各有明确标签，没有把它们称作新的预测结果。
+`APPLICATION_CONTEXT.md` 现在只保留用户的要求，原先的具体工业案例介绍已从合并文档移除。`APPLICATION_SOURCES.json` 是之前联网核查的历史来源记录，不作为 prompt 中预设的应用方向。
 
 ZIP 根下 `repository/` 保持源码相对路径；`saved_query_evidence/` 是6类已保存查询实验的NPZ/identity（含完整基线与不完整Q5/Q6）。`PACK_MANIFEST.json` 给逐文件SHA256。
 研究代码基准为 `96751ca`；两份后来完成的Markov报告随本次文档阶段原样归档。包中没有大原始数据、虚拟环境、Git凭据或作者子模块源码。作者代码与模型恢复地址写在主文档；这不是一个包含所有依赖的离线可运行镜像。

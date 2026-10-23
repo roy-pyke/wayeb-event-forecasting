@@ -14,8 +14,6 @@ Q5保存多个模式的转移闭合占用量，Q6按剩余期限缩小控制空�
 
 我现在最重要的想法是：研究应当更多地从真实世界出发。我希望你能去网上寻找真实的应用、例子、问题和代码，尤其是一些开源的、基于事件流的工业应用。制造、设备维护、能源、物流、充电等都可以，领域不必局限在这些。比起一个方便取得的传感器数据集，或人为设计一组A/B/C/D模式，我更想知道现实中谁在处理怎样的事件和流程，现有系统为什么不够好，哪些未来信息确实值得预测，数据是否真的能获得，以及哪里有值得研究的机制问题。我担心之前有一部分工作是在围着自己已有的算法造问题，这也是我希望你独立重审的原因。
 
-这次修改材料时，Codex在网上找到了Fledge的酒庄传感与告警、FledgePOWER的RTE/JEA变电站接入、EVerest充电栈、ThingsBoard机床监测、StreamPipes包装机维护教程和EdgeX/eKuiper工程案例。随后的应用背景附件给出了来源和核查范围。有些是报告过的部署，有些是PoC或模拟教程；还没有从已读页面确认可训练的开放生产日志，也没有证明这些用户都需要概率预测。这些只是目前已知的线索，不是我选定的场景。ThingsBoard最新版本的许可变化、EVerest仓库迁移等也记录了下来。
-
 对我来说，保留某个技术名称、沿用现有架构或继续某个候选都不是目标。你可以质疑我们的前提，推翻以前的解释，重新查文献和代码，沿真实应用发现新的问题；必要时彻底换方向。有工具和执行环境时，也可以在可用权限和资源内自主做能推进问题的工作。你不需要遵循Codex写的研究步骤、路线排序或输出模板，交接材料里的下一步建议只是当时的记录。
 
 我希望最终得到的是有真实价值的问题、可信的设计依据、经得住比较的机制和证据，以及清楚的失败解释。如果暂时找不到足以支撑论文的方向，我也希望知道这个事实。我愿意让你投入充分的思考和研究，尝试、修正、继续推进；无须替已有方案辩护，也无须承诺一定能发论文。请把这些材料作为完整起点，其余由你独立判断。
@@ -23,65 +21,13 @@ Q5保存多个模式的转移闭合占用量，Q6按剩余期限缩小控制空�
 
 ---
 
-# 修改 prompt 时补充的真实应用背景
+# 我的要求
 
-日期：2026-10-23（America/Los_Angeles）。以下是实际联网读取到的线索与仍然不知道的事，不是选题排序或后续工作指令。项目代码入口通过 GitHub 连接器读取，应用案例来自基金会、项目社区或开发方。没有安装这些系统、取得客户日志或重启 Wayeb 实验。
+我希望你能从网上寻找真实的应用和例子，尤其是开源的、基于事件流（event stream）的工业应用。我希望研究从现实中存在的问题出发，不要只围绕现有算法和人为设计的模式关门造车。
 
-## 已知案例与证据范围
+前面的材料摆出了整个项目的经过、失败、错误和未解决的问题。我的想法就是以这些经历为起点，让你独立思考和推进。你有充分的自由，可以查文献、看代码、研究真实应用，必要时换方向；具体做什么、怎么做，由你自己判断，不需要遵循 Codex 预设的步骤或路线。
 
-| 项目/应用 | 来源中具体做的事 | 现有证据的性质 | 本次未确认的事 |
-|---|---|---|---|
-| Fledge：UC Davis / Opus One 酒庄 | 温度、湿度、CO2 传感与告警，边缘到云的数据链 | 项目社区具名应用记录 | 开放生产日志、具体提前预测需求 |
-| FledgePOWER：RTE / JEA 变电站 | 历史设备数据接入、协议整合、边缘处理 | LF Energy 具名应用报告 | 可公开的运行日志、未来故障标签 |
-| EVerest：电动车充电 | 充电会话、授权、事务、协议处理 | 基金会采用报告与可读取的接口代码 | 可训练的生产会话日志、预测需求及收益 |
-| ThingsBoard：süc//dacor 机床监测 | 从机床控制程序采集电机电源状态，显示产线状态 | 厂商客户案例；终端汽车供应商未具名 | 案例版本、原始日志、预测用途 |
-| Apache StreamPipes：包装机 | 活动布尔信号产生包装事件，累计计数、存储和维护通知 | 官方具体流程教程，未具名生产客户 | 完整实测数据、故障标签、独立部署证据 |
-| EdgeX / Technotects：process skid | 泵与传感器监测、接入和动作 | 明确为客户 PoC，含商业组件 | 完整客户应用代码和原始数据开放性 |
-| eKuiper + EdgeX / Neuron | 事件流采集、清洗、规则计算、设备反控 | 有代码的官方工程教程；部分使用模拟器 | 该示例的生产部署和预测效果 |
-
-这些来源分别支持代码存在、工程流程或采用背景。它们没有共同证明某个新预测算法必要，也没有证明“有开源软件”就有可训练的公开日志。案例方的效果描述没有在本次独立复验。
-
-## Fledge：酒庄的传感与告警
-
-LF Edge 的[社区用例](https://lf-edge.atlassian.net/wiki/spaces/FLEDGE/pages/15040959/Use%2BCases) 列出 UC Davis 和 Opus One，描述 CO2、温湿度测量和传感器到云的数据处理。[项目页](https://lfedge.org/projects/fledge/) 和 [README.rst](https://github.com/fledge-iot/fledge/blob/develop/README.rst) 提供采集、缓存、处理、转发及插件架构的信息。
-
-本次读到了平台的 [Apache-2.0 LICENSE](https://github.com/fledge-iot/fledge/blob/develop/LICENSE)。酒庄全部软硬件、数据和具体告警配置是否开放，不能由平台许可推断。现有来源说明的是监测与告警；“提前预测未来越界能否帮助行动”目前是研究问题，还不是已证实的用户需求。
-
-## FledgePOWER：电网设备的数据链
-
-LF Energy 的[2024 峰会回顾](https://lfenergy.org/lf-energy-summit-recap-and-video-an-intelligent-edge-for-energy-automation-fledgepower-in-rte-substations-jeas-iiot-61850/) 给出 RTE 和 JEA 的变电站应用，涉及历史设备接入、数据整合和边缘处理。另有 [RTU/SCADA 协议转换设计](https://lf-energy.atlassian.net/wiki/spaces/FLED/pages/13673845/Plugins%2Bconfiguration%2Bdesign)，说明消息和数据模型转换。
-
-[部署仓库](https://github.com/fledge-power/fledgepower-deployment) 提供容器构建与 YAML 配置入口，本次读取的该仓库 LICENSE 为 Apache-2.0。各插件及外部依赖的许可不能一概而论。没有从已读页面取得公开运行日志、故障标签，也没有证据表明这些应用已经提出了我们目前的多模式概率查询问题。
-
-## EVerest：实际充电会话与协议接口
-
-旧地址 `EVerest/everest-core` 现重定向到 [EVerest/EVerest](https://github.com/EVerest/EVerest)。[当前 README](https://github.com/EVerest/EVerest/blob/main/README.md) 说明模块间 MQTT 通信、充电协议和 Apache-2.0。LF Energy 的[审计公告](https://lfenergy.org/lf-energy-advances-ev-charging-security-with-independent-everest-audit/) 报告其行业采用；本次没有独立复核规模。
-
-读到的 [EVSE manager 接口](https://github.com/EVerest/EVerest/blob/main/interfaces/evse_manager.yaml) 涉及授权、暂停/恢复和事务停止等命令，并引用相关类型。[config 目录](https://github.com/EVerest/EVerest/tree/main/config) 有 `config-sil.yaml`、`config-sil-dc.yaml`、`config-sil-ocpp201.yaml` 等软件在环（software-in-the-loop, SIL）配置，未执行。它说明存在明确的流程对象和仿真入口，不等于已获取真实充电会话日志或已证明预测价值。
-
-## ThingsBoard：机床生产监测与版本变化
-
-[süc//dacor 案例](https://thingsboard.io/case-studies/dacor/) 描述在机床控制程序中采集铣削电机电源状态，经 IoT 模块接入产线监测。已知用途是设备状态与停机可视化；没有据此确认未来停机预测、终端客户代码开放或日志下载入口。
-
-本次读取[当前 LICENSE](https://github.com/thingsboard/thingsboard/blob/master/LICENSE) 发现 4.4+ 为 BUSL-1.1。官方 [2026-09-29 公告](https://thingsboard.io/blog/one-thingsboard-source-available/) 区分了 4.4+ 的 source-available 与之前 Community Edition 的 Apache-2.0。当前默认分支、旧 CE、专业分析产品和案例版本是不同对象；目前没有选定用于复现的旧 CE tag。
-
-## StreamPipes：从活动信号到维护计数
-
-官方[使用量维护教程](https://streampipes.apache.org/blog/2025/04/30/usage-based-maintanence/) 给出 `timestamp`、`active` 字段，以 `false→true` 生成包装操作事件，累计计数、存储并触发维护通知。来源没有给出具名工厂、完整原始数据或真实故障标签，因此目前是具体工程教程的证据。
-
-[开源仓库](https://github.com/apache/streampipes) 与 [Compose README](https://github.com/apache/streampipes/blob/dev/installer/compose/README.md) 给出实现和安装入口；本次代码文件头确认为 Apache-2.0，开发分支的安装文件属于快照版本。使用量达到阈值与预测未来故障是不同目标；单纯计数、更新率或现有维护规则是否已足够，是尚未回答的问题。
-
-## EdgeX / eKuiper：现实集成需求与模拟教程
-
-[Technotects 案例](https://www.edgexfoundry.org/use-cases/case-study-3/) 明确是 process skid 的客户 PoC，使用 Edge Central 和商业驱动等组件。它支持现实工业集成的需求背景，不能作为全栈开源生产验证。
-
-[eKuiper 的 EdgeX 教程源码](https://github.com/lf-edge/ekuiper/blob/master/docs/en_US/edgex/edgex_rule_engine_tutorial.md) 展示 source、SQL、sink 和消息总线接入；[Neuron+eKuiper 教程](https://www.emqx.com/zh/blog/industrial-iot-data-collection-cleaning-and-control) 包含模拟器、清洗和反控。本次 eKuiper LICENSE 确认为 Apache-2.0；Neuron、EMQX、Edge Central 和各驱动的版本/许可另有边界。这些教程支持接入流程存在，没有提供可直接借用的生产预测收益。
-
-## 与现有研究的关系
-
-目前这些线索让“真实应用是否需要预测”“现有简单方法哪里不够”“数据与结果标签能否取得”成为更具体的问题。它们没有把 Q5/Q6 自动变成工业需求，也没有指定新的算法路线。原 Wayeb 实验的结果与失败保持原状。
-
-具体代码文件的读取身份记录在 `APPLICATION_SOURCES.json`。其中 Git blob SHA 用于标识读到了哪份文件，不能当作已经固定并执行过整套系统的 commit。
+我希望找到真正有新颖性、实际价值和足够证据支撑论文的方向。你可以充分思考、尝试、修正并继续推进，把设计依据、失败原因和结论如实记录下来。
 
 
 ---
@@ -90,7 +36,7 @@ LF Energy 的[2024 峰会回顾](https://lfenergy.org/lf-energy-summit-recap-and
 
 整理日期：2026-10-23（America/Los_Angeles）。研究代码基准：`96751ca`。本次工作只读取现有文件、统计已保存结果并制作交接材料；未恢复训练或采样，未打开储备年份，未重跑性能测试。本文中的过程按“问题—依据—设计变更—检验—结论”组织，便于外部导师审查。
 
-后续补充：用户希望从真实开源工业事件流应用出发，让 GPT Pro 自主研究。已联网补充的事实与未知项见 `APPLICATION_CONTEXT.md` 和 `APPLICATION_SOURCES.json`；以下实验经过与结论保持原样，其中的后续建议属于当时记录。
+后续补充：用户希望从真实开源工业事件流应用出发，让 GPT Pro 自主研究。用户的要求见 `APPLICATION_CONTEXT.md`；以下实验经过与结论保持原样，其中的后续建议属于当时记录。
 
 ## 1. 阅读入口与当前判断
 
@@ -108,7 +54,7 @@ LF Energy 的[2024 峰会回顾](https://lfenergy.org/lf-energy-summit-recap-and
 随附文件：
 
 - `GPT6_PRO_PROMPT.md`：直接发给 GPT‑6 Pro 的评审任务。
-- `APPLICATION_CONTEXT.md`、`APPLICATION_SOURCES.json`：修改 prompt 时补充的真实应用背景、证据范围及读取来源，不预设新路线。
+- `APPLICATION_CONTEXT.md`：用户对真实应用研究与自主推进的要求。
 - `SEND_TO_GPT6_PRO.md`：prompt 与本交接正文的合并版，单文件即可提供主要上下文。
 - `SOURCE_DOCUMENTS.md`：原有设计、研究日志、结果、文献和复现文档逐字汇编；保留历史时点的表述，不代表所有“正在运行”现在仍在运行。
 - `FILE_INVENTORY.md`、`FILE_MANIFEST.json`：全部本仓库文件及上游固定版本的文件清单；关键 Python 符号索引帮助定位实现。
