@@ -1,0 +1,81 @@
+{
+  "config": {
+    "architecture": "telemetry-conditioned autoregressive GRU",
+    "hidden": 48,
+    "embedding": 8,
+    "epochs": 12,
+    "batch": 256,
+    "learning_rate": 0.002,
+    "train_origins": 20000,
+    "calibration_origins": 4000,
+    "seed": 20261023
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_nll": 1.3235771059036254,
+      "calibration_nll": 1.3229133291244506
+    },
+    {
+      "epoch": 2,
+      "train_nll": 1.2335739404678345,
+      "calibration_nll": 1.3023639764785766
+    },
+    {
+      "epoch": 3,
+      "train_nll": 1.2191310546875,
+      "calibration_nll": 1.2991703319549561
+    },
+    {
+      "epoch": 4,
+      "train_nll": 1.2114459465026854,
+      "calibration_nll": 1.2945723991394043
+    },
+    {
+      "epoch": 5,
+      "train_nll": 1.2062284061431885,
+      "calibration_nll": 1.2914903926849366
+    },
+    {
+      "epoch": 6,
+      "train_nll": 1.2021115106582643,
+      "calibration_nll": 1.2916768560409546
+    },
+    {
+      "epoch": 7,
+      "train_nll": 1.1989021959304809,
+      "calibration_nll": 1.291763053894043
+    },
+    {
+      "epoch": 8,
+      "train_nll": 1.1958939544677734,
+      "calibration_nll": 1.2904012775421143
+    },
+    {
+      "epoch": 9,
+      "train_nll": 1.1938246227264404,
+      "calibration_nll": 1.2896488809585571
+    },
+    {
+      "epoch": 10,
+      "train_nll": 1.1918011938095092,
+      "calibration_nll": 1.2918633708953857
+    },
+    {
+      "epoch": 11,
+      "train_nll": 1.1900459951400757,
+      "calibration_nll": 1.292054063796997
+    },
+    {
+      "epoch": 12,
+      "train_nll": 1.188612686729431,
+      "calibration_nll": 1.289864496231079
+    }
+  ],
+  "selected_calibration_nll": 1.2896488809585571,
+  "sha256": "71642db6ca8d905d85a214cd9005e40495742d878855d36af3e796934bd8c81b",
+  "train_origins": 20000,
+  "calibration_origins": 4000,
+  "seconds": 4.718470166990301,
+  "torch": "2.5.1"
+}

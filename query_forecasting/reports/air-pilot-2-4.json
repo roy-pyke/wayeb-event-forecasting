@@ -1,0 +1,167 @@
+{
+  "domain": "air",
+  "mode": "pilot-2-4",
+  "origins": 2,
+  "replicates": 4,
+  "model_sha256": "0b0b1a6f23cf364d67bfc06dcc70a80b6633006fd141517b4c70845fe624a5a5",
+  "methods": [
+    "mc",
+    "mass",
+    "semantic",
+    "importance",
+    "importance_projected"
+  ],
+  "families": [
+    "nested",
+    "directional",
+    "multisignal"
+  ],
+  "budgets": [
+    128,
+    512
+  ],
+  "results": [
+    {
+      "budget": 128,
+      "method": "mc",
+      "mse": 0.0014064806721862304,
+      "family_mse": [
+        0.0022954283703361814,
+        0.0019018903135693797,
+        2.2123332653129748e-05
+      ],
+      "rows": 100.79166666666667,
+      "seconds": 0.0013488733299406401,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 128,
+      "method": "mass",
+      "mse": 0.00019876921798177803,
+      "family_mse": [
+        0.0004082346905961084,
+        0.00018356861345857623,
+        4.504349890649456e-06
+      ],
+      "rows": 99.58333333333333,
+      "seconds": 0.005130862836570789,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 128,
+      "method": "semantic",
+      "mse": 0.0001867308735642749,
+      "family_mse": [
+        0.00019886200934941052,
+        0.00035784690962900064,
+        3.483701714413494e-06
+      ],
+      "rows": 99.5,
+      "seconds": 0.005123007040917098,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 128,
+      "method": "importance",
+      "mse": 0.003054472522897324,
+      "family_mse": [
+        0.004673136832589447,
+        0.004471892088372406,
+        1.8388647730119545e-05
+      ],
+      "rows": 105.20833333333333,
+      "seconds": 0.003767244709403409,
+      "incoherent_runs": 1
+    },
+    {
+      "budget": 128,
+      "method": "importance_projected",
+      "mse": 0.0026468696566711177,
+      "family_mse": [
+        0.004673136832589446,
+        0.003249083489693788,
+        1.838864773011954e-05
+      ],
+      "rows": 105.20833333333333,
+      "seconds": 0.00378389737913191,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "mc",
+      "mse": 0.0004085150464923639,
+      "family_mse": [
+        0.00014335355974131036,
+        0.0010600602177264203,
+        2.213136200936119e-05
+      ],
+      "rows": 409.0,
+      "seconds": 0.00407930204164586,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "mass",
+      "mse": 2.6708675007641126e-06,
+      "family_mse": [
+        2.773766063986797e-06,
+        5.206862166703194e-06,
+        3.1974271602345864e-08
+      ],
+      "rows": 401.75,
+      "seconds": 0.02839640620732098,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "semantic",
+      "mse": 2.843470836052421e-06,
+      "family_mse": [
+        1.5758579957434493e-06,
+        6.928661359682864e-06,
+        2.5893152730950663e-08
+      ],
+      "rows": 399.375,
+      "seconds": 0.031507833209616365,
+      "incoherent_runs": 0
+    },
+    {
+      "budget": 512,
+      "method": "importance",
+      "mse": 0.001007545833567927,
+      "family_mse": [
+        0.0003255542204729483,
+        0.0026861609263642908,
+        1.0922353866541523e-05
+      ],
+      "rows": 426.7916666666667,
+      "seconds": 0.013777302042096077,
+      "incoherent_runs": 1
+    },
+    {
+      "budget": 512,
+      "method": "importance_projected",
+      "mse": 0.0006270566056552307,
+      "family_mse": [
+        0.0003255542204729482,
+        0.0015446932426262023,
+        1.0922353866541536e-05
+      ],
+      "rows": 426.7916666666667,
+      "seconds": 0.013794857582979603,
+      "incoherent_runs": 0
+    }
+  ],
+  "model_brier_against_observed": 0.023875934217097543,
+  "exact_reference_rows_mean": 1585.5,
+  "primary": {
+    "best_baseline": "mass",
+    "relative_mse_reduction": -0.06462444701540937,
+    "query_bootstrap_95_interval": [
+      -0.10955735849668158,
+      0.19965112040974908
+    ],
+    "wall_time_ratio": 1.1095711541657416,
+    "passed": false
+  }
+}

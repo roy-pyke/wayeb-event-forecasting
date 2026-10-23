@@ -1,0 +1,23 @@
+name: Probability-query research checks
+on:
+  push:
+    branches: [main]
+    paths: ['query_forecasting/**', '.github/workflows/query-forecasting.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  query-semantics:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: |
+          python -m venv .venv-pattern
+          .venv-pattern/bin/python -m pip install numpy==1.26.4 pandas==2.2.2 scipy==1.12.0 pytest==8.3.5
+      - name: Verify compiled queries and inference estimators
+        run: ./query_forecasting/run.sh -m pytest query_forecasting/tests -q
