@@ -42,3 +42,6 @@ Q2 判断：完整联合输出集合的必要性已被更近的监控状态和�
 [MPCR，JCP 2020，§2.2](https://arxiv.org/html/1702.05198v3) 先分箱、再以约束优化保存物理矩。[Factored Particles，UAI 2002](https://arxiv.org/pdf/1301.0590) 将投影粒子重新组合并明确承认该近似的偏差。这些都是必要对照，而非因为应用领域不同就可以忽略。
 
 Q5 同时加入时间变化的一阶马尔可夫代理：在确定的贪心代表前缀上查询所有可能末符号，每个 8 步查询预先用 36 个真实源调用，全部计入预算。它支持已有加性控制变量/LHS 和正权调和矩传播。它们是更强的常规对照，不将该代理构造另包装为新贡献。
+
+
+普通粒子基线也不能由“仅保持总质量”的零空间压缩代替。[Fearnhead 2004，§3.1](https://people.eecs.berkeley.edu/~jordan/sail/readings/Fearnhead04%20-%20Particle%20Filters%20for%20Mixture%20Models%20with%20and%20Unknown%20Number%20of%20Components.pdf) 明确给出 Fearnhead–Clifford 的阈值重采样：保留大权重，剩余粒子按统一阈值赋权并避免重复。已据公式实现，并增加系统/分层重采样和查询势排序的同预算对照。排序适配器不是原论文的完整软件重现。
