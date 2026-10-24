@@ -1,0 +1,190 @@
+{
+  "web_sites": {
+    "dev": {
+      "1": {
+        "n": 742432,
+        "up_rate": 0.909636168699625,
+        "mean_prediction": 0.909020602317296,
+        "markov_brier": 0.027560233429982553,
+        "stationary_brier": 0.08222112189298429,
+        "last_observation_brier": 0.03006470626266109,
+        "down_prefix_n": 67090,
+        "down_prefix_recovery_rate": 0.16635862274556565,
+        "predicted_down_prefix_recovery": 0.11614083328168949
+      },
+      "2": {
+        "n": 742308,
+        "up_rate": 0.9096345452292041,
+        "mean_prediction": 0.9084819395679683,
+        "markov_brier": 0.027860810455920988,
+        "stationary_brier": 0.08222243641522417,
+        "last_observation_brier": 0.030425375989481456,
+        "down_prefix_n": 67082,
+        "down_prefix_recovery_rate": 0.1683611102829373,
+        "predicted_down_prefix_recovery": 0.21737455352153998
+      },
+      "4": {
+        "n": 742060,
+        "up_rate": 0.9096299490607228,
+        "mean_prediction": 0.9076066442963088,
+        "markov_brier": 0.03397023420862949,
+        "stationary_brier": 0.08222615792786056,
+        "last_observation_brier": 0.033392178530038,
+        "down_prefix_n": 67063,
+        "down_prefix_recovery_rate": 0.18476656278424763,
+        "predicted_down_prefix_recovery": 0.3825286010748946
+      },
+      "8": {
+        "n": 741564,
+        "up_rate": 0.9096288385088812,
+        "mean_prediction": 0.9064384154786489,
+        "markov_brier": 0.04823849747598716,
+        "stationary_brier": 0.08222705714048277,
+        "last_observation_brier": 0.03505833616518601,
+        "down_prefix_n": 67024,
+        "down_prefix_recovery_rate": 0.19400513248985438,
+        "predicted_down_prefix_recovery": 0.6033417594800485
+      }
+    },
+    "test": {
+      "1": {
+        "n": 738980,
+        "up_rate": 0.9253281550244932,
+        "mean_prediction": 0.922692560026302,
+        "markov_brier": 0.023484733362847815,
+        "stationary_brier": 0.06951533757772042,
+        "last_observation_brier": 0.0256299223253674,
+        "down_prefix_n": 55187,
+        "down_prefix_recovery_rate": 0.17165274430572416,
+        "predicted_down_prefix_recovery": 0.11614083328168949
+      },
+      "2": {
+        "n": 738857,
+        "up_rate": 0.9253333188966201,
+        "mean_prediction": 0.9204000832313757,
+        "markov_brier": 0.024283191226628018,
+        "stationary_brier": 0.0695111563960576,
+        "last_observation_brier": 0.026684459915788848,
+        "down_prefix_n": 55180,
+        "down_prefix_recovery_rate": 0.1787604204421892,
+        "predicted_down_prefix_recovery": 0.21737455352153998
+      },
+      "4": {
+        "n": 738611,
+        "up_rate": 0.9253314667666742,
+        "mean_prediction": 0.9166632401229372,
+        "markov_brier": 0.02895887218807082,
+        "stationary_brier": 0.0695126560636668,
+        "last_observation_brier": 0.02865107614156843,
+        "down_prefix_n": 55163,
+        "down_prefix_recovery_rate": 0.1919221217120171,
+        "predicted_down_prefix_recovery": 0.3825286010748946
+      },
+      "8": {
+        "n": 738119,
+        "up_rate": 0.9253304683933079,
+        "mean_prediction": 0.9116785134049464,
+        "markov_brier": 0.04105852995401843,
+        "stationary_brier": 0.0695134644454992,
+        "last_observation_brier": 0.03046121289385587,
+        "down_prefix_n": 55105,
+        "down_prefix_recovery_rate": 0.2039197894927865,
+        "predicted_down_prefix_recovery": 0.6033417594800485
+      }
+    }
+  },
+  "pl-app": {
+    "dev": {
+      "1": {
+        "n": 4317125,
+        "up_rate": 0.7127491096505197,
+        "mean_prediction": 0.7485053637995188,
+        "markov_brier": 0.00983228918138664,
+        "stationary_brier": 0.24164036015602625,
+        "last_observation_brier": 0.001788690390016504,
+        "down_prefix_n": 1240180,
+        "down_prefix_recovery_rate": 0.0031463174700446708,
+        "predicted_down_prefix_recovery": 0.1684953404455783
+      },
+      "2": {
+        "n": 4316634,
+        "up_rate": 0.7127660116655709,
+        "mean_prediction": 0.7776169231036122,
+        "markov_brier": 0.029277140205454372,
+        "stationary_brier": 0.24162667461276283,
+        "last_observation_brier": 0.0025976258353152017,
+        "down_prefix_n": 1240051,
+        "down_prefix_recovery_rate": 0.004588520955992939,
+        "predicted_down_prefix_recovery": 0.30561454478063504
+      },
+      "4": {
+        "n": 4315652,
+        "up_rate": 0.7127975100865408,
+        "mean_prediction": 0.8205872898399047,
+        "markov_brier": 0.07795132750816655,
+        "stationary_brier": 0.24160117037545165,
+        "last_observation_brier": 0.004135412215813508,
+        "down_prefix_n": 1239795,
+        "down_prefix_recovery_rate": 0.007330244112938026,
+        "predicted_down_prefix_recovery": 0.5080072230266262
+      },
+      "8": {
+        "n": 4313688,
+        "up_rate": 0.7128524362448095,
+        "mean_prediction": 0.8678923138926141,
+        "markov_brier": 0.15883105842165574,
+        "stationary_brier": 0.2415566967246478,
+        "last_observation_brier": 0.006656021483241254,
+        "down_prefix_n": 1239277,
+        "down_prefix_recovery_rate": 0.01183109183822503,
+        "predicted_down_prefix_recovery": 0.7308053028277869
+      }
+    },
+    "test": {
+      "1": {
+        "n": 4369230,
+        "up_rate": 0.8319877873217936,
+        "mean_prediction": 0.8455329035965256,
+        "markov_brier": 0.006538640480009461,
+        "stationary_brier": 0.1450929321145222,
+        "last_observation_brier": 0.0018566200451795853,
+        "down_prefix_n": 734206,
+        "down_prefix_recovery_rate": 0.0056074180815738365,
+        "predicted_down_prefix_recovery": 0.1684953404455783
+      },
+      "2": {
+        "n": 4368747,
+        "up_rate": 0.8319982823450294,
+        "mean_prediction": 0.8565666084037288,
+        "markov_brier": 0.01829193941883528,
+        "stationary_brier": 0.14508443430558607,
+        "last_observation_brier": 0.0026446942338386728,
+        "down_prefix_n": 734203,
+        "down_prefix_recovery_rate": 0.00803592466933532,
+        "predicted_down_prefix_recovery": 0.30561454478063504
+      },
+      "4": {
+        "n": 4367781,
+        "up_rate": 0.8320188214564787,
+        "mean_prediction": 0.8728590317774717,
+        "markov_brier": 0.04740128576592582,
+        "stationary_brier": 0.1450678038093121,
+        "last_observation_brier": 0.0038717600539038017,
+        "down_prefix_n": 734192,
+        "down_prefix_recovery_rate": 0.01184839932878593,
+        "predicted_down_prefix_recovery": 0.5080072230266262
+      },
+      "8": {
+        "n": 4365849,
+        "up_rate": 0.8320587816940073,
+        "mean_prediction": 0.8908063896487682,
+        "markov_brier": 0.09569134832784576,
+        "stationary_brier": 0.14503544804830698,
+        "last_observation_brier": 0.0057787156633223,
+        "down_prefix_n": 734161,
+        "down_prefix_recovery_rate": 0.017832600751061415,
+        "predicted_down_prefix_recovery": 0.7308053028277869
+      }
+    }
+  }
+}

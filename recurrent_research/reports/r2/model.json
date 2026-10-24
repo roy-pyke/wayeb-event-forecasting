@@ -1,0 +1,10 @@
+{
+  "up_to_down_per_second": 2.1784975004449156e-05,
+  "down_to_up_per_second": 0.00020716774069123723,
+  "exposure_up_seconds": 1225546506.0,
+  "exposure_down_seconds": 128830386.0,
+  "up_to_down_events": 26698,
+  "down_to_up_events": 26689,
+  "training_stop_seconds": 10968000.0,
+  "source": "web_sites"
+}

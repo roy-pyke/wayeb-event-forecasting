@@ -1,0 +1,100 @@
+{
+  "web_sites": {
+    "nodes": 131,
+    "intervals": 47843,
+    "grid_start_seconds": 86400.0,
+    "grid_end_seconds": 18222000.0,
+    "step_seconds": 600,
+    "grid_points": 30227,
+    "known_node_slots": 3738906,
+    "up_node_slots": 3401994,
+    "down_node_slots": 336912,
+    "grid_state_changes": 93822,
+    "nodes_with_at_least_two_up_intervals": 129,
+    "splits": {
+      "train": {
+        "start": 87000.0,
+        "end": 10967400.0,
+        "known_slots": 2257189,
+        "down_slots": 214625
+      },
+      "dev": {
+        "start": 10968000.0,
+        "end": 14594400.0,
+        "known_slots": 742556,
+        "down_slots": 67098,
+        "replay": {
+          "selected_windows": 188,
+          "usable_windows": 154,
+          "complete_windows": 154,
+          "initial_unknown": 34,
+          "right_censored": 0,
+          "evaluated_slots": 4928
+        }
+      },
+      "test": {
+        "start": 14595000.0,
+        "end": 18222000.0,
+        "known_slots": 739103,
+        "down_slots": 55189,
+        "replay": {
+          "selected_windows": 188,
+          "usable_windows": 132,
+          "complete_windows": 132,
+          "initial_unknown": 56,
+          "right_censored": 0,
+          "evaluated_slots": 4224
+        }
+      }
+    }
+  },
+  "pl-app": {
+    "nodes": 720,
+    "intervals": 28705,
+    "grid_start_seconds": 0.0,
+    "grid_end_seconds": 45572400.0,
+    "step_seconds": 900,
+    "grid_points": 50637,
+    "known_node_slots": 19488021,
+    "up_node_slots": 15149670,
+    "down_node_slots": 4338351,
+    "grid_state_changes": 49700,
+    "nodes_with_at_least_two_up_intervals": 633,
+    "splits": {
+      "train": {
+        "start": 900.0,
+        "end": 27342900.0,
+        "known_slots": 10800469,
+        "down_slots": 2363841
+      },
+      "dev": {
+        "start": 27343800.0,
+        "end": 36457200.0,
+        "known_slots": 4317616,
+        "down_slots": 1240304,
+        "replay": {
+          "selected_windows": 240,
+          "usable_windows": 38,
+          "complete_windows": 38,
+          "initial_unknown": 202,
+          "right_censored": 0,
+          "evaluated_slots": 1216
+        }
+      },
+      "test": {
+        "start": 36458100.0,
+        "end": 45572400.0,
+        "known_slots": 4369713,
+        "down_slots": 734206,
+        "replay": {
+          "selected_windows": 316,
+          "usable_windows": 28,
+          "complete_windows": 28,
+          "initial_unknown": 288,
+          "right_censored": 0,
+          "evaluated_slots": 896
+        }
+      }
+    }
+  }
+}
