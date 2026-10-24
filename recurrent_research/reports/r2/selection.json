@@ -1,0 +1,15 @@
+{
+  "comparator": "independent_two_step",
+  "development_K2_total_value": {
+    "edf": 18612,
+    "fixed_backoff_2": 19265,
+    "exponential_backoff_1_2_4": 19480,
+    "myopic_value": 20090,
+    "urgency_value": 19709,
+    "independent_two_step": 20269
+  },
+  "model_sha256": "86c041cd1d85c06fc10abd12708c86c17d6d139ea4017bcedfc6e2d84fc4afb5",
+  "protocol_sha256": "be1fc2ce1b29b914ada31b70f04defac2280798b06bc3f91a986bdf5798fc50f",
+  "algorithm": "exact two-slot joint recourse; no parameter selection",
+  "frozen_before_controller_test": true
+}

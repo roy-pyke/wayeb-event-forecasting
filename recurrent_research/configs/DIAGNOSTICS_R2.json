@@ -1,0 +1,12 @@
+{
+  "id": "R2-diagnostic-controls",
+  "frozen_after": "primary development run",
+  "frozen_before": "all held-out controller evaluation",
+  "no_policy_change": true,
+  "negative_control": "Replay exactly the selected test workloads with all destinations always up and known to be up (p01=p11=1). If gains persist, they are queue scheduling gains, not recovery prediction or information value.",
+  "coupling_contrast": "Compare joint_two_step, independent_two_step, myopic_value and urgency_value at K=2 in this control.",
+  "recurrence_contrast": "Primary registered joint_two_step_absorbing ablation shares p01 but assumes p11=1.",
+  "observation_contrast": "Primary registered joint_two_step_no_observation discards current response only in its lookahead; the executed controller still receives exactly the same response feedback.",
+  "structural_checks": "Independent exhaustive two-slot belief tree; deterministic three-job example where a two-slot optimum is worse than the three-slot optimum. Prevent false global-optimality claims.",
+  "no_tuning": "These controls diagnose the frozen mechanism and do not select a revised controller using test results."
+}
