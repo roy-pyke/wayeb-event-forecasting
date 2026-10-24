@@ -22,6 +22,7 @@ P2 的小幅条件性收益依赖准确恢复时间；原首告警审计把 >0.5
 |[Johnston, Keslassy, Modiano, Channel Probing in Opportunistic Communication Systems, 2017](https://www.mit.edu/~modiano/papers/CV_J_95.pdf)|隐藏 ON/OFF 状态、探测历史、动态决定探测间隔并最大化吞吐|“根据恢复概率决定是否探测”有直接结构近邻，不能只换应用名|
 |[Karaca et al., Smart Scheduling and Feedback Allocation, 2019](https://arxiv.org/abs/1911.03632)|学习预测信道及不确定性，联合控制探测开销和调度|“真实数据训练+预测减少探测”也不是一般性的空白|
 |[Antoniadis et al., NeurIPS 2021](https://papers.nips.cc/paper_files/paper/2021/hash/8b8388180314a337c9aa3c5aa8e2f37a-Abstract.html)|不准确闲置时长预测辅助多状态电源管理，并分析误差和最坏情况|错误预测的稳健回退需要与既有保证区别，不能仅凭安全超时宣称新理论|
+|[Kang, Park, Fan, AAAI 2026](https://ojs.aaai.org/index.php/AAAI/article/view/40991)|离散时长后验结合先验和学习预测，分析学习增强ski-rental的竞争保证|条件分布更新与贝叶斯式等待决策也已有近期理论近邻；这里不把其保证直接搬到共享充电约束|
 |[Sun et al., PSCC 2020](https://par.nsf.gov/servlets/purl/10202835)|从 ACN 充电曲线提取尾部并分类，明确控制算法与噪声扭曲曲线|不能把受控制的实际电流直接当作独立于动作的可充能力|
 |[Alfen Smart Charging Implementation Guide](https://knowledge.alfen.com/download/attachments/854327297/Smart_charging_implementation_guide_EN_web.pdf?download=true)|实际设备用探测辨认6A/14A最低电流需求|6A探测不保证适用于所有车辆；本阶段只是固定档位假设|
 
@@ -31,7 +32,19 @@ P2 的小幅条件性收益依赖准确恢复时间；原首告警审计把 >0.5
 
 [evcc issue #28652](https://github.com/evcc-io/evcc/issues/28652) 的用户报告描述睡眠状态错误反复出现、充电计划未执行，提出冷却/重试限制。它支持“唤醒/失败重试/状态恢复”是现实工程问题，但 issue 的原因分析仍是报告者陈述，不能当已验证缺陷或实验数据。另一个 [discussion #32439](https://github.com/evcc-io/evcc/discussions/32439) 最后指出禁用了 wake-up calls，不能截取前面的错误日志说一定是预测不足。ACN 的正 pilot 下不取电，与通过厂商 API 主动唤醒有不同因果机制，不能混称独立场景实验证据。
 
-## 数据划分与独立场景
+## 开源代码核查
+
+还直接核查了evcc源码：`core/loadpoint.go`固定提交[106eda351b8c294020a876d309e0ffb7117ddda1](https://github.com/evcc-io/evcc/blob/106eda351b8c294020a876d309e0ffb7117ddda1/core/loadpoint.go)，对应blob `b077419d631f07837480263e06ad2f21da12ce21`。第1040行附近在调整电流遇睡眠错误且允许唤醒时调用WakeUp；第2342、2603行附近使用唤醒计时器、条件检查和结束事件。`core/loadpoint_vehicle.go` blob `c4a835a39dfb7f26cb78a15447a2e62f195805ba`第236行附近区分车辆/充电器唤醒及剩余尝试。这是代码阅读，未在设备上运行；证明常规错误恢复/有界重试在开源产品中已有实现，未证明其需要本项目的预测器。
+
+## DP的确切含义（不是新定理）
+
+令离散恢复时刻为R，预测CDF为F，失败探测时刻为s；只在吸收态假设下，失败给出R>s。下一探测j必须在s+1至min(s+4,T)之间。m_r=F(r)-F(r-1)，延迟权重w，单次失败代价1，则实现使用
+
+`V(s) = min_j { w * sum_{r=s+1..j} m_r*(j-r) + (1-F(j))*(1+V(j)) } / (1-F(s))`，`V(T)=0`。
+
+这是对“下次之前恢复”与“下次仍失败”的直接条件期望分解，向后递推即可；小实例穷举验证相同最优值。它只优化所定义的单会话损失，没有车辆间耦合、未来合成deadline或被挤占车辆的边际服务价值，因此不是共享馈线全局最优、POMDP新解法或稳健竞争比保证。最大4槽间隔只约束得到探测资源的单会话，不能证明拥挤系统中每车20分钟必被服务。
+
+## 数据划分与独立场景（实验约束）
 
 Office 全1474个录制按起始日切分60/20/20，跨边界录制排除；前期已经看过总体审计，明确承认它不是从未接触过的数据。只用训练部分拟合，开发部分选预测器和固定基线。Caltech California Garage 01 与 JPL Arroyo Garage 01 各固定抽1200个文件，按路径SHA256选择，读取内容前决定；完全不用于调参。这是独立场站（site transfer），不是独立产业或不同供应商平台。
 

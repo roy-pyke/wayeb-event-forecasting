@@ -1,0 +1,455 @@
+{
+  "scope": "Post-hoc descriptive failure diagnosis only; models and evaluation unchanged",
+  "sites": {
+    "caltech": {
+      "post_recovery_audit": {
+        "confirmed_recoveries": 9,
+        "relapsed_below_6_for_60s_within_observation": 5,
+        "post_recovery_end_15min": 8,
+        "known_unmet_request_before_declared_deadline": 4,
+        "observed_extra_at_least_0p1_kwh_before_deadline": 3,
+        "post_recovery_end_gap_or_missing": 1
+      },
+      "known_request_extra_kwh_sum": 3.1064372222223997,
+      "cdf15_quantiles": [
+        0.0008651231392165896,
+        0.002061655912911878,
+        0.05218738141170298
+      ],
+      "cdf60_quantiles": [
+        0.0014658715257402093,
+        0.00984854770318865,
+        0.32998304011534507
+      ],
+      "confirmation_current_quantiles": [
+        7.5,
+        7.9,
+        15.8
+      ],
+      "feature_drift": {
+        "elapsed_min": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 521,
+          "test_outside_train_range": 0
+        },
+        "energy_kwh": {
+          "train_nonmissing": 553,
+          "test_nonmissing": 379,
+          "train_unique": 553,
+          "test_outside_train_range": 2
+        },
+        "current_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 555,
+          "test_outside_train_range": 4
+        },
+        "current_std": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 555,
+          "test_outside_train_range": 3
+        },
+        "current_max": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 65,
+          "test_outside_train_range": 0
+        },
+        "recent_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 531,
+          "test_outside_train_range": 6
+        },
+        "recent_std": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 554,
+          "test_outside_train_range": 4
+        },
+        "recent_trend": {
+          "train_nonmissing": 551,
+          "test_nonmissing": 382,
+          "train_unique": 549,
+          "test_outside_train_range": 31
+        },
+        "pilot_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 547,
+          "test_outside_train_range": 0
+        },
+        "pilot_now": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 20,
+          "test_outside_train_range": 0
+        },
+        "recent_ratio": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 548,
+          "test_outside_train_range": 19
+        },
+        "hour_sin": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 362,
+          "test_outside_train_range": 4
+        },
+        "hour_cos": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 340,
+          "test_outside_train_range": 0
+        },
+        "weekday": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 5,
+          "test_outside_train_range": 44
+        },
+        "request_known": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 384,
+          "train_unique": 1,
+          "test_outside_train_range": 313
+        },
+        "remaining_kwh": {
+          "train_nonmissing": 0,
+          "test_nonmissing": 309,
+          "train_unique": 0,
+          "test_outside_train_range": null
+        },
+        "slack_min": {
+          "train_nonmissing": 0,
+          "test_nonmissing": 313,
+          "train_unique": 0,
+          "test_outside_train_range": null
+        }
+      }
+    },
+    "jpl": {
+      "post_recovery_audit": {
+        "confirmed_recoveries": 2,
+        "relapsed_below_6_for_60s_within_observation": 1,
+        "post_recovery_end_unplug": 1,
+        "post_recovery_end_15min": 1
+      },
+      "known_request_extra_kwh_sum": 0.0,
+      "cdf15_quantiles": [
+        0.0008651231392165896,
+        0.001827664078995574,
+        0.03142835291977282
+      ],
+      "cdf60_quantiles": [
+        0.0015011572210039356,
+        0.009957537761454588,
+        0.19050242202171505
+      ],
+      "confirmation_current_quantiles": [
+        7.1,
+        7.55,
+        8.0
+      ],
+      "feature_drift": {
+        "elapsed_min": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 521,
+          "test_outside_train_range": 0
+        },
+        "energy_kwh": {
+          "train_nonmissing": 553,
+          "test_nonmissing": 73,
+          "train_unique": 553,
+          "test_outside_train_range": 0
+        },
+        "current_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 555,
+          "test_outside_train_range": 3
+        },
+        "current_std": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 555,
+          "test_outside_train_range": 0
+        },
+        "current_max": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 65,
+          "test_outside_train_range": 0
+        },
+        "recent_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 531,
+          "test_outside_train_range": 2
+        },
+        "recent_std": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 554,
+          "test_outside_train_range": 1
+        },
+        "recent_trend": {
+          "train_nonmissing": 551,
+          "test_nonmissing": 73,
+          "train_unique": 549,
+          "test_outside_train_range": 10
+        },
+        "pilot_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 547,
+          "test_outside_train_range": 0
+        },
+        "pilot_now": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 20,
+          "test_outside_train_range": 0
+        },
+        "recent_ratio": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 548,
+          "test_outside_train_range": 3
+        },
+        "hour_sin": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 362,
+          "test_outside_train_range": 1
+        },
+        "hour_cos": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 340,
+          "test_outside_train_range": 0
+        },
+        "weekday": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 5,
+          "test_outside_train_range": 3
+        },
+        "request_known": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 73,
+          "train_unique": 1,
+          "test_outside_train_range": 19
+        },
+        "remaining_kwh": {
+          "train_nonmissing": 0,
+          "test_nonmissing": 19,
+          "train_unique": 0,
+          "test_outside_train_range": null
+        },
+        "slack_min": {
+          "train_nonmissing": 0,
+          "test_nonmissing": 19,
+          "train_unique": 0,
+          "test_outside_train_range": null
+        }
+      }
+    },
+    "office_test": {
+      "post_recovery_audit": {
+        "confirmed_recoveries": 35,
+        "relapsed_below_6_for_60s_within_observation": 19,
+        "post_recovery_end_gap_or_missing": 1,
+        "post_recovery_end_15min": 34,
+        "known_unmet_request_before_declared_deadline": 18,
+        "observed_extra_at_least_0p1_kwh_before_deadline": 5
+      },
+      "known_request_extra_kwh_sum": 42.67318138897549,
+      "cdf15_quantiles": [
+        0.0009011574365370866,
+        0.002351596031269469,
+        0.01665672856651824
+      ],
+      "cdf60_quantiles": [
+        0.0015011572210039356,
+        0.012861365058956511,
+        0.26330117803930914
+      ],
+      "confirmation_current_quantiles": [
+        6.7,
+        7.7,
+        22.7
+      ],
+      "feature_drift": {
+        "elapsed_min": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 521,
+          "test_outside_train_range": 37
+        },
+        "energy_kwh": {
+          "train_nonmissing": 553,
+          "test_nonmissing": 146,
+          "train_unique": 553,
+          "test_outside_train_range": 40
+        },
+        "current_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 555,
+          "test_outside_train_range": 38
+        },
+        "current_std": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 555,
+          "test_outside_train_range": 13
+        },
+        "current_max": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 65,
+          "test_outside_train_range": 15
+        },
+        "recent_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 531,
+          "test_outside_train_range": 37
+        },
+        "recent_std": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 554,
+          "test_outside_train_range": 6
+        },
+        "recent_trend": {
+          "train_nonmissing": 551,
+          "test_nonmissing": 108,
+          "train_unique": 549,
+          "test_outside_train_range": 3
+        },
+        "pilot_mean": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 547,
+          "test_outside_train_range": 0
+        },
+        "pilot_now": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 20,
+          "test_outside_train_range": 0
+        },
+        "recent_ratio": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 548,
+          "test_outside_train_range": 34
+        },
+        "hour_sin": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 362,
+          "test_outside_train_range": 11
+        },
+        "hour_cos": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 340,
+          "test_outside_train_range": 1
+        },
+        "weekday": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 5,
+          "test_outside_train_range": 2
+        },
+        "request_known": {
+          "train_nonmissing": 555,
+          "test_nonmissing": 149,
+          "train_unique": 1,
+          "test_outside_train_range": 109
+        },
+        "remaining_kwh": {
+          "train_nonmissing": 0,
+          "test_nonmissing": 108,
+          "train_unique": 0,
+          "test_outside_train_range": null
+        },
+        "slack_min": {
+          "train_nonmissing": 0,
+          "test_nonmissing": 109,
+          "train_unique": 0,
+          "test_outside_train_range": null
+        }
+      }
+    }
+  },
+  "counterexample": {
+    "seed": 703,
+    "public_synthetic_demand_quanta": [
+      40,
+      20,
+      33,
+      26,
+      17,
+      15
+    ],
+    "public_synthetic_deadlines_slots": [
+      9,
+      7,
+      12,
+      6,
+      10,
+      11
+    ],
+    "all_three_sampled_paused_episodes_do_not_recover": true,
+    "delivered_kwh": {
+      "fixed": 6.864,
+      "learned": 6.76,
+      "empirical": 6.76
+    },
+    "different_slots": [
+      {
+        "slot": 8,
+        "fixed_pilot_quanta": [
+          5,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "learned_pilot_quanta": [
+          5,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "fixed_actual_quanta": [
+          5,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "learned_actual_quanta": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  }
+}

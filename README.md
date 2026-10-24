@@ -12,6 +12,8 @@ This repository deploys the authors' implementations. Author repositories are Gi
 
 ## Sources
 
+The [ACN application study](acn_research/README.md) audits real charging requests and corrected author baselines. Its latest [R1 independent-site results](acn_research/docs/LEARNED_RESULTS.md) train causal recovery predictors on Office recordings and evaluate Caltech/JPL without retuning. Learned probing does not reproduce perfect-information gains; retained failures cover rare events, temporal shift, transient recovery, and the mismatch between local probing costs and shared charging capacity. This is negative research evidence, not an established novel effective controller.
+
 The subsequent [probability-query study](query_forecasting/README.md) investigates numerical inference for many event patterns under one frozen telemetry-conditioned neural source. It retains failed mechanisms, compares conventional query/particle/control-variate methods, and tests transition-closed occupancy constraints. This is ongoing research with no independent confirmation claim. [Source-model snapshots](https://github.com/roy-pyke/wayeb-event-forecasting/releases/tag/query-sources-20261022) and [reproduction instructions](query_forecasting/docs/REPRODUCTION.md) are available.
 
 | Implementation | Fixed revision | Purpose |

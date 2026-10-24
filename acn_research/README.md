@@ -13,7 +13,9 @@
 
 作者 Wayeb/RTCEF 子模块保持原固定版本。ACN/adacharge 采用独立固定源码与显式补丁；各自许可证分别适用。
 
-结论入口：[结果与边界](docs/RESULTS.md)。请求全量审计见 [FULL_OFFICE_AUDIT.md](docs/FULL_OFFICE_AUDIT.md)，设计与失败记录见 [RESEARCH_LOG.md](docs/RESEARCH_LOG.md)。修正的作者与当前状态信息评估在 `reports/c2/`，最终实用探测比较在 `reports/probing_p2/`；根 `reports/value_*` 和 `reports/probing/` 保留旧诊断，不能与最终结果混用。
+最新结论入口：[真实预测与独立场站负结果 R1](docs/LEARNED_RESULTS.md)，[设计与新颖性核查](docs/LEARNED_DESIGN.md)。3874个真实录制，Office训练/时间留出加Caltech和JPL外部验证，学习预测未优于每20分钟探测；720个条件性多车世界中略有损失。25项语义测试通过，当前不足以支撑新颖有效机制的论文主张。
+
+旧阶段：[作者基线与完美信息结果 C2/P2](docs/RESULTS.md)。请求全量审计见 [FULL_OFFICE_AUDIT.md](docs/FULL_OFFICE_AUDIT.md)，设计与失败记录见 [RESEARCH_LOG.md](docs/RESEARCH_LOG.md)。`reports/r1/`为最新真实预测结果；`reports/c2/`和`reports/probing_p2/`保留历史阶段，根`reports/value_*`和`reports/probing/`是更早诊断，不能混用。
 
 ## 从仓库根目录复现
 
@@ -37,6 +39,24 @@ $ACN_PY acn_research/scripts/probing_value.py --revision p2 --phase development
 $ACN_PY acn_research/scripts/probing_value.py --revision p2 --phase evaluation
 $ACN_PY acn_research/scripts/plot_final.py
 ```
+
+最新R1可在完成setup、fetch_data和fetch_office_full后单独复现；不必重新运行C2/P2长实验：
+
+```bash
+ACN_PY=.tools/acn/venv/bin/python
+$ACN_PY acn_research/scripts/fetch_independent.py
+$ACN_PY acn_research/scripts/build_recovery.py --sites office
+$ACN_PY acn_research/scripts/learned_recovery.py --phase development
+# 原研究在此提交冻结模型/选择，再执行下面的留出评估。
+$ACN_PY acn_research/scripts/build_recovery.py --sites caltech jpl
+$ACN_PY acn_research/scripts/learned_recovery.py --phase evaluation
+$ACN_PY acn_research/scripts/learned_service.py
+$ACN_PY acn_research/scripts/diagnose_recovery.py
+$ACN_PY acn_research/scripts/plot_learned.py
+PYTHONPATH=acn_research/src $ACN_PY -m pytest -q acn_research/tests
+```
+
+模型与逐会话预测在`artifacts/acn/r1/`，无需私密API key。代码与原始公开数据下载足以重新训练；GitHub未包含原始请求、逐会话特征或训练模型。重跑会覆盖同名本地派生产物，若要保留原始运行先复制其目录。日期、模型pickle字节和运行时可能跨环境变化；数值比较以公开聚合结果与固定数据/超参数为准。两个站各1200文件固定抽样，不是全站人口。
 
 在已有本机部署直接使用 `.tools/acn/venv/bin/python`；重新运行 setup 也使用该解释器即可。下载有缓存并逐文件校验，不使用私密 token。原始用户请求、逐用户关联和完整轨迹保存在忽略目录；GitHub 包含代码、协议、来源、补丁和汇总，不含这些原始数据。受镜像/API 可用性影响，下载可能失败，脚本会中止，不静默跳过文件。
 
