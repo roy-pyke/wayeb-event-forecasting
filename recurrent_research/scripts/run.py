@@ -32,7 +32,7 @@ def run_trace(trace, split, rates):
 
 def write_rows(path,rows):
     with path.open('w') as f:
-        writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+        writer=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');writer.writeheader();writer.writerows(rows)
 
 
 def paired(rows, dataset, k, baseline):

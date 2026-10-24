@@ -11,9 +11,9 @@
           "rejected_value": 4672.0,
           "pending_value": 2152.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05628842598525807,
+          "runtime_seconds": 0.05680941272294149,
           "n_windows": 154,
-          "microseconds_per_slot": 11.422164363891655
+          "microseconds_per_slot": 11.527884075272217
         },
         "fixed_backoff_2": {
           "completed_value": 11191.0,
@@ -24,9 +24,9 @@
           "rejected_value": 4623.0,
           "pending_value": 2136.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05738633155124262,
+          "runtime_seconds": 0.05660433316370472,
           "n_windows": 154,
-          "microseconds_per_slot": 11.644953642703454
+          "microseconds_per_slot": 11.48626890497255
         },
         "exponential_backoff_1_2_4": {
           "completed_value": 11208.0,
@@ -37,9 +37,9 @@
           "rejected_value": 4630.0,
           "pending_value": 2131.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.056762169930152595,
+          "runtime_seconds": 0.05588890990475193,
           "n_windows": 154,
-          "microseconds_per_slot": 11.518297469592653
+          "microseconds_per_slot": 11.341093730672062
         },
         "myopic_value": {
           "completed_value": 13481.0,
@@ -50,9 +50,9 @@
           "rejected_value": 2816.0,
           "pending_value": 1252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.051798123109620064,
+          "runtime_seconds": 0.050105959293432534,
           "n_windows": 154,
-          "microseconds_per_slot": 10.510982773867708
+          "microseconds_per_slot": 10.167605376102381
         },
         "urgency_value": {
           "completed_value": 12299.0,
@@ -63,9 +63,9 @@
           "rejected_value": 4122.0,
           "pending_value": 1796.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05276653787586838,
+          "runtime_seconds": 0.05152500496478751,
           "n_windows": 154,
-          "microseconds_per_slot": 10.70749551052524
+          "microseconds_per_slot": 10.455561072400064
         },
         "independent_two_step": {
           "completed_value": 12734.0,
@@ -76,9 +76,9 @@
           "rejected_value": 2897.0,
           "pending_value": 1789.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.07264279871014878,
+          "runtime_seconds": 0.07150187168736011,
           "n_windows": 154,
-          "microseconds_per_slot": 14.740827660338633
+          "microseconds_per_slot": 14.509308378116906
         },
         "joint_two_step": {
           "completed_value": 13783.0,
@@ -89,9 +89,9 @@
           "rejected_value": 2694.0,
           "pending_value": 1411.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.14576691790716723,
+          "runtime_seconds": 0.14327949791913852,
           "n_windows": 154,
-          "microseconds_per_slot": 29.579325874019325
+          "microseconds_per_slot": 29.074573441383627
         },
         "joint_two_step_absorbing": {
           "completed_value": 13455.0,
@@ -102,9 +102,9 @@
           "rejected_value": 2828.0,
           "pending_value": 1403.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.137918698892463,
+          "runtime_seconds": 0.13758434337796643,
           "n_windows": 154,
-          "microseconds_per_slot": 27.98674896356798
+          "microseconds_per_slot": 27.91890084780163
         },
         "joint_two_step_no_observation": {
           "completed_value": 13770.0,
@@ -115,22 +115,22 @@
           "rejected_value": 2716.0,
           "pending_value": 1369.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.1333152938168496,
+          "runtime_seconds": 0.13395162823144346,
           "n_windows": 154,
-          "microseconds_per_slot": 27.052616440107464
+          "microseconds_per_slot": 27.181742741770183
         },
         "current_state_oracle": {
           "completed_value": 13981.0,
           "completed_records": 4863.0,
-          "failed_attempts": 36.0,
-          "attempts": 4899.0,
+          "failed_attempts": 0.0,
+          "attempts": 4863.0,
           "expired_value": 5955.0,
           "rejected_value": 2694.0,
           "pending_value": 1255.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05362191720632836,
+          "runtime_seconds": 0.05710346292471513,
           "n_windows": 154,
-          "microseconds_per_slot": 10.881070861673775
+          "microseconds_per_slot": 11.58755335322953
         }
       },
       "candidate_minus": {
@@ -257,7 +257,7 @@
           "wins": 49,
           "ties": 22,
           "losses": 83,
-          "mean_failed_attempt_difference": 1.344155844155844,
+          "mean_failed_attempt_difference": 1.577922077922078,
           "relative_completed_value_gain": -0.014162077104642014
         }
       },
@@ -274,9 +274,9 @@
           "rejected_value": 1840.0,
           "pending_value": 1084.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05274799739709124,
+          "runtime_seconds": 0.05282266589347273,
           "n_windows": 154,
-          "microseconds_per_slot": 10.703733238046112
+          "microseconds_per_slot": 10.718885124487162
         },
         "fixed_backoff_2": {
           "completed_value": 19265.0,
@@ -287,9 +287,9 @@
           "rejected_value": 1479.0,
           "pending_value": 890.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05530938075389713,
+          "runtime_seconds": 0.0546668783063069,
           "n_windows": 154,
-          "microseconds_per_slot": 11.22349447116419
+          "microseconds_per_slot": 11.09311653942916
         },
         "exponential_backoff_1_2_4": {
           "completed_value": 19480.0,
@@ -300,9 +300,9 @@
           "rejected_value": 1394.0,
           "pending_value": 880.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.055886966350954026,
+          "runtime_seconds": 0.054675954685080796,
           "n_windows": 154,
-          "microseconds_per_slot": 11.34069934069684
+          "microseconds_per_slot": 11.094958337069967
         },
         "myopic_value": {
           "completed_value": 20090.0,
@@ -313,9 +313,9 @@
           "rejected_value": 924.0,
           "pending_value": 552.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05116721033118665,
+          "runtime_seconds": 0.05091682594502345,
           "n_windows": 154,
-          "microseconds_per_slot": 10.382956641880408
+          "microseconds_per_slot": 10.332148121960927
         },
         "urgency_value": {
           "completed_value": 19709.0,
@@ -326,9 +326,9 @@
           "rejected_value": 1300.0,
           "pending_value": 729.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.052265879057813436,
+          "runtime_seconds": 0.052322207775432616,
           "n_windows": 154,
-          "microseconds_per_slot": 10.60590078283552
+          "microseconds_per_slot": 10.617331123261488
         },
         "independent_two_step": {
           "completed_value": 20269.0,
@@ -339,9 +339,9 @@
           "rejected_value": 779.0,
           "pending_value": 872.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.07271449954714626,
+          "runtime_seconds": 0.07388070580782369,
           "n_windows": 154,
-          "microseconds_per_slot": 14.755377343170913
+          "microseconds_per_slot": 14.992026340873313
         },
         "joint_two_step": {
           "completed_value": 20439.0,
@@ -352,9 +352,9 @@
           "rejected_value": 768.0,
           "pending_value": 687.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.17217979702400044,
+          "runtime_seconds": 0.17435775941703469,
           "n_windows": 154,
-          "microseconds_per_slot": 34.93908218831178
+          "microseconds_per_slot": 35.38103884274243
         },
         "joint_two_step_absorbing": {
           "completed_value": 20331.0,
@@ -365,9 +365,9 @@
           "rejected_value": 842.0,
           "pending_value": 683.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.1655320092686452,
+          "runtime_seconds": 0.16393729951232672,
           "n_windows": 154,
-          "microseconds_per_slot": 33.59009928341015
+          "microseconds_per_slot": 33.26649746597539
         },
         "joint_two_step_no_observation": {
           "completed_value": 20363.0,
@@ -378,22 +378,22 @@
           "rejected_value": 788.0,
           "pending_value": 702.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.15900453832000494,
+          "runtime_seconds": 0.15822957456111908,
           "n_windows": 154,
-          "microseconds_per_slot": 32.26553131493607
+          "microseconds_per_slot": 32.10827405866864
         },
         "current_state_oracle": {
           "completed_value": 20411.0,
           "completed_records": 8391.0,
-          "failed_attempts": 633.0,
-          "attempts": 9024.0,
+          "failed_attempts": 0.0,
+          "attempts": 8391.0,
           "expired_value": 2093.0,
           "rejected_value": 829.0,
           "pending_value": 552.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05300683720270172,
+          "runtime_seconds": 0.05672229017363861,
           "n_windows": 154,
-          "microseconds_per_slot": 10.756257549249536
+          "microseconds_per_slot": 11.51020498653381
         }
       },
       "candidate_minus": {
@@ -520,7 +520,7 @@
           "wins": 82,
           "ties": 14,
           "losses": 58,
-          "mean_failed_attempt_difference": 1.4805194805194806,
+          "mean_failed_attempt_difference": 5.590909090909091,
           "relative_completed_value_gain": 0.001371809318504728
         }
       },
@@ -537,9 +537,9 @@
           "rejected_value": 403.0,
           "pending_value": 282.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.0516971709439531,
+          "runtime_seconds": 0.05168395611690357,
           "n_windows": 154,
-          "microseconds_per_slot": 10.490497350639833
+          "microseconds_per_slot": 10.487815770475562
         },
         "fixed_backoff_2": {
           "completed_value": 21738.0,
@@ -550,9 +550,9 @@
           "rejected_value": 457.0,
           "pending_value": 270.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05401429510675371,
+          "runtime_seconds": 0.05277191399363801,
           "n_windows": 154,
-          "microseconds_per_slot": 10.960693000558788
+          "microseconds_per_slot": 10.708586443514207
         },
         "exponential_backoff_1_2_4": {
           "completed_value": 21850.0,
@@ -563,9 +563,9 @@
           "rejected_value": 427.0,
           "pending_value": 275.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.053165952500421554,
+          "runtime_seconds": 0.052878752059768885,
           "n_windows": 154,
-          "microseconds_per_slot": 10.788545556092036
+          "microseconds_per_slot": 10.73026624589466
         },
         "myopic_value": {
           "completed_value": 22014.0,
@@ -576,9 +576,9 @@
           "rejected_value": 406.0,
           "pending_value": 256.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05050925328396261,
+          "runtime_seconds": 0.05080075410660356,
           "n_windows": 154,
-          "microseconds_per_slot": 10.249442630674231
+          "microseconds_per_slot": 10.308594583320529
         },
         "urgency_value": {
           "completed_value": 22015.0,
@@ -589,9 +589,9 @@
           "rejected_value": 404.0,
           "pending_value": 258.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05112258601002395,
+          "runtime_seconds": 0.05197249789489433,
           "n_windows": 154,
-          "microseconds_per_slot": 10.373901381904211
+          "microseconds_per_slot": 10.546367267632778
         },
         "independent_two_step": {
           "completed_value": 22019.0,
@@ -602,9 +602,9 @@
           "rejected_value": 401.0,
           "pending_value": 266.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.07136645272839814,
+          "runtime_seconds": 0.06999224348692223,
           "n_windows": 154,
-          "microseconds_per_slot": 14.481828881574298
+          "microseconds_per_slot": 14.202971486794285
         },
         "joint_two_step": {
           "completed_value": 22019.0,
@@ -615,9 +615,9 @@
           "rejected_value": 401.0,
           "pending_value": 266.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.16459279670380056,
+          "runtime_seconds": 0.16282482747919858,
           "n_windows": 154,
-          "microseconds_per_slot": 33.39951231814135
+          "microseconds_per_slot": 33.040752329382826
         },
         "joint_two_step_absorbing": {
           "completed_value": 22018.0,
@@ -628,9 +628,9 @@
           "rejected_value": 399.0,
           "pending_value": 271.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.15958082961151376,
+          "runtime_seconds": 0.15869891527108848,
           "n_windows": 154,
-          "microseconds_per_slot": 32.382473541297436
+          "microseconds_per_slot": 32.203513650789056
         },
         "joint_two_step_no_observation": {
           "completed_value": 22024.0,
@@ -641,22 +641,22 @@
           "rejected_value": 399.0,
           "pending_value": 267.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.1542050399002619,
+          "runtime_seconds": 0.15255049109691754,
           "n_windows": 154,
-          "microseconds_per_slot": 31.291607122618082
+          "microseconds_per_slot": 30.955862641419955
         },
         "current_state_oracle": {
           "completed_value": 22034.0,
           "completed_records": 9382.0,
-          "failed_attempts": 1905.0,
-          "attempts": 11287.0,
+          "failed_attempts": 0.0,
+          "attempts": 9382.0,
           "expired_value": 1199.0,
           "rejected_value": 399.0,
           "pending_value": 253.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.053278035717085004,
+          "runtime_seconds": 0.055865834874566644,
           "n_windows": 154,
-          "microseconds_per_slot": 10.811289715317574
+          "microseconds_per_slot": 11.336411297598751
         }
       },
       "candidate_minus": {
@@ -783,7 +783,7 @@
           "wins": 4,
           "ties": 144,
           "losses": 6,
-          "mean_failed_attempt_difference": 0.2857142857142857,
+          "mean_failed_attempt_difference": 12.655844155844155,
           "relative_completed_value_gain": -0.000680766088771898
         }
       },
@@ -800,9 +800,9 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05112524959258735,
+          "runtime_seconds": 0.05070858099497855,
           "n_windows": 154,
-          "microseconds_per_slot": 10.374441881612693
+          "microseconds_per_slot": 10.289890623981035
         },
         "fixed_backoff_2": {
           "completed_value": 21747.0,
@@ -813,9 +813,9 @@
           "rejected_value": 456.0,
           "pending_value": 263.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.052997668855823576,
+          "runtime_seconds": 0.05297641211654991,
           "n_windows": 154,
-          "microseconds_per_slot": 10.754397089249913
+          "microseconds_per_slot": 10.750083627546653
         },
         "exponential_backoff_1_2_4": {
           "completed_value": 21858.0,
@@ -826,9 +826,9 @@
           "rejected_value": 425.0,
           "pending_value": 272.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05294150114059448,
+          "runtime_seconds": 0.052883963217027485,
           "n_windows": 154,
-          "microseconds_per_slot": 10.74299941976349
+          "microseconds_per_slot": 10.731323704753954
         },
         "myopic_value": {
           "completed_value": 22039.0,
@@ -839,9 +839,9 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05107228783890605,
+          "runtime_seconds": 0.05034783686278388,
           "n_windows": 154,
-          "microseconds_per_slot": 10.363694772505285
+          "microseconds_per_slot": 10.216687675077898
         },
         "urgency_value": {
           "completed_value": 22039.0,
@@ -852,9 +852,9 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.05190712079638615,
+          "runtime_seconds": 0.05202363064745441,
           "n_windows": 154,
-          "microseconds_per_slot": 10.533100810954982
+          "microseconds_per_slot": 10.556743232032145
         },
         "independent_two_step": {
           "completed_value": 22039.0,
@@ -865,9 +865,9 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.06971250084461644,
+          "runtime_seconds": 0.07012304209638387,
           "n_windows": 154,
-          "microseconds_per_slot": 14.14620552853418
+          "microseconds_per_slot": 14.229513412415558
         },
         "joint_two_step": {
           "completed_value": 22039.0,
@@ -878,9 +878,9 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.16085724893491715,
+          "runtime_seconds": 0.16078795999055728,
           "n_windows": 154,
-          "microseconds_per_slot": 32.64148720270234
+          "microseconds_per_slot": 32.62742694613581
         },
         "joint_two_step_absorbing": {
           "completed_value": 22039.0,
@@ -891,9 +891,9 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.1568458771216683,
+          "runtime_seconds": 0.15635279950220138,
           "n_windows": 154,
-          "microseconds_per_slot": 31.827491299039835
+          "microseconds_per_slot": 31.727434963920736
         },
         "joint_two_step_no_observation": {
           "completed_value": 22039.0,
@@ -904,22 +904,22 @@
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.1533549966989085,
+          "runtime_seconds": 0.15026429324643686,
           "n_windows": 154,
-          "microseconds_per_slot": 31.119114589875913
+          "microseconds_per_slot": 30.49194262305943
         },
         "current_state_oracle": {
           "completed_value": 22039.0,
           "completed_records": 9387.0,
-          "failed_attempts": 2008.0,
-          "attempts": 11395.0,
+          "failed_attempts": 0.0,
+          "attempts": 9387.0,
           "expired_value": 1195.0,
           "rejected_value": 399.0,
           "pending_value": 252.0,
           "arrived_value": 23885.0,
-          "runtime_seconds": 0.053397675801534206,
+          "runtime_seconds": 0.0548197953030467,
           "n_windows": 154,
-          "microseconds_per_slot": 10.83556732985678
+          "microseconds_per_slot": 11.124146774157204
         }
       },
       "candidate_minus": {
@@ -1046,7 +1046,7 @@
           "wins": 0,
           "ties": 154,
           "losses": 0,
-          "mean_failed_attempt_difference": 0.0,
+          "mean_failed_attempt_difference": 13.03896103896104,
           "relative_completed_value_gain": 0.0
         }
       },

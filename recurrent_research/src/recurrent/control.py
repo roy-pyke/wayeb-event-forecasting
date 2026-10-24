@@ -82,6 +82,10 @@ def select(policy, p, queues, t, k, p01, p11, due=None, current_truth=None, hori
     elif policy == 'current_state_oracle':
         if current_truth is None:
             raise ValueError('Oracle only: requires additional current state')
+        # A free-state diagnostic oracle should not send known-failing requests.
+        # Idling the unused permits leaves reward unchanged and avoids misleading
+        # failure-count comparisons against a deliberately wasteful oracle.
+        eligible &= np.asarray(current_truth)>0
         scores = value*current_truth
     elif policy in ('edf', 'fixed_backoff_2', 'exponential_backoff_1_2_4'):
         if due is not None and policy != 'edf':

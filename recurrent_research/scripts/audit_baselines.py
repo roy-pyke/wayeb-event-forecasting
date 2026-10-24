@@ -64,7 +64,7 @@ def main():
         print(trace.name,summary,flush=True)
         save(REPORT/'baseline_audit.json',result)
     with (REPORT/'baseline_audit_windows.csv').open('w') as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+        w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
 
 
 if __name__=='__main__':main()

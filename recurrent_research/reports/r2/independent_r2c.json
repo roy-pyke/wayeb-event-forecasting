@@ -1,0 +1,568 @@
+{
+  "protocol": "INDEPENDENT_R2C.json",
+  "data": {
+    "nodes": 51663,
+    "intervals": 526078,
+    "grid_points": 840,
+    "step_seconds": 3600,
+    "p01": 0.5080072230266262,
+    "p11": 0.9465798844029061,
+    "selected_groups": 520,
+    "complete": 476,
+    "initial_unknown": 31,
+    "right_censored": 13,
+    "inventory": 0,
+    "evaluated_groups": 489,
+    "evaluated_slots": 15550,
+    "recovery_transitions": 1016,
+    "interruption_transitions": 1029,
+    "groups_with_up_down_up": 327,
+    "groups_with_two_recoveries_same_node": 162,
+    "unique_evaluated_nodes": 2856,
+    "evaluated_time_blocks": 26
+  },
+  "capacities": {
+    "2": {
+      "aggregates": {
+        "edf": {
+          "completed_value": 53001.0,
+          "completed_records": 22485.0,
+          "failed_attempts": 7207.0,
+          "attempts": 29692.0,
+          "expired_value": 10939.0,
+          "rejected_value": 7521.0,
+          "runtime_seconds": 0.180088541994337
+        },
+        "fixed_backoff_2": {
+          "completed_value": 56621.0,
+          "completed_records": 24105.0,
+          "failed_attempts": 4877.0,
+          "attempts": 28982.0,
+          "expired_value": 9797.0,
+          "rejected_value": 5766.0,
+          "runtime_seconds": 0.17706093011656776
+        },
+        "exponential_backoff_1_2_4": {
+          "completed_value": 57771.0,
+          "completed_records": 24567.0,
+          "failed_attempts": 3901.0,
+          "attempts": 28468.0,
+          "expired_value": 9387.0,
+          "rejected_value": 5343.0,
+          "runtime_seconds": 0.17510758299613371
+        },
+        "myopic_value": {
+          "completed_value": 56689.0,
+          "completed_records": 22742.0,
+          "failed_attempts": 6320.0,
+          "attempts": 29062.0,
+          "expired_value": 11519.0,
+          "rejected_value": 4792.0,
+          "runtime_seconds": 0.16461097140563652
+        },
+        "urgency_value": {
+          "completed_value": 54857.0,
+          "completed_records": 22958.0,
+          "failed_attempts": 6598.0,
+          "attempts": 29556.0,
+          "expired_value": 10605.0,
+          "rejected_value": 6809.0,
+          "runtime_seconds": 0.1686075374018401
+        },
+        "independent_two_step": {
+          "completed_value": 58756.0,
+          "completed_records": 23938.0,
+          "failed_attempts": 5826.0,
+          "attempts": 29764.0,
+          "expired_value": 9683.0,
+          "rejected_value": 3639.0,
+          "runtime_seconds": 0.23084495862713084
+        },
+        "joint_two_step": {
+          "completed_value": 59583.0,
+          "completed_records": 24141.0,
+          "failed_attempts": 5411.0,
+          "attempts": 29552.0,
+          "expired_value": 9518.0,
+          "rejected_value": 3689.0,
+          "runtime_seconds": 0.5464238284039311
+        },
+        "joint_two_step_absorbing": {
+          "completed_value": 59403.0,
+          "completed_records": 24292.0,
+          "failed_attempts": 5288.0,
+          "attempts": 29580.0,
+          "expired_value": 9448.0,
+          "rejected_value": 3908.0,
+          "runtime_seconds": 0.53002235974418
+        },
+        "joint_two_step_no_observation": {
+          "completed_value": 58892.0,
+          "completed_records": 23660.0,
+          "failed_attempts": 5938.0,
+          "attempts": 29598.0,
+          "expired_value": 9892.0,
+          "rejected_value": 4014.0,
+          "runtime_seconds": 0.5045413915649988
+        },
+        "current_state_oracle": {
+          "completed_value": 60725.0,
+          "completed_records": 25205.0,
+          "failed_attempts": 0.0,
+          "attempts": 25205.0,
+          "expired_value": 9258.0,
+          "rejected_value": 3532.0,
+          "runtime_seconds": 0.17858164513017982
+        },
+        "unpriced_horizon8": {
+          "completed_value": 57421.0,
+          "completed_records": 23767.0,
+          "failed_attempts": 6091.0,
+          "attempts": 29858.0,
+          "expired_value": 8342.0,
+          "rejected_value": 6170.0,
+          "runtime_seconds": 0.30319886817596853
+        },
+        "priced_horizon8": {
+          "completed_value": 57734.0,
+          "completed_records": 23825.0,
+          "failed_attempts": 6032.0,
+          "attempts": 29857.0,
+          "expired_value": 8483.0,
+          "rejected_value": 6198.0,
+          "runtime_seconds": 0.98981057171477
+        }
+      },
+      "joint_two_step_minus": {
+        "edf": {
+          "mean_difference": 13.460122699386503,
+          "total_difference": 6582.0,
+          "relative_gain": 0.12418633610686591,
+          "time_block_bootstrap_95": [
+            12.372571541993166,
+            14.574203929539294
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 463,
+          "ties": 12,
+          "losses": 14
+        },
+        "fixed_backoff_2": {
+          "mean_difference": 6.0572597137014315,
+          "total_difference": 2962.0,
+          "relative_gain": 0.05231274615425372,
+          "time_block_bootstrap_95": [
+            5.625583915319417,
+            6.505976693227092
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 399,
+          "ties": 34,
+          "losses": 56
+        },
+        "exponential_backoff_1_2_4": {
+          "mean_difference": 3.705521472392638,
+          "total_difference": 1812.0,
+          "relative_gain": 0.031365217842862336,
+          "time_block_bootstrap_95": [
+            3.07143556421919,
+            4.3105476673427985
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 338,
+          "ties": 32,
+          "losses": 119
+        },
+        "myopic_value": {
+          "mean_difference": 5.918200408997955,
+          "total_difference": 2894.0,
+          "relative_gain": 0.051050468344828806,
+          "time_block_bootstrap_95": [
+            5.29691059977367,
+            6.5372724763275
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 414,
+          "ties": 23,
+          "losses": 52
+        },
+        "urgency_value": {
+          "mean_difference": 9.664621676891615,
+          "total_difference": 4726.0,
+          "relative_gain": 0.08615126601892192,
+          "time_block_bootstrap_95": [
+            8.920338266211155,
+            10.417219408141435
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 450,
+          "ties": 14,
+          "losses": 25
+        },
+        "independent_two_step": {
+          "mean_difference": 1.69120654396728,
+          "total_difference": 827.0,
+          "relative_gain": 0.0140751582817074,
+          "time_block_bootstrap_95": [
+            1.3896706758304695,
+            1.9633748764060135
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 284,
+          "ties": 85,
+          "losses": 120
+        },
+        "joint_two_step_absorbing": {
+          "mean_difference": 0.36809815950920244,
+          "total_difference": 180.0,
+          "relative_gain": 0.003030149992424625,
+          "time_block_bootstrap_95": [
+            0.12267402007233784,
+            0.6276767187127935
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 227,
+          "ties": 83,
+          "losses": 179
+        },
+        "joint_two_step_no_observation": {
+          "mean_difference": 1.413087934560327,
+          "total_difference": 691.0,
+          "relative_gain": 0.011733342389458671,
+          "time_block_bootstrap_95": [
+            1.1175747348119576,
+            1.7021029713114753
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 269,
+          "ties": 135,
+          "losses": 85
+        },
+        "current_state_oracle": {
+          "mean_difference": -2.3353783231083844,
+          "total_difference": -1142.0,
+          "relative_gain": -0.01880609304240428,
+          "time_block_bootstrap_95": [
+            -2.9458743686868685,
+            -1.7259534482758623
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 157,
+          "ties": 36,
+          "losses": 296
+        },
+        "unpriced_horizon8": {
+          "mean_difference": 4.421267893660532,
+          "total_difference": 2162.0,
+          "relative_gain": 0.03765173020323575,
+          "time_block_bootstrap_95": [
+            3.9750203491284313,
+            4.858895705521473
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 351,
+          "ties": 49,
+          "losses": 89
+        },
+        "priced_horizon8": {
+          "mean_difference": 3.7811860940695294,
+          "total_difference": 1849.0,
+          "relative_gain": 0.03202618907402917,
+          "time_block_bootstrap_95": [
+            3.375763525122575,
+            4.192164125598364
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 335,
+          "ties": 51,
+          "losses": 103
+        }
+      }
+    },
+    "6": {
+      "aggregates": {
+        "edf": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.17608579387888312
+        },
+        "fixed_backoff_2": {
+          "completed_value": 64501.0,
+          "completed_records": 27532.0,
+          "failed_attempts": 5820.0,
+          "attempts": 33352.0,
+          "expired_value": 7273.0,
+          "rejected_value": 2473.0,
+          "runtime_seconds": 0.17316682590171695
+        },
+        "exponential_backoff_1_2_4": {
+          "completed_value": 64493.0,
+          "completed_records": 27532.0,
+          "failed_attempts": 4323.0,
+          "attempts": 31855.0,
+          "expired_value": 7244.0,
+          "rejected_value": 2494.0,
+          "runtime_seconds": 0.17029878502944484
+        },
+        "myopic_value": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.16588708013296127
+        },
+        "urgency_value": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.1674327970831655
+        },
+        "independent_two_step": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.22642997500952333
+        },
+        "joint_two_step": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.5344959154026583
+        },
+        "joint_two_step_absorbing": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.5085755108157173
+        },
+        "joint_two_step_no_observation": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.4918541735387407
+        },
+        "current_state_oracle": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 0.0,
+          "attempts": 27774.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.17693187750410289
+        },
+        "unpriced_horizon8": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.20598541473736987
+        },
+        "priced_horizon8": {
+          "completed_value": 65037.0,
+          "completed_records": 27774.0,
+          "failed_attempts": 10829.0,
+          "attempts": 38603.0,
+          "expired_value": 6884.0,
+          "rejected_value": 2377.0,
+          "runtime_seconds": 0.5056172427721322
+        }
+      },
+      "joint_two_step_minus": {
+        "edf": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "fixed_backoff_2": {
+          "mean_difference": 1.096114519427403,
+          "total_difference": 536.0,
+          "relative_gain": 0.008309948682966155,
+          "time_block_bootstrap_95": [
+            0.8991678848301689,
+            1.2955117136456968
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 170,
+          "ties": 319,
+          "losses": 0
+        },
+        "exponential_backoff_1_2_4": {
+          "mean_difference": 1.112474437627812,
+          "total_difference": 544.0,
+          "relative_gain": 0.008435023956088257,
+          "time_block_bootstrap_95": [
+            0.888623009418238,
+            1.399169229109349
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 142,
+          "ties": 347,
+          "losses": 0
+        },
+        "myopic_value": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "urgency_value": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "independent_two_step": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "joint_two_step_absorbing": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "joint_two_step_no_observation": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "current_state_oracle": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "unpriced_horizon8": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        },
+        "priced_horizon8": {
+          "mean_difference": 0.0,
+          "total_difference": 0.0,
+          "relative_gain": 0.0,
+          "time_block_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "n_groups": 489,
+          "n_time_blocks": 26,
+          "wins": 0,
+          "ties": 489,
+          "losses": 0
+        }
+      }
+    }
+  },
+  "gate": {
+    "coverage": true,
+    "selected_baseline": true,
+    "information_component": true,
+    "novelty_established": false
+  }
+}

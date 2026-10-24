@@ -56,6 +56,12 @@ def test_terminal_horizon_uses_immediate_reward():
     assert select('joint_two_step',p,q,31,1,.1,.9).tolist()==[1]
 
 
+def test_current_state_oracle_does_not_attempt_known_down_destination():
+    result=select('current_state_oracle',np.ones(3),[[(1,3)],[(2,3)],[(4,3)]],
+                  0,3,.1,.9,current_truth=np.array([0,1,0]))
+    assert result.tolist()==[1]
+
+
 def test_recurrence_never_absorbs_observed_success():
     states=np.array([[1,0],[0,1],[1,0]])
     arr=(np.ones((3,2),dtype=bool),np.ones((3,2),dtype=int),np.ones((3,2),dtype=int)*4)
@@ -154,5 +160,22 @@ def test_same_first_recovery_distribution_reverses_joint_action():
         acts,q=brute_q(p,queues,0,1,.5,p11)
         observed.append(int(acts[np.argmax(q),0]))
     assert observed==[0,1]
+
+
+def test_independent_groups_ignore_future_outcomes_and_do_not_replace_censoring():
+    sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+    from independent import selected_groups
+    from recurrent.data import Trace
+    trace=Trace('microsoft',[str(i) for i in range(130)],
+                [np.array([[0.,200000.]]) for _ in range(130)],
+                np.arange(34)*3600,np.ones((130,34),dtype=np.int8),3600)
+    before=list(selected_groups(trace))
+    assert len(before)==20
+    assert len(set(i for row in before for i in row[2]))==120
+    failed=before[0][2][0]
+    trace.states[failed,1:]=-1
+    after=list(selected_groups(trace))
+    assert [r[2] for r in after]==[r[2] for r in before]
+    assert len(after[0][3])==0 and after[0][5]=='right_censored'
 
 

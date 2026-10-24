@@ -1,0 +1,63 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "numpy": "1.26.4",
+  "aggregate_checks": {
+    "dev_windows.csv": {
+      "rows": 6160,
+      "all_resource_and_conservation_checks": true
+    },
+    "test_windows.csv": {
+      "rows": 6400,
+      "all_resource_and_conservation_checks": true
+    },
+    "baseline_audit_windows.csv": {
+      "rows": 640,
+      "all_resource_and_conservation_checks": true
+    },
+    "independent_r2c_windows.csv": {
+      "rows": 11736,
+      "all_resource_and_conservation_checks": true
+    }
+  },
+  "deterministic_policies": [
+    "edf",
+    "fixed_backoff_2",
+    "exponential_backoff_1_2_4",
+    "myopic_value",
+    "urgency_value",
+    "independent_two_step",
+    "joint_two_step",
+    "joint_two_step_absorbing",
+    "joint_two_step_no_observation",
+    "current_state_oracle",
+    "priced_horizon8",
+    "unpriced_horizon8"
+  ],
+  "source_hashes": {
+    "configs/BASELINE_AUDIT_R2B.json": "c096ff8eb43be8bb683fd3e767eab142648350880f3b95cd528b599504829cef",
+    "configs/DIAGNOSTICS_R2.json": "ef327d19807653234ca45432c950e7cd2a157b97512681249d55916f322c4d90",
+    "configs/INDEPENDENT_R2C.json": "031bb6b65e70e7d60ee28ce19b00a3cb74402392a4a47eec316a090d6d7e2b33",
+    "configs/PROTOCOL_R2.json": "be1fc2ce1b29b914ada31b70f04defac2280798b06bc3f91a986bdf5798fc50f",
+    "scripts/audit_baselines.py": "9b725276f5ee49dfc52b1c4a5b8572fd1fbf9f2d5c03ad4966b39d68fb3ac8ba",
+    "scripts/common.py": "9fa8d1b5783e50529a7e474e08ffbeda6688da6bae544f99f9970f07e474a37a",
+    "scripts/diagnose.py": "0c8638c9f9ebc4e8dae87652e3304383f277c577b831fd5999d186d0398101b5",
+    "scripts/fetch.py": "4aa1853d6718d92bb3957808209645e53a02e3970742fb5b15145d26092821cb",
+    "scripts/independent.py": "293a37d21fe5df5fe5dc1d7ebd47c98c792906d3298b952c3c96f58ffcb131b0",
+    "scripts/mechanism_audit.py": "7306c38881eceed8a68b9e84956d621243ffc12f05fbeca93ef9f8f466881697",
+    "scripts/plot.py": "ff821ab5ea0add8e473f00e5f032641a504e1f348cdff95453453025a215a703",
+    "scripts/prepare.py": "eef322511e72aabdc74c57a55dca80462d43e1a411d9055279d45718b6f07cd3",
+    "scripts/run.py": "d0a794427d8122f00183a0f6b19f3230662625dfd5b3e7f3c7d9b7611cd95692",
+    "scripts/verify.py": "e5c2a9d73981cea1600294807a6eabee6043e695039f74d7f45bedb34280a605",
+    "src/recurrent/__init__.py": "955d1a715fdcbed42025c8a3a95bfee194d9f4aef051d98b11e54cc0573d0583",
+    "src/recurrent/control.py": "5c6a46349fa05a660c97470f7851667c2f8eb938e09810f4e6823d5ee405f91d",
+    "src/recurrent/data.py": "8a90d27850610a371cb7bf870954471dacfff7dd721ce3b61ddc7523e6ca51c2",
+    "src/recurrent/pricing.py": "27192238d754a428a11bf7fe05938e21ad47b3507d30ef1af12c5017fd4a0f7a",
+    "src/recurrent/replay.py": "27e410acae35024e4d0f23ddff7f871a936c66733eb54e8e6a9c7accc5af41c1"
+  },
+  "tests": {
+    "exit_code": 0,
+    "output": "...............                                                          [100%]\n15 passed in 0.14s"
+  },
+  "full_capacity_neutrality": true
+}
