@@ -1,0 +1,56 @@
+{
+  "id": "R2-shared-capacity-recurrent-service",
+  "frozen_date": "2026-10-23",
+  "status": "frozen_before_trace_download_and_outcome_inspection",
+  "purpose": "Test whether shared-capacity observation recourse survives same-information strong baselines; do not label standard POMDP lookahead as novel.",
+  "source": {
+    "archive_url": "https://pbg.cs.illinois.edu/availability/availability-0.3.tar.bz2",
+    "documentation": "https://pbg.cs.illinois.edu/availability/readme.pdf",
+    "files": ["web_sites.avt", "pl-app.avt"],
+    "primary": "web_sites.avt",
+    "independent": "pl-app.avt",
+    "web_step_seconds": 600,
+    "planetlab_step_seconds": 900,
+    "no_cleaned_trace": "Do not select away correlated failures or unusually high churn. Report observation-boundary censoring."
+  },
+  "split": {
+    "primary_time_fractions": [0.6, 0.8],
+    "independent_time_fractions": [0.6, 0.8],
+    "fit": "Only primary training period. Independent-site local training is a labeled diagnostic, never used by the primary transfer controller.",
+    "node_identifiers": "No identifiers as learned features; hash only for deterministic sample selection.",
+    "unknown": "Before first up interval and at/after final end: unknown, not failure. Cut replay at first unknown among chosen nodes and retain censored denominators.",
+    "window_selection": "Nonoverlapping 32-slot windows in each split, at most 240 development and 480 test windows, evenly spaced. Select six nodes by SHA256(dataset/window_start/node_id), only requiring an earlier observed up at the start, not future availability."
+  },
+  "prediction": {
+    "model": "Pooled continuous-time two-state Markov rates with Jeffreys half-event smoothing; fit transitions and exposure on primary train only; rescale via exact matrix exponential for native time steps.",
+    "baselines": ["pooled_stationary", "last_observation", "trained_recurrent_markov"],
+    "observation": "All controllers see their own attempted destinations' outcomes only, delivered at end of slot. At start they share the immediately previous recorded sample as initial state. No future up/down events, future arrival seeds, or true outage ages enter controller input.",
+    "recurrence": "Both up-to-down and down-to-up transitions are allowed. An observed success is never permanent recovery.",
+    "assumption": "Binary reachability observations are exogenous to the tiny modeled workload. This does not identify server processing capacity or real Flink service latency."
+  },
+  "workload": {
+    "destinations": 6,
+    "slots": 32,
+    "capacities": [1, 2, 4, 6],
+    "arrival_probability_per_destination_slot": 0.35,
+    "queue_capacity_per_destination": 2,
+    "record_values": [1, 2, 4],
+    "deadline_slots": [2, 4, 8],
+    "seed": 23027,
+    "contract": "At most one head record attempt per destination and K total attempts per slot. Failure consumes one slot and retains the record; success completes one record and reveals reachability. Expired or buffer-rejected records are reported. All policies have identical total buffers and action options.",
+    "label": "Synthetic bounded read-only enrichment workload on real historical reachability, not production traffic or measured throughput."
+  },
+  "policies": ["edf", "fixed_backoff_2", "exponential_backoff_1_2_4", "myopic_value", "urgency_value", "independent_two_step", "joint_two_step", "joint_two_step_absorbing", "joint_two_step_no_observation", "current_state_oracle"],
+  "mechanism": {
+    "candidate": "Joint two-slot recourse evaluates the actual displaced service and the outcome-dependent next shared allocation. Its contrast with additive single-destination bids isolates nonseparable opportunity cost.",
+    "novelty": "The Bellman recurrence and two-step lookahead are established methods. Only a demonstrated structural failure of separable bidding plus a distinguishable new efficient mechanism could support a novelty claim; this phase can falsify that research path.",
+    "no_separate_probe": "Under equal cost, equal observation and nonnegative read-only payload value, a pure probe is weakly dominated by a productive attempt. This elementary dominance observation is not claimed as a new theorem."
+  },
+  "analysis": {
+    "primary": "Paired completed-value difference joint_two_step minus the development-selected strongest causal comparator, at K=2; bootstrap whole nonoverlapping time windows, 2000 resamples, seed 23028.",
+    "mechanism_contrast": "joint_two_step minus independent_two_step using identical beliefs, model, workloads, deadlines and two-slot horizon.",
+    "secondary": ["all comparator pairs", "all capacities", "completed_records", "failed_attempts", "expired_value", "buffer_rejected_value", "runtime", "action_disagreement", "recurrent_outages", "calibration"],
+    "gate": "Positive paired lower 95% bound at K=2 on both primary and independent transfer test, positive versus independent_two_step on both, no free capacity/buffer/information advantage. Passing performance gates still does not establish novelty.",
+    "failure_actions": "Diagnose objective mismatch, forecast shift, recurrence, horizon truncation, and workload/measurement mismatch. Preserve nulls. No test-driven parameter change or trace substitution."
+  }
+}
