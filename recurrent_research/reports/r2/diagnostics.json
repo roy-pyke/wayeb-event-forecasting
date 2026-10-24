@@ -1,0 +1,79 @@
+{
+  "structural_counterexample": {
+    "assumptions": "all states known up; no new arrivals; capacity one; rewards only on completion",
+    "queues": [
+      [
+        [
+          3,
+          3
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ]
+      ]
+    ],
+    "two_slot_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "two_slot_values": [
+      6.0,
+      5.0,
+      6.0
+    ],
+    "additive_scores": [
+      0.0,
+      2.0,
+      0.0
+    ],
+    "joint_two_slot_choice": 0,
+    "three_slot_optimum_value": 8.0,
+    "three_slot_optimum_order": [
+      1,
+      0,
+      2
+    ],
+    "three_slot_value_after_two_slot_choice": 6.0,
+    "interpretation": "Coupled two-slot value is not additive; its horizon truncation can still lose to a simpler urgency-aware action. This is an illustrative counterexample, not a new theorem."
+  },
+  "always_up": {
+    "web_sites": {
+      "n_windows": 132,
+      "mean_completed_value": {
+        "myopic_value": 141.1439393939394,
+        "urgency_value": 139.50757575757575,
+        "independent_two_step": 144.0,
+        "joint_two_step": 143.71212121212122
+      },
+      "joint_minus_independent": -0.28787878787878185,
+      "joint_minus_myopic": 2.568181818181813
+    },
+    "pl-app": {
+      "n_windows": 28,
+      "mean_completed_value": {
+        "myopic_value": 144.85714285714286,
+        "urgency_value": 142.0,
+        "independent_two_step": 147.25,
+        "joint_two_step": 147.53571428571428
+      },
+      "joint_minus_independent": 0.2857142857142776,
+      "joint_minus_myopic": 2.6785714285714164
+    }
+  }
+}

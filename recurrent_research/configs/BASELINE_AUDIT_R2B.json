@@ -1,0 +1,13 @@
+{
+  "id": "R2B-finite-horizon-price-baseline",
+  "status": "frozen_after_R2_test_as_a_falsification_audit_not_new_confirmation",
+  "motivation": "Two-slot joint lookahead shows small gains over two-slot additive bids, but an always-up counterexample loses 8 to 6 due to horizon truncation. Compare a stronger established capacity-priced finite-horizon baseline before interpreting this as a new mechanism.",
+  "candidate_unchanged": "joint_two_step",
+  "new_comparators": ["unpriced_horizon8", "priced_horizon8"],
+  "horizon": "All visible deadlines, capped at the protocol maximum 8 slots and remaining 32-slot experimental horizon. No unseen future arrivals.",
+  "subsidy_prices": [0, 0.5, 1, 1.5, 2, 3, 4],
+  "pricing": "For each price lambda, solve each destination's exact finite-horizon belief DP with a charge lambda per attempt. Select the price minimizing lambda*K*H + sum(V_i); choose current destinations by active-minus-passive advantage at that price. This is a standard Lagrangian relaxation heuristic, not a proved Whittle index.",
+  "uncertainty": "Same frozen recurrent CTMC and each policy's own partial feedback as R2. No new fitted parameters; no held-out tuning.",
+  "validation": "Check the dual bound against exhaustive tiny joint POMDP values, all trace resource/conservation invariants, same all-up negative control, and 1/3/7-day clustered bootstrap sensitivity.",
+  "interpretation": "Can falsify the R2 apparent improvement. Cannot promote a post-hoc winner as independent confirmation or novelty."
+}
