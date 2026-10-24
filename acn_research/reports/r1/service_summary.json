@@ -1,0 +1,3880 @@
+{
+  "scope": "Conditional exogenous response stress test, real held-out prefix forecasts; synthetic requests/deadlines. Seed CI is conditional on finite resampled episodes, not independent real-world CI.",
+  "forecast": "full_gbdt",
+  "selected_fixed": "every_4",
+  "worlds": 720,
+  "policy_runs": 8640,
+  "constraint_violations": 0,
+  "groups": {
+    "caltech_6A_recovery_36A_feeder": {
+      "mean_kwh": {
+        "backoff": 6.2894000000000005,
+        "early_10min": 6.445399999999998,
+        "empirical_dp": 6.432399999999999,
+        "every_1": 5.9358,
+        "every_2": 6.239999999999999,
+        "every_4": 6.447999999999999,
+        "inflate_0p2": 6.435,
+        "late_10min": 6.429799999999998,
+        "learned_dp": 6.435,
+        "learned_restore": 6.435,
+        "learned_threshold": 6.447999999999999,
+        "perfect_recovery": 6.6352
+      },
+      "offline_mean_kwh": 6.6793999999999984,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.15860000000000002,
+          "median_kwh": -0.10400000000000009,
+          "min_kwh": -0.5200000000000005,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.2002000000000001,
+            -0.11699999999999997
+          ],
+          "positive": 0,
+          "negative": 29,
+          "zero": 11
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.0026000000000000025,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007800000000000007,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015600000000000013,
+          "median_kwh": 0.0,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.031200000000000026,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.5122,
+          "median_kwh": -0.5199999999999996,
+          "min_kwh": -1.2480000000000002,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.6317999999999999,
+            -0.38740000000000013
+          ],
+          "positive": 0,
+          "negative": 33,
+          "zero": 7
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.20800000000000002,
+          "median_kwh": -0.20799999999999974,
+          "min_kwh": -0.6239999999999997,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.26260000000000006,
+            -0.15339999999999995
+          ],
+          "positive": 0,
+          "negative": 29,
+          "zero": 11
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02340000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.018200000000000015,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.031200000000000026,
+            -0.007800000000000007
+          ],
+          "positive": 0,
+          "negative": 7,
+          "zero": 33
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02340000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02340000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.1871999999999999,
+          "median_kwh": 0.20800000000000018,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            0.14299999999999988,
+            0.23139999999999983
+          ],
+          "positive": 32,
+          "negative": 1,
+          "zero": 7
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.013000000000000012,
+        "median_kwh": 0.0,
+        "min_kwh": -0.10400000000000009,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.02340000000000002,
+          -0.0026000000000000025
+        ],
+        "positive": 0,
+        "negative": 5,
+        "zero": 35
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0026000000000000025,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.10400000000000009,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.007800000000000007
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 39
+      }
+    },
+    "caltech_6A_recovery_60A_feeder": {
+      "mean_kwh": {
+        "backoff": 9.115600000000002,
+        "early_10min": 9.167600000000002,
+        "empirical_dp": 9.167600000000002,
+        "every_1": 8.8348,
+        "every_2": 9.063600000000001,
+        "every_4": 9.167600000000002,
+        "inflate_0p2": 9.167600000000002,
+        "late_10min": 9.167600000000002,
+        "learned_dp": 9.167600000000002,
+        "learned_restore": 9.167600000000002,
+        "learned_threshold": 9.167600000000002,
+        "perfect_recovery": 9.245600000000001
+      },
+      "offline_mean_kwh": 9.5836,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.051999999999999914,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.10400000000000098,
+          "bootstrap_95pct_kwh": [
+            -0.09099999999999975,
+            -0.020799999999999885
+          ],
+          "positive": 1,
+          "negative": 11,
+          "zero": 28
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.33279999999999993,
+          "median_kwh": -0.20800000000000018,
+          "min_kwh": -1.3520000000000003,
+          "max_kwh": 0.10400000000000098,
+          "bootstrap_95pct_kwh": [
+            -0.449865,
+            -0.21059999999999998
+          ],
+          "positive": 1,
+          "negative": 25,
+          "zero": 14
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.10399999999999995,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.20800000000000018,
+          "bootstrap_95pct_kwh": [
+            -0.15600000000000006,
+            -0.052000000000000005
+          ],
+          "positive": 1,
+          "negative": 16,
+          "zero": 23
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.07799999999999996,
+          "median_kwh": 0.0,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.31200000000000117,
+          "bootstrap_95pct_kwh": [
+            0.04159999999999997,
+            0.11180000000000004
+          ],
+          "positive": 18,
+          "negative": 1,
+          "zero": 21
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "caltech_6A_recovery_180A_feeder": {
+      "mean_kwh": {
+        "backoff": 10.075000000000001,
+        "early_10min": 10.075000000000001,
+        "empirical_dp": 10.075000000000001,
+        "every_1": 10.075000000000001,
+        "every_2": 10.075000000000001,
+        "every_4": 10.075000000000001,
+        "inflate_0p2": 10.075000000000001,
+        "late_10min": 10.075000000000001,
+        "learned_dp": 10.075000000000001,
+        "learned_restore": 10.075000000000001,
+        "learned_threshold": 10.075000000000001,
+        "perfect_recovery": 10.075000000000001
+      },
+      "offline_mean_kwh": 10.075,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "caltech_30A_recovery_36A_feeder": {
+      "mean_kwh": {
+        "backoff": 6.320600000000001,
+        "early_10min": 6.4765999999999995,
+        "empirical_dp": 6.4636,
+        "every_1": 5.9670000000000005,
+        "every_2": 6.2711999999999986,
+        "every_4": 6.479199999999999,
+        "inflate_0p2": 6.466199999999999,
+        "late_10min": 6.4609999999999985,
+        "learned_dp": 6.466199999999999,
+        "learned_restore": 6.466199999999999,
+        "learned_threshold": 6.479199999999999,
+        "perfect_recovery": 6.6768
+      },
+      "offline_mean_kwh": 6.6898,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.15860000000000005,
+          "median_kwh": -0.10400000000000009,
+          "min_kwh": -0.5200000000000005,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.2002000000000001,
+            -0.11699999999999999
+          ],
+          "positive": 0,
+          "negative": 29,
+          "zero": 11
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.0026000000000000025,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007800000000000007,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015600000000000013,
+          "median_kwh": 0.0,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.031200000000000026,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.5122,
+          "median_kwh": -0.5199999999999996,
+          "min_kwh": -1.2480000000000002,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.6317999999999999,
+            -0.38740000000000013
+          ],
+          "positive": 0,
+          "negative": 33,
+          "zero": 7
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.20800000000000005,
+          "median_kwh": -0.20799999999999974,
+          "min_kwh": -0.6239999999999997,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.26260000000000006,
+            -0.15339999999999998
+          ],
+          "positive": 0,
+          "negative": 29,
+          "zero": 11
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02340000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.018200000000000015,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.031200000000000026,
+            -0.007800000000000007
+          ],
+          "positive": 0,
+          "negative": 7,
+          "zero": 33
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02340000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02340000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.19759999999999991,
+          "median_kwh": 0.20800000000000018,
+          "min_kwh": 0.0,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            0.15599999999999992,
+            0.23659999999999987
+          ],
+          "positive": 33,
+          "negative": 0,
+          "zero": 7
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.013000000000000012,
+        "median_kwh": 0.0,
+        "min_kwh": -0.10400000000000009,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.02340000000000002,
+          -0.0026000000000000025
+        ],
+        "positive": 0,
+        "negative": 5,
+        "zero": 35
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0026000000000000025,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.10400000000000009,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.007800000000000007
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 39
+      }
+    },
+    "caltech_30A_recovery_60A_feeder": {
+      "mean_kwh": {
+        "backoff": 9.2144,
+        "early_10min": 9.256000000000004,
+        "empirical_dp": 9.256000000000004,
+        "every_1": 8.938799999999999,
+        "every_2": 9.170199999999998,
+        "every_4": 9.256000000000004,
+        "inflate_0p2": 9.256000000000004,
+        "late_10min": 9.256000000000004,
+        "learned_dp": 9.256000000000004,
+        "learned_restore": 9.256000000000004,
+        "learned_threshold": 9.256000000000004,
+        "perfect_recovery": 9.3782
+      },
+      "offline_mean_kwh": 9.697999999999999,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.04159999999999995,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            -0.08579999999999988,
+            0.00260000000000007
+          ],
+          "positive": 1,
+          "negative": 11,
+          "zero": 28
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.3172,
+          "median_kwh": -0.20800000000000018,
+          "min_kwh": -1.3520000000000003,
+          "max_kwh": 0.7279999999999998,
+          "bootstrap_95pct_kwh": [
+            -0.442065,
+            -0.18460000000000001
+          ],
+          "positive": 1,
+          "negative": 25,
+          "zero": 14
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.08579999999999996,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.9359999999999999,
+          "bootstrap_95pct_kwh": [
+            -0.1508,
+            -0.00779999999999994
+          ],
+          "positive": 1,
+          "negative": 16,
+          "zero": 23
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.12219999999999993,
+          "median_kwh": 0.0519999999999996,
+          "min_kwh": 0.0,
+          "max_kwh": 1.3520000000000003,
+          "bootstrap_95pct_kwh": [
+            0.06499999999999992,
+            0.20020000000000007
+          ],
+          "positive": 20,
+          "negative": 0,
+          "zero": 20
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "caltech_30A_recovery_180A_feeder": {
+      "mean_kwh": {
+        "backoff": 10.215400000000002,
+        "early_10min": 10.215400000000002,
+        "empirical_dp": 10.215400000000002,
+        "every_1": 10.215400000000002,
+        "every_2": 10.215400000000002,
+        "every_4": 10.215400000000002,
+        "inflate_0p2": 10.215400000000002,
+        "late_10min": 10.215400000000002,
+        "learned_dp": 10.215400000000002,
+        "learned_restore": 10.215400000000002,
+        "learned_threshold": 10.215400000000002,
+        "perfect_recovery": 10.215400000000002
+      },
+      "offline_mean_kwh": 10.215399999999999,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "jpl_6A_recovery_36A_feeder": {
+      "mean_kwh": {
+        "backoff": 6.3153999999999995,
+        "early_10min": 6.466199999999999,
+        "empirical_dp": 6.458399999999999,
+        "every_1": 5.985200000000001,
+        "every_2": 6.271199999999999,
+        "every_4": 6.471399999999998,
+        "inflate_0p2": 6.4609999999999985,
+        "late_10min": 6.4609999999999985,
+        "learned_dp": 6.4609999999999985,
+        "learned_restore": 6.4609999999999985,
+        "learned_threshold": 6.471399999999998,
+        "perfect_recovery": 6.6586
+      },
+      "offline_mean_kwh": 6.671599999999998,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.15600000000000008,
+          "median_kwh": -0.20799999999999974,
+          "min_kwh": -0.41600000000000037,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.19500000000000015,
+            -0.11700000000000008
+          ],
+          "positive": 0,
+          "negative": 28,
+          "zero": 12
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.005200000000000005,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.013000000000000012,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 2,
+          "zero": 38
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.026000000000000023,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.4862,
+          "median_kwh": -0.5720000000000001,
+          "min_kwh": -1.2479999999999993,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.6032,
+            -0.3692000000000001
+          ],
+          "positive": 0,
+          "negative": 31,
+          "zero": 9
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.20020000000000007,
+          "median_kwh": -0.20800000000000018,
+          "min_kwh": -0.6239999999999997,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.2574,
+            -0.1456000000000001
+          ],
+          "positive": 0,
+          "negative": 26,
+          "zero": 14
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.18719999999999987,
+          "median_kwh": 0.20800000000000018,
+          "min_kwh": 0.0,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            0.14559999999999992,
+            0.2287999999999998
+          ],
+          "positive": 33,
+          "negative": 0,
+          "zero": 7
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.01040000000000001,
+        "median_kwh": 0.0,
+        "min_kwh": -0.10400000000000009,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.02080000000000002,
+          -0.0026000000000000025
+        ],
+        "positive": 0,
+        "negative": 4,
+        "zero": 36
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0026000000000000025,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.10400000000000009,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.007800000000000007
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 39
+      }
+    },
+    "jpl_6A_recovery_60A_feeder": {
+      "mean_kwh": {
+        "backoff": 9.1104,
+        "early_10min": 9.165,
+        "empirical_dp": 9.165,
+        "every_1": 8.8634,
+        "every_2": 9.063600000000001,
+        "every_4": 9.165,
+        "inflate_0p2": 9.165,
+        "late_10min": 9.165,
+        "learned_dp": 9.165,
+        "learned_restore": 9.165,
+        "learned_threshold": 9.165,
+        "perfect_recovery": 9.240400000000001
+      },
+      "offline_mean_kwh": 9.5524,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.05460000000000005,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.10400000000000009,
+          "bootstrap_95pct_kwh": [
+            -0.09360000000000016,
+            -0.02080000000000004
+          ],
+          "positive": 2,
+          "negative": 11,
+          "zero": 27
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.3016,
+          "median_kwh": -0.10400000000000054,
+          "min_kwh": -1.3520000000000003,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.41859999999999997,
+            -0.1898
+          ],
+          "positive": 0,
+          "negative": 24,
+          "zero": 16
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.10139999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.1508,
+            -0.054600000000000024
+          ],
+          "positive": 0,
+          "negative": 15,
+          "zero": 25
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.07539999999999995,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.31200000000000117,
+          "bootstrap_95pct_kwh": [
+            0.04679999999999986,
+            0.10659999999999989
+          ],
+          "positive": 19,
+          "negative": 0,
+          "zero": 21
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "jpl_6A_recovery_180A_feeder": {
+      "mean_kwh": {
+        "backoff": 10.028200000000002,
+        "early_10min": 10.028200000000002,
+        "empirical_dp": 10.028200000000002,
+        "every_1": 10.028200000000002,
+        "every_2": 10.028200000000002,
+        "every_4": 10.028200000000002,
+        "inflate_0p2": 10.028200000000002,
+        "late_10min": 10.028200000000002,
+        "learned_dp": 10.028200000000002,
+        "learned_restore": 10.028200000000002,
+        "learned_threshold": 10.028200000000002,
+        "perfect_recovery": 10.028200000000002
+      },
+      "offline_mean_kwh": 10.028199999999998,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "jpl_30A_recovery_36A_feeder": {
+      "mean_kwh": {
+        "backoff": 6.3466,
+        "early_10min": 6.497399999999999,
+        "empirical_dp": 6.4895999999999985,
+        "every_1": 6.0164,
+        "every_2": 6.3024,
+        "every_4": 6.502599999999998,
+        "inflate_0p2": 6.492199999999999,
+        "late_10min": 6.492199999999999,
+        "learned_dp": 6.492199999999999,
+        "learned_restore": 6.492199999999999,
+        "learned_threshold": 6.502599999999998,
+        "perfect_recovery": 6.7002
+      },
+      "offline_mean_kwh": 6.713199999999999,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.15600000000000008,
+          "median_kwh": -0.20799999999999974,
+          "min_kwh": -0.41600000000000037,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.19500000000000015,
+            -0.11700000000000008
+          ],
+          "positive": 0,
+          "negative": 28,
+          "zero": 12
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.005200000000000005,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.013000000000000012,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 2,
+          "zero": 38
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.013000000000000012,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.026000000000000023,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 5,
+          "zero": 35
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.4862,
+          "median_kwh": -0.5720000000000001,
+          "min_kwh": -1.2479999999999993,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.6032,
+            -0.3692000000000001
+          ],
+          "positive": 0,
+          "negative": 31,
+          "zero": 9
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.20020000000000007,
+          "median_kwh": -0.20800000000000018,
+          "min_kwh": -0.6239999999999997,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.2574,
+            -0.1456000000000001
+          ],
+          "positive": 0,
+          "negative": 26,
+          "zero": 14
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01040000000000001,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02080000000000002,
+            -0.0026000000000000025
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.19759999999999986,
+          "median_kwh": 0.20800000000000018,
+          "min_kwh": 0.0,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            0.15599999999999986,
+            0.2391999999999999
+          ],
+          "positive": 34,
+          "negative": 0,
+          "zero": 6
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.01040000000000001,
+        "median_kwh": 0.0,
+        "min_kwh": -0.10400000000000009,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.02080000000000002,
+          -0.0026000000000000025
+        ],
+        "positive": 0,
+        "negative": 4,
+        "zero": 36
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0026000000000000025,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.10400000000000009,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.007800000000000007
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 39
+      }
+    },
+    "jpl_30A_recovery_60A_feeder": {
+      "mean_kwh": {
+        "backoff": 9.152000000000003,
+        "early_10min": 9.206599999999998,
+        "empirical_dp": 9.206599999999998,
+        "every_1": 8.905,
+        "every_2": 9.1052,
+        "every_4": 9.206599999999998,
+        "inflate_0p2": 9.206599999999998,
+        "late_10min": 9.206599999999998,
+        "learned_dp": 9.206599999999998,
+        "learned_restore": 9.206599999999998,
+        "learned_threshold": 9.206599999999998,
+        "perfect_recovery": 9.2924
+      },
+      "offline_mean_kwh": 9.594,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.05460000000000005,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.10400000000000009,
+          "bootstrap_95pct_kwh": [
+            -0.09360000000000016,
+            -0.02080000000000004
+          ],
+          "positive": 2,
+          "negative": 11,
+          "zero": 27
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.3016,
+          "median_kwh": -0.10400000000000054,
+          "min_kwh": -1.3520000000000003,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.41859999999999997,
+            -0.1898
+          ],
+          "positive": 0,
+          "negative": 24,
+          "zero": 16
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.10139999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.1508,
+            -0.054600000000000024
+          ],
+          "positive": 0,
+          "negative": 15,
+          "zero": 25
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.08579999999999996,
+          "median_kwh": 0.0519999999999996,
+          "min_kwh": 0.0,
+          "max_kwh": 0.41600000000000037,
+          "bootstrap_95pct_kwh": [
+            0.052000000000000005,
+            0.11960000000000011
+          ],
+          "positive": 20,
+          "negative": 0,
+          "zero": 20
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "jpl_30A_recovery_180A_feeder": {
+      "mean_kwh": {
+        "backoff": 10.082800000000002,
+        "early_10min": 10.082800000000002,
+        "empirical_dp": 10.082800000000002,
+        "every_1": 10.082800000000002,
+        "every_2": 10.082800000000002,
+        "every_4": 10.082800000000002,
+        "inflate_0p2": 10.082800000000002,
+        "late_10min": 10.082800000000002,
+        "learned_dp": 10.082800000000002,
+        "learned_restore": 10.082800000000002,
+        "learned_threshold": 10.082800000000002,
+        "perfect_recovery": 10.082800000000002
+      },
+      "offline_mean_kwh": 10.0828,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "office_test_6A_recovery_36A_feeder": {
+      "mean_kwh": {
+        "backoff": 6.2582,
+        "early_10min": 6.396,
+        "empirical_dp": 6.3908000000000005,
+        "every_1": 5.927999999999999,
+        "every_2": 6.206200000000001,
+        "every_4": 6.4064,
+        "inflate_0p2": 6.3908000000000005,
+        "late_10min": 6.3908000000000005,
+        "learned_dp": 6.3908000000000005,
+        "learned_restore": 6.3908000000000005,
+        "learned_threshold": 6.4064,
+        "perfect_recovery": 6.562400000000001
+      },
+      "offline_mean_kwh": 6.7262,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.1482,
+          "median_kwh": -0.10400000000000009,
+          "min_kwh": -0.41600000000000037,
+          "max_kwh": 0.10400000000000009,
+          "bootstrap_95pct_kwh": [
+            -0.18466500000000013,
+            -0.10919999999999992
+          ],
+          "positive": 1,
+          "negative": 28,
+          "zero": 11
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.010399999999999987,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.020799999999999996,
+            -0.00259999999999998
+          ],
+          "positive": 0,
+          "negative": 4,
+          "zero": 36
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015599999999999992,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02859999999999998,
+            -0.005200000000000005
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.4784,
+          "median_kwh": -0.46799999999999997,
+          "min_kwh": -1.3519999999999994,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.5902000000000001,
+            -0.3666
+          ],
+          "positive": 0,
+          "negative": 34,
+          "zero": 6
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.20020000000000007,
+          "median_kwh": -0.15600000000000014,
+          "min_kwh": -0.9359999999999999,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.2600000000000001,
+            -0.14040000000000005
+          ],
+          "positive": 0,
+          "negative": 28,
+          "zero": 12
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015599999999999992,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02859999999999998,
+            -0.005200000000000005
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015599999999999992,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02859999999999998,
+            -0.005200000000000005
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015599999999999992,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02859999999999998,
+            -0.005200000000000005
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.015599999999999992,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.02859999999999998,
+            -0.005200000000000005
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.156,
+          "median_kwh": 0.20800000000000018,
+          "min_kwh": -0.3119999999999994,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            0.10400000000000005,
+            0.20540000000000003
+          ],
+          "positive": 30,
+          "negative": 3,
+          "zero": 7
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.015599999999999992,
+        "median_kwh": 0.0,
+        "min_kwh": -0.10400000000000009,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.02859999999999998,
+          -0.005200000000000005
+        ],
+        "positive": 0,
+        "negative": 6,
+        "zero": 34
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "office_test_6A_recovery_60A_feeder": {
+      "mean_kwh": {
+        "backoff": 9.2612,
+        "early_10min": 9.287199999999999,
+        "empirical_dp": 9.2898,
+        "every_1": 8.9804,
+        "every_2": 9.188400000000001,
+        "every_4": 9.2898,
+        "inflate_0p2": 9.2898,
+        "late_10min": 9.2898,
+        "learned_dp": 9.2898,
+        "learned_restore": 9.2898,
+        "learned_threshold": 9.2898,
+        "perfect_recovery": 9.367799999999999
+      },
+      "offline_mean_kwh": 9.825399999999998,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.028599999999999914,
+          "median_kwh": 0.0,
+          "min_kwh": -0.5199999999999996,
+          "max_kwh": 0.3119999999999994,
+          "bootstrap_95pct_kwh": [
+            -0.07799999999999989,
+            0.015664999999999787
+          ],
+          "positive": 6,
+          "negative": 10,
+          "zero": 24
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.00259999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.1039999999999992,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007799999999999941,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.3094,
+          "median_kwh": -0.20800000000000018,
+          "min_kwh": -1.3520000000000003,
+          "max_kwh": 0.3119999999999994,
+          "bootstrap_95pct_kwh": [
+            -0.4290000000000001,
+            -0.18980000000000005
+          ],
+          "positive": 3,
+          "negative": 25,
+          "zero": 12
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.10139999999999993,
+          "median_kwh": 0.0,
+          "min_kwh": -0.7279999999999998,
+          "max_kwh": 0.41600000000000037,
+          "bootstrap_95pct_kwh": [
+            -0.17159999999999997,
+            -0.03379999999999987
+          ],
+          "positive": 4,
+          "negative": 16,
+          "zero": 20
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.07799999999999993,
+          "median_kwh": 0.0519999999999996,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.41600000000000037,
+          "bootstrap_95pct_kwh": [
+            0.03380000000000001,
+            0.11960000000000001
+          ],
+          "positive": 20,
+          "negative": 3,
+          "zero": 17
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "office_test_6A_recovery_180A_feeder": {
+      "mean_kwh": {
+        "backoff": 10.462399999999999,
+        "early_10min": 10.462399999999999,
+        "empirical_dp": 10.462399999999999,
+        "every_1": 10.462399999999999,
+        "every_2": 10.462399999999999,
+        "every_4": 10.462399999999999,
+        "inflate_0p2": 10.462399999999999,
+        "late_10min": 10.462399999999999,
+        "learned_dp": 10.462399999999999,
+        "learned_restore": 10.462399999999999,
+        "learned_threshold": 10.462399999999999,
+        "perfect_recovery": 10.462399999999999
+      },
+      "offline_mean_kwh": 10.462399999999999,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "office_test_30A_recovery_36A_feeder": {
+      "mean_kwh": {
+        "backoff": 6.437600000000001,
+        "early_10min": 6.585799999999999,
+        "empirical_dp": 6.578,
+        "every_1": 6.135999999999998,
+        "every_2": 6.4064000000000005,
+        "every_4": 6.593599999999998,
+        "inflate_0p2": 6.578,
+        "late_10min": 6.578,
+        "learned_dp": 6.578,
+        "learned_restore": 6.578,
+        "learned_threshold": 6.593599999999998,
+        "perfect_recovery": 6.7834
+      },
+      "offline_mean_kwh": 6.7886,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.15599999999999997,
+          "median_kwh": -0.1559999999999997,
+          "min_kwh": -0.41600000000000037,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.1949999999999998,
+            -0.11699999999999992
+          ],
+          "positive": 0,
+          "negative": 28,
+          "zero": 12
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.007800000000000007,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.018200000000000015,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 3,
+          "zero": 37
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01559999999999997,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.028599999999999938,
+            -0.005199999999999982
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.45759999999999995,
+          "median_kwh": -0.5199999999999996,
+          "min_kwh": -1.2480000000000002,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.5563999999999999,
+            -0.35359999999999997
+          ],
+          "positive": 0,
+          "negative": 33,
+          "zero": 7
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.18719999999999998,
+          "median_kwh": -0.15600000000000014,
+          "min_kwh": -0.5200000000000005,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.2366,
+            -0.13520000000000004
+          ],
+          "positive": 0,
+          "negative": 27,
+          "zero": 13
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01559999999999997,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.028599999999999938,
+            -0.005199999999999982
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01559999999999997,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.028599999999999938,
+            -0.005199999999999982
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01559999999999997,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.028599999999999938,
+            -0.005199999999999982
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.01559999999999997,
+          "median_kwh": 0.0,
+          "min_kwh": -0.10400000000000009,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.028599999999999938,
+            -0.005199999999999982
+          ],
+          "positive": 0,
+          "negative": 6,
+          "zero": 34
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.18980000000000002,
+          "median_kwh": 0.20800000000000018,
+          "min_kwh": 0.0,
+          "max_kwh": 0.41600000000000037,
+          "bootstrap_95pct_kwh": [
+            0.15340000000000004,
+            0.22100000000000009
+          ],
+          "positive": 34,
+          "negative": 0,
+          "zero": 6
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.01559999999999997,
+        "median_kwh": 0.0,
+        "min_kwh": -0.10400000000000009,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.028599999999999938,
+          -0.005199999999999982
+        ],
+        "positive": 0,
+        "negative": 6,
+        "zero": 34
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    },
+    "office_test_30A_recovery_60A_feeder": {
+      "mean_kwh": {
+        "backoff": 9.7058,
+        "early_10min": 9.6954,
+        "empirical_dp": 9.698,
+        "every_1": 9.417199999999998,
+        "every_2": 9.658999999999999,
+        "every_4": 9.703199999999999,
+        "inflate_0p2": 9.7006,
+        "late_10min": 9.7006,
+        "learned_dp": 9.7006,
+        "learned_restore": 9.7006,
+        "learned_threshold": 9.703199999999999,
+        "perfect_recovery": 9.921599999999998
+      },
+      "offline_mean_kwh": 10.220600000000001,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.00259999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.3119999999999994,
+          "max_kwh": 0.7279999999999998,
+          "bootstrap_95pct_kwh": [
+            -0.05459999999999985,
+            0.07020000000000008
+          ],
+          "positive": 7,
+          "negative": 14,
+          "zero": 19
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.007799999999999985,
+          "median_kwh": 0.0,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.020799999999999975,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 2,
+          "zero": 38
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.005200000000000005,
+          "median_kwh": 0.0,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.015600000000000013,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.2860000000000001,
+          "median_kwh": -0.20800000000000018,
+          "min_kwh": -1.3520000000000003,
+          "max_kwh": 0.5199999999999996,
+          "bootstrap_95pct_kwh": [
+            -0.403,
+            -0.16900000000000012
+          ],
+          "positive": 4,
+          "negative": 26,
+          "zero": 10
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.04420000000000002,
+          "median_kwh": 0.0,
+          "min_kwh": -0.41600000000000037,
+          "max_kwh": 0.831999999999999,
+          "bootstrap_95pct_kwh": [
+            -0.1118650000000001,
+            0.03640000000000003
+          ],
+          "positive": 4,
+          "negative": 19,
+          "zero": 17
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.00259999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.1039999999999992,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007799999999999941,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.00259999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.1039999999999992,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007799999999999941,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.00259999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.1039999999999992,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007799999999999941,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": -0.00259999999999998,
+          "median_kwh": 0.0,
+          "min_kwh": -0.1039999999999992,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            -0.007799999999999941,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 1,
+          "zero": 39
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.21839999999999993,
+          "median_kwh": 0.10400000000000009,
+          "min_kwh": -0.20800000000000018,
+          "max_kwh": 1.2479999999999993,
+          "bootstrap_95pct_kwh": [
+            0.12733499999999998,
+            0.31199999999999994
+          ],
+          "positive": 24,
+          "negative": 1,
+          "zero": 15
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": -0.00259999999999998,
+        "median_kwh": 0.0,
+        "min_kwh": -0.1039999999999992,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          -0.007799999999999941,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 1,
+        "zero": 39
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0026000000000000246,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.10400000000000098,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.007800000000000073
+        ],
+        "positive": 1,
+        "negative": 0,
+        "zero": 39
+      }
+    },
+    "office_test_30A_recovery_180A_feeder": {
+      "mean_kwh": {
+        "backoff": 11.336,
+        "early_10min": 11.336,
+        "empirical_dp": 11.336,
+        "every_1": 11.336,
+        "every_2": 11.336,
+        "every_4": 11.336,
+        "inflate_0p2": 11.336,
+        "late_10min": 11.336,
+        "learned_dp": 11.336,
+        "learned_restore": 11.336,
+        "learned_threshold": 11.336,
+        "perfect_recovery": 11.336
+      },
+      "offline_mean_kwh": 11.336,
+      "comparisons": {
+        "backoff_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "early_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "empirical_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_1_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "every_4_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "inflate_0p2_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "late_10min_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_dp_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_restore_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "learned_threshold_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        },
+        "perfect_recovery_minus_every_4": {
+          "seeds": 40,
+          "mean_kwh": 0.0,
+          "median_kwh": 0.0,
+          "min_kwh": 0.0,
+          "max_kwh": 0.0,
+          "bootstrap_95pct_kwh": [
+            0.0,
+            0.0
+          ],
+          "positive": 0,
+          "negative": 0,
+          "zero": 40
+        }
+      },
+      "learned_minus_same_cdf_threshold": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      },
+      "learned_minus_empirical_dp": {
+        "seeds": 40,
+        "mean_kwh": 0.0,
+        "median_kwh": 0.0,
+        "min_kwh": 0.0,
+        "max_kwh": 0.0,
+        "bootstrap_95pct_kwh": [
+          0.0,
+          0.0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 40
+      }
+    }
+  }
+}

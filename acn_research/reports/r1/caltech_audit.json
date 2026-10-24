@@ -1,0 +1,49 @@
+{
+  "counts": {
+    "no_alarm": 539,
+    "files": 1200,
+    "rows": 6305349,
+    "metadata_matched": 1050,
+    "unsupported_alarm": 277,
+    "eligible_alarm": 384
+  },
+  "split_boundaries_utc": [],
+  "groups": {
+    "caltech": {
+      "alarms": 384,
+      "sustained_recoveries": 9,
+      "any_rebound": 43,
+      "complete_60min_outcomes": 347,
+      "known_requests": 313,
+      "known_unmet_future_request": 269,
+      "eligible_sustained_recoveries": 4,
+      "outcomes": {
+        "horizon": 276,
+        "unplug": 62,
+        "gap": 37,
+        "sustained_recovery": 9
+      },
+      "horizons": {
+        "5": {
+          "known": 376,
+          "positive": 3
+        },
+        "15": {
+          "known": 368,
+          "positive": 4
+        },
+        "30": {
+          "known": 360,
+          "positive": 5
+        },
+        "60": {
+          "known": 347,
+          "positive": 9
+        }
+      }
+    }
+  },
+  "private_table_sha256": "e96784c675e89758009d0701a76d16e90c3876647bbb3b35a55e4ea4e356152b",
+  "first_start": "2018-05-01T04:56:04+00:00",
+  "last_start": "2020-12-02T23:56:11.144891+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "counts": {
+    "unsupported_alarm": 897,
+    "files": 1200,
+    "rows": 7608646,
+    "metadata_matched": 1119,
+    "no_alarm": 230,
+    "eligible_alarm": 73
+  },
+  "split_boundaries_utc": [],
+  "groups": {
+    "jpl": {
+      "alarms": 73,
+      "sustained_recoveries": 2,
+      "any_rebound": 3,
+      "complete_60min_outcomes": 72,
+      "known_requests": 19,
+      "known_unmet_future_request": 16,
+      "eligible_sustained_recoveries": 0,
+      "outcomes": {
+        "horizon": 55,
+        "unplug": 15,
+        "sustained_recovery": 2,
+        "gap": 1
+      },
+      "horizons": {
+        "5": {
+          "known": 73,
+          "positive": 0
+        },
+        "15": {
+          "known": 73,
+          "positive": 0
+        },
+        "30": {
+          "known": 73,
+          "positive": 1
+        },
+        "60": {
+          "known": 72,
+          "positive": 2
+        }
+      }
+    }
+  },
+  "private_table_sha256": "71c5906be9526cf4a0e296b851d6b024f91371e33fb700db35ed94bd8615258d",
+  "first_start": "2018-10-09T00:00:01+00:00",
+  "last_start": "2020-12-02T20:39:05+00:00"
+}
