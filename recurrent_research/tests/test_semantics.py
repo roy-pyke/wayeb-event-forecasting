@@ -7,6 +7,8 @@ import pytest
 from recurrent.control import joint_values, head_arrays, select
 from recurrent.data import read_avt, fit_rates, transition
 from recurrent.replay import simulate, arrivals_for, POLICIES
+from recurrent.pricing import DestinationDP,advance_queue
+from functools import lru_cache
 
 
 def brute_q(p, queues, t, k, a, b):
@@ -101,3 +103,56 @@ def test_no_current_capacity_gain_is_claimed_when_alternative_is_better():
     # Last slot: uncertain request never displaces certain higher-value service.
     chosen=select('joint_two_step',np.array([.99,.01]),[[(4,33)],[(1,33)]],31,1,.4,.8)
     assert chosen.tolist()==[0]
+
+
+def test_price_relaxation_upper_bounds_exact_joint_pomdp():
+    a,b=.18,.73
+    single=DestinationDP(a,b)
+    @lru_cache(None)
+    def exact(p,queues,h):
+        if h==0:return 0.
+        eligible=[i for i,q in enumerate(queues) if q]
+        if not eligible:return 0.
+        values=[]
+        for i in eligible: # K=1, observations arrive at end of slot
+            value=0.
+            for y in [0,1]:
+                weight=p[i] if y else 1-p[i]
+                nextp=[a+(b-a)*x for x in p];nextp[i]=b if y else a
+                nextqueues=list(queues)
+                nextqueues[i]=nextqueues[i][y:]
+                reward=queues[i][0][0] if y else 0.
+                value+=weight*(reward+exact(tuple(round(x,12) for x in nextp),
+                                           tuple(advance_queue(q) for q in nextqueues),h-1))
+            values.append(value)
+        return max(values)
+    for p in [(.2,.8),(.7,.6),(.4,.3)]:
+        queues=(((3,3),(1,2)),((2,1),(4,3)))
+        optimum=exact(p,queues,3)
+        bound,price,_=single.evaluate(p,queues,3,1)
+        assert bound+1e-10>=optimum
+
+
+def test_single_destination_price_dp_matches_all_up_deadlines():
+    dp=DestinationDP(1.,1.)
+    value,_=dp.solve(1.,((3,3),(2,1),(4,3)),3,0.)
+    assert value==7. # second record expires before it can become the head
+
+
+def test_all_deadline_baselines_obey_feedback_and_capacity():
+    states=np.random.default_rng(12).integers(0,2,(12,6))
+    for policy in ['unpriced_horizon8','priced_horizon8']:
+        stats,h=simulate(states,np.ones(6),arrivals_for('test',43,12),policy,2,.2,.8,True)
+        assert stats['attempts']<=24 and stats['max_buffer']<=12
+        assert len(h)==12
+
+
+def test_same_first_recovery_distribution_reverses_joint_action():
+    queues=[[(4,3)],[(3,3)]];p=np.array([.5,.5])
+    observed=[]
+    for p11 in [.55,.99]:
+        acts,q=brute_q(p,queues,0,1,.5,p11)
+        observed.append(int(acts[np.argmax(q),0]))
+    assert observed==[0,1]
+
+

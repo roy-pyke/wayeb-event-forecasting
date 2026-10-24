@@ -1,0 +1,109 @@
+{
+  "first_recovery_insufficiency": {
+    "p01": 0.5,
+    "initial_belief": [
+      0.5,
+      0.5
+    ],
+    "queue": [
+      [
+        [
+          4,
+          3
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ]
+      ]
+    ],
+    "capacity": 1,
+    "reward_horizon": 2,
+    "first_recovery_cdf": [
+      0.5,
+      0.75,
+      0.875,
+      0.9375,
+      0.96875,
+      0.984375,
+      0.9921875,
+      0.99609375
+    ],
+    "models": {
+      "0.55": {
+        "p11": 0.55,
+        "actions": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "expected_values": [
+          3.7875,
+          3.6
+        ],
+        "unique_optimal_action": [
+          0
+        ]
+      },
+      "0.99": {
+        "p11": 0.99,
+        "actions": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "expected_values": [
+          4.234999999999999,
+          4.48
+        ],
+        "unique_optimal_action": [
+          1
+        ]
+      }
+    }
+  },
+  "trace_mechanisms": {
+    "web_sites": {
+      "windows": 132,
+      "windows_with_down": 93,
+      "windows_with_recovery": 84,
+      "windows_with_up_down_up": 78,
+      "windows_with_two_recoveries_same_node": 60,
+      "recovery_transitions": 323,
+      "interruption_transitions": 322,
+      "decision_slots": 4224,
+      "same_snapshot_action_disagreements": {
+        "myopic_value": 1217,
+        "independent_two_step": 712,
+        "joint_two_step_no_observation": 955
+      },
+      "model_two_slot_value_advantage_over_no_observation_sum": 40.53771682848913,
+      "strict_info_action_value_improvements": 955
+    },
+    "pl-app": {
+      "windows": 28,
+      "windows_with_down": 18,
+      "windows_with_recovery": 1,
+      "windows_with_up_down_up": 0,
+      "windows_with_two_recoveries_same_node": 0,
+      "recovery_transitions": 1,
+      "interruption_transitions": 2,
+      "decision_slots": 896,
+      "same_snapshot_action_disagreements": {
+        "myopic_value": 319,
+        "independent_two_step": 234,
+        "joint_two_step_no_observation": 238
+      },
+      "model_two_slot_value_advantage_over_no_observation_sum": 30.390949253398034,
+      "strict_info_action_value_improvements": 238
+    }
+  }
+}

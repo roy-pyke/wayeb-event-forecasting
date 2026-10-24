@@ -63,6 +63,9 @@ def independent_scores(p, value, future, p01, p11):
 
 
 def select(policy, p, queues, t, k, p01, p11, due=None, current_truth=None, horizon=32):
+    if policy in ('priced_horizon8','unpriced_horizon8'):
+        from .pricing import priced_select
+        return priced_select(p,queues,t,k,p01,p11,horizon,priced=policy=='priced_horizon8')
     value, slack, future = head_arrays(queues, t)
     eligible = value > 0
     if not eligible.any():
@@ -85,7 +88,10 @@ def select(policy, p, queues, t, k, p01, p11, due=None, current_truth=None, hori
             eligible &= due <= t
         indices = np.flatnonzero(eligible)
         return np.asarray(sorted(indices, key=lambda i:(slack[i],-value[i]*p[i],i))[:k])
-    else:
+    elif policy in ('myopic_value','independent_two_step','joint_two_step',
+                    'joint_two_step_absorbing','joint_two_step_no_observation'):
         scores = value*p
+    else:
+        raise ValueError('Unknown policy: '+policy)
     indices = np.flatnonzero(eligible)
     return np.asarray(sorted(indices, key=lambda i:(-scores[i],i))[:k], dtype=int)
