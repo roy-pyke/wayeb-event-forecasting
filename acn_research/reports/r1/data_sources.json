@@ -1,0 +1,22 @@
+{
+  "caltech": {
+    "tree": "ebbfe918d0f4f84ec023b75b09277e95df57add8",
+    "population_files": 31860,
+    "selected": 1200,
+    "downloaded": 1200,
+    "failures": 0,
+    "bytes": 41210176,
+    "selection_sha256": "4b4266c86fe75517503a028363145c44ea4db00e42e6d5911358e9f098c081ed",
+    "manifest_sha256": "a05aed06adc249ac2a6142ebf96f10eb7ddfd0be85778ba2c6304acc437be529"
+  },
+  "jpl": {
+    "tree": "622e5780628345081ba45ece54b58aec42a478b7",
+    "population_files": 27723,
+    "selected": 1200,
+    "downloaded": 1200,
+    "failures": 0,
+    "bytes": 25885559,
+    "selection_sha256": "ddb024fe14b0d62039e4592d97ab7a10da53fbc2c0bb8949394c7d43fd2d83f7",
+    "manifest_sha256": "d496e22bf9a2fff2d71ec42ecf6d6868c06333f29897fdf01a5a593097da545a"
+  }
+}

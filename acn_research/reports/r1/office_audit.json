@@ -1,0 +1,150 @@
+{
+  "counts": {
+    "eligible_alarm": 838,
+    "files": 1474,
+    "rows": 7592347,
+    "metadata_matched": 1300,
+    "no_alarm": 636
+  },
+  "split_boundaries_utc": [
+    "2019-12-12T00:00:00+00:00",
+    "2020-02-20T00:00:00+00:00"
+  ],
+  "groups": {
+    "development": {
+      "alarms": 130,
+      "sustained_recoveries": 9,
+      "any_rebound": 18,
+      "complete_60min_outcomes": 128,
+      "known_requests": 2,
+      "known_unmet_future_request": 1,
+      "eligible_sustained_recoveries": 0,
+      "outcomes": {
+        "horizon": 105,
+        "unplug": 14,
+        "sustained_recovery": 9,
+        "gap": 2
+      },
+      "horizons": {
+        "5": {
+          "known": 129,
+          "positive": 0
+        },
+        "15": {
+          "known": 128,
+          "positive": 0
+        },
+        "30": {
+          "known": 128,
+          "positive": 0
+        },
+        "60": {
+          "known": 128,
+          "positive": 9
+        }
+      }
+    },
+    "office_test": {
+      "alarms": 149,
+      "sustained_recoveries": 35,
+      "any_rebound": 61,
+      "complete_60min_outcomes": 139,
+      "known_requests": 109,
+      "known_unmet_future_request": 68,
+      "eligible_sustained_recoveries": 18,
+      "outcomes": {
+        "horizon": 83,
+        "sustained_recovery": 35,
+        "unplug": 21,
+        "gap": 10
+      },
+      "horizons": {
+        "5": {
+          "known": 147,
+          "positive": 5
+        },
+        "15": {
+          "known": 146,
+          "positive": 14
+        },
+        "30": {
+          "known": 142,
+          "positive": 29
+        },
+        "60": {
+          "known": 139,
+          "positive": 35
+        }
+      }
+    },
+    "purged": {
+      "alarms": 4,
+      "sustained_recoveries": 1,
+      "any_rebound": 1,
+      "complete_60min_outcomes": 4,
+      "known_requests": 0,
+      "known_unmet_future_request": 0,
+      "eligible_sustained_recoveries": 0,
+      "outcomes": {
+        "horizon": 2,
+        "sustained_recovery": 1,
+        "unplug": 1
+      },
+      "horizons": {
+        "5": {
+          "known": 4,
+          "positive": 0
+        },
+        "15": {
+          "known": 4,
+          "positive": 1
+        },
+        "30": {
+          "known": 4,
+          "positive": 1
+        },
+        "60": {
+          "known": 4,
+          "positive": 1
+        }
+      }
+    },
+    "train": {
+      "alarms": 555,
+      "sustained_recoveries": 27,
+      "any_rebound": 93,
+      "complete_60min_outcomes": 548,
+      "known_requests": 0,
+      "known_unmet_future_request": 0,
+      "eligible_sustained_recoveries": 0,
+      "outcomes": {
+        "horizon": 438,
+        "unplug": 83,
+        "sustained_recovery": 27,
+        "gap": 6,
+        "file_end": 1
+      },
+      "horizons": {
+        "5": {
+          "known": 555,
+          "positive": 0
+        },
+        "15": {
+          "known": 553,
+          "positive": 1
+        },
+        "30": {
+          "known": 551,
+          "positive": 8
+        },
+        "60": {
+          "known": 548,
+          "positive": 27
+        }
+      }
+    }
+  },
+  "private_table_sha256": "6ce242fb8a4e5d9c0186f352b316c2ef9cdec19997629dfab7ae33349b93db19",
+  "first_start": "2019-03-25T16:24:42+00:00",
+  "last_start": "2020-12-01T22:31:20+00:00"
+}
