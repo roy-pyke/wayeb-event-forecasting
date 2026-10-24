@@ -1,0 +1,19 @@
+{
+  "version": "R1-S1-before-held-out-model-evaluation",
+  "parent": "LEARNED_PROTOCOL_R1.json",
+  "scope": "Explicit exogenous, absorbing-recovery stress test; not historical replay, causal OPE, or proof of real user benefit",
+  "seeds": [700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739],
+  "groups": ["office_test","caltech","jpl"],
+  "period_minutes": 5,
+  "horizon_slots": 12,
+  "vehicles": "3 active + 3 alarmed at t=0; alarmed episodes sampled with replacement from complete held-out 60min outcomes, including never-resume/unplug. No future features given to policy.",
+  "public_requests": "Active demand integers20..45 and alarmed demand8..30 in6A-slot quanta; each declared deadline uniformly integer6..12 slots. Synthetic public requests, intentionally separate from actual mirrored user request data. No retuning.",
+  "response": "Alarmed acceptance zero until ceil(confirmed_sustained_recovery_minutes/5), then constant at6A or30A (separate assumptions); always-active cars30A. Nonrecovery remains zero. Observed unplug terminates session when seen, no advance notification. Real deadline is synthetic declaration.",
+  "feeder_amp": [36,60,180],
+  "feedback": "Pilot>0 and measured actual=0 proves failure; no pilot gives no observation. Positive result restores nominal eligibility next cycle. Observed positive actual<pilot gives cap estimate for the fixed-capacity model. No latent state input.",
+  "policies": "All fixed/backoff candidates, development-selected every4, empirical-CDF DP, selected learned-CDF DP, same-CDF development-selected threshold, learned-DP nominal-restoration variant when conditional recovery probability>=.5, early10/late10/inflated-probability perturbations, exact-recovery diagnostic and full offline flow bound.",
+  "allocation": "Common EDF by public deadline, cap by observed state and due probe, then use spare feeder budget for available unmet vehicles. DP probe<=20min conditional on getting an allocation; congestion can delay it further. Single-episode delay guarantee does not apply when feeder blocks probes.",
+  "metrics": "Delivered kWh, shortfall, unused pilot, paired seed differences. Bootstrap2000 seeds descriptive conditional on finite sampled source episodes; never present as independent population confidence.",
+  "constraints": "Same finite actions0/6/12/18/24/30A; recompute actual=min(pilot,response_cap,remaining) for every intervention. Check all energy/feeder/deadline constraints and offline bound. At180A all policies must match offline.",
+  "selection": "No model or policy retuning. Frozen office development selection from reports/r1/selection.json. Show both single-vehicle and coupled failure; no best-on-test selection."
+}
