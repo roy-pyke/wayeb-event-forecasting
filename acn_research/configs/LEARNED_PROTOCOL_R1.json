@@ -1,0 +1,28 @@
+{
+  "version": "R1-frozen-before-new-labels-models-or-external-data",
+  "date": "2026-10-23",
+  "purpose": "Replace perfect notices by a real-data prefix predictor; evaluate discovery cost and conditional service benefit, including failures and independent sites.",
+  "training_site": "office: all 1474 pinned recordings; chronological 60/20/20 split by recording start day, purge recordings crossing next split boundary",
+  "external_sites": {
+    "caltech": {"directory": "time series data/caltech/California_Garage_01", "tree": "ebbfe918d0f4f84ec023b75b09277e95df57add8"},
+    "jpl": {"directory": "time series data/jpl/Arroyo_Garage_01", "tree": "622e5780628345081ba45ece54b58aec42a478b7"}
+  },
+  "sampling": "1200 files per external site, smallest SHA256(site + '/' + filename), before opening contents, no outcome/request filter. Verify pinned Git blob; preserve failed downloads, no replacement.",
+  "static_commit": "abb7cf15cc7108913e965d4375cc7270d532b65f",
+  "alarm": "First existing 60s low-current alarm after prior activity; <=0.5A current and >=6A pilot throughout low-current prefix. One row per session.",
+  "primary_target": "First confirmed sustained >=6A actual current for >=60s after alarm, with positive >=6A pilot support and <=15s telemetry gaps. Confirmation time, not retrospective onset, is recovery time.",
+  "secondary_target": "Any >0.5A rebound, descriptive only; cannot substitute for sustained service recovery.",
+  "followup": "60 minutes; censor at gap >15s, nonincreasing time, missing current/pilot, pilot <6A, file end. UNPLUGGED is a competing terminal event, never recovery. No future imputation.",
+  "features": "Alarm prefix only: elapsed session time, energy counter if monotone, mean/std/max/recent current, recent current trend, pilot summary, local hour/day; request-known, declared remaining demand and departure slack from modifiedAt<=alarm. No site/station/user/session IDs, filename, final energy, doneChargingTime, disconnectTime, future pilot, future labels.",
+  "horizons_minutes": [5,10,15,20,25,30,35,40,45,50,55,60],
+  "models": "Train-only per-horizon empirical CDF; elapsed-time logistic; full-feature regularized logistic; full-feature HistGradientBoosting(max_iter=100,max_leaf_nodes=7,min_samples_leaf=20,l2_regularization=1,learning_rate=.05,random_state=724). Missing-value imputation fitted on train; no class balancing. Multi-horizon probabilities projected monotonically. All models reported; choose forecast by development mean horizon Brier, ties lexical. No test tuning.",
+  "label_missingness": "Per-horizon labels missing when censored before horizon without recovery. Complete-case metrics explicitly conditional, no independent-censoring claim. Competing unplug remains a negative for later horizons.",
+  "discovery_policies": "Fixed probes every 1/2/4 five-minute slots, exponential 1-2-4 backoff; same-CDF myopic probability threshold; finite-horizon expected-cost dynamic programming using predicted CDF, with max 4-slot gap. Last-failure conditioning uses only observed failed probes. Always include no-predictor empirical-CDF DP. Spare capacity gives free probes in coupled service model.",
+  "costs": "Primary discovery cost = failed probes + delay_slots; sensitivity delay weight .25 and 4, measured separately. Delay includes undetected recoveries through horizon; never-resume sessions incur failed probes only. This is normalized opportunity cost, not real dollars or measured delivered energy.",
+  "policy_selection": "Select fixed/backoff baseline and same-CDF threshold (.05,.1,.2,.4,.6,.8) on office development for each fixed cost. Freeze models and choices before office test and external evaluation.",
+  "errors": "Natural held-out false positive/negative rates at 15min (threshold .5), calibration/Brier/logloss/AP and recovery/discovery delay; additionally shift predicted CDF 10min early/late and inflate by .2, clearly synthetic sensitivity, not measured errors.",
+  "coupled_service": "Optional explicitly exogenous absorbing-recovery stress test using held-out learned CDFs and observed complete 60min outcomes. Three always-active plus three initially paused EVs, public synthetic demand/deadlines and capacities36/60/180A; no claim historical current remains invariant under new commands. Fresh seeds 700-739, pairs common. Same policy controls/spare fill; no tuning from evaluation.",
+  "uncertainty": "Paired bootstrap by recording start day for discovery, 2000 resamples; coupled resampling worlds reuses finite episodes and is not independent real-world evidence. Report sample sizes and negative effects.",
+  "success_gate": "No paper novelty or production efficacy claim unless mechanism differs substantively from prior active sensing/learning-augmented scheduling and gains survive same-information baselines and both external sites. Causal effect remains unidentified from observational logs.",
+  "prior_protocol_erratum": "P2 numeric seeds and executed results are 500-519; inherited selection prose says 400-419 by mistake. Old protocol preserved; no numerical result changes."
+}
