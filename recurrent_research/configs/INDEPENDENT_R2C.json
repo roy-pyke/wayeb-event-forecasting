@@ -1,0 +1,23 @@
+{
+  "id": "R2C-fresh-independent-recurrence",
+  "frozen_before": "reading microsoft.avt; the existing archive member listing and public dataset documentation were seen",
+  "reason": "R2 PlanetLab test has only one recovery and no UP-DOWN-UP cycle, so its positive scheduling difference cannot independently validate recurrence.",
+  "source": "microsoft.avt from the already checksum-pinned availability-0.3 archive",
+  "provenance": "Bolosky, Douceur, Ely, Theimer, SIGMETRICS 2000: hourly probes of 51,662 corporate desktop PCs over 35 days. This is machine availability, not HTTP service quality.",
+  "sampling": {
+    "step_seconds": 3600,
+    "window_slots": 32,
+    "starts": "All nonoverlapping full 32-slot windows, beginning at index 1. No training or tuning on this domain.",
+    "groups_per_time_window": 20,
+    "nodes_per_group": 6,
+    "selection": "At each window start, require only an earlier first up. Sort eligible nodes by SHA256(microsoft/window_start/node_identifier); take the first 120 and partition into 20 disjoint six-node groups. No replacements for censored groups.",
+    "unknown": "Same R2 rule: before first up or at/after last interval end is unknown; common prefix truncation; retain all selection and censoring counts."
+  },
+  "frozen_methods": "Use exactly R2's primary-web-trained rates, ten policies, and the two fixed R2B price baselines; no recalibration, selection, new hyperparameters or new policy.",
+  "workload": "Same R2 arrival/value/deadline/buffer contract; workload identifier is window_start*100+group, dataset=microsoft.",
+  "capacities": [2, 6],
+  "primary_comparator": "independent_two_step as selected on original web development data",
+  "new_claim_gate": "At least 20 usable distinct time blocks and at least 50 evaluated groups with a same-node UP-DOWN-UP cycle; then positive lower 95% time-block-clustered CI for candidate versus selected comparator AND no-observation ablation. Passing does not establish novelty or deployment efficacy.",
+  "bootstrap": "2000 resamples, seed23031; cluster all groups at the same time window to preserve shared outages; additionally report per-node coverage without publishing identifiers",
+  "limits": "Old coarse-grained availability data; synthetic request demand; common observation-point and endpoint-retirement ambiguity remain. No modern Flink performance or real customer benefit claim."
+}
